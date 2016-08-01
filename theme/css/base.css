@@ -1,0 +1,259 @@
+* {
+    margin:0;
+    padding:0;
+}
+
+body {
+    background-color: #27c7bd;
+    /* background-image: linear-gradient(to bottom, #f14848 0, #27c7bd 100%); */
+    /* background-repeat: no-repeat; */
+    /* background-position: fixed; */
+    padding: 0;
+    margin: 0;
+    /* font-family: "Open Sans"; */
+    color: #2d2c27;
+    /* font-size: 62.5%; */
+    /* font-weight: 300; */
+    display: block;
+    height: 100%;
+}
+
+header#main{
+    height: 100%;
+    width: 100%;
+    display: block;
+    background-image: linear-gradient(to bottom, #27c7bd 0, #27c7bd 100%);
+    background-repeat: no-repeat;
+    background-position: fixed;
+}
+
+header .spacer {
+    height: 30vh;
+}
+
+/* centre the content in the parallax layers */
+header .title {
+    text-align: center;
+    text-transform: uppercase;
+    font-weight: bold;
+    /*this determines the main font of the title page*/
+    font-family: 'Roboto Condensed', helvetica, sans-serif;
+}
+
+header h1.title {
+    padding-bottom: 10px;
+    rob-weight: 300;
+}
+
+span.first {
+    font-weight: 200;
+}
+
+header h4.title {
+    padding-bottom: 18px;
+    font-weight: 200;
+    /* font-size: 100%;   */
+}
+
+header h5.title {
+    /* font-size: 100%;    */
+}
+
+ul#social {
+    list-style: none;
+    padding: 0;
+    margin: 0 auto;
+    text-align: center;
+}
+
+
+ul#social li {
+    display: inline;
+}
+
+ul#social li a {
+    color: black;
+}
+
+ul#social h1 {
+    display: inline-block;
+    padding-left: 12px;
+    padding-right: 12px;
+}
+
+ul#social img {
+    vertical-align: bottom;
+    height: 56px;
+}
+
+@media screen and ( max-width: 720px ) {
+
+    header h1.title {
+	font-size: 4rem;
+    }
+
+    header h4.title {
+	font-size: 1.15rem;
+    }
+
+}
+
+
+footer.body {
+    background: #404040;
+    position: fixed;
+    bottom: 0px;
+    left: 0px;
+    width: 100%;
+    padding: 10px;
+    text-align: center;
+    color: rgb(230,230,230);
+    z-index: 10;
+    display: none;
+
+}
+
+/* nav {  */
+/*     background: #404040; */
+/*     z-index: 5; */
+/* } */
+
+.content {
+    /* background: #E8E8E8; */
+    /* room for the footer */
+    padding-top: 50px;
+    padding-bottom: 50px;
+    /* put in the middle of the page */
+    padding-left: 5vh;
+    padding-right: 5vh;
+    z-index: 5;
+    min-height: 50vh;
+    /* max-width: 500px; */
+}
+
+p {
+    max-width: 500px;
+    padding-bottom: 1.2em;
+}
+
+ol#post-list {
+    padding: 0 0 0 0px;
+}
+
+/* only direct descendants */
+ol#post-list > li {
+    list-style-type: none;
+}
+
+abbr {
+    font-weight: bold;
+}
+
+img {
+    max-width: 650;
+}
+
+body ol {
+  margin: 1em 0;
+  padding: 0 0 0 40px;
+}
+
+body ol li {
+  list-style-type: decimal;
+}
+
+h1 {
+    font-size:3.77em;
+}
+h2 {
+    padding: 0px 0px 10px 0px;
+    font-size:2.11em;
+}
+h3 {
+    font-size:1.55em;
+}
+h4 {
+    font-size:1em;
+}
+
+#menu {
+    color: #eeeeee;
+}
+
+#menu ul {
+    height: auto;
+    padding: 8px 0px;
+    margin-left: 10vh;
+}
+
+#menu li {
+    display: inline;
+    padding: 8px;
+}
+
+#menu a {
+    text-decoration: none;
+    color: #eeeeee;
+    padding: 8px;
+}
+
+.highlight {
+    padding-bottom: 1.2em;
+}
+
+.entry-content {
+    max-width: 500px;
+}
+
+.item {
+    margin: 10px 1%;
+    width: 46.9%;
+    text-align: center;
+    border-radius: 8px;
+    background: #D8D8D8;
+    /* border: 1px solid #fafafa; */
+    -webkit-box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.3), 0 0 40px rgba(128, 128, 128, 0.1) inset; }
+}
+
+.item.w2 {
+    width: 96%;
+}
+
+.item img {
+    border-radius: 8px 8px 0 0;
+}
+
+img.blackwhite:hover {
+    filter: none;
+    -webkit-filter: grayscale(0%);
+}
+img.blackwhite {
+    -webkit-filter: grayscale(1);
+    -webkit-filter: grayscale(100%);
+    filter: grayscale(100%);
+    filter: url(#greyscale);
+    filter: gray;
+}
+
+/* .item a:hover { */
+/*   background: #A2C; */
+/*   color: white; */
+/* } */
+
+.item:hover {
+    background: #C0C0C0;
+}
+
+/* enough width for 4 columns */
+@media screen and ( min-width: 720px ) {
+
+    .item {
+	width: 22.5%;
+    }
+
+    .item.w2 {
+	width: 46.9%;
+    }
+
+}

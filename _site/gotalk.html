@@ -1,0 +1,500 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Gotalk &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rsms">
+    
+    <meta property="fb:admins" content="728642302">
+    <meta property="fb:app_id" content="38027689216">
+    
+    <meta property="og:title" content="Gotalk">
+      
+      <meta name="description" content="Gotalk exists to make it easy for programs to *talk with one another over the internet*, like a web app coordinating with a web server, or a bunch of programs dividing work amongst eachother">
+      <meta name="og:description" content="Gotalk exists to make it easy for programs to *talk with one another over the internet*, like a web app coordinating with a web server, or a bunch of programs dividing work amongst eachother">
+      
+    
+    
+    <meta property="og:image" content="https://rsms.me/res/gotalk-intro.png">
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/gotalk">
+    <meta property="og:site_name" content="rsms.me">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2015-01-21">
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation">
+        <!-- <li><a href="/projects/" title="Projects I am or was involved in">Projects</a></li> -->
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <div class="content">
+  <div class="post single">
+    
+    <h1>Gotalk</h1>
+    <info datetime="2015-01-21">
+      Jan 21, 2015
+    </info>
+    
+    <div class="body"><p><a href="https://github.com/rsms/gotalk">Gotalk</a> exists to make it easy for programs to <em>talk with one another over the internet</em>, like a web app coordinating with a web server, or a bunch of programs dividing work amongst eachother.</p>
+
+<p><img src="/res/gotalk-comic.png" alt="A terribly boring amateur comic strip" /></p>
+
+<p>Gotalk takes the natural approach of <em>bidirectional</em> and <em>concurrent</em> communication — any peer have the ability to expose “operations” as well as asking other peers to perform operations. The traditional restrictions of who can request and who can respond usually associated with a client-server model is nowhere to be found in gotalk.</p>
+
+<h2 id="gotalk-in-a-nutshell">Gotalk in a nutshell</h2>
+
+<h4 id="bidirectional">Bidirectional</h4>
+
+<p>There’s no discrimination on capabilities depending on who connected or who accepted. Both “servers” and “clients” can expose operations as well as send requests to the other side.</p>
+
+<h4 id="concurrent">Concurrent</h4>
+
+<p>Requests, results, and notifications all share a single connection without blocking eachother by means of <a href="http://en.wikipedia.org/wiki/Protocol_pipelining"><em>pipelining</em></a>. There’s no serialization on request-result or even for a single large message, as the gotalk protocol is frame-based and multiplexes messages over a single connection. This means you can perform several requests at once without having to think about queueing or blocking.</p>
+
+<p><img src="/res/gotalk-pipeline-diagram.png" alt="Diagram of how Gotalk uses connection pipelining" /></p>
+
+<h4 id="simple">Simple</h4>
+
+<p>Gotalk has a simple and opinionated API with very few components. You expose an operation via “handle” and send requests via “request”.</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="n">Handle</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="k">func</span><span class="p">(</span><span class="n">params</span><span class="x"> </span><span class="n">In</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="n">Out</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x"> </span><span class="o">...</span><span class="x"> </span><span class="p">})</span><span class="x">
+</span><span class="c">// ...</span><span class="x">
+</span><span class="n">Request</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="n">params</span><span class="p">,</span><span class="x"> </span><span class="o">&amp;</span><span class="n">result</span><span class="p">)</span><span class="x">
+</span></code></pre>
+</div>
+
+<h4 id="practical">Practical</h4>
+
+<p>Gotalk includes a <a href="https://github.com/rsms/gotalk/tree/master/js">JavaScript implementation</a> for Web Sockets alongside the full-featured Go implementation, making it easy to build modern web applications. The Gotalk source code also includes <a href="https://github.com/rsms/gotalk/tree/master/examples">a number of easily-readable examples</a>.</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">handle</span><span class="p">(</span><span class="s2">"greet"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">params</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+<span class="c1">// ...</span>
+<span class="nx">request</span><span class="p">(</span><span class="s2">"greet"</span><span class="p">,</span> <span class="nx">params</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span> <span class="p">...</span> <span class="p">});</span>
+</code></pre>
+</div>
+
+<h4 id="debuggable">Debuggable</h4>
+
+<p>The Gotalk protocol’s wire format is byte based for easy on-the-wire inspection of data. It can thus be operated over any reliable byte transport. For example, here’s a protocol message representing a request for an operation “hello” with the parameter “world”:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>r001005hello00000005world
+</code></pre>
+</div>
+
+<h2 id="by-example">By example</h2>
+
+<p>As just mentioned earlier, there are a few examples in the <code class="highlighter-rouge">examples</code> directory demonstrating how you can use Gotalk. But let’s explore a simple program right here — a little something written in <a href="http://golang.org/">Go</a> which demonstrates the use of an operation named “greet”:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">server</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Handle</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="k">func</span><span class="p">(</span><span class="n">in</span><span class="x"> </span><span class="n">GreetIn</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="n">GreetOut</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="k">return</span><span class="x"> </span><span class="n">GreetOut</span><span class="p">{</span><span class="s">"Hello "</span><span class="x"> </span><span class="o">+</span><span class="x"> </span><span class="n">in</span><span class="o">.</span><span class="n">Name</span><span class="p">},</span><span class="x"> </span><span class="no">nil</span><span class="x">
+  </span><span class="p">})</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Serve</span><span class="p">(</span><span class="s">"tcp"</span><span class="p">,</span><span class="x"> </span><span class="s">"localhost:1234"</span><span class="p">);</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+
+</span><span class="k">func</span><span class="x"> </span><span class="n">client</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">s</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Connect</span><span class="p">(</span><span class="s">"tcp"</span><span class="p">,</span><span class="x"> </span><span class="s">"localhost:1234"</span><span class="p">)</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+  </span><span class="n">greeting</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="o">&amp;</span><span class="n">GreetOut</span><span class="p">{}</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">s</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="n">GreetIn</span><span class="p">{</span><span class="s">"Rasmus"</span><span class="p">},</span><span class="x"> </span><span class="n">greeting</span><span class="p">);</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+  </span><span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"greeting: %+v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="x"> </span><span class="n">greeting</span><span class="p">)</span><span class="x">
+  </span><span class="n">s</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Let’s look at the above example in more detail, broken apart to see what’s going on.</p>
+
+<p>We begin by importing the gotalk library together with <code class="highlighter-rouge">log</code> which we use for printing to the console:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+  </span><span class="s">"log"</span><span class="x">
+  </span><span class="s">"github.com/rsms/gotalk"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>We define two types: Expected input (request parameters) and output (result) for our “greet” operation:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">type</span><span class="x"> </span><span class="n">GreetIn</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">Name</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="s">`json:"name"`</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span><span class="k">type</span><span class="x"> </span><span class="n">GreetOut</span><span class="x"> </span><span class="k">struct</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">Greeting</span><span class="x"> </span><span class="kt">string</span><span class="x"> </span><span class="s">`json:"greeting"`</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Registers a process-global request handler for an operation called “greet” accepting parameters of type <code class="highlighter-rouge">GreetIn</code>, returning results of type <code class="highlighter-rouge">GreetOut</code>:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">server</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Handle</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="k">func</span><span class="p">(</span><span class="n">in</span><span class="x"> </span><span class="n">GreetIn</span><span class="p">)</span><span class="x"> </span><span class="p">(</span><span class="n">GreetOut</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="k">return</span><span class="x"> </span><span class="n">GreetOut</span><span class="p">{</span><span class="s">"Hello "</span><span class="x"> </span><span class="o">+</span><span class="x"> </span><span class="n">in</span><span class="o">.</span><span class="n">Name</span><span class="p">},</span><span class="x"> </span><span class="no">nil</span><span class="x">
+  </span><span class="p">})</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Finally at the bottom of our <code class="highlighter-rouge">server</code> function we call <code class="highlighter-rouge">gotalk.Serve</code>, which starts a local TCP server on port 1234:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="x">  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Serve</span><span class="p">(</span><span class="s">"tcp"</span><span class="p">,</span><span class="x"> </span><span class="s">"localhost:1234"</span><span class="p">);</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>In out <code class="highlighter-rouge">client</code> function we start by connecting to the server:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="k">func</span><span class="x"> </span><span class="n">client</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">s</span><span class="p">,</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">gotalk</span><span class="o">.</span><span class="n">Connect</span><span class="p">(</span><span class="s">"tcp"</span><span class="p">,</span><span class="x"> </span><span class="s">"localhost:1234"</span><span class="p">)</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Finally we send a request for “greet” and print the result:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="x">  </span><span class="n">greeting</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">GreetOut</span><span class="p">{}</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">s</span><span class="o">.</span><span class="n">Request</span><span class="p">(</span><span class="s">"greet"</span><span class="p">,</span><span class="x"> </span><span class="n">GreetIn</span><span class="p">{</span><span class="s">"Rasmus"</span><span class="p">},</span><span class="x"> </span><span class="o">&amp;</span><span class="n">greeting</span><span class="p">);</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="n">log</span><span class="o">.</span><span class="n">Fatalln</span><span class="p">(</span><span class="n">err</span><span class="p">)</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+  </span><span class="n">log</span><span class="o">.</span><span class="n">Printf</span><span class="p">(</span><span class="s">"greeting: %+v</span><span class="se">\n</span><span class="s">"</span><span class="p">,</span><span class="x"> </span><span class="n">greeting</span><span class="p">)</span><span class="x">
+
+  </span><span class="n">s</span><span class="o">.</span><span class="n">Close</span><span class="p">()</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>Output:</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="n">greeting</span><span class="o">:</span><span class="x"> </span><span class="p">{</span><span class="n">Greeting</span><span class="o">:</span><span class="n">Hello</span><span class="x"> </span><span class="n">Rasmus</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<h2 id="gotalk-in-the-web-browser">Gotalk in the web browser</h2>
+
+<p>Gotalk is implemented not only in the full-fledged Go package, but also in a <a href="https://github.com/rsms/gotalk/tree/master/js">JavaScript library</a>. This allows writing web apps talking Gotalk via Web Sockets possible.</p>
+
+<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="c">// server.go:</span><span class="x">
+</span><span class="k">package</span><span class="x"> </span><span class="n">main</span><span class="x">
+</span><span class="k">import</span><span class="x"> </span><span class="p">(</span><span class="x">
+  </span><span class="s">"net/http"</span><span class="x">
+  </span><span class="s">"github.com/rsms/gotalk"</span><span class="x">
+</span><span class="p">)</span><span class="x">
+</span><span class="k">func</span><span class="x"> </span><span class="n">main</span><span class="p">()</span><span class="x"> </span><span class="p">{</span><span class="x">
+  </span><span class="n">gotalk</span><span class="o">.</span><span class="n">HandleBufferRequest</span><span class="p">(</span><span class="s">"echo"</span><span class="p">,</span><span class="x"> </span><span class="k">func</span><span class="p">(</span><span class="n">in</span><span class="x"> </span><span class="p">[]</span><span class="kt">byte</span><span class="p">)</span><span class="x"> </span><span class="p">([]</span><span class="kt">byte</span><span class="p">,</span><span class="x"> </span><span class="kt">error</span><span class="p">)</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="k">return</span><span class="x"> </span><span class="n">in</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="x">
+  </span><span class="p">})</span><span class="x">
+  </span><span class="n">http</span><span class="o">.</span><span class="n">Handle</span><span class="p">(</span><span class="s">"/gotalk"</span><span class="p">,</span><span class="x"> </span><span class="n">gotalk</span><span class="o">.</span><span class="n">WebSocketHandler</span><span class="p">(</span><span class="no">nil</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">))</span><span class="x">
+  </span><span class="n">http</span><span class="o">.</span><span class="n">Handle</span><span class="p">(</span><span class="s">"/"</span><span class="p">,</span><span class="x"> </span><span class="n">http</span><span class="o">.</span><span class="n">FileServer</span><span class="p">(</span><span class="n">http</span><span class="o">.</span><span class="n">Dir</span><span class="p">(</span><span class="s">"."</span><span class="p">)))</span><span class="x">
+  </span><span class="n">err</span><span class="x"> </span><span class="o">:=</span><span class="x"> </span><span class="n">http</span><span class="o">.</span><span class="n">ListenAndServe</span><span class="p">(</span><span class="s">":1234"</span><span class="p">,</span><span class="x"> </span><span class="no">nil</span><span class="p">)</span><span class="x">
+  </span><span class="k">if</span><span class="x"> </span><span class="n">err</span><span class="x"> </span><span class="o">!=</span><span class="x"> </span><span class="no">nil</span><span class="x"> </span><span class="p">{</span><span class="x">
+    </span><span class="nb">panic</span><span class="p">(</span><span class="s">"ListenAndServe: "</span><span class="x"> </span><span class="o">+</span><span class="x"> </span><span class="n">err</span><span class="o">.</span><span class="n">Error</span><span class="p">())</span><span class="x">
+  </span><span class="p">}</span><span class="x">
+</span><span class="p">}</span><span class="x">
+</span></code></pre>
+</div>
+
+<p>In our html document, we begin by registering any operations we can handle:</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;!-- index.html --&gt;
+&lt;body&gt;
+&lt;script type="text/javascript" src="gotalk.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+gotalk.handle('greet', function (params, result) {
+  result({ greeting: 'Hello ' + params.name });
+});
+&lt;/script&gt;
+</code></pre>
+</div>
+
+<p>We can’t “listen &amp; accept” connections in a web browser, but we can “connect” so we do just that, connecting to “/gotalk” which is where we registered <code class="highlighter-rouge">gotalk.WebSocketHandler</code> in our server.</p>
+
+<div class="highlighter-rouge"><pre class="highlight"><code>&lt;!-- index.html --&gt;
+&lt;body&gt;
+&lt;script type="text/javascript" src="gotalk.js"&gt;&lt;/script&gt;
+&lt;script&gt;
+gotalk.handle('greet', function (params, result) {
+  result({ greeting: 'Hello ' + params.name });
+});
+
+gotalk.connect('ws://'+document.location.host+'/gotalk', function (err, s) {
+  if (err) return console.error(err);
+  // s is a gotalk.Sock
+});
+&lt;/script&gt;
+</code></pre>
+</div>
+
+<p>This is enough for enabling the <em>server</em> to do things in the <em>browser</em> …</p>
+
+<p>But you probably want to have the <em>browser</em> send requests to the <em>server</em>, so let’s send a “echo” request just as our connection opens:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="nx">gotalk</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">'ws://'</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">+</span><span class="s1">'/gotalk'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"echo"</span><span class="p">,</span> <span class="s2">"Hello world"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'echo failed:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'echo result:'</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>We could rewrite our code like this to allow some UI component to send a request:</p>
+
+<div class="language-js highlighter-rouge"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">s</span> <span class="o">=</span> <span class="nx">gotalk</span><span class="p">.</span><span class="nx">connect</span><span class="p">(</span><span class="s1">'ws://'</span><span class="o">+</span><span class="nb">document</span><span class="p">.</span><span class="nx">location</span><span class="p">.</span><span class="nx">host</span><span class="o">+</span><span class="s1">'/gotalk'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">s</span><span class="p">)</span> <span class="p">{</span>
+  <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="nx">err</span><span class="p">);</span>
+<span class="p">});</span>
+
+<span class="nx">button</span><span class="p">.</span><span class="nx">addEventListener</span><span class="p">(</span><span class="s1">'click'</span><span class="p">,</span> <span class="kd">function</span> <span class="p">()</span> <span class="p">{</span>
+  <span class="nx">s</span><span class="p">.</span><span class="nx">request</span><span class="p">(</span><span class="s2">"echo"</span><span class="p">,</span> <span class="s2">"Hello world"</span><span class="p">,</span> <span class="kd">function</span> <span class="p">(</span><span class="nx">err</span><span class="p">,</span> <span class="nx">result</span><span class="p">)</span> <span class="p">{</span>
+    <span class="k">if</span> <span class="p">(</span><span class="nx">err</span><span class="p">)</span> <span class="k">return</span> <span class="nx">console</span><span class="p">.</span><span class="nx">error</span><span class="p">(</span><span class="s1">'echo failed:'</span><span class="p">,</span> <span class="nx">err</span><span class="p">);</span>
+    <span class="nx">console</span><span class="p">.</span><span class="nx">log</span><span class="p">(</span><span class="s1">'echo result:'</span><span class="p">,</span> <span class="nx">result</span><span class="p">);</span>
+  <span class="p">});</span>
+<span class="p">});</span>
+</code></pre>
+</div>
+
+<p>The request will fail with an error “socket is closed” if the user clicks our button while the connection isn’t open.</p>
+
+<p>If you’re interested in learning more about using Gotalk with web browsers, check out <a href="https://github.com/rsms/gotalk/tree/master/examples/websocket">examples/websocket</a> and <a href="https://github.com/rsms/gotalk/tree/master/examples/websocket-chat">examples/websocket-chat</a> which shows how to use most of the Gotalk functionality to make interactive websites.</p>
+
+<h2 id="protocol-and-wire-format">Protocol and wire format</h2>
+
+<p>The wire format is designed to be human-readable and flexible; it’s byte-based and can be efficiently implemented in a number of environments ranging from HTTP and WebSocket in a web browser to raw TCP in Go or C. The protocol provides only a small set of operations on which more elaborate operations can be modeled by the user.</p>
+
+<p>Here’s a complete description of the protocol:</p>
+
+<div class="language-rb highlighter-rouge"><pre class="highlight"><code><span class="n">conversation</span>    <span class="o">=</span> <span class="no">ProtocolVersion</span> <span class="no">Message</span><span class="o">*</span>
+<span class="n">message</span>         <span class="o">=</span> <span class="no">SingleRequest</span> <span class="o">|</span> <span class="no">StreamRequest</span>
+                <span class="o">|</span> <span class="no">SingleResult</span> <span class="o">|</span> <span class="no">StreamResult</span>
+                <span class="o">|</span> <span class="no">ErrorResult</span>
+
+<span class="no">ProtocolVersion</span> <span class="o">=</span> <span class="o">&lt;</span><span class="n">hexdigit</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">hexdigit</span><span class="o">&gt;</span>
+
+<span class="no">SingleRequest</span>   <span class="o">=</span> <span class="s2">"r"</span> <span class="n">requestID</span> <span class="n">operation</span> <span class="n">payload</span>
+<span class="no">StreamRequest</span>   <span class="o">=</span> <span class="s2">"s"</span> <span class="n">requestID</span> <span class="n">operation</span> <span class="n">payload</span> <span class="no">StreamReqPart</span><span class="o">+</span>
+<span class="no">StreamReqPart</span>   <span class="o">=</span> <span class="s2">"p"</span> <span class="n">requestID</span> <span class="n">payload</span>
+<span class="no">SingleResult</span>    <span class="o">=</span> <span class="s2">"R"</span> <span class="n">requestID</span> <span class="n">payload</span>
+<span class="no">StreamResult</span>    <span class="o">=</span> <span class="s2">"S"</span> <span class="n">requestID</span> <span class="n">payload</span> <span class="no">StreamResult</span><span class="o">*</span>
+<span class="no">ErrorResult</span>     <span class="o">=</span> <span class="s2">"E"</span> <span class="n">requestID</span> <span class="n">payload</span>
+<span class="no">Notification</span>    <span class="o">=</span> <span class="s2">"n"</span> <span class="n">type</span> <span class="n">payload</span>
+
+<span class="n">requestID</span>       <span class="o">=</span> <span class="o">&lt;</span><span class="n">byte</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">byte</span><span class="o">&gt;</span> <span class="o">&lt;</span><span class="n">byte</span><span class="o">&gt;</span>
+
+<span class="n">operation</span>       <span class="o">=</span> <span class="n">text3</span>
+<span class="n">type</span>            <span class="o">=</span> <span class="n">text3</span>
+
+<span class="n">text3</span>           <span class="o">=</span> <span class="n">text3Size</span> <span class="n">text3Value</span>
+<span class="n">text3Size</span>       <span class="o">=</span> <span class="n">hexUInt3</span>
+<span class="n">text3Value</span>      <span class="o">=</span> <span class="o">&lt;&lt;</span><span class="no">byte</span><span class="o">&gt;</span><span class="p">{</span><span class="n">text3Size</span><span class="p">}</span> <span class="n">as</span> <span class="n">utf8</span> <span class="n">text</span><span class="o">&gt;</span><span class="sh">
+
+payload         = payloadSize payloadData?
+payloadSize     = hexUInt8
+payloadData     = &lt;byte&gt;{payloadSize}
+
+hexUInt3        = &lt;hexdigit&gt; &lt;hexdigit&gt; &lt;hexdigit&gt;
+hexUInt8        = &lt;hexdigit&gt; &lt;hexdigit&gt; &lt;hexdigit&gt; &lt;hexdigit&gt;
+                  &lt;hexdigit&gt; &lt;hexdigit&gt; &lt;hexdigit&gt; &lt;hexdigit&gt;
+</span></code></pre>
+</div>
+
+<p>A conversation begins with the protocol version:</p>
+
+<div class="language-lua highlighter-rouge"><pre class="highlight"><code><span class="mi">00</span>  <span class="c1">-- ProtocolVersion 0</span>
+</code></pre>
+</div>
+
+<p>If the version of the protocol spoken by the other end is not supported by the reader, the connection is terminated and the conversation never starts. Otherwise, any messages are read and/or written.</p>
+
+<p>This is a “single-payload” request …</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+-----------------</span> <span class="n">SingleRequest</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">+-------------</span> <span class="n">text3Size</span>   <span class="mi">4</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>   <span class="o">+---------</span> <span class="n">operation</span>   <span class="s">"echo"</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>   <span class="o">|</span>       <span class="o">+-</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>  <span class="o">|</span>   <span class="o">|</span>       <span class="o">|</span>
+<span class="n">r001004echo00000019</span><span class="p">{</span><span class="s">"message"</span><span class="p">:</span><span class="s">"Hello World"</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>… and a corresponding “single-payload” result:</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+-----------------</span> <span class="n">SingleResult</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">R00100000019</span><span class="p">{</span><span class="s">"message"</span><span class="p">:</span><span class="s">"Hello World"</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Each request is identified by exactly three bytes—the <code class="highlighter-rouge">requestID</code>—which is requestor-specific and has no purpose beyond identity, meaning the value is never interpreted.</p>
+
+<p>These “single” requests &amp; results are the most common protocol messages, and as their names indicates, their payloads follow immediately after the header. For large payloads this can become an issue when dealing with many concurrent requests over a single connection, for which there’s a more complicated “streaming” request &amp; result type which we will explore later on.</p>
+
+<p>If an error occurs while handing a request, an “error” is send as the reply instead of a regular result:</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+-----------------</span> <span class="n">ErrorResult</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">38</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">E00100000026</span><span class="p">{</span><span class="s">"error"</span><span class="p">:</span><span class="s">"Unknown operation </span><span class="se">\"</span><span class="s">echo</span><span class="se">\"</span><span class="s">"</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>As with all messages, what the payload data represents is up to each application and not part of the Gotalk protocol although we use JSON in our examples here.</p>
+
+<p>When there’s no expectation on a response, Gotalk provides a “notification” message type:</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+----------------------</span> <span class="n">Notification</span>
+<span class="o">|</span>              <span class="o">+---------</span> <span class="nb">type</span>        <span class="s">"chat message"</span>
+<span class="o">|</span>              <span class="o">|</span>       <span class="o">+-</span> <span class="n">payloadSize</span> <span class="mi">50</span>
+<span class="o">|</span>              <span class="o">|</span>       <span class="o">|</span>
+<span class="n">n00cchat</span> <span class="n">message00000032</span><span class="p">{</span><span class="s">"message"</span><span class="p">:</span><span class="s">"Hi"</span><span class="p">,</span><span class="s">"from"</span><span class="p">:</span><span class="s">"nthn"</span><span class="p">,</span><span class="s">"chat_room"</span><span class="p">:</span><span class="s">"gonuts"</span><span class="p">}</span>
+</code></pre>
+</div>
+
+<p>Notifications are never replied to nor can they cause “error” results.</p>
+
+<p>For more complicated scenarios there are “streaming-payload” requests and results at our disposal. This allows transmitting of large amounts of data without the need for large buffers. For example this could be used to forward audio data to audio playback hardware, or to transmit a large file off of slow media like a tape drive or hard-disk drive.</p>
+
+<p>Because transmitting a streaming request or result does not occupy “the line” (single-payloads are transmitted serially), they can also be useful when there are many concurrent requests happening over a single connection.</p>
+
+<p>Here’s an example of a “streaming-payload” request …</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+-----------------</span> <span class="n">StreamRequest</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>      <span class="o">+---------</span> <span class="n">operation</span>   <span class="s">"echo"</span>
+<span class="o">|</span>  <span class="o">|</span>      <span class="o">|</span>       <span class="o">+-</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>      <span class="o">|</span>       <span class="o">|</span>
+<span class="n">s001004echo0000000b</span><span class="p">{</span><span class="s">"message"</span><span class="p">:</span>
+
+<span class="o">+-----------------</span> <span class="n">streamReqPart</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">p0010000000e</span><span class="s">"Hello World"</span><span class="p">}</span>
+
+<span class="o">+-----------------</span> <span class="n">streamReqPart</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">0</span> <span class="p">(</span><span class="n">end</span> <span class="n">of</span> <span class="n">stream</span><span class="p">)</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">p00100000000</span>
+</code></pre>
+</div>
+
+<p>… followed by a “streaming-payload” result:</p>
+
+<div class="language-py highlighter-rouge"><pre class="highlight"><code><span class="o">+-----------------</span> <span class="n">StreamResult</span> <span class="p">(</span><span class="mi">1</span><span class="n">st</span> <span class="n">part</span><span class="p">)</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">S0010000000b</span><span class="p">{</span><span class="s">"message"</span><span class="p">:</span>
+
+<span class="o">+-----------------</span> <span class="n">StreamResult</span> <span class="p">(</span><span class="mi">2</span><span class="n">nd</span> <span class="n">part</span><span class="p">)</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">25</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">S0010000000e</span><span class="s">"Hello World"</span><span class="p">}</span>
+
+<span class="o">+-----------------</span> <span class="n">StreamResult</span>
+<span class="o">|</span>  <span class="o">+----------------</span> <span class="n">requestID</span>   <span class="s">"001"</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">+--------</span> <span class="n">payloadSize</span> <span class="mi">0</span> <span class="p">(</span><span class="n">end</span> <span class="n">of</span> <span class="n">stream</span><span class="p">)</span>
+<span class="o">|</span>  <span class="o">|</span>       <span class="o">|</span>
+<span class="n">S00100000000</span>
+</code></pre>
+</div>
+
+<p>Requests and results does not need to match on the “single” vs “streaming” detail — it’s perfectly fine to send a streaming request and read a single response, or send a single response just to receive a streaming result. <em>The payload type is orthogonal to the message type</em>, with the exception of an error response which is always a “single-payload” message, carrying any information about the error in its payload. Note however that the current version of the Go package does not provide a high-level API for mixed-kind request-response handling.</p>
+
+<h2 id="open-source-code">Open source code</h2>
+
+<p>Gotalk is a hobby project and free to use, modify and even sell within the bounds of <a href="https://github.com/rsms/gotalk#mit-license">the liberal MIT-license</a>. You’ll find the most recent version at <a href="https://github.com/rsms/gotalk">https://github.com/rsms/gotalk</a></p>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+    <!-- <info class="after">
+<div class="fb-like" data-href="//rsms.me/gotalk" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
+    </info> -->
+
+  
+  </div>
+</div>
+
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+  </body>
+</html>

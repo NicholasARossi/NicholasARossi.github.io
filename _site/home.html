@@ -1,0 +1,280 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-72x72-precomposed.png">
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@rsms">
+    
+    <meta property="fb:admins" content="728642302">
+    <meta property="fb:app_id" content="38027689216">
+    
+      <meta name="description" content="Ramblings by Rasmus Andersson -- a Swedish designer with a passion for technology">
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/home">
+    <meta property="og:site_name" content="rsms.me">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation">
+        <!-- <li><a href="/projects/" title="Projects I am or was involved in">Projects</a></li> -->
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <!-- <div class="content full-bleed intro">
+  Welcome to my homepage!!1
+</div> -->
+
+    <style type="text/css">
+#wrap {
+   width:900px;
+   height: 1200;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:650px;
+}
+#mid_col {
+   float:middle;
+   width:50px;
+}
+#right_col {
+   float:right;
+   width:200px;
+}
+</style>
+
+<div id="wrap">
+    <div id="left_col">
+      <div class="posts">
+        <div class="content full-bleed" id="recent-posts">
+        <a
+          href="/welcome" class="post-excerpt photo">
+            <div class="padded-content">
+              <div class="title">Welcome!</div>
+            
+              <div class="image" style="background-image:url('/res/cat.jpg')"></div>
+            <!-- post.photo_url -->
+            </div>
+          </a><a
+          href="/pizza" class="post-excerpt">
+            <div class="padded-content">
+              <div class="title">Pizza Post</div>
+            
+              <!-- <div class="title">Pizza Post</div> -->
+              <info datetime="">
+                Jul 2015
+              </info>
+              
+              <span class="body"><p>Pizzas, how do they work? Well think long and hard before you order a pizza in the wrong size or the wrong state!</p>
+</span>
+              
+            <!-- post.photo_url -->
+            </div>
+          </a><a
+          href="/gotalk" class="post-excerpt">
+            <div class="padded-content">
+              <div class="title">Gotalk</div>
+            
+              <!-- <div class="title">Gotalk</div> -->
+              <info datetime="">
+                Jan 2015
+              </info>
+              
+              <span class="body"><p>Gotalk exists to make it easy for programs to <em>talk with one another over the internet</em>, like a web app coordinating with a web server, or a bunch of programs dividing work amongst eachother</p>
+</span>
+              
+            <!-- post.photo_url -->
+            </div>
+          </a>
+          <div class="breaker"></div>
+          <div class="end">
+            <a href="/archive/">More...</a>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div id="right_col">
+
+      <a class="twitter-timeline"  href="https://twitter.com/DivergentData" Remove data-src="false" data-height="750px" data-theme="dark" data-link-color="#E95F28" data-chrome="nofooter noscrollbar noborders">Tweets by DivergentData</a>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
+</div>
+
+<script type="text/javascript">
+(function(){
+
+var columns = null;
+
+function f(){
+  var cols = window.innerWidth >= 890 ? 2 : 1;
+  if (columns === cols) { return; }
+  columns = cols;
+  // if (cols === 2) console.log('switch to multi-column');
+  // else            console.log('switch to single-column');
+
+  var posts = document.getElementById('recent-posts');
+  var childNodes = posts.childNodes, i, L = childNodes.length, node, h,
+      col_width, col0_y, col1_y, col1_x,
+      origin = {x:0, y:0}, node_count = 0, is_col0, row0_max_y = 0;
+
+  posts.style.position = (columns === 1) ? null : 'relative';
+
+  for (i = 0; i !== L; ++i) {
+    node = childNodes[i];
+    if (node.nodeType === Node.ELEMENT_NODE) {
+      if (node.className === 'breaker') {
+        if (columns === 1) {
+          node.style.height = null;
+        } else {
+          node.style.height = Math.max(col0_y, col1_y) + 'px';
+        }
+        break;
+      }
+      if (columns === 1) {
+        node.style.position = null;
+        node.style.top = null;
+        node.style.left = null;
+        node.style.width = null;
+        continue;
+      }
+      node.style.position = 'absolute';
+      if (col0_y === undefined) {
+        origin.x = node.offsetLeft;
+        origin.y = node.offsetTop;
+        col_width = node.clientWidth;
+        col0_y = origin.y + node.clientHeight;
+        row0_max_y = col0_y;
+        node.style.top = '0px';
+        node.style.left = '0px';
+        node.style.width = col_width + 'px';
+        //node.style.border = '1px solid red'
+      } else {
+        if (col1_y === undefined) {
+          col1_y = origin.y + node.clientHeight;
+          col1_x = origin.x + node.clientWidth;
+          if (col1_y > row0_max_y) {
+            row0_max_y = col1_y;
+          }
+          node.style.top = '0px';
+          node.style.left = col1_x + 'px';
+          node.style.width = col_width + 'px';
+        } else {
+          // node.style.position = 'absolute';
+          is_col0 = (node_count % 2) === 0;
+          node.style.width = col_width + 'px';
+          if (is_col0) {
+            node.style.left = origin.x + 'px';
+            node.style.top = col0_y + 'px';
+            node.setAttribute('data-height', node.clientHeight);
+            col0_y += node.clientHeight;
+            node.classList.add('col0');
+          } else {
+            node.style.left = col1_x + 'px';
+            node.style.top = col1_y + 'px';
+            node.setAttribute('data-height', node.clientHeight);
+            col1_y += node.clientHeight;
+            node.classList.add('col1');
+          }
+        }
+      }
+      ++node_count;
+    }
+  }
+}
+
+function setup(){
+  f();
+  var onresize = f;
+  // var timer = null;
+  // function onresize() {
+  //   if (timer !== null) { return; }
+  //   timer = setTimeout(function(){ timer = null; f(); }, 100);
+  // }
+  if (window.addEventListener) {
+    window.addEventListener('resize', onresize);
+  } else {
+    window.attachEvent('resize', onresize);
+  }
+}
+
+// if (window.addEventListener) {
+//   window.addEventListener('DOMContentLoaded', setup);
+// } else {
+//   window.attachEvent('onload', setup);
+// }
+
+window.initFuncs.push(setup);
+
+})();
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+  </body>
+</html>
