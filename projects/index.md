@@ -1,7 +1,7 @@
 ---
 layout: dirindex
 fb_comments: 3
-title: Projects
+title: Side Projects
 ---
 Odds and ends; beeps and boops:
 
