@@ -1,5 +1,5 @@
 ---
-layout: page
+layout: barebones
 title: About
 ---
 
