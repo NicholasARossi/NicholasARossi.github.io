@@ -1,6 +1,8 @@
 port: 3000
 lsi: false
 permalink: /:title
+url: "https://nicholasarossi.github.io" # the base hostname & protocol for your site
+baseurl: "/nicholasarossi"
 markdown: kramdown
 # Since GH pages override this to "true", we test this value to see if we are running locally
 safe: false
