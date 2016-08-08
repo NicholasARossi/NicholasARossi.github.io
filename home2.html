@@ -5,39 +5,63 @@ layout: default
   Welcome to my homepage!!1
 </div> -->
 
+    <style type="text/css">
+#wrap {
+   width:900px;
+   height: 1200;
+   margin:0 auto;
+}
+#left_col {
+   float:left;
+   width:650px;
+}
+#mid_col {
+   float:middle;
+   width:50px;
+}
+#right_col {
+   float:right;
+   width:200px;
+}
+</style>
 
-
-<div class="posts">
-<div class="content full-bleed" id="recent-posts">
-{% for post in site.posts limit:50 %}<a
-  href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
-    <div class="padded-content">
-      <div class="title">{{ post.title }}</div>
-    {% if post.photo_url %}
-      <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
-    {% else %}
-      <!-- <div class="title">{{ post.title }}</div> -->
-      <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
-        {{ post.date | date: "%b %Y" }}
-      </info>
-      {% if post.description %}
-      <span class="body">{{ post.description | markdownify }}</span>
-      {% else %}
-      <span class="body">{{ post.excerpt | strip_html }}</span>
-      {% endif %}
-    {% endif %}<!-- post.photo_url -->
+<div id="wrap">
+    <div id="left_col">
+      <div class="posts">
+        <div class="content full-bleed" id="recent-posts">
+        {% for post in site.posts limit:50 %}<a
+          href="{{ post.url }}" class="post-excerpt{% if post.photo_url %} photo{% endif %}">
+            <div class="padded-content">
+              <div class="title">{{ post.title }}</div>
+            {% if post.photo_url %}
+              <div class="image" style="background-image:url('{{ post.photo_url }}')"></div>
+            {% else %}
+              <!-- <div class="title">{{ post.title }}</div> -->
+              <info datetime="{{ page.date | date: "%Y-%m-%d" }}">
+                {{ post.date | date: "%b %Y" }}
+              </info>
+              {% if post.description %}
+              <span class="body">{{ post.description | markdownify }}</span>
+              {% else %}
+              <span class="body">{{ post.excerpt | strip_html }}</span>
+              {% endif %}
+            {% endif %}<!-- post.photo_url -->
+            </div>
+          </a>{% endfor %}
+          <div class="breaker"></div>
+          <div class="end">
+            <a href="/archive/">More...</a>
+          </div>
+        </div>
+      </div>
     </div>
-  </a>{% endfor %}
-  <div class="breaker"></div>
-  <div class="end">
-    <a href="/archive/">More...</a>
-  </div>
+    <div id="right_col">
+
+      <a class="twitter-timeline"  href="https://twitter.com/DivergentData" Remove data-src="false" data-height="750px" data-theme="dark" data-link-color="#E95F28" data-chrome="nofooter noscrollbar noborders">Tweets by DivergentData</a>
+      <script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+    </div>
 </div>
-<a class="twitter-timeline" href="//twitter.com/githubstatus" data-widget-id="479252841396056064" data-tweet-limit="2" data-chrome="nofooter noborders noscrollbar transparent">
-     Tweets by </a><a href="https://twitter.com/intent/user?screen_name=githubstatus">@githubstatus</a>
-
-
-
 
 <script type="text/javascript">
 (function(){
