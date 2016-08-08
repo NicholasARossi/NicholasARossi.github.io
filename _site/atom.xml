@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-08-07T23:59:10-04:00</updated>
+  <updated>2016-08-08T00:07:51-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -29,7 +29,7 @@
 &lt;p&gt;What does pizza size mean visually? Mouse over the data below for sample pizzas from the &lt;font color=&quot;blue&quot;&gt;Pizza Hut&lt;/font&gt;, &lt;font color=&quot;green&quot;&gt;Dominos&lt;/font&gt; and &lt;font color=&quot;red&quot;&gt;Papa Johns&lt;/font&gt; in Minnesota. A lower price per square inch means a better deal on the pizza.&lt;/p&gt;
 &lt;iframe src=&quot;/res/blog_1/minnesota.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;We see how value scales with increased pizza size, but what of other qualities? Well, we should talk about crust. Crust is the pulp of pizza - a highly divisive feature and one that should always be considered when choosing pizza size. The data below shows some randomly sampled pizza from across the states and how they scale pizza value&lt;/p&gt;
+&lt;p&gt;We see how value scales with increased pizza size, but what of other qualities? Well, we should talk about crust. Crust is the pulp of pizza - a highly divisive feature and one that should always be considered when choosing pizza size. The data below shows some randomly sampled pizza from across the states and how they scale pizza value () &lt;/p&gt;
 &lt;p&gt;&lt;img src=&quot;/res/blog_1/swarm.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;The Big take away from this is that due to trends in pizza pricing, if you really like crust you should just get a bunch of personal pan pizzas from Pizza hoot, or get cheese pizzas from dominoms.&lt;/p&gt;
