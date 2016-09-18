@@ -10,4 +10,4 @@ gems:
   - jekyll-redirect-from
   - rdiscount
 url: "https://nicholasarossi.github.io" # the base hostname & protocol for your site
-# baseurl: "/nicholasarossi"
+baseurl: "/nicholasarossi"
