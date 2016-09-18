@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-08-08T00:18:47-04:00</updated>
+  <updated>2016-09-18T21:53:38+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -11,9 +11,99 @@
   </author>
   
   <entry>
+    <title>Musical Systems Analysis</title>
+    <link href="http://nicholasarossi.github.io//Musical-Systems"/>
+    <updated>2016-09-18T00:00:00+02:00</updated>
+    <id>http://nicholasarossi.github.io//Musical Systems</id>
+    <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
+&lt;p&gt;A motif is a recurring element - a pattern that is found more often than would occur by chance. They are essential in all ordered systems, from genetic networks to the patterns of social interaction. Today we’re going to talk about their role in music while we reviewing the ways that you can teach robots to write songs.&lt;/p&gt;
+
+&lt;h2 id=&quot;roll-the-dice-maybe-itll-sound-good&quot;&gt;Roll the dice, maybe it’ll sound good&lt;/h2&gt;
+&lt;p&gt;For the purposes of this post, we’re going to understand a musical work as a simple sequence of notes. How we move from one note to the next is what produces this emergent “musicality”. The foundation of most robot-composers like &lt;a href=&quot;https://en.wikipedia.org/wiki/Emily_Howell&quot;&gt;Emily Howell&lt;/a&gt; are &lt;a href=&quot;https://en.wikipedia.org/wiki/Markov_chain&quot;&gt;markov chains&lt;/a&gt;. For more information on what those are, and to see some of the foundational code that made this post possible, read &lt;a href=&quot;http://setosa.io/ev/markov-chains/&quot;&gt;Victor Powell&lt;/a&gt;, he is master of us all. Markov chains can be used to create biased random walks between notes which, absent of any grand form, can still produce musicality.&lt;/p&gt;
+&lt;p&gt;
+The network bellow shows one such markov chain that hops around the pentatonic scale. This scale is nice for generating random music because it lacks any dissonant intervals.
+&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/score/7/5/756b1ensi3iu6vn4elyyb4uwcgn0z1u/756b1ens.png&quot; alt=&quot;pentatonic scale&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt; This biased random walk reveals that certain notes are favored, even if all of the jumps are inherently probabilistic. Play with the speed and unmute it to hear this network performed. Note, I added some random rhythms on top just to keep the notes interesting (quarter and eight notes, 50% probability each)&lt;/p&gt;
+
+&lt;!-- How markov chains produce distributions --&gt;
+&lt;iframe src=&quot;/res/blog_2/random-sequence-markov.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;lets-go-data-mining&quot;&gt;Let’s go data mining!&lt;/h2&gt;
+&lt;p&gt;So the above showed that a biased random network can generate the semblance of musicality. However, the weights between the nodes (or the probability of each transition) are super important in making your robo-music not sound like utter garbage. So in order to “discover” the appropriate weight, I told my computer to much up a bunch of songs and tell me how we transition from one note to the next. It was &lt;a href=&quot;/res/blog_2/algorithm.png&quot;&gt;complicated&lt;/a&gt;. Below we see the note and interval distributions from  ~5000 pop songs.
+&lt;img src=&quot;/res/blog_2/int_dist.png&quot; alt=&quot;distributions&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So these what might come from a summing up a bunch of histograms like the animated on above for a whole slew of pop songs. The interval diagram (the distance from one note to the next) shows that clearly not moving at all (staying on the same note) is the most favored transition. This is emphasized by looking at our case-study song, Bad romance by mother monster, and fitting a few different distributions to show how we move throughout this song.&lt;/p&gt;
+
+&lt;center&gt;&lt;img src=&quot;/res/blog_2/romance2.png&quot; alt=&quot;Romance &quot; style=&quot;width: 50%;&quot; /&gt;&lt;/center&gt;
+
+&lt;p&gt;Say what you will, but i’m calling that as an exponential distribution. &lt;spoiler alert=&quot;&quot;&gt; This information will be important later when we try to shape random notes to resemble real music. &amp;lt;/spoiler alert&amp;gt;&lt;/spoiler&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;je-veux-ton-amour-et-je-veux-ta-revanche&quot;&gt;Je veux ton amour et je veux ta revanche&lt;/h2&gt;
+&lt;p&gt;There is an important element that these simple random walks can’t quite capture though : the motif. We can think of motifs in music as hooks. The melody you’ll hum when you think of the song. Take Bad Romance by Lady Gaga, the hook is &lt;a href=&quot;https://www.youtube.com/watch?v=Rwp8ZlYkg_I&quot;&gt;unforgetable&lt;/a&gt;. However let’s try to generate it from a markov chain:
+&lt;!-- Example Motif From mother monster --&gt;
+&lt;img src=&quot;/res/blog_2/gaga.png&quot; alt=&quot;Gaga Fugue&quot; style=&quot;width: 200px;&quot; /&gt;
+&lt;!-- ![Gaga Fugue](/res/blog_2/gaga.png){ width: 50px; } --&gt;&lt;/p&gt;
+&lt;iframe src=&quot;/res/blog_2/markov.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Using all of my stats power I can say (not counting rhythm) that even with the optimal weights we’re still looking at ~3% chance that the hook will be generated if you start on the tonic. Not so hot. As a result we need to generate musicality not just from the probabilities of note transitions, but also the recurrence of grander symmetry.&lt;/p&gt;
+
+&lt;p&gt;Real full-blown actual real life scientists have studied this problem and used fancy math to analyze the frequency of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309746/&quot;&gt;recurrent patterns&lt;/a&gt;. For me I’m just gonna prospect the hooks.&lt;/p&gt;
+
+&lt;p&gt;Going back to our data and using some full-blown computer science shenanigans we can find which patterns are most common, as is demonstrated by the graph below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/res/blog_2/total_motifs.png&quot; alt=&quot;total motifs&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;You music notes can note the prospect of the RA-AH-GA-GA-AH-AH echoed in some of the prospected motifs (hint 62 is middle - C). Clearly some imperfect musical fragments were also recovered, but overall we see that it not just about probabilities between notes, there are also bigger patterns that recur.&lt;/p&gt;
+
+&lt;h2 id=&quot;pulling-it-all-together&quot;&gt;Pulling it all together&lt;/h2&gt;
+
+&lt;p&gt;So how do we know that any of this actually makes something sound musical? Well, we need to give a robot these rules that we found to be common in other peoples music, and ask it to use them to generate new music. I did just that when I wrote an evolutionary algorithm bringing together both the ideas of markovian interactions and motif recurrence to turn this:&lt;/p&gt;
+
+&lt;audio controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/res/blog_2/random_music.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+&lt;/audio&gt;
+
+&lt;p&gt;into this:&lt;/p&gt;
+
+&lt;audio controls=&quot;&quot;&gt;
+  &lt;source src=&quot;/res/blog_2/example.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;
+&lt;/audio&gt;
+
+&lt;p&gt;Not perfect, but you can hear the elements coming together.&lt;/p&gt;
+
+&lt;h2 id=&quot;tldr&quot;&gt;tl;dr&lt;/h2&gt;
+
+&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/embed/cTKlHhLE6Tc&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;notes-for-nerds&quot;&gt;Notes for Nerds:&lt;/h2&gt;
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The musical markov chain visualizations were done by adapting &lt;a href=&quot;http://setosa.io/ev/markov-chains/&quot;&gt;this&lt;/a&gt;, with help from &lt;a href=&quot;https://mudcu.be/midi-js/&quot;&gt;midi.js&lt;/a&gt; and time and tricks garnered from the interent.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The web-scrapping took midi files from various repositories across the web and parsed them with &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;Beautiful Soup&lt;/a&gt; and &lt;a href=&quot;https://github.com/vishnubob/python-midi&quot;&gt;python midi libraries&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I used matlab to write the evolutionary algorithm to combine the themes and write the novel music (I almost never use matlab but I had some code I previously wrote that made it easy)&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;The code here was really cobbled together, if you want more detail on how I did something just email me.&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
+  
+  <entry>
     <title>Pizza Post</title>
     <link href="http://nicholasarossi.github.io//pizza"/>
-    <updated>2016-08-07T00:00:00-04:00</updated>
+    <updated>2016-08-07T00:00:00+02:00</updated>
     <id>http://nicholasarossi.github.io//pizza</id>
     <content type="html">&lt;p&gt;So we all know the bigger the pizza, &lt;a href=&quot;http://www.npr.org/sections/money/2014/02/26/282132576/74-476-reasons-you-should-always-get-the-bigger-pizza&quot;&gt;the better the deal&lt;/a&gt;. The price per square inch decreases dramatically as you increase pizza size. But there&#39;s so much more to do with pizza math! For the following graphs I assume uniform thickness among pizzas (obvious conciet) but beyond that we just need equations for area an circumference of a circle. Presto pesto!&lt;/p&gt;
 &lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;def&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pizza_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
@@ -62,7 +152,7 @@
   <entry>
     <title>Welcome!</title>
     <link href="http://nicholasarossi.github.io//welcome"/>
-    <updated>2016-08-01T00:00:00-04:00</updated>
+    <updated>2016-08-01T00:00:00+02:00</updated>
     <id>http://nicholasarossi.github.io//welcome</id>
     <content type="html">&lt;p&gt;Hey! This is the first post in what will hopefully be a long and fruitful foray into the overcrowded world of data science blogging. I hope to share with you some insightful bits and well as a good helping of glorious infectious confusion. Later!
 &lt;br /&gt;
