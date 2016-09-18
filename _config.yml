@@ -9,5 +9,5 @@ include: [".well-known"]
 gems:
   - jekyll-redirect-from
   - rdiscount
-url: "https://nicholasarossi.github.io" # the base hostname & protocol for your site
-baseurl: "/nicholasarossi"
+url: "http://www.rossidata.com" # the base hostname & protocol for your site
+
