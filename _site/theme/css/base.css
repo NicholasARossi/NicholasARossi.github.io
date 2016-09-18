@@ -2,7 +2,9 @@
     margin:0;
     padding:0;
 }
-
+.hidden {
+    display: none;
+}
 body {
     background-color: #27c7bd;
     /* background-image: linear-gradient(to bottom, #f14848 0, #27c7bd 100%); */

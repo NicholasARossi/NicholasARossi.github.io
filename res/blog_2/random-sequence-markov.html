@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Markov Chains</title>
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+    <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+    <link href="style.css" type="text/css" rel="stylesheet">
+    <script src="d3.min.js"></script>
+    <script src="vector.js"></script>
+    <script src="angular.min.js" charset="utf-8"></script>
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/jquery_ui-bundle.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/prettify-bundle.js"></script>
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/framebox.js"></script>
+    <link rel="stylesheet"
+    href="https://google-developers.appspot.com/_static/24dd69d909/css/devsite-cyan.css">
+    <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet"
+          href="https://google-developers.appspot.com/_static/24dd69d909/css/devsite-cyan.css">
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/prettify-bundle.js"></script>
+
+
+    <meta name="robots" content="noindex">
+    <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/jquery_ui-bundle.js"></script>
+    <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+    <script src="https://google-developers.appspot.com/_static/24dd69d909/js/framebox.js"></script>
+    <!-- Code For Music Playback -->
+    <!-- shims -->
+    <script src="midi/inc/shim/Base64.js" type="text/javascript"></script>
+    <script src="midi/inc/shim/Base64binary.js" type="text/javascript"></script>
+    <script src="midi/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+    <!-- midi.js -->
+    <script src="midi/js/midi/audioDetect.js" type="text/javascript"></script>
+    <script src="midi/js/midi/gm.js" type="text/javascript"></script>
+    <script src="midi/js/midi/loader.js" type="text/javascript"></script>
+    <script src="midi/js/midi/plugin.audiotag.js" type="text/javascript"></script>
+    <script src="midi/js/midi/plugin.webaudio.js" type="text/javascript"></script>
+    <script src="midi/js/midi/plugin.webmidi.js" type="text/javascript"></script>
+    <!-- utils -->
+    <script src="midi/js/util/dom_request_xhr.js" type="text/javascript"></script>
+    <script src="midi/js/util/dom_request_script.js" type="text/javascript"></script>
+    <style>
+body, html {
+  overflow: hidden;
+}
+.st-diagram {
+  pointer-events: none;
+  position: absolute;
+  left: 0;
+  width: 100%;
+  z-index: 1;
+}
+.st-diagram .nodes {
+  pointer-events: all;
+}
+</style>
+</head>
+<body ng-app="myApp" ng-controller="MainCtrl">
+
+  <!-- <div style="position:relative;width:100%">
+       <div id="chart_div" style="position:absolute;right:0px;top:0px;width: 400px; height: 300px;"></div>
+   </div> -->
+
+   <button style="position:absolute;left:0px;top:50px;"  class="sortButton" ng-click="toggle = !toggle">{{toggleText}}</button>
+ <histogram data="data"></histogram>
+ <button style="position:absolute;left:0px;top:0px;" ng-click="changeData()">Reset Data</button>
+  <st-diagram style="position:absolute;left:200px;top:0px;" states="states"
+    transition-matrix="transitionMatrix" duration="duration"
+    state="state"
+    selected-transition="selected.transition"></st-diagram>
+  <!-- <div class="sequence" step-1="70%" step-2="60%"></div> -->
+  <div style="position:absolute;left:500px;top:0px;" class="controls">
+    <input  class="speedRange" type="range" ng-model="speedRange"
+      min="1" max="10" step="1">
+    <label> speed </label>
+  </div>
+</body>
+<!-- <input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: null, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension8&quot;: &quot;scriptsafe&quot;, &quot;dimension1&quot;: &quot;Signed out&quot;}, &quot;gaid&quot;: &quot;UA-24532603-1&quot;}">
+
+<input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {}, &quot;gaid&quot;: &quot;UA-47037920-1&quot;}">
+
+<input class="google-analytics-id-json" type="hidden" value="{&quot;dimensions&quot;: {&quot;dimension6&quot;: null, &quot;dimension5&quot;: &quot;en&quot;, &quot;dimension3&quot;: false, &quot;dimension8&quot;: &quot;scriptsafe&quot;, &quot;dimension1&quot;: &quot;Signed out&quot;}, &quot;gaid&quot;: &quot;UA-49880327-1&quot;}"> -->
+<script>
+  var dataLayer = [{"freeTrialEligibleUser": "False", "language": {"requested": "en", "served": null}, "projectName": null, "scriptsafe": "scriptsafe", "signedIn": "False", "internalUser": "False"}];
+</script>
+
+
+
+<script>
+
+  window.onload = function() {
+      // Initialize the settings variables we get from the server side
+    devsite.settings.initSettings({'ALLOWED_HOSTS': ['.android.com', '.appspot.com', '.gonglchuangl.net', '.google.cn', '.google.com', '.googleplex.com', '.devsitetest.how'], 'VERSION_HASH': '24dd69d909'} || {});
+    // DevsiteUtilParams rely on devsite.settings.
+    devsite.utils.initDevsiteUtilParams('https://google-developers.appspot.com/',
+        devsite.settings.ALLOWED_HOSTS.concat('youtube.com'));
+    devsite.permissions.init({"51470233c56fc1fde50f00b73c52b216": false, "700def1a83e356c06c0925afb05de4b0": false, "6749dcb526ce9bde6993550c7d928d24": true, "098dafe57affddc137df300142652cfd": false, "4c1e030265e73d132474df5ca11667f1": false});
+    devsite.base.init(null, null, top, false);
+
+    devsite.analytics.InitAnalytics(true);
+
+
+  }
+
+
+</script>
+<script>
+
+var myApp = angular.module('myApp', []);
+
+myApp.controller('MainCtrl', function($scope, utils, $window) {
+  angular.element($window).on('resize', function() { $scope.$apply(); });
+  $scope.diagramCenter = [0.8, 0.5];
+  /* Histogram */
+   $scope.data = [
+       {"name":"C","nqueries":0},
+       {"name":"D","nqueries":0},
+       {"name":"E","nqueries":0},
+       {"name":"G","nqueries":0},
+       {"name":"A","nqueries":0},
+       {"name":"C2","nqueries":0}];
+
+       $scope.toggle = true;
+
+       $scope.$watch('toggle', function(){
+           $scope.toggleText = $scope.toggle ? 'Unmute' : 'Mute';
+       })
+  $scope.state = { current: null };
+  $scope.selected = { transition: null };
+  var labels = ['C', 'D', 'E', 'G', 'A', 'C'];
+  var color = d3.scale.category10();
+  $scope.states = labels.map(function(label, i) {
+        // if (i===1){
+        // $scope.data = [{"name":"R","nqueries":0},
+        // {"name":"S","nqueries":0}];}
+        // if (i===2){
+        // $scope.data = [{"name":"R","nqueries":1},
+        // {"name":"S","nqueries":1}];}
+
+    return { text: label, label: label, index: i, color: color(label) };
+  });
+  $scope.transitionMatrix = [
+    [0.3, 0.1,0.1,0.1,0.1,0.3],
+    [0.3, 0.1,0.1,0.1,0.1,0.3],
+    [0.3, 0.1,0.1,0.1,0.1,0.3],
+    [0.3, 0.1,0.1,0.1,0.1,0.3],
+    [0.3, 0.1,0.1,0.1,0.1,0.3],
+    [0.3, 0.1,0.1,0.1,0.1,0.3]
+  ];
+  $scope.duration = 1000;
+  $scope.speedRange = 1;
+  $scope.$watch('speedRange', function(speed) {
+    $scope.duration = 2000 / +speed;
+  });
+});
+
+</script>
+<script src="common.js" charset="utf-8"></script>
+
+</html>
