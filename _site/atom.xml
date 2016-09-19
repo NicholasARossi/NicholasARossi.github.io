@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-09-19T10:35:22+02:00</updated>
+  <updated>2016-09-19T10:51:05+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -58,9 +58,12 @@ The network bellow shows one such markov chain that hops around the pentatonic s
 
 &lt;p&gt;You music notes can note the prospect of the RA-AH-GA-GA-AH-AH echoed in some of the prospected motifs (hint 62 is middle - C). Clearly some imperfect musical fragments were also recovered, but overall we see that it not just about probabilities between notes, there are also bigger patterns that recur.&lt;/p&gt;
 
+&lt;p&gt;Prospecting the most common motif from all 5000 songs reveals what approximates to be a zero-mean Markovian process for each of the hooks if you center them at the same starting pitch.
+&lt;img src=&quot;/res/blog_2/all_motifs.png&quot; alt=&quot;all motifs&quot; /&gt;&lt;/p&gt;
+
 &lt;h2 id=&quot;pulling-it-all-together&quot;&gt;Pulling it all together&lt;/h2&gt;
 
-&lt;p&gt;So how do we know that any of this actually makes something sound musical? Well, we need to give a robot these rules that we found to be common in other peoples music, and ask it to use them to generate new music. I did just that when I wrote an evolutionary algorithm bringing together both the ideas of markovian interactions and motif recurrence to turn this:&lt;/p&gt;
+&lt;p&gt;So how do we know that any of this actually makes something sound musical? Well, we need to give a robot these rules that we found to be common in other peoples music, and ask it to use them to generate new music. I did just that when I wrote an evolutionary algorithm bringing together both the ideas of Markovian interactions and motif recurrence to turn this:&lt;/p&gt;
 
 &lt;audio controls=&quot;&quot;&gt;
   &lt;source src=&quot;/res/blog_2/random_music.mp3&quot; type=&quot;audio/mpeg&quot; /&gt;

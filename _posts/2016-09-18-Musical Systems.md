@@ -51,9 +51,13 @@ Going back to our data and using some full-blown computer science shenanigans we
 
 You music notes can note the prospect of the RA-AH-GA-GA-AH-AH echoed in some of the prospected motifs (hint 62 is middle - C). Clearly some imperfect musical fragments were also recovered, but overall we see that it not just about probabilities between notes, there are also bigger patterns that recur.
 
+
+Prospecting the most common motif from all 5000 songs reveals what approximates to be a zero-mean Markovian process for each of the hooks if you center them at the same starting pitch.
+![all motifs](/res/blog_2/all_motifs.png)
+
 ## Pulling it all together
 
-So how do we know that any of this actually makes something sound musical? Well, we need to give a robot these rules that we found to be common in other peoples music, and ask it to use them to generate new music. I did just that when I wrote an evolutionary algorithm bringing together both the ideas of markovian interactions and motif recurrence to turn this:
+So how do we know that any of this actually makes something sound musical? Well, we need to give a robot these rules that we found to be common in other peoples music, and ask it to use them to generate new music. I did just that when I wrote an evolutionary algorithm bringing together both the ideas of Markovian interactions and motif recurrence to turn this:
 
 <audio controls>
   <source src="/res/blog_2/random_music.mp3" type="audio/mpeg">
