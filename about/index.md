@@ -5,7 +5,7 @@ title: About
 
 <img src="portrait.jpg" width="25%" align="right">
 
-Hello. My name is Nicholas Rossi. I'm a PhD candidate in bioengineering studying in the <a href="http://www.cems.uvm.edu/~mjdunlop/index.html">Dunlop Lab</a>. I'm currently on loan as a [chateaubriand fellow](https://www.france-science.org/-The-Chateaubriand-Fellowship-.html) to the department of theoretical physics at École Normale Supérieure in Paris working with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I try to achieve end to end control in science by running experiments, building models and forecasting statistical phenomena.
+Hello. My name is Nicholas Rossi. I'm a PhD candidate in bioengineering studying in the <a href="http://www.cems.uvm.edu/~mjdunlop/index.html">Dunlop Lab</a>. I'm currently on loan as a [chateaubriand fellow](https://www.france-science.org/-The-Chateaubriand-Fellowship-.html) to the department of theoretical physics at École Normale Supérieure in Paris working with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I try to achieve end to end control in science by running experiments, building models and analyzing statistical phenomena.
 
 
 You can find me at the following locations:
