@@ -15,11 +15,11 @@
     <!-- <link rel="stylesheet" href="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/styles/default.min.css"> -->
     <!-- <script src="http://cdnjs.cloudflare.com/ajax/libs/highlight.js/8.2/highlight.min.js"></script> -->
   </head>
-  <body>
+  <body itemscope itemtype="https://schema.org/Person">
 
 <header id="main">
   <div class="spacer"></div>
-  <h1 class="title" onclick="document.location.href='/';"><a href="home.html"><span class="first"><font color="black">Nicholas </font></span><span class="last"><font color="black">Rossi </font></span></h1>
+  <h1 itemprop="name" class="title" onclick="document.location.href='/';"><a href="home.html"><span itemprop="givenName" class="first"><font color="black">Nicholas </font></span><span itemprop="familyName" class="last"><font color="black">Rossi </font></span></h1>
   <!-- <h2 class="title">Double Plus Super Neeto Data</h2>\ -->
   <h1 class="title" onclick="document.location.href='/';"><a href="home.html"><span class="first"><img src="/res/banner.png" width="354" height="80" alt="Banner"></span></h1>
 
@@ -40,13 +40,4 @@
   ga('create', 'UA-84468677-1', 'auto');
   ga('send', 'pageview');
 
-</script>
-<script type="application/ld+json">
-{
-  "@context": "http://www.schema.org",
-  "@type": "Organization",
-  "url": "http://www.rossidata.com",
-  "name": "Analytics and Investigations",
-  "author": "Nicholas A. Rossi",
-}
 </script>
