@@ -1,0 +1,115 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+  <meta http-equiv="content-type" content="text/html; charset=UTF-8">
+
+
+
+
+
+
+
+
+
+
+  <script type="text/javascript" src="//code.jquery.com/jquery-1.8.3.js"></script>
+
+
+
+  <style type="text/css">
+
+  </style>
+
+  <title></title>
+
+
+
+
+
+
+
+<script type='text/javascript'>//
+<![CDATA[
+$(window).load(function(){
+var innerRadius = 120;
+var outerRadius = 30;
+var width       = 800;
+var height      = 500;
+
+var pie = d3.layout.pie()
+                   .sort(null);
+
+var arc = d3.svg.arc()
+                .innerRadius(innerRadius)
+                .outerRadius(outerRadius);
+
+var svg = d3.select("body").append("svg")
+                           .attr("width", width)
+                           .attr("height", height)
+                           .append("g")
+                           .attr("transform", "translate(" + width / 2 + "," + height / 2 + ")");
+
+var path = svg.selectAll("path").data(pie([1,1,1,1,1]))
+                           .enter().append("path")
+                           .attr("fill", "white")
+                           .attr("d", arc)
+                           .each(function(d) { this._current = d; }); // store the initial values
+
+$(svg).bind("monitor", worker);
+$(svg).trigger("monitor");
+
+function worker(event) {
+    var newRadius   = getRandomRadius();
+
+    var jobs_counts = getRandomCounts();
+    var jobs_colors = ["green", "yellow", "red", "blue", "cyan"];
+    path = path.data(pie(jobs_counts))
+               .attr("fill", function(d,i) {return jobs_colors[i]});
+
+    path.transition().duration(500).attrTween("d", function(a) {
+         var i = d3.interpolate(this._current, a),
+             k = d3.interpolate(arc.outerRadius()(), newRadius);
+         this._current = i(0);
+         return function(t) {
+             return arc.innerRadius(k(t)/4).outerRadius(k(t))(i(t));
+         };
+    });
+    setTimeout(function(){$(svg).trigger("monitor")}, 1000)
+}
+
+
+function getRandomCounts() {
+    var arr = [];
+    for (var i=0;i<5;i++) {
+       arr.push(Math.floor(Math.random()*10)+1);
+    }
+    //console.log(arr);
+    return (arr);
+}
+
+function getRandomRadius() {
+    var newRadius = Math.floor(Math.random()*150);
+    if (newRadius < 50) {
+          newRadius = 50;
+    }
+    return newRadius;
+}
+
+});//]]>
+
+</script>
+
+
+</head>
+
+<body>
+  <head>
+    <script src="http://d3js.org/d3.v2.js"></script>
+</head>
+
+
+
+</body>
+
+</html>

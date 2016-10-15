@@ -3,12 +3,74 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-09-19T10:51:05+02:00</updated>
+  <updated>2016-10-15T15:43:58+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi1@uvm.edu</email>
   </author>
+  
+  <entry>
+    <title>Global Trends in Cigarette Consumption</title>
+    <link href="http://nicholasarossi.github.io//cigarettes"/>
+    <updated>2016-10-15T00:00:00+02:00</updated>
+    <id>http://nicholasarossi.github.io//cigarettes</id>
+    <content type="html">&lt;h2 id=&quot;smoking-is-a-lot-more-prevalent-in-certain-places&quot;&gt;Smoking is a lot more prevalent in certain places&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;url&quot;&gt;&lt;img src=&quot;/res/blog_3/smoker.JPG&quot; align=&quot;left&quot; width=&quot;30%&quot; /&gt;&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;There are certain countries that have a much larger smoking population than others - ranging from countries like Ethiopia that have less than 5% of a smoking population to countries like Jordan where it’s closer to 40%.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_3/Percentage_smokers.PNG&quot;&gt;
+&lt;img src=&quot;/res/blog_3/Percentage_smokers.PNG&quot; /&gt;
+&lt;/a&gt;﻿
+## Certain countries have super intense smokers&lt;/p&gt;
+
+&lt;p&gt;Just looking at the average number of cigarettes that a smoker consumes per country, it’s clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_3/cigarettes_per_smoker.PNG&quot;&gt;
+&lt;img src=&quot;/res/blog_3/cigarettes_per_smoker.PNG&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h2 id=&quot;countries-that-have-the-most-smokers-do-not-necessarily-smoke-the-most&quot;&gt;Countries that have the most smokers do not necessarily smoke the most&lt;/h2&gt;
+
+&lt;p&gt;The graph below show the weak correlation between the the percentage of smokers in a country and the average number of cigarettes they smoke per day (Spearman’s R: 0.36, p value=0.0001).&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/res/blog_3/comparison.PNG&quot; alt=&quot;Relationship&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A good example the disparity between frequency and volume France vs the USA. &lt;a href=&quot;/res/blog_3/letired.PNG&quot;&gt;Stereotypes&lt;/a&gt; would have us believe that everyone in France smokes. Indeed, smoking is more common France - about ~27.6% of people smoke in France compared to ~17.2% in the states. However, Americans always believe that if something is worth doing, it’s worth overdoing - so american smokers consume on average 17 cigarettes per day (there are 20 in a pack) while French people struggle to consume just under 10 on average. USA! USA! USA!&lt;/p&gt;
+
+&lt;p&gt;The chart below shows the countries where smoking is the most frequent, and the countries that have the most &lt;em&gt;committed&lt;/em&gt; smokers. There is some overlap, but the rankings are very different for the two metrics.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/res/blog_3/cig_subplots.PNG&quot; alt=&quot;Top Countries&quot; /&gt;&lt;/p&gt;
+
+&lt;h2 id=&quot;why-cigarettes-per-smoker-and-not-cigarettes-per-capita&quot;&gt;Why cigarettes per smoker and not cigarettes per capita?&lt;/h2&gt;
+
+&lt;p&gt;Well simply put cigarette consumption follows a &lt;a href=&quot;https://en.wikipedia.org/wiki/Multimodal_distribution&quot;&gt;non-normal distribution&lt;/a&gt;, therefore the “mean” doesn’t have much significance. To use (albeit crude) statistics humor - humans have on average one testicle and one breast which doesn’t cary much information about how human anatomy is distributed! Similarly there are people that smoke and those that don’t - it’s best to understand how those groups function independently.&lt;/p&gt;
+
+&lt;h2 id=&quot;notes-for-nerds&quot;&gt;Notes for Nerds:&lt;/h2&gt;
+
+&lt;ol&gt;
+  &lt;li&gt;
+    &lt;p&gt;The data came from the &lt;a href=&quot;http://apps.who.int/gho/data/node.sdg.3-a-viz?lang=en&quot;&gt;WHO&lt;/a&gt; as well as &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_countries_by_cigarette_consumption_per_capita&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Analysis was done with Python; visualizations with &lt;a href=&quot;http://vincent.readthedocs.io/en/latest/&quot;&gt;vincent&lt;/a&gt; and &lt;a href=&quot;http://stanford.edu/~mwaskom/software/seaborn/&quot;&gt;seaborn&lt;/a&gt;. Maps touched up with Illustrator.&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Code and munged data available &lt;a href=&quot;https://github.com/NicholasARossi/Global-Smoking-Analysis/tree/master&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;Disregard cigarettes, acquire dry land
+&lt;img src=&quot;/res/blog_3/the_gentleman_guppy.GIF&quot; alt=&quot;Gentleman Guppy&quot; /&gt;&lt;/p&gt;
+  &lt;/li&gt;
+&lt;/ol&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Musical Systems Analysis</title>
@@ -26,20 +88,20 @@ The network bellow shows one such markov chain that hops around the pentatonic s
 
 &lt;p&gt;&lt;img src=&quot;https://upload.wikimedia.org/score/7/5/756b1ensi3iu6vn4elyyb4uwcgn0z1u/756b1ens.png&quot; alt=&quot;pentatonic scale&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt; This biased random walk reveals that certain notes are favored, even if all of the jumps are inherently probabilistic. Play with the speed and unmute it to hear this network performed. Note, I added some random rhythms on top just to keep the notes interesting (quarter and eight notes, 50% probability each)&lt;/p&gt;
+&lt;p&gt; This biased random walk reveals that certain notes are favored, a phenomenon emerging from the probabilty weights between the jumps. Play with the speed and unmute it to hear this network performed. Note, I added some random rhythms on top just to keep the notes interesting (quarter and eight notes, 50% probability each)&lt;/p&gt;
 
 &lt;!-- How markov chains produce distributions --&gt;
 &lt;iframe src=&quot;/res/blog_2/random-sequence-markov.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&quot;lets-go-data-mining&quot;&gt;Let’s go data mining!&lt;/h2&gt;
-&lt;p&gt;So the above showed that a biased random network can generate the semblance of musicality. However, the weights between the nodes (or the probability of each transition) are super important in making your robo-music not sound like utter garbage. So in order to “discover” the appropriate weight, I told my computer to much up a bunch of songs and tell me how we transition from one note to the next. It was &lt;a href=&quot;/res/blog_2/algorithm.png&quot;&gt;complicated&lt;/a&gt;. Below we see the note and interval distributions from  ~5000 pop songs.
+&lt;p&gt;So the figure above showed that a biased random network can generate the semblance of musicality. However, the weights between the nodes (or the probability of each transition) are super important in making your robo-music not sound like utter garbage. In order to “discover” the appropriate weights, I told my computer to scrape a bunch of songs from the web, analyze them, and tell me how we transition from one note to the next. It was &lt;a href=&quot;/res/blog_2/algorithm.png&quot;&gt;complicated&lt;/a&gt;. Below we see the note and interval distributions from  ~2000 pop songs.
 &lt;img src=&quot;/res/blog_2/int_dist.png&quot; alt=&quot;distributions&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;So these what might come from a summing up a bunch of histograms like the animated on above for a whole slew of pop songs. The interval diagram (the distance from one note to the next) shows that clearly not moving at all (staying on the same note) is the most favored transition. This is emphasized by looking at our case-study song, Bad romance by mother monster, and fitting a few different distributions to show how we move throughout this song.&lt;/p&gt;
+&lt;p&gt;These are produced from what might come from a summing up a bunch of histograms like the animated one above for a whole slew of pop songs. The interval diagram (the distance from one note to the next) shows that clearly not moving at all (staying on the same note) is the most favored transition. This is emphasized by looking at our case-study song, Bad romance by Lady Gaga, and fitting a few different distributions to show how we move throughout this song.&lt;/p&gt;
 
 &lt;center&gt;&lt;img src=&quot;/res/blog_2/romance2.png&quot; alt=&quot;Romance &quot; style=&quot;width: 50%;&quot; /&gt;&lt;/center&gt;
 
-&lt;p&gt;Say what you will, but i’m calling that as an exponential distribution. &lt;spoiler alert=&quot;&quot;&gt; This information will be important later when we try to shape random notes to resemble real music. &amp;lt;/spoiler alert&amp;gt;&lt;/spoiler&gt;&lt;/p&gt;
+&lt;p&gt;Say what you will, but i’m calling that as an exponential distribution. This fact can be used to inform our procedural music model later on.&lt;/p&gt;
 
 &lt;h2 id=&quot;je-veux-ton-amour-et-je-veux-ta-revanche&quot;&gt;Je veux ton amour et je veux ta revanche&lt;/h2&gt;
 &lt;p&gt;There is an important element that these simple random walks can’t quite capture though : the motif. We can think of motifs in music as hooks. The melody you’ll hum when you think of the song. Take Bad Romance by Lady Gaga, the hook is &lt;a href=&quot;https://www.youtube.com/watch?v=Rwp8ZlYkg_I&quot;&gt;unforgetable&lt;/a&gt;. However let’s try to generate it from a markov chain:
@@ -48,15 +110,15 @@ The network bellow shows one such markov chain that hops around the pentatonic s
 &lt;!-- ![Gaga Fugue](/res/blog_2/gaga.png){ width: 50px; } --&gt;&lt;/p&gt;
 &lt;iframe src=&quot;/res/blog_2/markov.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Using all of my stats power I can say (not counting rhythm) that even with the optimal weights we’re still looking at ~3% chance that the hook will be generated if you start on the tonic. Not so hot. As a result we need to generate musicality not just from the probabilities of note transitions, but also the recurrence of grander symmetry.&lt;/p&gt;
+&lt;p&gt;Using all of my stats power, I can say (not counting rhythm) that even with the optimal weights we’re still looking at ~3% chance that the hook will be generated if you start on the tonic. Not so hot. As a result we need to generate musicality not just from the probabilities of note transitions, but also the recurrence of grander symmetry.&lt;/p&gt;
 
 &lt;p&gt;Real full-blown actual real life scientists have studied this problem and used fancy math to analyze the frequency of &lt;a href=&quot;http://www.ncbi.nlm.nih.gov/pmc/articles/PMC3309746/&quot;&gt;recurrent patterns&lt;/a&gt;. For me I’m just gonna prospect the hooks.&lt;/p&gt;
 
-&lt;p&gt;Going back to our data and using some full-blown computer science shenanigans we can find which patterns are most common, as is demonstrated by the graph below:&lt;/p&gt;
+&lt;p&gt;Going back to our data and using some computer science shenanigans we can find which patterns are most common, as is demonstrated by the graph below (see github for how this was done):&lt;/p&gt;
 
 &lt;p&gt;&lt;img src=&quot;/res/blog_2/total_motifs.png&quot; alt=&quot;total motifs&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;You music notes can note the prospect of the RA-AH-GA-GA-AH-AH echoed in some of the prospected motifs (hint 62 is middle - C). Clearly some imperfect musical fragments were also recovered, but overall we see that it not just about probabilities between notes, there are also bigger patterns that recur.&lt;/p&gt;
+&lt;p&gt;Note the presence of the RA-AH-GA-GA-AH-AH echoed in some of the prospected motifs (hint 62 is middle - C). Clearly some imperfect musical fragments were also recovered, but overall we see that it not just about probabilities between notes, there are also bigger patterns that recur.&lt;/p&gt;
 
 &lt;p&gt;Prospecting the most common motif from all 5000 songs reveals what approximates to be a zero-mean Markovian process for each of the hooks if you center them at the same starting pitch.
 &lt;img src=&quot;/res/blog_2/all_motifs.png&quot; alt=&quot;all motifs&quot; /&gt;&lt;/p&gt;
@@ -84,16 +146,13 @@ The network bellow shows one such markov chain that hops around the pentatonic s
 &lt;h2 id=&quot;notes-for-nerds&quot;&gt;Notes for Nerds:&lt;/h2&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;The musical markov chain visualizations were done by adapting &lt;a href=&quot;http://setosa.io/ev/markov-chains/&quot;&gt;this&lt;/a&gt;, with help from &lt;a href=&quot;https://mudcu.be/midi-js/&quot;&gt;midi.js&lt;/a&gt; and time and tricks garnered from the interent.&lt;/p&gt;
+    &lt;p&gt;The musical markov chain visualizations were done by adapting &lt;a href=&quot;http://setosa.io/ev/markov-chains/&quot;&gt;this&lt;/a&gt;, with help from &lt;a href=&quot;https://mudcu.be/midi-js/&quot;&gt;midi.js&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;The web-scrapping took midi files from various repositories across the web and parsed them with &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;Beautiful Soup&lt;/a&gt; and &lt;a href=&quot;https://github.com/vishnubob/python-midi&quot;&gt;python midi libraries&lt;/a&gt;&lt;/p&gt;
+    &lt;p&gt;The web-scrapping took midi files from various repositories across the web and parsed them with &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/bs4/doc/&quot;&gt;Beautiful Soup&lt;/a&gt; and &lt;a href=&quot;https://github.com/vishnubob/python-midi&quot;&gt;python midi libraries&lt;/a&gt;. Code and sample midi files available &lt;a href=&quot;https://github.com/NicholasARossi/musical_systems/tree/master&quot;&gt;here&lt;/a&gt;.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
-    &lt;p&gt;I used matlab to write the evolutionary algorithm to combine the themes and write the novel music (I almost never use matlab but I had some code I previously wrote that made it easy)&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;The code here was really cobbled together, if you want more detail on how I did something just email me.&lt;/p&gt;
+    &lt;p&gt;I used matlab to write the evolutionary algorithm to combine the themes and write the novel music (I almost never use matlab but I had some code I previously wrote that made it easy). Not available on github, but just email me if you have questions.&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </content>
