@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-10-15T15:50:27+02:00</updated>
+  <updated>2016-10-15T15:52:40+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -17,33 +17,30 @@
     <id>http://nicholasarossi.github.io//cigarettes</id>
     <content type="html">&lt;h2 id=&quot;smoking-is-a-lot-more-prevalent-in-certain-places&quot;&gt;Smoking is a lot more prevalent in certain places&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;../res/blog_3/smoker.JPG&quot; align=&quot;left&quot; width=&quot;30%&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/res/blog_3/smoker.jpg&quot; align=&quot;left&quot; width=&quot;30%&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;There are certain countries that have a much larger smoking population than others - ranging from countries like Ethiopia that have less than 5% of a smoking population to countries like Jordan where it’s closer to 40%.&lt;/p&gt;
+&lt;p&gt;There are certain countries that have a much larger smoking population than others - ranging from countries like Ethiopia that have less than 5% of a smoking population to countries like Jordan where it’s closer to 40%.
+&lt;!-- &lt;div class=&quot;full zoomable&quot;&gt;&lt;img src=&quot;/res/blog_3/Percentage_smokers.PNG&quot;&gt;&lt;/div&gt; --&gt;
+&lt;!-- ![Percentage Smokers](/res/blog_3/Percentage_smokers.PNG) --&gt;
+&lt;a href=&quot;/res/blog_3/Percentage_smokers.png&quot;&gt;
+&lt;img src=&quot;/res/blog_3/Percentage_smokers.png&quot; /&gt;
+&lt;/a&gt;﻿
+## Certain countries have super intense smokers&lt;/p&gt;
 
-&lt;p&gt;&lt;a href=&quot;../res/blog_3/Percentage_smokers.PNG&quot;&gt;
-&lt;img src=&quot;../res/blog_3/Percentage_smokers.PNG&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;h2 id=&quot;certain-countries-have-super-intense-smokers&quot;&gt;Certain countries have super intense smokers&lt;/h2&gt;
-
-&lt;p&gt;Just looking at the average number of cigarettes that a smoker consumes per country, it’s clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;../res/blog_3/cigarettes_per_smoker.PNG&quot;&gt;
-&lt;img src=&quot;../res/blog_3/cigarettes_per_smoker.PNG&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
+&lt;p&gt;Just looking at the average number of cigarettes that a smoker consumes per country, it’s clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).
+&lt;img src=&quot;/res/blog_3/cigarettes_per_smoker.png&quot; alt=&quot;Cigarettes per Smoker&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;countries-that-have-the-most-smokers-do-not-necessarily-smoke-the-most&quot;&gt;Countries that have the most smokers do not necessarily smoke the most&lt;/h2&gt;
 
 &lt;p&gt;The graph below show the weak correlation between the the percentage of smokers in a country and the average number of cigarettes they smoke per day (Spearman’s R: 0.36, p value=0.0001).&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../res/blog_3/comparison.PNG&quot; alt=&quot;Relationship&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/res/blog_3/comparison.png&quot; alt=&quot;Relationship&quot; /&gt;&lt;/p&gt;
 
-&lt;p&gt;A good example the disparity between frequency and volume France vs the USA. &lt;a href=&quot;../res/blog_3/letired.PNG&quot;&gt;Stereotypes&lt;/a&gt; would have us believe that everyone in France smokes. Indeed, smoking is more common France - about ~27.6% of people smoke in France compared to ~17.2% in the states. However, Americans always believe that if something is worth doing, it’s worth overdoing - so american smokers consume on average 17 cigarettes per day (there are 20 in a pack) while French people struggle to consume just under 10 on average. USA! USA! USA!&lt;/p&gt;
+&lt;p&gt;A good example the disparity between frequency and volume France vs the USA. &lt;a href=&quot;/res/blog_3/letired.png&quot;&gt;Stereotypes&lt;/a&gt; would have us believe that everyone in France smokes. Indeed, smoking is more common France - about ~27.6% of people smoke in France compared to ~17.2% in the states. However, Americans always believe that if something is worth doing, it’s worth overdoing - so american smokers consume on average 17 cigarettes per day (there are 20 in a pack) while French people struggle to consume just under 10 on average. USA! USA! USA!&lt;/p&gt;
 
 &lt;p&gt;The chart below shows the countries where smoking is the most frequent, and the countries that have the most &lt;em&gt;committed&lt;/em&gt; smokers. There is some overlap, but the rankings are very different for the two metrics.&lt;/p&gt;
 
-&lt;p&gt;&lt;img src=&quot;../res/blog_3/cig_subplots.PNG&quot; alt=&quot;Top Countries&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/res/blog_3/cig_subplots.png&quot; alt=&quot;Top Countries&quot; /&gt;&lt;/p&gt;
 
 &lt;h2 id=&quot;why-cigarettes-per-smoker-and-not-cigarettes-per-capita&quot;&gt;Why cigarettes per smoker and not cigarettes per capita?&lt;/h2&gt;
 
@@ -63,7 +60,7 @@
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Disregard cigarettes, acquire dry land
-&lt;img src=&quot;/res/blog_3/the_gentleman_guppy.GIF&quot; alt=&quot;Gentleman Guppy&quot; /&gt;&lt;/p&gt;
+&lt;img src=&quot;/res/blog_3/the_gentleman_guppy.gif&quot; alt=&quot;Gentleman Guppy&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </content>
