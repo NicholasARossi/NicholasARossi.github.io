@@ -11,19 +11,19 @@ comments: yes
 
 
 
-<a href="url"><img src="/res/blog_3/smoker.JPG" align="left" width="30%" ></a>
+<a href="url"><img src="/res/blog_3/smoker.jpg" align="left" width="30%" ></a>
 
 There are certain countries that have a much larger smoking population than others - ranging from countries like Ethiopia that have less than 5% of a smoking population to countries like Jordan where it's closer to 40%.
 
-<a href="/res/blog_3/Percentage_smokers.PNG">
-<img src="/res/blog_3/Percentage_smokers.PNG">
+<a href="/res/blog_3/Percentage_smokers.png">
+<img src="/res/blog_3/Percentage_smokers.png">
 </a>﻿
 ## Certain countries have super intense smokers
 
 Just looking at the average number of cigarettes that a smoker consumes per country, it's clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).
 
-<a href="/res/blog_3/cigarettes_per_smoker.PNG">
-<img src="/res/blog_3/cigarettes_per_smoker.PNG">
+<a href="/res/blog_3/cigarettes_per_smoker.png">
+<img src="/res/blog_3/cigarettes_per_smoker.png">
 </a>﻿
 
 ## Countries that have the most smokers do not necessarily smoke the most
