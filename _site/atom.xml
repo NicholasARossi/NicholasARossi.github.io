@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-10-15T15:52:40+02:00</updated>
+  <updated>2016-10-15T16:00:48+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -24,8 +24,9 @@
 &lt;!-- ![Percentage Smokers](/res/blog_3/Percentage_smokers.PNG) --&gt;
 &lt;a href=&quot;/res/blog_3/Percentage_smokers.png&quot;&gt;
 &lt;img src=&quot;/res/blog_3/Percentage_smokers.png&quot; /&gt;
-&lt;/a&gt;﻿
-## Certain countries have super intense smokers&lt;/p&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h2 id=&quot;certain-countries-have-super-intense-smokers&quot;&gt;Certain countries have super intense smokers&lt;/h2&gt;
 
 &lt;p&gt;Just looking at the average number of cigarettes that a smoker consumes per country, it’s clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).
 &lt;img src=&quot;/res/blog_3/cigarettes_per_smoker.png&quot; alt=&quot;Cigarettes per Smoker&quot; /&gt;&lt;/p&gt;

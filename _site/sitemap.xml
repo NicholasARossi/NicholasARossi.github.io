@@ -1,47 +1,47 @@
 <?xml version="1.0" encoding="utf-8"?>
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
-    <loc>http://rsms.me/</loc>
-    <lastmod>2016-10-15T15:52:40+02:00</lastmod>
+    <loc>http://rossidata.com/</loc>
+    <lastmod>2016-10-15T16:00:48+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
-    <loc>http://rsms.me/about/</loc>
-    <lastmod>2016-10-15T15:52:40+02:00</lastmod>
+    <loc>http://rossidata.com/about/</loc>
+    <lastmod>2016-10-15T16:00:48+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
-    <loc>http://rsms.me/archive/</loc>
-    <lastmod>2016-10-15T15:52:40+02:00</lastmod>
+    <loc>http://rossidata.com/archive/</loc>
+    <lastmod>2016-10-15T16:00:48+02:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
-    <loc>http://rsms.me/cigarettes</loc>
+    <loc>http://rossidata.com/cigarettes</loc>
     <lastmod>2016-10-15T00:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
-    <loc>http://rsms.me/Musical-Systems</loc>
+    <loc>http://rossidata.com/Musical-Systems</loc>
     <lastmod>2016-09-18T00:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
-    <loc>http://rsms.me/pizza</loc>
+    <loc>http://rossidata.com/pizza</loc>
     <lastmod>2016-08-07T00:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
-    <loc>http://rsms.me/welcome</loc>
+    <loc>http://rossidata.com/welcome</loc>
     <lastmod>2016-08-01T00:00:00+02:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
