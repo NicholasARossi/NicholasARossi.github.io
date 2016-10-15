@@ -19,6 +19,7 @@ There are certain countries that have a much larger smoking population than othe
 <a href="/res/blog_3/Percentage_smokers.png">
 <img src="/res/blog_3/Percentage_smokers.png">
 </a>﻿
+
 ## Certain countries have super intense smokers
 
 Just looking at the average number of cigarettes that a smoker consumes per country, it's clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).
