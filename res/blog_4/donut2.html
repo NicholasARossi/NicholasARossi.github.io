@@ -139,15 +139,11 @@ function alertHeight() {
 
 
 if( typeof( window.innerWidth ) == 'number' ) {
-var width = window.screen.width/2,
+var width = window.screen.width/2.5,
     height =  window.screen.height/2.5,
     radius = Math.min(width, height) / 2;
 }
-else{
-  var width = window.screen.width/2,
-      height =  window.screen.height,
-      radius = Math.min(width, height) / 2;
-}
+
 var pie = d3.layout.pie()
 	.sort(null)
 	.value(function(d) {
