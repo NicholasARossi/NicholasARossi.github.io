@@ -100,15 +100,48 @@ svg.append("g")
 svg.append("g")
 	.attr("class", "lines");
 
-var margin = {top: 10, left: 10, bottom: 10, right: 10}
-  , width = parseInt(d3.select('#svg').style('width'))
-  , width = width - margin.left - margin.right
-  , mapRatio = .5
-  , height = width * mapRatio
-  , radius = Math.min(width, height) / 2;
-// var width = 960/1.25,
-//     height = 450/1.25,
 
+function alertWidth() {
+  var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+  return myWidth
+}
+
+function alertHeight() {
+  var myWidth = 0, myHeight = 0;
+  if( typeof( window.innerWidth ) == 'number' ) {
+    //Non-IE
+    myWidth = window.innerWidth;
+    myHeight = window.innerHeight;
+  } else if( document.documentElement && ( document.documentElement.clientWidth || document.documentElement.clientHeight ) ) {
+    //IE 6+ in 'standards compliant mode'
+    myWidth = document.documentElement.clientWidth;
+    myHeight = document.documentElement.clientHeight;
+  } else if( document.body && ( document.body.clientWidth || document.body.clientHeight ) ) {
+    //IE 4 compatible
+    myWidth = document.body.clientWidth;
+    myHeight = document.body.clientHeight;
+  }
+  return myHeight
+}
+
+
+
+var width = document.documentElement.clientWidth,
+    height =  document.documentElement.clientHeight*.8,
+    radius = Math.min(width, height) / 2;
 
 var pie = d3.layout.pie()
 	.sort(null)
