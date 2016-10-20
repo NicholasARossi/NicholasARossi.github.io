@@ -2,8 +2,10 @@
 <html lang="en" prefix="og: http://nicholasarossi.github.io#">
   <head>
     <meta charset="utf-8">
-    <title>Archive (sidebar) &mdash; Nicholas A. Rossi</title>
+    <title>Logistic Regression and Term Limits for Congress &mdash; Nicholas A. Rossi</title>
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
@@ -16,18 +18,20 @@
     <meta name="twitter:site" content="@divergentdata">
     
     
-    <meta property="og:title" content="Archive (sidebar)">
+    <meta property="og:title" content="Logistic Regression and Term Limits for Congress">
       
-      <meta name="description" content="Photography Projects Archive About me Recent posts Global Trends in Cigarette Consumption Oct 15, 2016 Musical Systems Analysis Sep 18, 2016 Pizza Post Aug 07,...">
-      <meta name="og:description" content="Photography Projects Archive About me Recent posts Global Trends in Cigarette Consumption Oct 15, 2016 Musical Systems Analysis Sep 18, 2016 Pizza Post Aug 07,...">
+      <meta name="description" content="Ever wonder if giving congress people term limits would be a good idea? Here, I use logistic regression to look at a few landmark pieces of legislation and determine what role (if any) limiting term limits would play on the outcome of the vote">
+      <meta name="og:description" content="Ever wonder if giving congress people term limits would be a good idea? Here, I use logistic regression to look at a few landmark pieces of legislation and determine what role (if any) limiting term limits would play on the outcome of the vote">
       
     
     
     
     
-    <meta property="og:url" content="http://nicholasarossi.github.io/archive/sidebar">
+    <meta property="og:url" content="http://nicholasarossi.github.io/congress">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2016-10-19">
     
     <script>window.initFuncs = [];</script>
   </head>
@@ -36,95 +40,61 @@
       <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
       <ul class="navigation">
         <li><a href="/projects/" title="Projects I am or was involved in">Projects</a></li>
-        <li><a href="/archive/"class="active" title="Archived articles">Archive</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
         <li><a href="/about/">About me</a></li>
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <style>
-  header, footer, #sidebar { display:none !important; }
-  html, body { background-color:black; width:100% !important; }
-  html { zoom:70%; text-shadow: #000 0 1px 1px; }
-  body {  color:#fff; }
-  ul { list-style:none; padding-left:0 !important; }
-  li { margin-left:0 !important; }
-  li > a {
-    display:block;
-    padding:5px 5px 5px 15px;
-    border-top:1px solid #333;
-    font-family:'helvetica neue','helvetica',sans-serif;
-    width:280px;
-  }
-  li > a > span {
-    display:block;
-    padding:0; margin:0;
-    white-space:nowrap; overflow:hidden; text-overflow: ellipsis;
-    width:280px;
-  }
-  li > a:link, li > a:visited { color:#999; }
-  li > a:active, li > a:hover { color:white; }
-  li > a info { display:block; color:#666; }
-  ul.navigation {
-    display: -webkit-box;
-    -webkit-box-orient: vertical;
-    -webkit-box-direction: reverse;
-  }
-  ul.navigation li a {
-    border-top:none;
-    border-bottom:1px solid #333;
-    padding:0 5px 0 15px;
-    line-height:44px;
-  }
-  h2 { margin-top:15px; text-align:center; color:white; }
-  a.logo, p.h { display:block; margin:10px 5px 5px 0; text-align:center; }
-  p.h {  }
-</style>
+      <div class="content">
+  <div class="post single">
+    
+    <h1>Logistic Regression and Term Limits for Congress</h1>
+    <info datetime="2016-10-19">
+      Oct 19, 2016
+    </info>
+    
+    <div class="body"><h2 id="what-is-logistic-regression-and-why-am-i-using-it-here">What is logistic regression and why am I using it here?</h2>
+
+<p>Logistic regression is a great way of measuring</p>
+
+<h2 id="first-landmark--the-1964-voting-rights-act">First Landmark : The 1964 Voting Rights Act</h2>
+
+<p><a href="/res/blog_4/civil_rights.png">
+<img src="/res/blog_4/civil_rights.png" />
+</a>﻿</p>
+
+<h2 id="second-landmark--the-2008-auto-bailout">Second Landmark : The 2008 Auto-bailout</h2>
+
+<p><a href="/res/blog_4/auto.png">
+<img src="/res/blog_4/auto.png" />
+</a>﻿</p>
+
+<iframe src="/res/blog_4/donut2.html" width="100%" height="400" scrolling="no"></iframe>
+
+<h2 id="third-landmark--the-authorization-for-use-of-force-in-iraq">Third Landmark : The Authorization for use of force in Iraq</h2>
+
+<p><a href="/res/blog_4/iraq.png">
+<img src="/res/blog_4/iraq.png" />
+</a>﻿</p>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+
+
+  
+  </div>
+</div>
+
 <script>
-  function openInParent(self) {
-    window.parent.document.location = self.href;
-    return false;
-  }
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
 </script>
-<a target="_top" href="/" class="logo"><img src="/res/signature.png" width="160" height="50" alt="Signature"></a>
-<ul class="navigation">
-  <li><a target="_top" href="/photos/" title="A selection of recent photography">Photography</a></li>
-  <li><a target="_top" href="/projects/" title="Projects I am or was involved in">Projects</a></li>
-  <li><a target="_top" href="/archive/"class="active" title="Archived articles">Archive</a></li>
-  <li><a target="_top" href="/about/">About me</a></li>
-  <li><a></a></li>
-</ul>
-<p class="h"><b>Recent posts</b></p>
-<ul>
-
-  <li class="posts">
-    <a onclick="return openInParent(this)" target="_top" href="/cigarettes">
-      <span>Global Trends in Cigarette Consumption</span>
-      <info>Oct 15, 2016</info>
-    </a>
-  </li>
-
-  <li class="posts">
-    <a onclick="return openInParent(this)" target="_top" href="/Musical-Systems">
-      <span>Musical Systems Analysis</span>
-      <info>Sep 18, 2016</info>
-    </a>
-  </li>
-
-  <li class="posts">
-    <a onclick="return openInParent(this)" target="_top" href="/pizza">
-      <span>Pizza Post</span>
-      <info>Aug 07, 2016</info>
-    </a>
-  </li>
-
-  <li class="posts">
-    <a onclick="return openInParent(this)" target="_top" href="/welcome">
-      <span>Welcome!</span>
-      <info>Aug 01, 2016</info>
-    </a>
-  </li>
-
-</ul>
 
     <!--/div-->
 
