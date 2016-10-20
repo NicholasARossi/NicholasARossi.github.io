@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-10-20T12:29:05+02:00</updated>
+  <updated>2016-10-20T18:54:01+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -19,7 +19,7 @@
 
 &lt;p&gt;Ever wonder if giving congress people term limits would be a good idea? Here we retcon history and imagine how things would have played out differently with only a “junior” congress.&lt;/p&gt;
 
-&lt;h3 id=&quot;methadology&quot;&gt;Methadology:&lt;/h3&gt;
+&lt;h3 id=&quot;methodology&quot;&gt;Methodology:&lt;/h3&gt;
 &lt;p&gt;I’m going to look a number of landmark pieces of legislation and see first how the number of years a congressman affected their vote, and how the vote hypothetically would have played out differently if there were term limits.&lt;/p&gt;
 
 &lt;p&gt;For the first bit I use &lt;a href=&quot;https://en.wikipedia.org/wiki/Logistic_regression&quot;&gt;logistic regression&lt;/a&gt; which is a great way to measure correlation between a categorical variable (like alive/dead, vote yea/nay) and a continuous variable (ex age, height, weight). It basically shows how the probability of being in one of the states changes with the continuous variable - in this case voting yea or nay as a function of tenure.&lt;/p&gt;
