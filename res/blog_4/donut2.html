@@ -139,8 +139,8 @@ function alertHeight() {
 
 
 
-var width = window.innerWidth,
-    height =  window.innerHeight,
+var width = document.documentElement.clientWidth,
+    height =  document.documentElement.clientHeight,
     radius = Math.min(width, height) / 2;
 
 var pie = d3.layout.pie()
