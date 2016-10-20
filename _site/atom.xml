@@ -3,12 +3,47 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-10-20T04:05:49+02:00</updated>
+  <updated>2016-10-20T04:07:16+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi1@uvm.edu</email>
   </author>
+  
+  <entry>
+    <title>Logistic Regression and Term Limits for Congress</title>
+    <link href="http://nicholasarossi.github.io//congress"/>
+    <updated>2016-10-18T00:00:00+02:00</updated>
+    <id>http://nicholasarossi.github.io//congress</id>
+    <content type="html">&lt;h2 id=&quot;what-is-logistic-regression-and-why-am-i-using-it-here&quot;&gt;What is logistic regression and why am I using it here?&lt;/h2&gt;
+
+&lt;p&gt;Logistic regression is a great way of measuring&lt;/p&gt;
+
+&lt;h2 id=&quot;first-landmark--the-1964-voting-rights-act&quot;&gt;First Landmark : The 1964 Voting Rights Act&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_4/civil_rights.png&quot;&gt;
+&lt;img src=&quot;/res/blog_4/civil_rights.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h2 id=&quot;second-landmark--the-2008-auto-bailout&quot;&gt;Second Landmark : The 2008 Auto-bailout&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_4/auto.png&quot;&gt;
+&lt;img src=&quot;/res/blog_4/auto.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_4/donut2.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;h2 id=&quot;third-landmark--the-authorization-for-use-of-force-in-iraq&quot;&gt;Third Landmark : The Authorization for use of force in Iraq&lt;/h2&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_4/iraq.png&quot;&gt;
+&lt;img src=&quot;/res/blog_4/iraq.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Global Trends in Cigarette Consumption</title>
