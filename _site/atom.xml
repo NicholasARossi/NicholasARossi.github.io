@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2016-10-20T12:12:19+02:00</updated>
+  <updated>2016-10-20T12:29:05+02:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>How Term Limits Might Affect How Congress Works</title>
     <link href="http://nicholasarossi.github.io//congress"/>
-    <updated>2016-10-18T00:00:00+02:00</updated>
+    <updated>2016-10-20T00:00:00+02:00</updated>
     <id>http://nicholasarossi.github.io//congress</id>
     <content type="html">&lt;h3 id=&quot;question&quot;&gt;Question!:&lt;/h3&gt;
 
@@ -25,6 +25,8 @@
 &lt;p&gt;For the first bit I use &lt;a href=&quot;https://en.wikipedia.org/wiki/Logistic_regression&quot;&gt;logistic regression&lt;/a&gt; which is a great way to measure correlation between a categorical variable (like alive/dead, vote yea/nay) and a continuous variable (ex age, height, weight). It basically shows how the probability of being in one of the states changes with the continuous variable - in this case voting yea or nay as a function of tenure.&lt;/p&gt;
 
 &lt;p&gt;Next, I compare the votes as they happened historically versus if everyone that had been in the house longer than 8 years wasn’t allowed to vote. This is a rough estimate to see how a “junior” congress would behave differently than the mixed bag we’ve got currently.&lt;/p&gt;
+
+&lt;p&gt;&lt;em&gt;Note&lt;/em&gt; tenure was calculated as the number of years the congress person had been serving up to the year of the particular vote, not the total number of years they would end up serving.&lt;/p&gt;
 
 &lt;h2 id=&quot;first-landmark--the-voting-rights-act-of-1965&quot;&gt;First Landmark : The Voting Rights Act of 1965&lt;/h2&gt;
 
@@ -67,7 +69,7 @@
 &lt;h3 id=&quot;big-take-aways&quot;&gt;Big Take Aways:&lt;/h3&gt;
 &lt;ol&gt;
   &lt;li&gt;
-    &lt;p&gt;Term limits do have the power to affect decisions like the auto-bailout and the voting rights act where conservative ideology plays a stonger role.&lt;/p&gt;
+    &lt;p&gt;Term limits do have the power to affect decisions like the auto-bailout and the voting rights act where conservative ideology plays a stronger role.&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;More personal or partisan decisions like the Iraq war vote seem less affected.&lt;/p&gt;
