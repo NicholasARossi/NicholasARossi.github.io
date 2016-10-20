@@ -138,11 +138,11 @@ function alertHeight() {
 }
 
 
-if( typeof( window.innerWidth ) == 'number' ) {
+
 var width = window.screen.width/2.5,
     height =  window.screen.height/2.5,
     radius = Math.min(width, height) / 2;
-}
+
 
 var pie = d3.layout.pie()
 	.sort(null)
@@ -164,7 +164,7 @@ var legendSpacing = radius * 0.02;
 
 var div = d3.select("body").append("div").attr("class", "toolTip");
 
-svg.attr("transform", "translate(" + width / 1.25 + "," + height / 2 + ")");
+svg.attr("transform", "translate(" + width / 1.5 + "," + height / 2 + ")");
 
 // var colorRange = d3.scale.category20();
 var color = d3.scale.ordinal()
