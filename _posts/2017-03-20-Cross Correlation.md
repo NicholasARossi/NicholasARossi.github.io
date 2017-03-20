@@ -46,6 +46,7 @@ Below is the full cross-correlation of a sine and cosine wave. We see that there
 
 <video controls width="100%">
   <source src="/res/blog_5/true_1.webm" type="video/webm">
+  <source src="/res/blog_5/true_1.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -53,6 +54,7 @@ Your browser does not support the video tag.
 Cross-correlation is an extremely powerful method of analysis to use on noisy data. Just adding bit of waggle to the sine wave analysis from above we seem that we get similar results.
 <video controls width="100%">
   <source src="/res/blog_5/true_2.webm" type="video/webm">
+  <source src="/res/blog_5/true_2.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -65,14 +67,15 @@ $$\frac{dY}{dt} = (gX_{t}-\theta_{y}Y_{t})dt+\sigma_{y} \eta_{y}$$
 Here $\theta$ represents the inverse of the correlation time of the signal while $\sigma$ represents the standard deviation of the trajectory. In this case, I've modeled Y as having some linear dependance on X, scaled by the gain "g".
 These equations could model any number of stochastic interactions (gene expression, weather patterns) but we'll use them to imagine an example from the world of finance.
 <center>
-<a href="/res/blog_5/econ.png">
-<img src="/res/blog_5/econ.png">
+<a href="/res/blog_5/Econ.png">
+<img src="/res/blog_5/Econ.png">
 </a>﻿
 </center>
 Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn't entirely apparent at first glance. We turn to our new favorite technique - Cross-Correlation!!!!
 
 <video controls width="100%">
   <source src="/res/blog_5/true_4.webm" type="video/webm">
+  <source src="/res/blog_5/true_4.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 
@@ -85,6 +88,7 @@ Clearly real economic markets are more complicated than this as the regulation i
 If the signal to noise ration is high in a given relationship between two time-series, it may require a relatively long data set in order to detect any apparent cross-correlation. The animation bellow illustrates this point by calculating the numerical cross correlation of two time traces (blue dots) and comparing them to the exact analytical solution to the cross-correlation of the two functions.
 <video controls width="100%">
   <source src="/res/blog_5/true_5.webm" type="video/webm">
+  <source src="/res/blog_5/true_5.mp4" type="video/mp4">
 Your browser does not support the video tag.
 </video>
 In order to get the numerical calculations to converge to the exact solutions we need a relatively long simulation. This can be **very** problematic when calculating cross-correlations using real data sets as it's possible a given time-series of collected data is insufficient to effectively calculate any underlying phenomena. However, the time it takes to converge to the exact solution is a function of the signal to noise ratio and as such shorter data sets will be sufficient for less noisy data.
