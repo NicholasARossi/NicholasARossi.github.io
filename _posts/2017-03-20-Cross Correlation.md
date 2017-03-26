@@ -14,7 +14,7 @@ comments: yes
 
 ### Some things take time
 
-Have you ever looked a graph, where two traces seem related after some time delay? Consider the following...
+Have you ever looked at a graph, where two traces seem related after some time delay? Consider the following...
 <center>
 <a align="center" href="/res/blog_5/graph_1.png">
 <img  src="/res/blog_5/graph_1.png">
@@ -26,10 +26,10 @@ We see that the daylight in Boston and Paris follow the same basic trajectories,
 <img src="/res/blog_5/graph_2.png">
 </a>﻿
 </center>
-An interesting graph that contains some information for sure, but isn't as informative as it could be. The [degeneracy](https://en.wikipedia.org/wiki/Degenerate_conic) of the data make each value non-unique, preventing us to determine the exact brightness of Paris given Boston and vice-versa.
+An interesting graph that contains some information, but isn't as informative as it could be. The [degeneracy](https://en.wikipedia.org/wiki/Degenerate_conic) of the data make each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.
 
 
-There **is** an answer to this problem however that allows us to relate these two signals in a more meaningful way : compare them after a **time-shift**. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.
+There **is** an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a **time-shift**. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.
 
 <a align="center" href="/res/blog_5/graph_3.png">
 <img src="/res/blog_5/graph_3.png">
@@ -71,7 +71,7 @@ These equations could model any number of stochastic interactions (gene expressi
 <img src="/res/blog_5/Econ.png">
 </a>﻿
 </center>
-Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn't entirely apparent at first glance. We turn to our new favorite technique - Cross-Correlation!!!!
+Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn't entirely apparent at first glance. We don't know if the Dollar affects the prices of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!
 
 <video controls width="100%">
   <source src="/res/blog_5/true_4.webm" type="video/webm">

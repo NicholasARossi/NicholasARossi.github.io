@@ -8,6 +8,11 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
@@ -64,7 +69,7 @@
 
 <h3 id="some-things-take-time">Some things take time</h3>
 
-<p>Have you ever looked a graph, where two traces seem related after some time delay? Consider the following…</p>
+<p>Have you ever looked at a graph, where two traces seem related after some time delay? Consider the following…</p>
 <center>
 <a align="center" href="/res/blog_5/graph_1.png">
 <img src="/res/blog_5/graph_1.png" />
@@ -76,9 +81,9 @@
 <img src="/res/blog_5/graph_2.png" />
 </a>﻿
 </center>
-<p>An interesting graph that contains some information for sure, but isn’t as informative as it could be. The <a href="https://en.wikipedia.org/wiki/Degenerate_conic">degeneracy</a> of the data make each value non-unique, preventing us to determine the exact brightness of Paris given Boston and vice-versa.</p>
+<p>An interesting graph that contains some information, but isn’t as informative as it could be. The <a href="https://en.wikipedia.org/wiki/Degenerate_conic">degeneracy</a> of the data make each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.</p>
 
-<p>There <strong>is</strong> an answer to this problem however that allows us to relate these two signals in a more meaningful way : compare them after a <strong>time-shift</strong>. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.</p>
+<p>There <strong>is</strong> an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a <strong>time-shift</strong>. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.</p>
 
 <p><a align="center" href="/res/blog_5/graph_3.png">
 <img src="/res/blog_5/graph_3.png" />
@@ -118,7 +123,7 @@ These equations could model any number of stochastic interactions (gene expressi
 <img src="/res/blog_5/Econ.png" />
 </a>﻿
 </center>
-<p>Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We turn to our new favorite technique - Cross-Correlation!!!!</p>
+<p>Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We don’t know if the Dollar affects the prices of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!</p>
 
 <video controls="" width="100%">
   <source src="/res/blog_5/true_4.webm" type="video/webm" />
@@ -209,7 +214,11 @@ Your browser does not support the video tag.
   })();
 </script>
     <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
+
 </html>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

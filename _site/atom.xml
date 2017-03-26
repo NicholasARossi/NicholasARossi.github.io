@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-03-26T14:53:17-04:00</updated>
+  <updated>2017-03-26T16:58:08-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -24,7 +24,7 @@
 
 &lt;h3 id=&quot;some-things-take-time&quot;&gt;Some things take time&lt;/h3&gt;
 
-&lt;p&gt;Have you ever looked a graph, where two traces seem related after some time delay? Consider the following…&lt;/p&gt;
+&lt;p&gt;Have you ever looked at a graph, where two traces seem related after some time delay? Consider the following…&lt;/p&gt;
 &lt;center&gt;
 &lt;a align=&quot;center&quot; href=&quot;/res/blog_5/graph_1.png&quot;&gt;
 &lt;img src=&quot;/res/blog_5/graph_1.png&quot; /&gt;
@@ -36,9 +36,9 @@
 &lt;img src=&quot;/res/blog_5/graph_2.png&quot; /&gt;
 &lt;/a&gt;﻿
 &lt;/center&gt;
-&lt;p&gt;An interesting graph that contains some information for sure, but isn’t as informative as it could be. The &lt;a href=&quot;https://en.wikipedia.org/wiki/Degenerate_conic&quot;&gt;degeneracy&lt;/a&gt; of the data make each value non-unique, preventing us to determine the exact brightness of Paris given Boston and vice-versa.&lt;/p&gt;
+&lt;p&gt;An interesting graph that contains some information, but isn’t as informative as it could be. The &lt;a href=&quot;https://en.wikipedia.org/wiki/Degenerate_conic&quot;&gt;degeneracy&lt;/a&gt; of the data make each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.&lt;/p&gt;
 
-&lt;p&gt;There &lt;strong&gt;is&lt;/strong&gt; an answer to this problem however that allows us to relate these two signals in a more meaningful way : compare them after a &lt;strong&gt;time-shift&lt;/strong&gt;. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.&lt;/p&gt;
+&lt;p&gt;There &lt;strong&gt;is&lt;/strong&gt; an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a &lt;strong&gt;time-shift&lt;/strong&gt;. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.&lt;/p&gt;
 
 &lt;p&gt;&lt;a align=&quot;center&quot; href=&quot;/res/blog_5/graph_3.png&quot;&gt;
 &lt;img src=&quot;/res/blog_5/graph_3.png&quot; /&gt;
@@ -78,7 +78,7 @@ These equations could model any number of stochastic interactions (gene expressi
 &lt;img src=&quot;/res/blog_5/Econ.png&quot; /&gt;
 &lt;/a&gt;﻿
 &lt;/center&gt;
-&lt;p&gt;Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We turn to our new favorite technique - Cross-Correlation!!!!&lt;/p&gt;
+&lt;p&gt;Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We don’t know if the Dollar affects the prices of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!&lt;/p&gt;
 
 &lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
   &lt;source src=&quot;/res/blog_5/true_4.webm&quot; type=&quot;video/webm&quot; /&gt;
