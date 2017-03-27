@@ -54,7 +54,7 @@ text {
     display: inline-block;
     position: relative;
     width: 100%;
-    padding-bottom: 100%; /* aspect ratio */
+    padding-bottom: 125%; /* aspect ratio */
     vertical-align: top;
     overflow: hidden;
 }
@@ -139,8 +139,8 @@ function alertHeight() {
 
 
 
-var width = window.screen.width/2.5,
-    height =  window.screen.height/2.5,
+var width = window.screen.availHeight/2.5,
+    height =  window.screen.availHeight/2.5,
     radius = Math.min(width, height) / 2;
 
 
@@ -169,7 +169,6 @@ svg.attr("transform", "translate(" + width / 1.25 + "," + height / 2 + ")");
 // var colorRange = d3.scale.category20();
 var color = d3.scale.ordinal()
 	.range(["#6495ED", "#F08080","#a7a6a6", "#d3d3d3"]);
-
 
 datasetTotal = [
 		{label:"Dem - Yea", value:81},
