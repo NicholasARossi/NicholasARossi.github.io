@@ -69,32 +69,44 @@
 
 <h3 id="some-things-take-time">Some things take time</h3>
 
-<p>Have you ever looked at a graph, where two traces seem related after some time delay? Consider the following…</p>
+<p>Hey <a href="https://www.youtube.com/watch?v=sIlNIVXpIns">look at this graph</a>!</p>
 <center>
 <a align="center" href="/res/blog_5/graph_1.png">
 <img src="/res/blog_5/graph_1.png" />
 </a>﻿
 </center>
-<p>We see that the daylight in Boston and Paris follow the same basic trajectories, but the exact brightness in Boston isn’t a great predictor of the brightness in Paris. Taken a step further, if we “flatten” the data to remove the time dimension and plot the brightness in Paris vs that of Boston we get the following.</p>
-<center>
+<p>We see that the daylight in Boston and Paris follow the same basic trajectories, but the exact brightness in Boston isn’t a great predictor of the brightness in Paris. Taken a step further, if we “flatten” the data to remove the time dimension and plot the brightness in Paris vs that of Boston we get the following. Each point on the circle represents the brightness in Paris and the brightness in Boston at a specific time.</p>
+
+<video controls="" width="100%">
+  <source src="/res/blog_5/flattened_1.webm" type="video/webm" />
+  <source src="/res/blog_5/flattened_1.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+
+<!-- <center>
 <a align="center" href="/res/blog_5/graph_2.png">
-<img src="/res/blog_5/graph_2.png" />
+<img src="/res/blog_5/graph_2.png">
 </a>﻿
-</center>
-<p>An interesting graph that contains some information, but isn’t as informative as it could be. The <a href="https://en.wikipedia.org/wiki/Degenerate_conic">degeneracy</a> of the data make each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.</p>
+</center> -->
+<p>An interesting graph that contains some information, but isn’t as informative as it could be. The <a href="https://en.wikipedia.org/wiki/Degenerate_conic">degeneracy</a> of the data makes each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.</p>
 
-<p>There <strong>is</strong> an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a <strong>time-shift</strong>. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables.</p>
+<p>There <strong>is</strong> an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a <strong>time-shift</strong>. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables. In plain language, you’re comparing points from the two trajectories at different times.</p>
 
-<p><a align="center" href="/res/blog_5/graph_3.png">
-<img src="/res/blog_5/graph_3.png" />
-</a>﻿</p>
+<video controls="" width="100%">
+  <source src="/res/blog_5/flattened_2.webm" type="video/webm" />
+  <source src="/res/blog_5/flattened_2.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<!-- <a align="center" href="/res/blog_5/graph_3.png">
+<img src="/res/blog_5/graph_3.png">
+</a>﻿ -->
 
-<p>The essence of this operation is <a href="https://en.wikipedia.org/wiki/Cross-correlation">cross-correlation</a>. How much do two signals correlate with each other as you shift one of them in time. We call the magnitude of the shift $\tau$.</p>
+<p>This operation is the essence of <a href="https://en.wikipedia.org/wiki/Cross-correlation">cross-correlation</a>. How much do two signals correlate with each other as you shift one of them in time. We call the magnitude of the shift $\tau$.</p>
 <center>
 $$(f*g)(\tau) = \int_{-\infty}^{\infty} f^{}g(t+\tau)dt$$
 </center>
 
-<p>Below is the full cross-correlation of a sine and cosine wave. We see that there is a peak cross-correlation at $ \tau=\frac{\pi}{2}$ and the signals are most anti-correlated at $ \tau=\frac{3\pi}{4}$. If you shift the signal backward or forward tau can be positive or negative (g is leading or lagging).</p>
+<p>Below we see the full cross-correlation of a sine and cosine wave as we move the cosine wave and keep the other fixed. We see that there is a peak cross-correlation at $ \tau=\frac{\pi}{2}$ and the signals are most anti-correlated at $ \tau=\frac{3\pi}{4}$. If you shift the signal backward or forward tau can be positive or negative (g is leading or lagging).</p>
 
 <video controls="" width="100%">
   <source src="/res/blog_5/true_1.webm" type="video/webm" />
@@ -103,7 +115,7 @@ Your browser does not support the video tag.
 </video>
 
 <h3 id="what-happens-with-noisy-data">What happens with noisy data?</h3>
-<p>Cross-correlation is an extremely powerful method of analysis to use on noisy data. Just adding bit of waggle to the sine wave analysis from above we seem that we get similar results.</p>
+<p>Cross-correlation is an extremely powerful method of analysis to use on noisy data. Just adding bit of waggle to the sine and cosine waves from above gets similar results.</p>
 <video controls="" width="100%">
   <source src="/res/blog_5/true_2.webm" type="video/webm" />
   <source src="/res/blog_5/true_2.mp4" type="video/mp4" />
@@ -123,7 +135,7 @@ These equations could model any number of stochastic interactions (gene expressi
 <img src="/res/blog_5/Econ.png" />
 </a>﻿
 </center>
-<p>Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We don’t know if the Dollar affects the prices of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!</p>
+<p>Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We don’t know if the Dollar affects the value of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!</p>
 
 <video controls="" width="100%">
   <source src="/res/blog_5/true_4.webm" type="video/webm" />
@@ -131,7 +143,7 @@ These equations could model any number of stochastic interactions (gene expressi
 Your browser does not support the video tag.
 </video>
 
-<p>It becomes apparent that as we shift the Euro time trace, the two trajectories become more most correlated as $\tau = - 18$ days. If this simulated data is to be believed (<em>wink</em>), that means we should BUY BUY BUY Euros if the dollar spikes up, alternatively we should SELL SELL SELL Euros if the Dollar drops in value.</p>
+<p>It becomes apparent that as we shift the Euro time trace, the two trajectories become more most correlated as $\tau = - 18$ days. The value of the dollar determines (in part) that of the Euro. If this simulated data is to be believed (<em>wink</em>), that means we should BUY BUY BUY Euros if the dollar spikes up, alternatively we should SELL SELL SELL Euros if the Dollar drops in value.</p>
 
 <p>Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.</p>
 
@@ -145,12 +157,16 @@ Your browser does not support the video tag.
 <p>In order to get the numerical calculations to converge to the exact solutions we need a relatively long simulation. This can be <strong>very</strong> problematic when calculating cross-correlations using real data sets as it’s possible a given time-series of collected data is insufficient to effectively calculate any underlying phenomena. However, the time it takes to converge to the exact solution is a function of the signal to noise ratio and as such shorter data sets will be sufficient for less noisy data.</p>
 
 <h3 id="conclusion">Conclusion</h3>
+<p>Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including <a href="http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html">genetic networks</a>, <a href="https://arxiv.org/abs/1002.0321">finance</a> and the <a href="http://www.pnas.org/content/108/42/17296.full">climate </a>. Always remember, sometimes things take time.</p>
+
+<h2 id="notes">notes:</h2>
+
 <ul>
   <li>
-    <p>This sort of analysis does not prove causality, but allows for non-simulataneous interactions to be quantified.</p>
+    <p>I hacked this together on a couple jupyter notebooks, if you’re curious as to how I made the animations you can find the code <a href="https://github.com/NicholasARossi/xcor_animations">here</a></p>
   </li>
   <li>
-    <p>I hacked this together on a couple jupyter notebooks, if you’re curious as to how I made the animations you can find the code <a href="https://github.com/NicholasARossi/xcor_animations">here</a></p>
+    <p>Cross-correlation does assume the underlying phenomena are <a href="https://en.wikipedia.org/wiki/Stationary_process">stationary</a> and <a href="https://en.wikipedia.org/wiki/Ergodicity">ergodic</a>. There are work arounds for these assumptions but they are usually pretty messy.</p>
   </li>
 </ul>
 </div>
