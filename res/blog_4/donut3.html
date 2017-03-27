@@ -136,7 +136,7 @@ function alertHeight() {
 
 var width = window.screen.availHeight/2.5,
     height =  window.screen.availHeight/2.5,
-    radius = Math.min(width, height) / 2;
+    radius = Math.min(width, height) / 2.5;
 
 
 var pie = d3.layout.pie()
@@ -165,19 +165,20 @@ svg.attr("transform", "translate(" + width / 1.25 + "," + height / 2 + ")");
 var color = d3.scale.ordinal()
 	.range(["#6495ED", "#F08080","#a7a6a6", "#d3d3d3"]);
 
-datasetTotal = [
-		{label:"Dem - Yea", value:81},
-        {label:"Rep - Yea", value:214},
-        {label:"Dem - Nay", value:127},
-        {label:"Rep - Nay", value:8}
-        ];
 
-datasetOption1 = [
-		{label:"Dem - Yea", value:40},
-        {label:"Rep - Yea", value:119},
-        {label:"Dem - Nay", value:58},
-        {label:"Rep - Nay", value:2}
-        ];
+  datasetTotal = [
+  		{label:"Dem - Yea", value:81},
+          {label:"Rep - Yea", value:214},
+          {label:"Dem - Nay", value:127},
+          {label:"Rep - Nay", value:8}
+          ];
+
+  datasetOption1 = [
+  		{label:"Dem - Yea", value:40},
+          {label:"Rep - Yea", value:119},
+          {label:"Dem - Nay", value:58},
+          {label:"Rep - Nay", value:2}
+          ];
 
 // datasetOption2 = [
 // 		{label:"Category 1", value:10},
