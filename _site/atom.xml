@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-04-05T13:03:35-04:00</updated>
+  <updated>2017-04-05T13:08:55-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -119,6 +119,8 @@ Your browser does not support the video tag.
 &lt;!-- &lt;iframe width=&quot;1200&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot;&gt;&lt;/iframe&gt; --&gt;
 
 &lt;p&gt;&lt;iframe id=&quot;igraph&quot; style=&quot;border:none&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot; width=&quot;1200&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;calculating-the-future&quot;&gt;Calculating the future&lt;/h3&gt;
 
 &lt;p&gt;To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.&lt;/p&gt;
 &lt;center&gt;

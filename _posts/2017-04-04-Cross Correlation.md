@@ -114,6 +114,8 @@ In the chart above we see the trajectories of the presidential wins (diamonds) v
 
 <p><iframe id="igraph" style='border:none' src="//plot.ly/~divergent.data/2.embed" width="1200" height="600"></iframe></p>
 
+### Calculating the future
+
 To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.
 <center>
 <a align="center" href="/res/blog_5/xcor_house.png">
