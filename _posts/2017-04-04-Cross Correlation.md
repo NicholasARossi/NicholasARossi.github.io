@@ -110,7 +110,7 @@ The central hypothesis is that presidential victories embolded the opposite part
 
 In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).
 
-<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe>
+<iframe width="100%" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe>
 
 
 To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.
@@ -129,7 +129,7 @@ To help point out the features of this graph, I annotated the one bellow just to
 </a>﻿
 </center>
 
-So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn't exactly a mathematical certainty. Still, if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.
+So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn't exactly a mathematical certainty. But if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.
 
 
 ### Conclusion

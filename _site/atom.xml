@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-04-05T12:38:00-04:00</updated>
+  <updated>2017-04-05T12:45:03-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -115,7 +115,7 @@ Your browser does not support the video tag.
 
 &lt;p&gt;In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800’s, 1900’s) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).&lt;/p&gt;
 
-&lt;iframe width=&quot;900&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot;&gt;&lt;/iframe&gt;
+&lt;iframe width=&quot;100%&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.&lt;/p&gt;
 &lt;center&gt;
@@ -133,7 +133,7 @@ Your browser does not support the video tag.
 &lt;/a&gt;﻿
 &lt;/center&gt;
 
-&lt;p&gt;So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn’t exactly a mathematical certainty. Still, if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.&lt;/p&gt;
+&lt;p&gt;So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn’t exactly a mathematical certainty. But if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.&lt;/p&gt;
 
 &lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
 &lt;p&gt;Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including &lt;a href=&quot;http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html&quot;&gt;genetic networks&lt;/a&gt;, &lt;a href=&quot;https://arxiv.org/abs/1002.0321&quot;&gt;finance&lt;/a&gt; and the &lt;a href=&quot;http://www.pnas.org/content/108/42/17296.full&quot;&gt;climate &lt;/a&gt;. It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories can influence the success of subsequent house races.&lt;/p&gt;
