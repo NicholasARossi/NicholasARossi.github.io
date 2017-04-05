@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-04-05T12:47:46-04:00</updated>
+  <updated>2017-04-05T12:51:49-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -115,7 +115,9 @@ Your browser does not support the video tag.
 
 &lt;p&gt;In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800’s, 1900’s) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).&lt;/p&gt;
 
-&lt;iframe width=&quot;1200&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot;&gt;&lt;/iframe&gt;
+&lt;!-- &lt;iframe width=&quot;1200&quot; height=&quot;600&quot; frameborder=&quot;0&quot; scrolling=&quot;no&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot;&gt;&lt;/iframe&gt; --&gt;
+
+&lt;p&gt;&lt;iframe id=&quot;igraph&quot; style=&quot;border:none&quot; src=&quot;//plot.ly/~divergent.data/2.embed&quot; width=&quot;1200&quot; height=&quot;600&quot;&gt;&lt;/iframe&gt;&lt;/p&gt;
 
 &lt;p&gt;To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.&lt;/p&gt;
 &lt;center&gt;
