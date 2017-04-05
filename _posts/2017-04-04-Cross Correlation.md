@@ -1,7 +1,7 @@
 ---
-title: "Understanding Cross-Correlation"
+title: "Forecasting the 2018 Midterms using tools from Engineering"
 layout: post
-description: "What happens when two things are related, but only after some time delay?"
+description: "What tools from signals and systems analysis can help us understand trends in the political process"
 comments: yes
 ---
 <script type="text/x-mathjax-config">
@@ -12,9 +12,12 @@ comments: yes
 </script>
 
 
-### Some things take time
+### Red House Rising
+<img src="/res/blog_5/meme.png">
+We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Should we have foreseen the republican ascension and what mathematical tools can help us predict the future? Can we prove that presidential victories produce losses in congress?
 
-Hey [look at this graph](https://www.youtube.com/watch?v=sIlNIVXpIns)!
+### Some things take time
+Before we get to politics let's take a look at any easy example of two things changing in time
 <center>
 <a align="center" href="/res/blog_5/graph_1.png">
 <img  src="/res/blog_5/graph_1.png">
@@ -97,8 +100,44 @@ It becomes apparent that as we shift the Euro time trace, the two trajectories b
 
 Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.
 
+### Understanding Past Political Patterns
+The central hypothesis is that presidential victories embolded the opposite party. To test this we gather historical data of US elections.
+<center>
+<a align="center" width="10%" href="/res/blog_5/pos_neg.png">
+<img src="/res/blog_5/pos_neg.png">
+</a>﻿
+</center>
 
-### Note: Numerical Cross-Correlation is data hungry
+In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).
+
+<iframe width="900" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe>
+
+
+To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.
+<center>
+<a align="center" href="/res/blog_5/xcor_house.png">
+<img src="/res/blog_5/xcor_house.png">
+</a>﻿
+</center>
+First, I've computed two functions - one including all the data since 1855 and the second just on the data since 1940 (an arbitrary demarcation for the inception of the modern definitions of the republicans and democrats). The upshot is that both predict house flips to the opposition party as a function of the presidential party, however it is more pronounced in the after 1940 data set.
+
+To help point out the features of this graph, I annotated the one bellow just to show what this method of analysis predicts in the current context.
+
+<center>
+<a align="center" href="/res/blog_5/close_up3.png">
+<img src="/res/blog_5/close_up3.png">
+</a>﻿
+</center>
+
+So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn't exactly a mathematical certainty. Still, if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.
+
+
+### Conclusion
+Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including [genetic networks](http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html), [finance](https://arxiv.org/abs/1002.0321) and the [climate ](http://www.pnas.org/content/108/42/17296.full). It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories can influence the success of subsequent house races.
+
+
+
+### Addendum: Numerical Cross-Correlation is data hungry
 If the signal to noise ration is high in a given relationship between two time-series, it may require a relatively long data set in order to detect any apparent cross-correlation. The animation bellow illustrates this point by calculating the numerical cross correlation of two time traces (blue dots) and comparing them to the exact analytical solution to the cross-correlation of the two functions.
 <video controls width="100%">
   <source src="/res/blog_5/true_5.webm" type="video/webm">
@@ -107,11 +146,10 @@ Your browser does not support the video tag.
 </video>
 In order to get the numerical calculations to converge to the exact solutions we need a relatively long simulation. This can be **very** problematic when calculating cross-correlations using real data sets as it's possible a given time-series of collected data is insufficient to effectively calculate any underlying phenomena. However, the time it takes to converge to the exact solution is a function of the signal to noise ratio and as such shorter data sets will be sufficient for less noisy data.
 
-### Conclusion
-Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including [genetic networks](http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html), [finance](https://arxiv.org/abs/1002.0321) and the [climate ](http://www.pnas.org/content/108/42/17296.full). Always remember, sometimes things take time.
 
 ## notes:
+* I got the historical congressional data from [here](https://www.infoplease.com/history-and-government/us-government/composition-congress-political-party-1855a2017)
 
-* I hacked this together on a couple jupyter notebooks, if you're curious as to how I made the animations you can find the code [here](https://github.com/NicholasARossi/xcor_animations)
+* I hacked this together on a couple jupyter notebooks in python, if you're curious as to how I made the animations you can find the code  [here](https://github.com/NicholasARossi/xcor_animations). Interactive plot was done with [plot.ly](www.plot.ly))
 
 * Cross-correlation does assume the underlying phenomena are [stationary](https://en.wikipedia.org/wiki/Stationary_process) and [ergodic](https://en.wikipedia.org/wiki/Ergodicity). There are work arounds for these assumptions but they are usually pretty messy.
