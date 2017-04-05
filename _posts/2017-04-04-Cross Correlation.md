@@ -151,6 +151,8 @@ In order to get the numerical calculations to converge to the exact solutions we
 ## notes:
 * I got the historical congressional data from [here](https://www.infoplease.com/history-and-government/us-government/composition-congress-political-party-1855a2017)
 
+* I didn't include the data from the 2016 election because it's all still 2real4me
+
 * I hacked this together on a couple jupyter notebooks in python, if you're curious as to how I made the animations you can find the code  [here](https://github.com/NicholasARossi/xcor_animations). Interactive plot was done with [plot.ly](www.plot.ly))
 
 * Cross-correlation does assume the underlying phenomena are [stationary](https://en.wikipedia.org/wiki/Stationary_process) and [ergodic](https://en.wikipedia.org/wiki/Ergodicity). There are work arounds for these assumptions but they are usually pretty messy.

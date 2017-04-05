@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-04-05T13:02:12-04:00</updated>
+  <updated>2017-04-05T13:03:35-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -154,6 +154,9 @@ Your browser does not support the video tag.
 &lt;ul&gt;
   &lt;li&gt;
     &lt;p&gt;I got the historical congressional data from &lt;a href=&quot;https://www.infoplease.com/history-and-government/us-government/composition-congress-political-party-1855a2017&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+  &lt;/li&gt;
+  &lt;li&gt;
+    &lt;p&gt;I didn’t include the data from the 2016 election because it’s all still 2real4me&lt;/p&gt;
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;I hacked this together on a couple jupyter notebooks in python, if you’re curious as to how I made the animations you can find the code  &lt;a href=&quot;https://github.com/NicholasARossi/xcor_animations&quot;&gt;here&lt;/a&gt;. Interactive plot was done with &lt;a href=&quot;www.plot.ly&quot;&gt;plot.ly&lt;/a&gt;)&lt;/p&gt;
