@@ -110,7 +110,7 @@ The central hypothesis is that presidential victories embolded the opposite part
 
 In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).
 
-<iframe width="100%" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe>
+<iframe width="1200" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe>
 
 
 To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.
