@@ -23,7 +23,7 @@ Before we get to politics let's take a look at any easy example of two things ch
 <img  src="/res/blog_5/graph_1.png">
 </a>﻿
 </center>
-We see that the daylight in Boston and Paris follow the same basic trajectories, but the exact brightness in Boston isn't a great predictor of the brightness in Paris. Taken a step further, if we "flatten" the data to remove the time dimension and plot the brightness in Paris vs that of Boston we get the following. Each point on the circle represents the brightness in Paris and the brightness in Boston at a specific time.
+We see that the daylight in Boston and Paris follow the same basic trajectories, but the exact brightness in Boston isn't a great predictor of the brightness in Paris at any given time. Taken a step further, if we "flatten" the data to remove the time dimension and plot the brightness in Paris vs that of Boston we get the following. Each point on the circle represents the brightness in Paris and the brightness in Boston at a specific time.
 
 <video controls width="100%">
   <source src="/res/blog_5/flattened_1.webm" type="video/webm">
@@ -53,9 +53,9 @@ Your browser does not support the video tag.
 
 This operation is the essence of [cross-correlation](https://en.wikipedia.org/wiki/Cross-correlation). How much do two signals correlate with each other as you shift one of them in time. We call the magnitude of the shift $\tau$.
 <center>
-$$(f*g)(\tau) = \int_{-\infty}^{\infty} f^{}g(t+\tau)dt$$
+$$(f*g)(\tau) = \int_{-\infty}^{\infty} f^{*}g(t+\tau)dt$$
 </center>
-
+Basically, the operation is the sum of the similarity between two time traces as you move one of them around.
 
 
 Below we see the full cross-correlation of a sine and cosine wave as we move the cosine wave and keep the other fixed. We see that there is a peak cross-correlation at $ \tau=\frac{\pi}{2}$ and the signals are most anti-correlated at $ \tau=\frac{3\pi}{4}$. If you shift the signal backward or forward tau can be positive or negative (g is leading or lagging).
@@ -96,7 +96,7 @@ Here we see two time traces representing the value of the Dollar and the value o
 Your browser does not support the video tag.
 </video>
 
-It becomes apparent that as we shift the Euro time trace, the two trajectories become more most correlated as $\tau = - 18$ days. The value of the dollar determines (in part) that of the Euro. If this simulated data is to be believed (*wink*), that means we should BUY BUY BUY Euros if the dollar spikes up, alternatively we should SELL SELL SELL Euros if the Dollar drops in value.
+It becomes apparent that as we shift the Euro time trace, the two trajectories become most correlated as $\tau = - 18$ days. The value of the dollar determines (in part) that of the Euro. If this simulated data is to be believed (*wink*), that means we should BUY BUY BUY Euros if the dollar spikes up, alternatively we should SELL SELL SELL Euros if the Dollar drops in value.
 
 Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.
 
@@ -108,7 +108,7 @@ The central hypothesis is that presidential victories embolded the opposite part
 </a>﻿
 </center>
 
-In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added).
+In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).
 
 <!-- <iframe width="1200" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe> -->
 
@@ -122,7 +122,7 @@ To quantitatively investigate whether the presidential election influence the ho
 </center>
 First, I've computed two functions - one including all the data since 1855 and the second just on the data since 1940 (an arbitrary demarcation for the inception of the modern definitions of the republicans and democrats). The upshot is that both predict house flips to the opposition party as a function of the presidential party, however it is more pronounced in the after 1940 data set.
 
-To help point out the features of this graph, I annotated the one bellow just to show what this method of analysis predicts in the current context.
+To help point out the features of this graph, I annotated the one below just to show what this method of analysis predicts in the current context.
 
 <center>
 <a align="center" href="/res/blog_5/close_up3.png">
