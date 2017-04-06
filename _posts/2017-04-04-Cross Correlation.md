@@ -1,5 +1,5 @@
 ---
-title: "Forecasting the 2018 Midterms using tools from Engineering"
+title: "Forecasting the 2018 Midterms Using Tools from Engineering"
 layout: post
 description: "What tools from signals and systems analysis can help us understand trends in the political process"
 comments: yes
