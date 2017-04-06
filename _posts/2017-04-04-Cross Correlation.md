@@ -14,7 +14,7 @@ comments: yes
 
 ### Red House Rising
 <img src="/res/blog_5/meme.png">
-We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Should we have foreseen the republican ascension and what mathematical tools can help us predict the future? Can we prove that presidential victories produce losses in congress?
+We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Can we prove that presidential victories produce losses in congress?
 
 ### Some things take time
 Before we get to politics let's take a look at any easy example of two things changing in time
@@ -101,14 +101,14 @@ It becomes apparent that as we shift the Euro time trace, the two trajectories b
 Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.
 
 ### Understanding Past Political Patterns
-The central hypothesis is that presidential victories embolded the opposite party. To test this we gather historical data of US elections.
+The central hypothesis is that presidential victories embolden the opposite party. Lets apply some of the mathematical techniques above to determine whether or not we can calculate the properties of the rise and fall of political groups. First, we gather historical data of US elections.
 <center>
 <a align="center" width="10%" href="/res/blog_5/pos_neg.png">
 <img src="/res/blog_5/pos_neg.png">
 </a>﻿
 </center>
 
-In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).
+In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that the mechanism of political turnover has changed. For instance, in the past (1800's, 1900's) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).
 
 <!-- <iframe width="1200" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe> -->
 
@@ -116,7 +116,7 @@ In the chart above we see the trajectories of the presidential wins (diamonds) v
 
 ### Calculating the future
 
-To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.
+To quantitatively investigate whether the presidential election influences the house majority, we compute the cross-correlation on this data to produce the following two graphs.
 <center>
 <a align="center" href="/res/blog_5/xcor_house.png">
 <img src="/res/blog_5/xcor_house.png">
@@ -136,7 +136,7 @@ So cross-correlation predicts the house to flip to the democrats in 2018 and sta
 
 
 ### Conclusion
-Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including [genetic networks](http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html), [finance](https://arxiv.org/abs/1002.0321) and the [climate ](http://www.pnas.org/content/108/42/17296.full). It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories can influence the success of subsequent house races.
+Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including [genetic networks](http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html), [finance](https://arxiv.org/abs/1002.0321) and the [climate ](http://www.pnas.org/content/108/42/17296.full). It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories may influence/predict the success of subsequent house races.
 
 
 

@@ -69,7 +69,7 @@
 
 <h3 id="red-house-rising">Red House Rising</h3>
 <p><img src="/res/blog_5/meme.png" />
-We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Should we have foreseen the republican ascension and what mathematical tools can help us predict the future? Can we prove that presidential victories produce losses in congress?</p>
+We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Can we prove that presidential victories produce losses in congress?</p>
 
 <h3 id="some-things-take-time">Some things take time</h3>
 <p>Before we get to politics let’s take a look at any easy example of two things changing in time</p>
@@ -152,14 +152,14 @@ Your browser does not support the video tag.
 <p>Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.</p>
 
 <h3 id="understanding-past-political-patterns">Understanding Past Political Patterns</h3>
-<p>The central hypothesis is that presidential victories embolded the opposite party. To test this we gather historical data of US elections.</p>
+<p>The central hypothesis is that presidential victories embolden the opposite party. Lets apply some of the mathematical techniques above to determine whether or not we can calculate the properties of the rise and fall of political groups. First, we gather historical data of US elections.</p>
 <center>
 <a align="center" width="10%" href="/res/blog_5/pos_neg.png">
 <img src="/res/blog_5/pos_neg.png" />
 </a>﻿
 </center>
 
-<p>In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that way politics is done has changed. For instance, in the past (1800’s, 1900’s) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).</p>
+<p>In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that the mechanism of political turnover has changed. For instance, in the past (1800’s, 1900’s) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).</p>
 
 <!-- <iframe width="1200" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe> -->
 
@@ -167,7 +167,7 @@ Your browser does not support the video tag.
 
 <h3 id="calculating-the-future">Calculating the future</h3>
 
-<p>To quantitatively investigate whether the presidential election influence the house majority we compute the cross-correlation on this data to produce the following two graphs.</p>
+<p>To quantitatively investigate whether the presidential election influences the house majority, we compute the cross-correlation on this data to produce the following two graphs.</p>
 <center>
 <a align="center" href="/res/blog_5/xcor_house.png">
 <img src="/res/blog_5/xcor_house.png" />
@@ -186,7 +186,7 @@ Your browser does not support the video tag.
 <p>So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn’t exactly a mathematical certainty. But if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.</p>
 
 <h3 id="conclusion">Conclusion</h3>
-<p>Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including <a href="http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html">genetic networks</a>, <a href="https://arxiv.org/abs/1002.0321">finance</a> and the <a href="http://www.pnas.org/content/108/42/17296.full">climate </a>. It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories can influence the success of subsequent house races.</p>
+<p>Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including <a href="http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html">genetic networks</a>, <a href="https://arxiv.org/abs/1002.0321">finance</a> and the <a href="http://www.pnas.org/content/108/42/17296.full">climate </a>. It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories may influence/predict the success of subsequent house races.</p>
 
 <h3 id="addendum-numerical-cross-correlation-is-data-hungry">Addendum: Numerical Cross-Correlation is data hungry</h3>
 <p>If the signal to noise ration is high in a given relationship between two time-series, it may require a relatively long data set in order to detect any apparent cross-correlation. The animation bellow illustrates this point by calculating the numerical cross correlation of two time traces (blue dots) and comparing them to the exact analytical solution to the cross-correlation of the two functions.</p>
