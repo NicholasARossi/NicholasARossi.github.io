@@ -3,12 +3,99 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-04-06T08:23:59-04:00</updated>
+  <updated>2017-05-03T00:32:37-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi1@uvm.edu</email>
   </author>
+  
+  <entry>
+    <title>Quantifying Genetic Entropy in Humans and Wheat</title>
+    <link href="http://nicholasarossi.github.io//Wheat"/>
+    <updated>2017-05-02T00:00:00-04:00</updated>
+    <id>http://nicholasarossi.github.io//Wheat</id>
+    <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
+  MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
+&lt;/script&gt;
+
+&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;h3 id=&quot;how-different-are-we&quot;&gt;How different are we?&lt;/h3&gt;
+&lt;p&gt;What does it mean to be genetically distinct? Within a species, we need to be able to calculate how much variability there is. Within all humans, how much variation of each gene is there?&lt;/p&gt;
+
+&lt;p&gt;We need a metric to quantify just how diverse a given genome is - be it plant or animal. To do this we turn to &lt;a href=&quot;https://www.youtube.com/watch?v=sDhLY-5fGD0&quot;&gt;entropy&lt;/a&gt;&lt;/p&gt;
+&lt;center&gt;
+$$H(x)=-\sum_{i=1}^{n} P(x_i)log_2P(x_i)$$
+&lt;/center&gt;
+
+&lt;p&gt;This is a terrific, non-paramentric method for evaluating total diversity in a set. Here, a discrete valued variable x has a set of values n. I chose to compute entropy with log base 2 to give a score in bits (base e for nats, the choice is yours).&lt;/p&gt;
+
+&lt;p&gt;The non-paramentric nature of the entropy calculation allows us to determine the diversity of a given variable regardless of how that diversity is distributed.
+To illustrate this point consider the groups of colored dots below:&lt;/p&gt;
+
+&lt;center&gt;
+&lt;a align=&quot;center&quot; href=&quot;/res/blog_6/entropy_comparison.png&quot;&gt;
+&lt;img src=&quot;/res/blog_6/entropy_comparison.png&quot; /&gt;
+&lt;/a&gt;﻿
+&lt;/center&gt;
+&lt;p&gt;Each of the groups above has the same entropy score (2 bits). The group to the left is split evenly between two genotypes while the group to the right has a total of eight potential variations at the same point. Basically we see the entropy score doesn’t care if you have a split group or one group dominating with a smatering of other random genotypes.&lt;/p&gt;
+
+&lt;p&gt;In order to use entropy to calculate a diversity score for an entire organism, we average the diversity throughout a set of SNPs (&lt;a href=&quot;https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism&quot;&gt;Single-nucleotide polymorphisms&lt;/a&gt;). These are high-variability locations in the genome that serve to distinguish the genetic variance of individuals of the species.&lt;/p&gt;
+
+&lt;p&gt;Calculating the average SNP entropy over the an entire set of SNPs for a given organism produces the following equation:&lt;/p&gt;
+
+&lt;center&gt;
+$$H_{average}(k)=-\frac{1}{k}\sum_{j=1}^{k}\sum_{i=1}^{n} P(k_{ji})log_2P(k_{ji})$$
+&lt;/center&gt;
+
+&lt;p&gt;Where k is a given SNP location within a population. Each potential SNP sequence at a given location has a particular probability &lt;script type=&quot;math/tex&quot;&gt;P(k_{ji})&lt;/script&gt; within that population.&lt;/p&gt;
+
+&lt;p&gt;This calculation serves as a loose upper bound to the genetic entropy of a given organism. We call this an upper bound because SNPs are target because they are diversity hotspots by nature. Calculating the average diversity at those locations produces a diversity score for the entire organism.&lt;/p&gt;
+
+&lt;h3 id=&quot;this-is-what-diversity-looks-like&quot;&gt;This is what diversity looks like!&lt;/h3&gt;
+&lt;p&gt;The central question I wanted to ask is : who has more genetic variability - us or an organism we’ve bred? To answer this I applied the above metric to a multinational data set of human SNPs (see notes) versus one from a british domestic wheat set.&lt;/p&gt;
+
+&lt;center&gt;
+&lt;a align=&quot;center&quot; href=&quot;/res/blog_6/swarm_plot2.png&quot;&gt;
+&lt;img src=&quot;/res/blog_6/swarm_plot2.png&quot; /&gt;
+&lt;/a&gt;﻿
+&lt;/center&gt;
+
+&lt;p&gt;I included the upper an lower bound sets as well (random and uniform). These represent the maximum entropy you could generate at a given SNP in a diploid organism with 4 base-pairs (4 bits) versus a completely isogenic population (0 bits of entropy). We see real organisms are in the middle with some diversity but not total anarchy.&lt;/p&gt;
+
+&lt;p&gt;As for the analyzed data, the raw score for the domesticated wheat is (surprise) higher than us. Yet, this value is not overwhelming different.
+The subtle difference of the average SNP complexity between humans and wheat might not seem like much at first glance, but we have to factor in the radical difference in genome size that this complexity scales with.&lt;/p&gt;
+
+&lt;p&gt;First, the wheat genome is about &lt;a href=&quot;https://www.cshl.edu/news-a-features/bread-wheats-large-and-complex-genome-is-revealed.html&quot;&gt;5 times larger&lt;/a&gt; than humans. We would imagine that the complexity functions on each individual choice as an exponent.
+Given the average entropy of human genome is 1.116 bits per SNP and the average entropy of wheat genome is 1.251 bits per SNP, a back of the envelope calculations would yield something like:&lt;/p&gt;
+&lt;center&gt;
+Total Complexity = genome size&lt;sup&gt;entropy per base&lt;/sup&gt;
+&lt;/center&gt;
+&lt;p&gt;Applying this straight forward calculation yields the chart below:
+&lt;!-- width=&quot;100%&quot; height=&quot;400&quot; --&gt;&lt;/p&gt;
+&lt;iframe src=&quot;/res/blog_6/bubble_chart.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;diversity-is-good&quot;&gt;Diversity is good!&lt;/h3&gt;
+
+&lt;p&gt;Isogenic or low diversity populations are &lt;a href=&quot;https://www.nationalgeographic.org/encyclopedia/biodiversity/&quot;&gt;fragile&lt;/a&gt;. Maintaining populations of high-variability is key to sucessful species.This metric doesn’t necessarily guarenteee survivorship.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;While quantifying diversity is a non-trivial problem, entropy is a good first pass metric to use to understand the variability in a given set.
+Domestic Wheat seems more ready than us to withstand the apocalypse than us. That doesn’t matter though because humans aren’t going to survive the apocalypse, we’re going to &lt;a href=&quot;https://www.youtube.com/watch?v=VEJ8lpCQbyw&quot;&gt;become it&lt;/a&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;I got the Human SNP dataset from &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/20643205&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;I got the Wheat SNP dataset from &lt;a href=&quot;http://www.cerealsdb.uk.net/cerealgenomics/CerealsDB/indexNEW.php&quot;&gt;here&lt;/a&gt; (the kasp set)&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Forecasting the 2018 Midterms Using Tools from Engineering</title>
