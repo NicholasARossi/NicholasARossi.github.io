@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-05-03T08:21:56-04:00</updated>
+  <updated>2017-05-03T19:58:23-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -30,9 +30,9 @@
 $$H(x)=-\sum_{i=1}^{n} P(x_i)log_2P(x_i)$$
 &lt;/center&gt;
 
-&lt;p&gt;This is a terrific, non-paramentric method for evaluating total diversity in a set. Here, a discrete valued variable x has a set of values n. I chose to compute entropy with log base 2 to give a score in bits (base e for nats, the choice is yours).&lt;/p&gt;
+&lt;p&gt;This is a terrific, non-parametric method for evaluating total diversity in a set. Here, a discrete valued variable x has a set of values n. I chose to compute entropy with log base 2 to give a score in bits (base e for nats, the choice is yours).&lt;/p&gt;
 
-&lt;p&gt;The non-paramentric nature of the entropy calculation allows us to determine the diversity of a given variable regardless of how that diversity is distributed.
+&lt;p&gt;The non-parametric nature of the entropy calculation allows us to determine the diversity of a given variable regardless of how that diversity is distributed.
 To illustrate this point consider the groups of colored dots below:&lt;/p&gt;
 
 &lt;center&gt;
