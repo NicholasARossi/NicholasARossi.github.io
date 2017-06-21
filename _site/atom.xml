@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-06-21T14:14:16-07:00</updated>
+  <updated>2017-06-21T14:20:14-07:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -21,6 +21,8 @@
 
 &lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
 &lt;/script&gt;
+
+&lt;p&gt;The following is an online supplement to the &lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;poster&lt;/a&gt; I’m presenting at the &lt;a href=&quot;http://synbioconference.org/2017&quot;&gt;2017 SEED conference&lt;/a&gt; in Vancouver.&lt;/p&gt;
 
 &lt;h3 id=&quot;using-synthetic-biology-to-understand-the-utility-of-active-degradation&quot;&gt;Using Synthetic Biology to Understand the Utility of Active Degradation&lt;/h3&gt;
 &lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot;&gt;
