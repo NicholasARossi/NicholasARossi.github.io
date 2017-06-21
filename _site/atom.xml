@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-06-21T11:23:44-07:00</updated>
+  <updated>2017-06-21T11:32:26-07:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -79,13 +79,20 @@ $$\frac{dX}{dt} = -\theta_{x} X_{t} dt+\sigma_{x} \eta_{x}$$
 
 &lt;p&gt;Where &lt;script type=&quot;math/tex&quot;&gt;\theta_{x}&lt;/script&gt; scales with the half-life of the molecule.&lt;/p&gt;
 
-&lt;p&gt;Below we see simulation of several trajectories as well as the analytical solutions to the variance over time of the function for a short half-life activator. Mouse over the trajectories to highlight them.&lt;/p&gt;
+&lt;p&gt;Below we see simulation of several trajectories as well as the analytical solutions to the variance over time of the function for a short half-life activator. Click links for interactive versions.&lt;/p&gt;
 
-&lt;iframe src=&quot;/res/blog_7/short.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;&lt;a href=&quot;/res/blog_7/short.html&quot;&gt;
+&lt;img src=&quot;/res/blog_7/first_int.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;!-- &lt;iframe src=&quot;/res/blog_7/short.html&quot; width=&quot;100%&quot; height=&quot;400&quot;  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
 
 &lt;p&gt;Increasing the half-life of the activator demonstrates a slower accumulation of diversity over time.&lt;/p&gt;
 
-&lt;iframe src=&quot;/res/blog_7/long.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+&lt;!-- &lt;iframe src=&quot;/res/blog_7/long.html&quot; width=&quot;100%&quot; height=&quot;400&quot;  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
+&lt;p&gt;&lt;a href=&quot;/res/blog_7/long.html&quot;&gt;
+&lt;img src=&quot;/res/blog_7/second_int.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
 
 &lt;h2 id=&quot;active-degradation-increases-the-rate-of-diversity-accumulation&quot;&gt;Active degradation increases the rate of diversity accumulation&lt;/h2&gt;
 
