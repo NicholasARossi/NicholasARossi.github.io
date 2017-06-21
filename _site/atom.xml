@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-06-21T11:20:58-07:00</updated>
+  <updated>2017-06-21T11:23:44-07:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -24,8 +24,9 @@
 
 &lt;h3 id=&quot;using-synthetic-biology-to-understand-the-utility-of-active-degradation&quot;&gt;Using Synthetic Biology to Understand the Utility of Active Degradation&lt;/h3&gt;
 &lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot;&gt;
+&lt;source src=&quot;/res/blog_7/seed_logo.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
+
   &lt;source src=&quot;/res/blog_7/seed_logo.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
-  &lt;source src=&quot;/res/blog_7/seed_logo.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
 
 Your browser does not support the video tag.
 &lt;/video&gt;
@@ -38,8 +39,9 @@ Your browser does not support the video tag.
 &lt;p&gt;The video below shows a growing bacterial microcolony that’s hit with a temporary dose of carbenicillin. Red coloration is a propidium iodide indication of cell death. Cyan represents diversity in a transcriptional reporter for the multiple antibiotic resistance activator MarA&lt;/p&gt;
 
 &lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;source src=&quot;/res/blog_7/media6.webm&quot; type=&quot;video/webm&quot; /&gt;
+
   &lt;source src=&quot;/res/blog_7/media6.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-  &lt;source src=&quot;/res/blog_7/media6.webm&quot; type=&quot;video/webm&quot; /&gt;
 
 Your browser does not support the video tag.
 &lt;/video&gt;
@@ -90,15 +92,17 @@ $$\frac{dX}{dt} = -\theta_{x} X_{t} dt+\sigma_{x} \eta_{x}$$
 &lt;p&gt;Mirroring the computational results, experimental results for activators with differing half-lives demonstrate different rates of diversity generation. Here we compare a system with wild type MarA that is actively degraded to a system with synthetically modified MarA that is not.&lt;/p&gt;
 
 &lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;source src=&quot;/res/blog_5/short_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
+
   &lt;source src=&quot;/res/blog_7/short_halflife.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-  &lt;source src=&quot;/res/blog_5/short_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
 
 Your browser does not support the video tag.
 &lt;/video&gt;
 
 &lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;source src=&quot;/res/blog_5/long_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
+
   &lt;source src=&quot;/res/blog_7/long_halflife.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-  &lt;source src=&quot;/res/blog_5/long_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
 
 Your browser does not support the video tag.
 &lt;/video&gt;
