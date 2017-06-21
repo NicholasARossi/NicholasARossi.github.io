@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-06-21T14:20:14-07:00</updated>
+  <updated>2017-06-21T14:28:26-07:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -69,9 +69,10 @@ Your browser does not support the video tag.
 Your browser does not support the video tag.
 &lt;/video&gt; --&gt;
 
-&lt;h2 id=&quot;how-does-a-bacterial-populations-go-from-a-few-cells-to-rich-phenotypic-diversity&quot;&gt;How does a bacterial populations go from a few cells to rich phenotypic diversity?&lt;/h2&gt;
+&lt;h2 id=&quot;how-does-a-bacterial-population-go-from-a-few-cells-to-rich-phenotypic-diversity&quot;&gt;How does a bacterial population go from a few cells to rich phenotypic diversity?&lt;/h2&gt;
 
-&lt;p&gt;&lt;img src=&quot;/res/blog_7/diversity.png&quot; alt=&quot;diversity&quot; /&gt;&lt;/p&gt;
+&lt;p&gt;&lt;img src=&quot;/res/blog_7/diversity.png&quot; alt=&quot;diversity&quot; /&gt;
+Cell growth is clearly important for the development of a diverse population, but more than that the noise profile of the genes of interest is important as well.&lt;/p&gt;
 
 &lt;p&gt;We can model the development of diversity in noisy genes by an &lt;a href=&quot;https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process&quot;&gt;Ornstein–Uhlenbeck processes&lt;/a&gt;&lt;/p&gt;
 
