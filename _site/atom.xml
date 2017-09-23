@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-06-21T14:28:26-07:00</updated>
+  <updated>2017-08-24T14:14:09-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//SEED2017"/>
-    <updated>2017-06-20T00:00:00-07:00</updated>
+    <updated>2017-06-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//SEED2017</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -141,7 +141,7 @@ document.getElementById(&quot;video1&quot;).currentTime = 14;
   <entry>
     <title>Quantifying Genetic Entropy in Humans and Wheat</title>
     <link href="http://nicholasarossi.github.io//Wheat"/>
-    <updated>2017-05-02T00:00:00-07:00</updated>
+    <updated>2017-05-02T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Wheat</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -230,7 +230,7 @@ Domestic Wheat seems more ready than us to withstand the apocalypse than us. Tha
   <entry>
     <title>Forecasting the 2018 Midterms Using Tools from Engineering</title>
     <link href="http://nicholasarossi.github.io//Cross-Correlation"/>
-    <updated>2017-04-04T00:00:00-07:00</updated>
+    <updated>2017-04-04T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Cross Correlation</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -394,7 +394,7 @@ Your browser does not support the video tag.
   <entry>
     <title>How Term Limits Might Affect How Congress Works</title>
     <link href="http://nicholasarossi.github.io//congress"/>
-    <updated>2016-10-20T00:00:00-07:00</updated>
+    <updated>2016-10-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//congress</id>
     <content type="html">&lt;h3 id=&quot;question&quot;&gt;Question!:&lt;/h3&gt;
 
@@ -479,7 +479,7 @@ Your browser does not support the video tag.
   <entry>
     <title>Global Trends in Cigarette Consumption</title>
     <link href="http://nicholasarossi.github.io//cigarettes"/>
-    <updated>2016-10-15T00:00:00-07:00</updated>
+    <updated>2016-10-15T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//cigarettes</id>
     <content type="html">&lt;h2 id=&quot;smoking-is-a-lot-more-prevalent-in-certain-places&quot;&gt;Smoking is a lot more prevalent in certain places&lt;/h2&gt;
 
@@ -540,7 +540,7 @@ Your browser does not support the video tag.
   <entry>
     <title>Musical Systems Analysis</title>
     <link href="http://nicholasarossi.github.io//Musical-Systems"/>
-    <updated>2016-09-18T00:00:00-07:00</updated>
+    <updated>2016-09-18T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Musical Systems</id>
     <content type="html">&lt;h2 id=&quot;intro&quot;&gt;Intro&lt;/h2&gt;
 &lt;p&gt;A motif is a recurring element - a pattern that is found more often than would occur by chance. They are essential in all ordered systems, from genetic networks to the patterns of social interaction. Today we’re going to talk about their role in music while we reviewing the ways that you can teach robots to write songs.&lt;/p&gt;
@@ -630,7 +630,7 @@ The network bellow shows one such markov chain that hops around the pentatonic s
   <entry>
     <title>Pizza Post</title>
     <link href="http://nicholasarossi.github.io//pizza"/>
-    <updated>2016-08-07T00:00:00-07:00</updated>
+    <updated>2016-08-07T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//pizza</id>
     <content type="html">&lt;p&gt;So we all know the bigger the pizza, &lt;a href=&quot;http://www.npr.org/sections/money/2014/02/26/282132576/74-476-reasons-you-should-always-get-the-bigger-pizza&quot;&gt;the better the deal&lt;/a&gt;. The price per square inch decreases dramatically as you increase pizza size. But there&#39;s so much more to do with pizza math! For the following graphs I assume uniform thickness among pizzas (obvious conciet) but beyond that we just need equations for area an circumference of a circle. Presto pesto!&lt;/p&gt;
 &lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;def&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pizza_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
@@ -679,7 +679,7 @@ The network bellow shows one such markov chain that hops around the pentatonic s
   <entry>
     <title>Welcome!</title>
     <link href="http://nicholasarossi.github.io//welcome"/>
-    <updated>2016-08-01T00:00:00-07:00</updated>
+    <updated>2016-08-01T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//welcome</id>
     <content type="html">&lt;p&gt;Hey! This is the first post in what will hopefully be a long and fruitful foray into the overcrowded world of data science blogging. I hope to share with you some insightful bits and well as a good helping of glorious infectious confusion. Later!
 &lt;br /&gt;

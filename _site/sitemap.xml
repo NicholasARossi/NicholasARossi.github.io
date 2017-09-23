@@ -2,75 +2,75 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://rossidata.com/</loc>
-    <lastmod>2017-06-21T14:28:26-07:00</lastmod>
+    <lastmod>2017-08-24T14:14:09-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://rossidata.com/about/</loc>
-    <lastmod>2017-06-21T14:28:26-07:00</lastmod>
+    <lastmod>2017-08-24T14:14:09-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://rossidata.com/archive/</loc>
-    <lastmod>2017-06-21T14:28:26-07:00</lastmod>
+    <lastmod>2017-08-24T14:14:09-04:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   
   <url>
     <loc>http://rossidata.com/SEED2017</loc>
-    <lastmod>2017-06-20T00:00:00-07:00</lastmod>
+    <lastmod>2017-06-20T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/Wheat</loc>
-    <lastmod>2017-05-02T00:00:00-07:00</lastmod>
+    <lastmod>2017-05-02T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/Cross-Correlation</loc>
-    <lastmod>2017-04-04T00:00:00-07:00</lastmod>
+    <lastmod>2017-04-04T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/congress</loc>
-    <lastmod>2016-10-20T00:00:00-07:00</lastmod>
+    <lastmod>2016-10-20T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/cigarettes</loc>
-    <lastmod>2016-10-15T00:00:00-07:00</lastmod>
+    <lastmod>2016-10-15T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/Musical-Systems</loc>
-    <lastmod>2016-09-18T00:00:00-07:00</lastmod>
+    <lastmod>2016-09-18T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/pizza</loc>
-    <lastmod>2016-08-07T00:00:00-07:00</lastmod>
+    <lastmod>2016-08-07T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
    
   <url>
     <loc>http://rossidata.com/welcome</loc>
-    <lastmod>2016-08-01T00:00:00-07:00</lastmod>
+    <lastmod>2016-08-01T00:00:00-04:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.5</priority>
    </url>
