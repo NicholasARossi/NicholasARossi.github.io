@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2017-08-24T14:14:09-04:00</updated>
+  <updated>2017-09-23T07:51:46-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -12,9 +12,9 @@
   
   <entry>
     <title>SEED 2017</title>
-    <link href="http://nicholasarossi.github.io//SEED2017"/>
+    <link href="http://nicholasarossi.github.io//EBRC"/>
     <updated>2017-06-20T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//SEED2017</id>
+    <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
 &lt;/script&gt;
@@ -22,7 +22,7 @@
 &lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
 &lt;/script&gt;
 
-&lt;p&gt;The following is an online supplement to the &lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;poster&lt;/a&gt; I’m presenting at the &lt;a href=&quot;http://synbioconference.org/2017&quot;&gt;2017 SEED conference&lt;/a&gt; in Vancouver.&lt;/p&gt;
+&lt;p&gt;The following is an online supplement to the &lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;poster&lt;/a&gt; I’m presenting at the &lt;a href=&quot;http://synbioconference.org/2017&quot;&gt;2017 SEED conference&lt;/a&gt; in Vancouver and a talk that I gave at the &lt;a href=&quot;https://www.ebrc.org/Fall2017&quot;&gt;2017 EBRC conference&lt;/a&gt;.&lt;/p&gt;
 
 &lt;h3 id=&quot;using-synthetic-biology-to-understand-the-utility-of-active-degradation&quot;&gt;Using Synthetic Biology to Understand the Utility of Active Degradation&lt;/h3&gt;
 &lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot;&gt;
@@ -33,7 +33,7 @@
 Your browser does not support the video tag.
 &lt;/video&gt;
 
-&lt;p&gt;What is the utility of active degradation bacterial genetic networks and how can synthetic biology help us tease out its role in bet-hedging systems? Using a combination of synthetic reporter plasmids and mathematical modeling we investigate this problem.&lt;/p&gt;
+&lt;p&gt;What is the utility of active degradation in bacterial genetic networks and how can synthetic biology help us tease out its role in bet-hedging systems? Using a combination of synthetic reporter plasmids and mathematical modeling we investigate this problem.&lt;/p&gt;
 
 &lt;h2 id=&quot;phenotypic-diversity-in-isogenic-bacteria-can-help-survive-unexpected-antibiotic-stress&quot;&gt;Phenotypic diversity in isogenic bacteria can help survive unexpected antibiotic stress&lt;/h2&gt;
 &lt;p&gt;As shown in &lt;a href=&quot;https://www.nature.com/articles/srep19538&quot;&gt;this fantastic paper&lt;/a&gt;, even bacteria that are genetically identical can demonstrate differing susceptibility to antibiotics.&lt;/p&gt;
@@ -62,6 +62,16 @@ Your browser does not support the video tag.
 &lt;iframe src=&quot;/res/blog_7/waves.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot; align=&quot;center&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;This difference can be described by the metric correlation time, which is to say how well knowing the state of the processes now informs where it will be in the future. For instance, pure white noise has a correlation time of 0 minutes - knowing where it is now does not inform at all where it will be in the future.&lt;/p&gt;
+
+&lt;p&gt;Additionally, thanks to the assumption of ergodicity we can assume that following one time trace for a sufficiently long period of time is the same as ob many processes at the same time point.&lt;/p&gt;
+
+&lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;source src=&quot;/res/blog_7/1gene_ts.webm&quot; type=&quot;video/webm&quot; /&gt;
+
+  &lt;source src=&quot;/res/blog_7/1gene_ts.mp4&quot; type=&quot;video/mp4&quot; /&gt;
+
+Your browser does not support the video tag.
+&lt;/video&gt;
 
 &lt;!-- Watch the following animation to see how
 &lt;video controls id=&quot;video1&quot; width=&quot;100%&quot;&gt;
