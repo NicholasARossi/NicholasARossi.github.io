@@ -1,0 +1,18 @@
+Metadata-Version: 1.1
+Name: django-simple-poll
+Version: 0.2.1
+Summary: Django simple poll application
+Home-page: https://github.com/applecat/django-simple-poll
+Author: Dmitry Akinin
+Author-email: d.akinin@gmail.com
+License: UNKNOWN
+Download-URL: https://github.com/applecat/django-simple-poll/archive/v0.2.1.tar.gz
+Description: UNKNOWN
+Platform: UNKNOWN
+Classifier: Development Status :: 4 - Beta
+Classifier: Environment :: Web Environment
+Classifier: Intended Audience :: Developers
+Classifier: License :: OSI Approved :: BSD License
+Classifier: Operating System :: OS Independent
+Classifier: Programming Language :: Python
+Classifier: Framework :: Django

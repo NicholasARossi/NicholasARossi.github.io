@@ -1,0 +1,267 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Schools are still segregated &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+    <meta property="og:title" content="Schools are still segregated">
+      
+      <meta name="description" content="Did segregation really end a generation ago? Here we investigate how it continues, quantitatively.">
+      <meta name="og:description" content="Did segregation really end a generation ago? Here we investigate how it continues, quantitatively.">
+      
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/segregation">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2018-01-01">
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation">
+        <li><a href="/home.html">Blog</a></li>
+
+        <li><a href="/papers/" title="Publicaitons and presentations">Papers</a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Hobbies</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <div class="content">
+  <div class="post single">
+    
+    <h1>Schools are still segregated</h1>
+    <info datetime="2018-01-01">
+      Jan 01, 2018
+    </info>
+    
+    <div class="body"><script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
+
+<html>
+  <head>
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker" />
+    <style>
+      h1,h2,h3,head,title {
+        font-family: 'Permanent Marker',serif;
+        color: darkturquoise;
+      }
+      body {
+        <!-- font-family: 'timesnewroman',serif; -->
+        color: black;
+      }
+    </style>
+  </head>
+</html>
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<h2 id="segregation-is-dead-long-live-segregation">Segregation is dead, long live segregation</h2>
+
+<p>When I think of segregation, I think of a historical event. Something begun under the umbrella of government agency and vanquished by collective endeavor. However, the data suggest that despite the end of exogenous state-sponsored inequety, we see a emergent clustering of ethnic groups in america that produces non-homogenous demographic distributions in k12 education. Below we investigate the scope of this phenomenon using a number of quantitative techniques.</p>
+
+<h2 id="demographics-are-distributed-regionally-then-locally">Demographics are distributed regionally, then locally</h2>
+<p>Before we evaluate local clustering in school populations, we must begin by decoupling regional phenomena. Not every state has the same demographics. There exists majority minority states (Hawaii, California, Texas) and majority white states (Vermont, Maine, West Virginia). We are a collective of vaguely autonomous republics and any evaluation of a student body must be contextualized by the state in which it is located. Below we see the white proportionality of each state:</p>
+
+<iframe class="lazyload" src="/res/blog_8/map.html" width="100%" height="50%" scrolling="no"></iframe>
+
+<h2 id="what-does-modern-segregation-look-like">What does modern segregation look like?</h2>
+
+<p>Unlike de jure segregation of the past, modern racial clustering is not <em>usually</em> a consequence of direct state action, but rather an emergent phenomenon arising from the interface of human behavior and public policy. In fact <a href="https://en.wikipedia.org/wiki/Parents_Involved_in_Community_Schools_v._Seattle_School_District_No._1">the supreme court ruled in 2007</a> that it was unconsitutional for state actors to forcibly integrate schools - so racial separation today is a passive, bottom-up process.</p>
+
+<p>To examine the face of modern segregation let’s consider the following two high-schools : <span style="color:darkturquoise"><strong>Minnetonka High</strong></span> just outside of Minneapolis, MN and <span style="color:magenta"><strong>Berkmar High</strong></span> just outside of Atlanta, GA.
+Minnetonka is predominatly white and Berkmar is predominatly non-white, but that alone is not enough to indicate <em>segragation</em>.</p>
+
+<iframe class="lazyload" src="/res/blog_8/schools.html" width="100%" height="300px" scrolling="yes"></iframe>
+
+<p>The question is - how well do the demographics of these schools mirror the demographics of the state? Are they representative of a well mixed population?
+To gain context, lets consider a <span style="color:darkgrey"><strong>hypothetical distribution</strong></span> of schools that comes from random resampling of the total state demographics. Here, we would expect some variance in the demographics of the schools as a function of the the error in bootstrap resampling. However, we can see that the distribution remains relatively homogenous with schools neither being purely white nor purely non-white.  Reality is very far from this randomly generated distribution. For both <span style="color:darkturquoise"><strong>Minnesota</strong></span> and <span style="color:magenta"><strong>Georgia</strong></span>, we see many schools are not well mixed - the ensemble of schools expresses a heterogeneous range of demographics.</p>
+
+<p><a href="/res/blog_8/MN_GA_density.png">
+<img class="lazyload" src="/res/blog_8/MN_GA_density.png" />
+</a>﻿</p>
+
+<p>The qualitiative difference are clear, but what quantitiative metrics can we employ to comapare the relative <em>segregation</em> of each state.</p>
+
+<p>First lets borrow a tool from information theory <a href="https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence">Kullback Leibler divergence</a>. This is a non-parametric calculation of how similar two distribution are. In this case, we can compare how similar the actual demographic distributions of schools in a state are to the distribution that would be generated from pure random sampling.</p>
+
+<video controls="" loop="" autoplay="" width="100%" height="300">
+<source src="/res/blog_8/mass_data.webm" autoplay="true" type="video/webm" />
+<center>
+\[
+D_{kL}(P||Q)= \int^{\infty}_{-\infty} p(x)log\frac{p(x)}{q(x)} \, dx
+\]
+</center>
+</video>
+
+<p>Alternatively, we can use binomial proportion confidence intervals to calculate how unlikely randomly sampling a school population would be. In this case $\hat{p}(x)$ is the observed percentage of white people in a school, ${p}(x)$ is the state wide percentage, and n is the number of students in that school. The z score can be understood as a measure of unlikeliness that that school population could occur randomly - or how segregated it is.</p>
+<center>
+\[
+z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
+\]
+</center>
+<p>Then we can average that over all k schools in the state.</p>
+<center>
+\[
+\bar{z}=\frac{1}{k}\sum_{j=1}^{k}\frac{|\hat{p}_j(x)-p_j(x)|}{\sqrt{\frac{1}{n}(p_j(x)*(1-p_j(x)))}}
+\]
+</center>
+
+<p><a href="/res/blog_8/MN_GA_quant.png">
+<img class="lazyload" src="/res/blog_8/MN_GA_quant.png" />
+</a>﻿</p>
+
+<p>We see that both metric confirm similar trends : that Minnesota is less segregated for its demographics than Georgia.</p>
+
+<h3 id="segregation-manifests-spatially">Segregation manifests spatially</h3>
+<p>An important element of these data is the spatial component. We can see that region determines demographics in a granular way by investigating particular states.</p>
+
+<p><a href="/res/blog_8/california.png">
+<img class="lazyload" src="/res/blog_8/california.png" />
+</a>﻿</p>
+
+<p><a href="/res/blog_8/ny.png">
+<img class="lazyload" src="/res/blog_8/ny.png" />
+</a>﻿</p>
+
+<p>New York shows that certain upstate is disproportionately white while the city is disproportionately nonwhite. Interestingly, even within the city there exists demographic heterogeneity manifested as local clustering.</p>
+
+<p><a href="/res/blog_8/manhattan.png">
+<img class="lazyload" src="/res/blog_8/manhattan.png" />
+</a>﻿</p>
+
+<h2 id="verdict--how-segregated-is-your-state">Verdict : how segregated is your state?</h2>
+
+<p>Applying the z-score metric from above we can calculate the average degree of segregation for each state.</p>
+
+<iframe src="/res/blog_8/map3.html" width="100%" height="50%" scrolling="no"></iframe>
+<!-- <iframe src="/res/blog_8/states_scatter.html" width="100%"  height="100%"  scrolling="no"></iframe> -->
+
+<h2 id="what-predicts-this-segregation">What predicts this segregation?</h2>
+<p>We can consider several covariates with this emergent, de-facto, segregation. First, the demographics of the state matter, as you can’t be segregated if you’re completely homogenous. Mouse over the state below to reveal their <span style="color:teal"><strong>% white</strong></span> as well as thier <span style="color:magenta"><strong>segregation score</strong></span>.</p>
+
+<style>.embed-container { position: relative; padding-bottom: 85%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="/res/blog_8/states_scatter.html" frameborder="0" allowfullscreen="" scrolling="no"></iframe></div>
+
+<p>However, this variable doesn’t have strong predictive power over whether the state is segregated or not. The level of urbanization of the state does however. Mouse over the state below to reveal their <span style="color:coral"><strong>% urbanized</strong></span> as well as thier <span style="color:slategrey"><strong>segregation score</strong></span>.</p>
+
+<style>.embed-container { position: relative; padding-bottom: 85%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
+<div class="embed-container"><iframe src="/res/blog_8/states_scatter2.html" frameborder="0" allowfullscreen="" scrolling="no"></iframe></div>
+
+<h3 id="afterword">Afterword</h3>
+<p>US government data is highly racialized which lends itself to testing these sorts of hypotheses. For instance, tracking distributions of student family income is a little harder. However, statistics like income could be inferred from proxy variables like the percentage of students qualifying in free lunch programs.</p>
+
+<p>Still, these data represent quantitatively disprove the hypothesis that segregation is exclusively a top-down phenomenon that was part of the historical record. It still exists today in part because of the emergent clustering produced from humans tendency to self-associate.</p>
+
+<h3 id="notes">Notes:</h3>
+<ul>
+  <li>Data can be found <a href="https://ocrdata.ed.gov/">here</a>; the urbanization and state demographics just from wikipedia</li>
+  <li><a href="https://github.com/NicholasARossi/Segregation">Code</a> ; maps were made with <a href="https://matplotlib.org/basemap/">basemap</a> - ideas for the map figures came from <a href="http://ramiro.org/notebook/new-york-roads-railways/">here</a></li>
+</ul>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+
+
+  
+  </div>
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
