@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-01-06T17:12:38-05:00</updated>
+  <updated>2018-01-06T17:37:04-05:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -136,8 +136,12 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
 
 &lt;p&gt;Still, these data represent quantitatively disprove the hypothesis that segregation is exclusively a top-down phenomenon that was part of the historical record. It still exists today in part because of the emergent clustering produced from humans tendency to self-associate.&lt;/p&gt;
 
-&lt;p&gt;Watch the video essay below for further analysis:&lt;/p&gt;
-&lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/watch?v=uszdal33edo&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot;&gt;&lt;/iframe&gt;
+&lt;p&gt;Watch the video essay below for further analysis:
+&lt;a href=&quot;https://www.youtube.com/watch?v=uszdal33edo?rel=0&quot;&gt;
+&lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_8/thumb.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;!-- &lt;iframe width=&quot;560&quot; height=&quot;315&quot; src=&quot;https://www.youtube.com/watch?v=uszdal33edo&quot;&gt;&lt;/iframe&gt; --&gt;
 
 &lt;h3 id=&quot;notes&quot;&gt;Notes:&lt;/h3&gt;
 &lt;ul&gt;
