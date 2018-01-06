@@ -1,4 +1,4 @@
-d3.csv('statescatter.csv', function (data) {
+d3.csv('statescatter2.csv', function (data) {
   // states
   var body = d3.select('body')
 	var margin = { top: 50, right: 50, bottom: 50, left: 50 }
