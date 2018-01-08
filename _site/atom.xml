@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-01-06T17:37:04-05:00</updated>
+  <updated>2018-01-07T20:28:49-05:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -41,19 +41,19 @@
 
 &lt;h2 id=&quot;segregation-is-dead-long-live-segregation&quot;&gt;Segregation is dead, long live segregation&lt;/h2&gt;
 
-&lt;p&gt;When I think of segregation, I think of a historical event. Something begun under the umbrella of government agency and vanquished by collective endeavor. However, the data suggest that despite the end of exogenous state-sponsored inequety, we see a emergent clustering of ethnic groups in america that produces non-homogenous demographic distributions in k12 education. Below we investigate the scope of this phenomenon using a number of quantitative techniques.&lt;/p&gt;
+&lt;p&gt;When I think of segregation, I think of a historical event. Something begun under the umbrella of government agency and vanquished by collective endeavor. However, the data suggest that despite the end of exogenous state-sponsored inequity, we see a emergent clustering of ethnic groups in America that produces non-homogenous demographic distributions in k-12 education. Below we investigate the scope of this phenomenon using a number of quantitative techniques.&lt;/p&gt;
 
 &lt;h2 id=&quot;demographics-are-distributed-regionally-then-locally&quot;&gt;Demographics are distributed regionally, then locally&lt;/h2&gt;
-&lt;p&gt;Before we evaluate local clustering in school populations, we must begin by decoupling regional phenomena. Not every state has the same demographics. There exists majority minority states (Hawaii, California, Texas) and majority white states (Vermont, Maine, West Virginia). We are a collective of vaguely autonomous republics and any evaluation of a student body must be contextualized by the state in which it is located. Below we see the white proportionality of each state:&lt;/p&gt;
+&lt;p&gt;Before we evaluate local clustering in school populations, we must begin by decoupling it regional phenomena. Not every state has the same demographics. There exists majority minority states (Hawaii, California, Texas) and majority white states (Vermont, Maine, West Virginia). We are a collective of vaguely autonomous republics and any evaluation of a student body of a particular school must be contextualized by the statistics of the state in which it is located. Below we see the white proportionality of each state:&lt;/p&gt;
 
 &lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_8/map.html&quot; width=&quot;100%&quot; height=&quot;50%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;h2 id=&quot;what-does-modern-segregation-look-like&quot;&gt;What does modern segregation look like?&lt;/h2&gt;
 
-&lt;p&gt;Unlike de jure segregation of the past, modern racial clustering is not &lt;em&gt;usually&lt;/em&gt; a consequence of direct state action, but rather an emergent phenomenon arising from the interface of human behavior and public policy. In fact &lt;a href=&quot;https://en.wikipedia.org/wiki/Parents_Involved_in_Community_Schools_v._Seattle_School_District_No._1&quot;&gt;the supreme court ruled in 2007&lt;/a&gt; that it was unconsitutional for state actors to forcibly integrate schools - so racial separation today is a passive, bottom-up process.&lt;/p&gt;
+&lt;p&gt;Unlike de jure segregation of the past, modern racial clustering is not &lt;em&gt;usually&lt;/em&gt; a consequence of direct state action, but rather an emergent phenomenon arising from the interface of human behavior and public policy. In fact &lt;a href=&quot;https://en.wikipedia.org/wiki/Parents_Involved_in_Community_Schools_v._Seattle_School_District_No._1&quot;&gt;the supreme court ruled in 2007&lt;/a&gt; that it was unconstitutional for state actors to forcibly integrate schools - so racial separation today is a passive, bottom-up process.&lt;/p&gt;
 
 &lt;p&gt;To examine the face of modern segregation let’s consider the following two high-schools : &lt;span style=&quot;color:darkturquoise&quot;&gt;&lt;strong&gt;Minnetonka High&lt;/strong&gt;&lt;/span&gt; just outside of Minneapolis, MN and &lt;span style=&quot;color:magenta&quot;&gt;&lt;strong&gt;Berkmar High&lt;/strong&gt;&lt;/span&gt; just outside of Atlanta, GA.
-Minnetonka is predominatly white and Berkmar is predominatly non-white, but that alone is not enough to indicate &lt;em&gt;segragation&lt;/em&gt;.&lt;/p&gt;
+Minnetonka is predominantly white and Berkmar is predominantly non-white, but that alone is not enough to indicate &lt;em&gt;segragation&lt;/em&gt;.&lt;/p&gt;
 
 &lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_8/schools.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;yes&quot;&gt;&lt;/iframe&gt;
 
@@ -64,12 +64,14 @@ To gain context, lets consider a &lt;span style=&quot;color:darkgrey&quot;&gt;&l
 &lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_8/MN_GA_density.png&quot; /&gt;
 &lt;/a&gt;﻿&lt;/p&gt;
 
-&lt;p&gt;The qualitiative difference are clear, but what quantitiative metrics can we employ to comapare the relative &lt;em&gt;segregation&lt;/em&gt; of each state.&lt;/p&gt;
+&lt;p&gt;The qualitative difference are clear, but what quantitative metrics can we employ to compare the relative &lt;em&gt;segregation&lt;/em&gt; of each state.&lt;/p&gt;
 
 &lt;p&gt;First lets borrow a tool from information theory &lt;a href=&quot;https://en.wikipedia.org/wiki/Kullback%E2%80%93Leibler_divergence&quot;&gt;Kullback Leibler divergence&lt;/a&gt;. This is a non-parametric calculation of how similar two distribution are. In this case, we can compare how similar the actual demographic distributions of schools in a state are to the distribution that would be generated from pure random sampling.&lt;/p&gt;
 
 &lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot;&gt;
 &lt;source src=&quot;/res/blog_8/mass_data.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
+&lt;source src=&quot;/res/blog_8/mass_data.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
+
 &lt;center&gt;
 \[
 D_{kL}(P||Q)= \int^{\infty}_{-\infty} p(x)log\frac{p(x)}{q(x)} \, dx
@@ -77,7 +79,7 @@ D_{kL}(P||Q)= \int^{\infty}_{-\infty} p(x)log\frac{p(x)}{q(x)} \, dx
 &lt;/center&gt;
 &lt;/video&gt;
 
-&lt;p&gt;Alternatively, we can use binomial proportion confidence intervals to calculate how unlikely randomly sampling a school population would be. In this case $\hat{p}(x)$ is the observed percentage of white people in a school, ${p}(x)$ is the state wide percentage, and n is the number of students in that school. The z score can be understood as a measure of unlikeliness that that school population could occur randomly - or how segregated it is.&lt;/p&gt;
+&lt;p&gt;Alternatively, we can solve the binomial proportion confidence interval formula for how unlikely randomly sampling a school population would be. In this case $\hat{p}(x)$ is the observed percentage of white people in a school, ${p}(x)$ is the state wide percentage, and n is the number of students in that school. The z score can be understood as a measure of unlikeliness that that school population could occur randomly - or how segregated it is.&lt;/p&gt;
 &lt;center&gt;
 \[
 z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
@@ -97,7 +99,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
 &lt;p&gt;We see that both metric confirm similar trends : that Minnesota is less segregated for its demographics than Georgia.&lt;/p&gt;
 
 &lt;h3 id=&quot;segregation-manifests-spatially&quot;&gt;Segregation manifests spatially&lt;/h3&gt;
-&lt;p&gt;An important element of these data is the spatial component. We can see that region determines demographics in a granular way by investigating particular states.&lt;/p&gt;
+&lt;p&gt;An important element of these data is the spatial component. See the maps below of the first and fourth most populous states and how their school demographics are distributed spatially.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/res/blog_8/california.png&quot;&gt;
 &lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_8/california.png&quot; /&gt;
@@ -121,12 +123,12 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
 &lt;!-- &lt;iframe src=&quot;/res/blog_8/states_scatter.html&quot; width=&quot;100%&quot;  height=&quot;100%&quot;  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
 
 &lt;h2 id=&quot;what-predicts-this-segregation&quot;&gt;What predicts this segregation?&lt;/h2&gt;
-&lt;p&gt;We can consider several covariates with this emergent, de-facto, segregation. First, the demographics of the state matter, as you can’t be segregated if you’re completely homogenous. Mouse over the state below to reveal their &lt;span style=&quot;color:teal&quot;&gt;&lt;strong&gt;% white&lt;/strong&gt;&lt;/span&gt; as well as thier &lt;span style=&quot;color:magenta&quot;&gt;&lt;strong&gt;segregation score&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;We can consider several covariates with this emergent, de-facto, segregation. First, the demographics of the state matter, as you can’t be segregated if you’re completely homogenous. Mouse over the state below to reveal their &lt;span style=&quot;color:teal&quot;&gt;&lt;strong&gt;% white&lt;/strong&gt;&lt;/span&gt; as well as their &lt;span style=&quot;color:magenta&quot;&gt;&lt;strong&gt;segregation score&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;
 
 &lt;style&gt;.embed-container { position: relative; padding-bottom: 85%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
 &lt;div class=&quot;embed-container&quot;&gt;&lt;iframe src=&quot;/res/blog_8/states_scatter.html&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
 
-&lt;p&gt;However, this variable doesn’t have strong predictive power over whether the state is segregated or not. The level of urbanization of the state does however. Mouse over the state below to reveal their &lt;span style=&quot;color:coral&quot;&gt;&lt;strong&gt;% urbanized&lt;/strong&gt;&lt;/span&gt; as well as thier &lt;span style=&quot;color:slategrey&quot;&gt;&lt;strong&gt;segregation score&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;
+&lt;p&gt;However, this variable doesn’t have strong predictive power over whether the state is segregated or not. The level of urbanization of the state seems to have more of an impact. Mouse over the state below to reveal their &lt;span style=&quot;color:coral&quot;&gt;&lt;strong&gt;% urbanized&lt;/strong&gt;&lt;/span&gt; as well as their &lt;span style=&quot;color:slategrey&quot;&gt;&lt;strong&gt;segregation score&lt;/strong&gt;&lt;/span&gt;.&lt;/p&gt;
 
 &lt;style&gt;.embed-container { position: relative; padding-bottom: 85%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }&lt;/style&gt;
 &lt;div class=&quot;embed-container&quot;&gt;&lt;iframe src=&quot;/res/blog_8/states_scatter2.html&quot; frameborder=&quot;0&quot; allowfullscreen=&quot;&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;&lt;/div&gt;
