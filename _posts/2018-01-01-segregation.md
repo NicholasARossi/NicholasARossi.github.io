@@ -5,7 +5,7 @@ description: "Did segregation really end a generation ago? Here we investigate h
 comments: yes
 ---
 <script src="https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js"></script>
-
+<meta property="og:image" content="/res/blog_8/thumb.png">
 <html>
   <head>
     <link rel="stylesheet"

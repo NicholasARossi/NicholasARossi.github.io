@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-01-07T20:28:49-05:00</updated>
+  <updated>2018-01-07T21:21:50-05:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -16,6 +16,8 @@
     <updated>2018-01-01T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//segregation</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
+
+&lt;meta property=&quot;og:image&quot; content=&quot;/res/blog_8/thumb.png&quot; /&gt;
 
 &lt;html&gt;
   &lt;head&gt;
