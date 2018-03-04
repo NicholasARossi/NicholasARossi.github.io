@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-03-04T09:58:04-05:00</updated>
+  <updated>2018-03-04T12:09:22-05:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -36,18 +36,18 @@
 
 &lt;h3 id=&quot;familiar-faces&quot;&gt;Familiar Faces&lt;/h3&gt;
 
-&lt;p&gt;There are a lot of recurrent actors in this year’s best picture nominees, the network diagram below shows how they connect.
+&lt;p&gt;There are a lot of recurrent actors in this year’s best picture nominees. The  network diagram below shows how they connect.
 &lt;a href=&quot;/res/blog_12/cluster.png&quot;&gt;
 &lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster.png&quot; /&gt;
 &lt;/a&gt;﻿&lt;/p&gt;
 
-&lt;p&gt;Michael Stuhlbarg who appears in the post, the shape of water and call me by your name has a 33% chance of being in a movie that will win best picture!&lt;/p&gt;
+&lt;p&gt;The most outrageous example of this is &lt;a href=&quot;https://en.wikipedia.org/wiki/Michael_Stuhlbarg&quot;&gt;Michael Stuhlbarg&lt;/a&gt;. He appears in “The Post”, “The Shape of Water” and “Call Me by Your Name”. If the academy awards were purely random, he would have a 33% chance of being in a movie that would win best picture!&lt;/p&gt;
 
-&lt;p&gt;Breaking this down a bit, lets just look at this year’s two WWII epics : Dunkirk and Darkest Hour. There’s only one actor that unites the two films. Mouse over for the complete cast list.&lt;/p&gt;
+&lt;p&gt;Breaking this down a bit, let’s just look at this year’s two WWII epics : Dunkirk and Darkest Hour. There’s only one actor that unites the two films. Mouse over for the complete cast list.&lt;/p&gt;
 
 &lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster_ww2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;Phantom thread is on it’s own, having shared no actors with any other films. The main cluster can contains the remain 6 films and can be investigated below:&lt;/p&gt;
+&lt;p&gt;Phantom thread is on it’s own, having shared no actors with any other films. The main cluster contains the remain 6 films and can be investigated below:&lt;/p&gt;
 
 &lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/other_sets.html&quot; width=&quot;100%&quot; height=&quot;500px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
