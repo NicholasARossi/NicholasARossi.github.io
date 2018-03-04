@@ -3,12 +3,68 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-01-09T15:15:29-05:00</updated>
+  <updated>2018-03-04T00:50:01-05:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi1@uvm.edu</email>
   </author>
+  
+  <entry>
+    <title>Shared Actors between the 2018 Best Picture Nominees</title>
+    <link href="http://nicholasarossi.github.io//Academy"/>
+    <updated>2018-03-01T00:00:00-05:00</updated>
+    <id>http://nicholasarossi.github.io//Academy</id>
+    <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
+
+&lt;html&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=EBGaramond&quot; /&gt;
+&lt;style&gt;
+@font-face {
+  font-family: &#39;ebgaramond&#39;;
+  src: url(&#39;/res/blog_12/EBGaramond.ttf&#39;) format(&#39;truetype&#39;);
+  font-weight: normal;
+  font-style: normal;
+}
+  h1,h2,h3,head,title {
+    font-family: &#39;ebgaramond&#39;,serif;
+    color: Black;
+    &lt;!-- background-color: gold; --&gt;
+  }
+&lt;/style&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&quot;familiar-faces&quot;&gt;Familiar Faces&lt;/h3&gt;
+
+&lt;p&gt;There are a lot of recurrent actors in this year’s best picture nominees, the network diagram below shows how they connect.
+&lt;a href=&quot;/res/blog_12/cluster.png&quot;&gt;
+&lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;Michael Stuhlbarg who appears in the post, the shape of water and call me by your name has a 33% chance of being in a movie that will win best picture!&lt;/p&gt;
+
+&lt;p&gt;Breaking this down a bit, lets just look at this year’s two WWII epics : Dunkirk and Darkest Hour. There’s only one actor that unites the two films. Mouse over for the complete cast list.&lt;/p&gt;
+
+&lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster_ww2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Phantom thread is on it’s own, having shared no actors with any other films. The main cluster can contains the remain 6 films and can be investigated below:&lt;/p&gt;
+
+&lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/other_sets.html&quot; width=&quot;100%&quot; height=&quot;500px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+&lt;p&gt;Just as with action stars getting reused in blockbuster cinema, it appears there is a culture of employing the same actors in the award targeting niche.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/academy_awards/tree/master&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The data was taken from &lt;a href=&quot;https://www.themoviedb.org&quot;&gt;the movie db&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Schools are still segregated</title>

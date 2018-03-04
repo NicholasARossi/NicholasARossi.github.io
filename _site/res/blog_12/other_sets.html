@@ -1,0 +1,175 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+
+.link {
+  stroke: #ccc;
+}
+body {
+background: #eee;
+}
+
+@font-face {
+  font-family: 'ebgaramond';
+  src: url('EBGaramond.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+.node text {
+  pointer-events: none;
+  font: 'ebgaramond';
+}
+</style>
+<body>
+<script src="//d3js.org/d3.v3.min.js"></script>
+<script>
+
+var width = window.innerWidth,
+    height = window.innerHeight,
+    radius = 6;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width)
+    .attr("height", height);
+d3.selection.prototype.moveToFront = function() {
+  return this.each(function(){
+    this.parentNode.appendChild(this);
+  });
+};
+var force = d3.layout.force()
+    .gravity(.25)
+    .distance(30)
+    .charge(-50)
+    .size([width, height]);
+
+d3.json("data.json", function(error, json) {
+  if (error) throw error;
+
+  force
+      .nodes(json.nodes)
+      .links(json.links)
+      .start();
+
+  var link = svg.selectAll(".link")
+      .data(json.links)
+    .enter().append("line")
+      .attr("class", "link");
+  var colorz =["#2c7bb6","#00a6ca","#00ccbc","#90eb9d","#f9d057","#f29e2e", "#e76818","#d7191c","#7C26CB"];
+
+  var unique_actors=[ 'Nick Searcy', 'Lucas Hedges', 'Charley Palmer Rothwell', 'Caleb Landry Jones', 'Bradley Whitford', 'Tracy Letts', 'Timothée Chalamet', 'Kathryn Newton', 'Michael Stuhlbarg']
+  var movie_titles=['The Shape of Water',
+ 'Three Billboards',
+ 'Call Me by Your Name',
+ 'The Post',
+ 'Get Out',
+ 'Lady Bird']
+
+
+  var node = svg.selectAll(".node")
+      .data(json.nodes)
+    .enter().append("g")
+      .attr("class", "node")
+      .on("mouseover", mouseover)
+.on("mouseout", mouseout)
+      .call(force.drag);
+      function mouseover() {
+        d3.select(this).moveToFront();
+
+    d3.select(this).select("text").transition()
+        .duration(750)
+        .style("font-size",(width/30)+"px")
+;
+  }
+  function mouseout() {
+    d3.select(this).select("text").transition()
+        .duration(750)
+        .style("font-size","0px")
+;
+  }
+
+      node.append("text")
+          .attr("dx", 12)
+          .attr("dy", ".35em")
+          .moveToFront()
+          .text(function(d) {return d.name })
+    .style("font-family","ebgaramond")
+    .style("font-size","0px")
+    .style("fill",  'black');
+
+    var texts = svg.selectAll()
+        .data(colorz)
+        .enter().append("text")
+        .attr("x", function(d,i){
+            return 0
+        })
+        .attr("y", function(d,i){return((height/20)+(height/20)*i)})
+        // console.log(d.data1)
+        .text(function(d,i){
+          return movie_titles[i]})
+        .style("font-family","ebgaramond")
+        .style("font-size",(width/30)+"px")
+        .style("fill", function(d,i){
+          return colorz[i];
+        });;
+
+  //   node.append("text")
+  //       .attr("dx", 12)
+  //       .attr("dy", ".35em")
+  //       .moveToFront()
+  //       .text(function(d) { if (movie_titles.indexOf(d.name) >= 0) {
+  // return d.name }})
+  //       .style("font-family","ebgaramond")
+  //       .style("font-size",(width/30)+"px")
+  //       .style("fill", function(d,i){
+  //         return 'slategrey';
+  //       });
+
+        node.append("circle")
+            .attr("r",function(d) { if(d.group< 9 ){return 5} else { return 8} })
+            .attr("fill", function(d) { return colorz[d.group]; })
+            .style('opacity',function(d) { if(d.group< 9 ){return 0.9} else { return 1.0} })
+            .attr("x", -8)
+            .attr("y", -8)
+            .attr("width", 16)
+            .attr("height", 16);
+
+
+      //   node.append("text")
+      //       .attr("dx", 12)
+      //       .attr("dy", ".35em")
+      //       .text(function(d) { if (unique_actors.indexOf(d.name) >= 0) {
+      // return d.name }})
+      //       .style("font-family","ebgaramond")
+      //       .style("font-size",(width/30)+"px")
+      //       .style("fill", function(d,i){
+      //         return colorz[d.group];
+      //       });
+
+    //   node.append("text")
+    //       .attr("dx", 12)
+    //       .attr("dy", ".35em")
+    //       .text(function(d) { if (movie_titles.indexOf(d.name) >= 0) {
+    // return d.name }})
+    //       .style("font-family","ebgaramond")
+    //       .style("font-size",(width/40)+"px")
+    //       .style("fill", function(d,i){
+    //         return colorz[d.group];
+    //       });
+
+  force.on("tick", function() {
+    node.attr("cx", function(d) { return d.x = Math.max(radius, Math.min(width - radius, d.x)); })
+    .attr("cy", function(d) { return d.y = Math.max(radius, Math.min(height - radius, d.y)); });
+
+    link.attr("x1", function(d) { return d.source.x; })
+        .attr("y1", function(d) { return d.source.y; })
+        .attr("x2", function(d) { return d.target.x; })
+        .attr("y2", function(d) { return d.target.y; });
+
+    node.attr("transform", function(d) { return "translate(" + d.x + "," + d.y + ")"; });
+
+
+
+  });
+});
+
+</script>

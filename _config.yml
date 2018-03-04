@@ -11,3 +11,4 @@ gems:
   - rdiscount
 url: "http://www.rossidata.com" # the base hostname & protocol for your site
 
+github: [metadata]

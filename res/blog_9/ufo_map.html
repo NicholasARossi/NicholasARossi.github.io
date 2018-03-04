@@ -1,0 +1,122 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+	.state{
+		fill: none;
+		stroke: #ffffff;
+		stroke-width: 1;
+	}
+	.state:hover{
+		fill-opacity:0.5;
+	}
+	#tooltip {
+		position: absolute;
+		text-align: center;
+		padding: 20px;
+		margin: 10px;
+		font: 12px sans-serif;
+		background: lightsteelblue;
+		border: 1px;
+		border-radius: 2px;
+		pointer-events: none;
+	}
+	#tooltip h4{
+		margin:0;
+		font-size:14px;
+	}
+	#tooltip{
+		background:rgba(0,0,0,0.9);
+		border:1px solid grey;
+		border-radius:5px;
+		font-size:12px;
+		width:auto;
+		padding:4px;
+		color:white;
+		opacity:0;
+	}
+	#tooltip table{
+		table-layout:fixed;
+	}
+	#tooltip tr td{
+		padding:0;
+		margin:0;
+	}
+	#tooltip tr td:nth-child(1){
+		width:50px;
+	}
+	#tooltip tr td:nth-child(2){
+		text-align:center;
+	}
+</style>
+<body>
+<div id="tooltip"></div><!-- div to hold tooltip. -->
+<svg  viewBox="0 0 1500 600" width="960" height="600" id="statesvg"></svg> <!-- svg to hold the map. -->
+<!-- <script>
+    function zoom() {
+        var circle = document.getElementById('statesvg');
+        circle.setAttribute("transform", "scale(.5)");
+    }
+    zoom();
+</script> -->
+<script src="uStates.js"></script> <!-- creates uStates. -->
+<script src="http://d3js.org/d3.v3.min.js"></script>
+
+<script>
+
+	function tooltipHtml(n, d){	/* function to create html content string in tooltip div. */
+		return "<h4>"+n+"</h4><table>"+
+			"<tr><td>Sightings per 100,000 people: </td><td>"+(d.low)+"</td></tr>"+
+			"</table>";
+	}
+  var j=-1
+  var rate=[0.000142211,
+		0.000479394,
+		0.000393816,
+		0.000223625,
+		0.000246648,
+		0.000275814,
+		0.000269571,
+		0.00019346,
+		0,
+		0.00020719,
+		0.000131867,
+		0.000246577,
+		0.000334757,
+		0.000205677,
+		0.000209376,
+		0.00022632,0.000224272,0.000206549,
+		0.000128032,0.00047618,0.000151672,0.00019987,
+		0.000208716,0.000196918,0.000138688,0.000259054,
+		0.000493732,0.000213586,0.000313057,0.000402072,
+		0.000168787,0.000390867,0.00016261,0.000186103,
+		0.000182316,0.00020881,0.000195841,0.000457933,
+		0.000201679,0.000274544,0.000219765,0.000228313,
+		0.00018,0.000133823,0.000248004,0.000490382,
+0.00016617,0.000595229,0.000263539,0.000230969,0.000349765];
+	var sampleData ={};	/* Sample random data. */
+	["AL","AK", "AZ","AR",  "CA", "CO", "CT", "DE", "DC", "FL", "GA", "HI","ID", "IL", "IN", "IA",  "KS", "KY", "LS","ME",  "MD",  "MA","MI", "MN",  "MS","MO", "MT", "NE","NV","NH", "NJ","NM", "NY","NC", "ND",     "OH", "OK", "OR", "PA", "RI", "SC", "SD", "TN", "TX", "UT","VT", "VA",  "WA",  "WV","WI", "WY"]
+		.forEach(function(d){
+      j+=1
+
+			var low=Math.round(100*Math.random()),
+				mid=Math.round(100*Math.random()),
+				high=Math.round(100*Math.random());
+			sampleData[d]={low:Math.round(rate[j]*100000), color:d3.interpolate("slategrey","#00FF00")(((rate[j]-0.000128032)/(0.000595229-0.000128032)))};
+			/* wedding day blues gradient or predawn */
+
+		});
+
+	/* draw states on id #statesvg */
+	uStates.draw("#statesvg", sampleData, tooltipHtml);
+	var box = statesvg.scrollWidth
+	// d3.select(self.frameElement).style("height", (Math.round(box.height).toString().concat("px")));
+	d3.select(self.frameElement).style("height", (box/1.5).toString().concat("px"));
+
+</script>
+
+<script>
+console.log(sampleData);
+</script>
+
+</body>

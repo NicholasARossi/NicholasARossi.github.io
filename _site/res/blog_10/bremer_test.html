@@ -1,0 +1,101 @@
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script type="text/javascript" src="master/build/CCapture.all.min.js"></script>
+<script type="text/javascript" src="Whammy.js"></script>
+<script src="download.js"></script>
+
+<!-- Include Whammy if you want to export WebM -->
+<!-- <style>
+body{
+    background-color: #696969
+  }
+</style> -->
+
+<script>
+// linear gradient from N. Bremers talk
+
+var colorScale = d3.scale.linear()
+    	.range(["#2c7bb6", "#00a6ca","#00ccbc","#90eb9d","#ffff8c","#f9d057","#f29e2e","#e76818","#d7191c"])
+    	.domain(d3.range(100));
+
+var colors =[ "#696969","#ffffff","#FF8888"]
+var canvas = document.querySelector('#c').getContext('2d'),side = 0,
+size = 100,
+x = 100,
+y = 100;
+idx=0
+
+maxidx=20
+scaler=1920/(maxidx)
+shifter=0
+trip =0
+// var capturer = new CCapture( {    format: 'png',
+//     framerate: 60,
+//     motionBlurFrames:1,
+//     verbose: true} );
+
+function myFunction (t) {
+// if (Math.round(t)<60000 && trip ==0){
+//   capturer.start();
+//
+//   console.log('start')
+//   trip=trip+1
+// }
+// if (Math.round(t)>60000 && trip ==1){
+//   console.log('stop')
+//   console.log(canvas)
+//   capturer.stop();
+//   // default save, will download automatically a file called {name}.extension (webm/gif/tar)
+//   capturer.save();
+//
+//   trip=trip+1
+// }
+var remainder = Math.round(t)%100;
+
+if (Math.round(t)>10350){
+  canvas.clearRect(0, 0, 0, 1500)
+
+}
+else {
+canvas.clearRect(0, 0, 3000, 1500)
+var bg = new Path2D();
+var xpoints=[0,1920,1920,0]
+var ypoints=[0,0,1080,1080]
+side=0
+for (side; side < 5; side++) {
+  bg.lineTo(xpoints[side], ypoints[side]);
+}
+canvas.fillStyle = colors[2];
+canvas.fill(bg);
+}
+
+idx=0
+for (idx; idx < 80; idx++){
+var xpoints=[0,1,1,.9,.9,.6,.6,.4,.4,.1,.1,0,0]
+
+var ypoints=[0,0,.4,.4,.5,.5,.4,.4,.5,.5,.4,.4,0]
+// var ypoints=[0,0,.4+1,.4+1,.5+1,.5+1,.4+1,.4+1,.5+1,.5+1,.4+1,.4+1,0]
+
+side=0
+var blox = new Path2D();
+
+for (side; side < 12; side++) {
+  blox.lineTo(xpoints[side]*scaler+scaler*(idx)+350*Math.cos(t/800+idx*Math.PI/(maxidx/2))-300, ypoints[side]*-scaler+540+350*Math.sin(t/800+idx*Math.PI/(maxidx/2)));
+  // blox.lineTo(ypoints[side]*scaler+(1900)*Math.pow(Math.sin(t/6000+idx*Math.PI/(maxidx)),200),xpoints[side]*scaler+scaler*(idx));
+  // blox.lineTo(ypoints[side]*scaler+(1900)*Math.pow(Math.sin(t/6000+idx*Math.PI/(maxidx)),200),xpoints[side]*scaler+scaler*(idx));
+
+  // blox.lineTo(xpoints[side]*scaler+scaler*(idx)+540+350*Math.pow(Math.cos(t/800+idx*Math.PI/(maxidx/2)),2)*Math.sign(Math.sin(t/800+idx*Math.PI/(maxidx/2))), ypoints[side]*-scaler+540+350*Math.pow(Math.cos(t/800+idx*Math.PI/(maxidx/2)),2)*Math.sign(Math.cos(t/800+idx*Math.PI/(maxidx/2))));
+
+}
+canvas.fillStyle = d3.interpolate(colors[0],colors[1])(idx/maxidx);
+canvas.fill(blox);
+
+
+}
+// capturer.capture(c);
+
+requestAnimationFrame(myFunction);
+}
+requestAnimationFrame(myFunction);
+
+</script>
