@@ -1,11 +1,12 @@
 <!doctype html>
 <html>
 
+  <object id="my-svg" type="image/svg+xml" data="res/splash/logo_animated.svg"></object>
 
   <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
 
-  <script src='res/splash/vivus.js'></script>
-  <script src='res/splash/pathformer.js'></script>
+  <!-- <script src='res/splash/vivus.js'></script>
+  <script src='res/splash/pathformer.js'></script> -->
   <html>
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker" type="text/css" />
@@ -24,11 +25,11 @@
 
   <style>
   body {
-  	width: 100wh;
-  	height: 98vh;
+  	width: 90wh;
+  	height: 100vh;
   	color: #fff;
-  	background: linear-gradient(180deg,  #90f2f5, #04dde9, #06a2cb, #0e5cc9, #494dbe, #6b3395, #b649a7, #c53473);
-  	background-size: 400% 400%;
+  	background: linear-gradient(-90deg,  #90f2f5, #04dde9, #06a2cb, #0e5cc9, #494dbe, #6b3395, #b649a7, #c53473);
+  	background-size: 800% 800%;
   	-webkit-animation: Gradient 15s ease infinite;
   	-moz-animation: Gradient 15s ease infinite;
   	animation: Gradient 15s ease infinite;
@@ -40,37 +41,37 @@
   }
   @-webkit-keyframes Gradient {
   	0% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   	50% {
-  		background-position: 50% 100%
+  		background-position: 100% 50%
   	}
   	100% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   }
 
   @-moz-keyframes Gradient {
     0% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   	50% {
-  		background-position: 50% 100%
+  		background-position: 100% 50%
   	}
   	100% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   }
 
   @keyframes Gradient {
     0% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   	50% {
-  		background-position: 50% 100%
+  		background-position: 100% 50%
   	}
   	100% {
-  		background-position: 50% 0%
+  		background-position: 0% 50%
   	}
   }
 
@@ -91,7 +92,7 @@
   </head>
 
   <body>
-    <svg id="letters" width="100%" height="100%" viewBox="0 0 904.26 643.69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
+    <!-- <svg id="letters" width="100%" height="100%" viewBox="0 0 904.26 643.69" version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" xml:space="preserve" style="fill-rule:evenodd;clip-rule:evenodd;stroke-linejoin:round;stroke-miterlimit:1.41421;">
 
 
       <g transform="translate(-72.05 -251.29)">
@@ -100,15 +101,15 @@
       <g transform="translate(-72.05 -251.29)">
           <path id="hletter" d="M592.21,263.06l99.25,0.27q86.23,0.23,166.09,66.42,12.33,10.55,34.71,36.34,72.61,93,72.28,203.55l0,9.79q-0.35,117.45-83.63,215.82-34,34.35-54.48,45.53-11.09,8.31-39.44,22-50.18,20.53-81.42,20.44l-121.71-.33q-9.44,0-23.39-12.75a54.94,54.94,0,0,1-14.85-38.46q0.09-30.45,27.15-46.69a48.07,48.07,0,0,1,21.17-4.65l91.77,0.25q73.54,0.2,127.08-55.48,22.21-25.67,31.7-43.41,27.16-51.4,27.32-101.79l0-10.88q0.2-66.33-42.58-126.62Q772.5,367.21,681.71,367l-41.33-.11L640.13,451q-0.12,40.23-34.66,53.56a57.75,57.75,0,0,1-11.72,1.42h-0.32q-28.64-.08-42.86-30.93a64,64,0,0,1-3.84-22.49l0.41-137q0.1-33.71,29.76-48.86A37.76,37.76,0,0,1,592.21,263.06Z" style="fill:none;stroke-width:10px;stroke:white;"/>
       </g>
-      </svg>
+      </svg> -->
 
-      <script>
+      <!-- <script>
         new Vivus('letters', {type: 'delayed',duration: 400,    animTimingFunction: Vivus.EASE
   }, function() {
           $('#tletter').attr('style', 'fill:white')
           $('#hletter').attr('style', 'fill:white')
         });
-      </script>
+      </script> -->
     <!-- <script>
 
     // console.log(document.getElementById("my-svg").data[0])
