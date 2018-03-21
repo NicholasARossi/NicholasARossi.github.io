@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-03-15T14:40:34-04:00</updated>
+  <updated>2018-03-20T23:12:41-04:00</updated>
   <id>http://rsms.me/</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -18,7 +18,7 @@
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
 &lt;html&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=EBGaramond&quot; /&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=SFCar&quot; /&gt;
 &lt;style&gt;
 @font-face {
   font-family: &#39;ebgaramond&#39;;
@@ -29,7 +29,7 @@
   h1,h2,h3,head,title {
     font-family: &#39;ebgaramond&#39;,serif;
     color: Black;
-    &lt;!-- background-color: gold; --&gt;
+    background-color: yellow;
   }
 &lt;/style&gt;
 &lt;/html&gt;
@@ -79,10 +79,19 @@
   &lt;head&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Permanent+Marker&quot; /&gt;
     &lt;style&gt;
-      h1,h2,h3,head,title {
+      &lt;!-- h1,h2,h3,title {
+        font-family: &#39;Permanent Marker&#39;,serif;
+        color: darkturquoise;
+      } --&gt;
+      h1,h2,h3,h4,h5,h6,pre, code, tt {
         font-family: &#39;Permanent Marker&#39;,serif;
         color: darkturquoise;
       }
+      h1,head,title{
+        background-color: magenta;
+        color:white;
+      }
+
       body {
         &lt;!-- font-family: &#39;timesnewroman&#39;,serif; --&gt;
         color: black;

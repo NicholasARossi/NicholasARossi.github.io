@@ -11,10 +11,19 @@ comments: yes
     <link rel="stylesheet"
           href="https://fonts.googleapis.com/css?family=Permanent+Marker">
     <style>
-      h1,h2,h3,head,title {
+      <!-- h1,h2,h3,title {
+        font-family: 'Permanent Marker',serif;
+        color: darkturquoise;
+      } -->
+      h1,h2,h3,h4,h5,h6,pre, code, tt {
         font-family: 'Permanent Marker',serif;
         color: darkturquoise;
       }
+      h1,head,title{
+        background-color: magenta;
+        color:white;
+      }
+
       body {
         <!-- font-family: 'timesnewroman',serif; -->
         color: black;

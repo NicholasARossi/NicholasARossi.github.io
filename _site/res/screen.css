@@ -18,8 +18,8 @@
 
 /* Base */
 * { margin:0; padding:0; font-family:inherit; }
+
 body {
-  background:#ddd;
   color:#222;
   font:16px 'Roboto Slab', georgia, serif;
   line-height:1.625;
@@ -357,13 +357,52 @@ a.post-excerpt {
         opacity:0.9;
       }
   }
+  @-webkit-keyframes Gradient {
+  	0% {
+  		background-position: 0% 50%
+  	}
+  	50% {
+  		background-position: 100% 50%
+  	}
+  	100% {
+  		background-position: 0% 50%
+  	}
+  }
+
+  @-moz-keyframes Gradient {
+  	0% {
+  		background-position: 0% 50%
+  	}
+  	50% {
+  		background-position: 100% 50%
+  	}
+  	100% {
+  		background-position: 0% 50%
+  	}
+  }
+
+  @keyframes Gradient {
+  	0% {
+  		background-position: 0% 50%
+  	}
+  	50% {
+  		background-position: 100% 50%
+  	}
+  	100% {
+  		background-position: 0% 50%
+  	}
+  }
+
 
   a.post-excerpt:hover {
-    color:black;
+    color:white;
     /*background-color:#444;*/
     /*This is the highlighting background color */
-    background-color:#27c7bd;
-    text-decoration:none;
+    background: linear-gradient(90deg, #00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e2e, #e76818);
+    background-size: 800% 800%;
+    -webkit-animation: Gradient 15s ease infinite;
+    -moz-animation: Gradient 15s ease infinite;
+    animation: Gradient 15s ease infinite;
   }
 
   a.post-excerpt div.title {
@@ -667,6 +706,24 @@ footer {
       min-height:300px;
     }
 }
+body,header{
+  background-size: 50px 50px;
+  background-color: #d3d3d3;
+  background-image: -webkit-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                    transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                    transparent 75%, transparent);
+  background-image: -moz-linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                    transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                    transparent 75%, transparent);
+  background-image: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                    transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                    transparent 75%, transparent);
+  -pie-background: linear-gradient(45deg, rgba(255, 255, 255, .2) 25%, transparent 25%,
+                   transparent 50%, rgba(255, 255, 255, .2) 50%, rgba(255, 255, 255, .2) 75%,
+                   transparent 75%, transparent) 0 0 / 50px 50px #ac0;
+  behavior: url(/pie/PIE.htc);
+}
+
 
 /* medium-res devices (e.g. ipad, but not iphone) */
 /*#sidebar { display:none; }

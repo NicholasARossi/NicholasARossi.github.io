@@ -1,6 +1,28 @@
 ---
 layout: default
 ---
+<style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
 <div class="content{% if page.photo_url %} photo-post{% endif %}">
   <div class="post single">
     {% unless page.title_hidden %}
@@ -12,7 +34,14 @@ layout: default
     <div class="body">{{ content }}</div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-
+    <div class="PageNavigation">
+      {% if page.previous.url %}
+        <a class="prev" href="{{page.previous.url}}">&laquo; {{page.previous.title}}</a>
+      {% endif %}
+      {% if page.next.url %}
+        <a class="next" href="{{page.next.url}}">{{page.next.title}} &raquo;</a>
+      {% endif %}
+    </div>
 
   {% if page.disqus_comments %}
     <div id="disqus_thread"></div>
@@ -29,6 +58,9 @@ layout: default
   </div>
 </div>
 {% include autoreload-in-debug.html %}
+
+
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

@@ -54,7 +54,29 @@
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <div class="content">
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
   <div class="post single">
     
     <h1>Schools are still segregated</h1>
@@ -70,10 +92,19 @@
   <head>
     <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Permanent+Marker" />
     <style>
-      h1,h2,h3,head,title {
+      <!-- h1,h2,h3,title {
+        font-family: 'Permanent Marker',serif;
+        color: darkturquoise;
+      } -->
+      h1,h2,h3,h4,h5,h6,pre, code, tt {
         font-family: 'Permanent Marker',serif;
         color: darkturquoise;
       }
+      h1,head,title{
+        background-color: magenta;
+        color:white;
+      }
+
       body {
         <!-- font-family: 'timesnewroman',serif; -->
         color: black;
@@ -202,11 +233,21 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/EBRC">&laquo; SEED 2017</a>
+      
+      
+        <a class="next" href="/Academy">Shared Actors between the 2018 Best Picture Nominees &raquo;</a>
+      
+    </div>
 
   
   </div>
 </div>
+
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -266,6 +307,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   </body>
 
 </html>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

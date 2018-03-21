@@ -54,7 +54,29 @@
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <div class="content">
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
   <div class="post single">
     
     <h1>Lego Datascience</h1>
@@ -65,10 +87,12 @@
     <div class="body"><html>
   <head>
     <link rel="stylesheet" href="/res/blog_9/bonus_style.css" /><style>
-      h2,h3,head,title {
+      h1,h2,h3,head,title {
         font-family: 'futura';
-        color: #FF8888;
-        background-color: lightgray;
+        <!-- color: #FF8888;
+        background-color: lightgray; -->
+        color: lightgray;
+        background-color: #FF8888;
       }
 
       body {
@@ -93,11 +117,21 @@
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/UFO">&laquo; Stargazing UFOs</a>
+      
+      
+        <a class="next" href="/Academy">Shared Actors between the 2018 Best Picture Nominees &raquo;</a>
+      
+    </div>
 
   
   </div>
 </div>
+
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -157,6 +191,7 @@
   </body>
 
 </html>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),

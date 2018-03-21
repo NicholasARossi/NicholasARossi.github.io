@@ -56,7 +56,29 @@
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <div class="content photo-post">
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content photo-post">
   <div class="post single">
     
     <h1>SEED 2017</h1>
@@ -193,11 +215,21 @@ document.getElementById("video1").currentTime = 14;
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/Wheat">&laquo; Quantifying Genetic Entropy in Humans and Wheat</a>
+      
+      
+        <a class="next" href="/segregation">Schools are still segregated &raquo;</a>
+      
+    </div>
 
   
   </div>
 </div>
+
+
+
 
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
@@ -257,6 +289,7 @@ document.getElementById("video1").currentTime = 14;
   </body>
 
 </html>
+
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
   (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
