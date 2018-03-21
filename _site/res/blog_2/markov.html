@@ -1,0 +1,116 @@
+<html>
+<head>
+  <title>Markov Chains</title>
+  <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1">
+  <link href='http://fonts.googleapis.com/css?family=Open+Sans' rel='stylesheet' type='text/css'>
+  <link href="style.css" type="text/css" rel="stylesheet">
+  <script src="d3.min.js"></script>
+  <script src="vector.js"></script>
+  <script src="angular.min.js" charset="utf-8"></script>
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/jquery_ui-bundle.js"></script>
+  <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/prettify-bundle.js"></script>
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/framebox.js"></script>
+  <link rel="stylesheet"
+  href="https://google-developers.appspot.com/_static/24dd69d909/css/devsite-cyan.css">
+  <link href="//fonts.googleapis.com/css?family=Roboto:300,400,400italic,500,500italic,700,700italic|Roboto+Mono:400,700|Material+Icons"
+        rel="stylesheet">
+  <link rel="stylesheet"
+        href="https://google-developers.appspot.com/_static/24dd69d909/css/devsite-cyan.css">
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/prettify-bundle.js"></script>
+
+
+  <meta name="robots" content="noindex">
+  <script src="//ajax.googleapis.com/ajax/libs/jquery/2.1.1/jquery.min.js"></script>
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/jquery_ui-bundle.js"></script>
+  <script src="//www.google.com/jsapi?key=AIzaSyCZfHRnq7tigC-COeQRmoa9Cxr0vbrK6xw"></script>
+
+  <script src="https://google-developers.appspot.com/_static/24dd69d909/js/framebox.js"></script>
+  <!-- Code For Music Playback -->
+  <!-- shims -->
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/inc/shim/Base64binary.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/inc/shim/WebAudioAPI.js" type="text/javascript"></script>
+  <!-- midi.js -->
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/AudioDetect.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/gm.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/loader.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/plugin.audiotag.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/plugin.webaudio.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/MIDI/plugin.webmidi.js" type="text/javascript"></script>
+  <!-- utils -->
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/util/dom_request_xhr.js" type="text/javascript"></script>
+  <script src="http://cdn.rawgit.com/NicholasARossi/NicholasARossi.github.io/master/res/blog_2/midi/js/util/dom_request_script.js" type="text/javascript"></script>
+  <style>
+body, html {
+overflow: hidden;
+}
+.st-diagram {
+pointer-events: none;
+position: absolute;
+left: 0;
+width: 100%;
+z-index: 1;
+}
+.st-diagram .nodes {
+pointer-events: all;
+}
+</style>
+</head>
+
+<body ng-app="myApp" ng-controller="MainCtrl">
+  <button style="position:absolute;left:0px;top:50px;"  class="sortButton" ng-click="toggle = !toggle">{{toggleText}}</button>
+  <st-diagram states="states" transition-matrix="transitionMatrix"
+  center="diagramCenter"
+  duration="duration"></st-diagram>
+
+  <div class="controls">
+        <input class="speedRange" type="range" ng-model="speedRange"
+    min="1" max="5" step="1">
+    <label> Speed </label>
+  </div>
+</body>
+<script>
+
+
+// $(document).on('click', '.toggle-button', function() {
+//     $(this).toggleClass('toggle-button-selected');
+// });
+
+
+var myApp = angular.module('myApp', []);
+
+
+
+myApp.controller('MainCtrl', function($scope, utils, $window, $timeout) {
+  $scope.states = [
+    { label: 'A', index: 0 },
+    { label: 'E', index: 1 },
+    { label: 'F', index: 2 }
+    ];
+
+  angular.element($window).on('resize', function() { $scope.$apply(); });
+  $scope.toggle = true;
+
+  $scope.$watch('toggle', function(){
+      $scope.toggleText = $scope.toggle ? 'Unmute' : 'Mute';
+  })
+  $scope.diagramCenter = [0.40, 0.5];
+  $scope.greeting = [1];
+  $scope.speedRange = 1;
+
+  $scope.$watch('speedRange', function(speed) {
+    $scope.duration = 2000 / +speed;
+  });
+
+  $scope.transitionMatrix = [
+    [0.5, 0.5,0],
+    [0, 0.5,0.5],
+    [0.5, 0,0.5],
+  ];
+});
+</script>
+
+<script src="common2.js" charset="utf-8"></script>
+
+</html>

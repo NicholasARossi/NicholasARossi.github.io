@@ -1,0 +1,177 @@
+<!DOCTYPE html>
+<svg width="960" height="500"></svg>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+
+d3.csv('cumsum_totale.csv',function(d){
+  return{
+    x: +d.x,
+    y: +d.y,
+    z: +d.z,
+
+  };
+},function(data){
+
+
+console.log()
+
+
+var svg = d3.select("svg").attr('viewBox',"0 0 1920 1080").attr('preserveAspectRatio',"xMidYMid meet"),
+    margin = {top: 20, right: 20, bottom: 100, left: 100},
+    width = +svg.attr("width") - margin.left - margin.right,
+    height = +svg.attr("height") - margin.top - margin.bottom,
+    g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+var parseTime = d3.timeParse("%d-%b-%y");
+
+var x = d3.scaleLog()
+    .rangeRound([0, width]);
+
+var y = d3.scaleLinear()
+    .rangeRound([height, 0]);
+
+var line = d3.line()
+    .x(function(d) { return x(d.x); })
+    .y(function(d) {return y(d.y); })
+    .curve(d3.curveStepBefore);
+
+var line2 = d3.line()
+    .x(function(d) { return x(d.x); })
+    .y(function(d) {return y(d.z); })
+    .curve(d3.curveStepBefore);
+
+
+  x.domain(d3.extent(data, function(d) { return d.x; }));
+  y.domain(d3.extent(data, function(d) { return d.y; }));
+
+  function scale1(){
+    y.domain(d3.extent(data, function(d) { return d.y; }));
+    d3.axisLeft(y)
+  }
+  function scale2(){
+    y.domain(d3.extent(data, function(d) { return d.z; }));
+    d3.axisLeft(y)
+  }
+  var xaxis=g.append("g")
+      .attr("transform", "translate(0," + height + ")")
+      .attr("stroke-width", 0)
+      .call(d3.axisBottom(x).tickValues([1,10,100,1000]).tickFormat(d3.format(",.0f")))
+      .style("font-family","futura")
+      .style("font-size","20px");
+  var xlabel=g.append('g')
+          .append('text') // y-axis Label
+          .attr('class','label')
+          .attr('transform','rotate(-90)')
+          .attr('x',0)
+          .attr('y',-50)
+          .style("opacity",.25)
+          .style("font-family","futura")
+          .style("font-size","60px")
+          .attr("lineWidth",100)
+          .attr("strokeStyle","black")
+          // .attr('dy','.71em')
+          .style('text-anchor','end')
+          .text('Number of Sets');
+
+var ylabel=g.append('g')
+        .append('text') // y-axis Label
+        .attr('class','label')
+        .attr('y',100)
+        .attr('x',width/5)
+        .attr('transform', 'translate(0,' + height + ')')
+
+        .style("opacity",.25)
+        .style("font-family","futura")
+        .style("font-size","60px")
+        .attr("lineWidth",100)
+        .attr("strokeStyle","black")
+        // .attr('dy','.71em')
+        .style('text-anchor','front')
+        .text('Number of Pieces');
+
+  var yaxis=g.append("g")
+      .attr("stroke-width", 0)
+      .call(d3.axisLeft(y))
+      .style("font-family","futura")
+      .style("font-size","12px");
+  var histo=g.append("path")
+      .attr("fill", "none")
+      .attr("stroke", "#FF8888")
+      .attr("stroke-linejoin", "round")
+      .attr("stroke-linecap", "round")
+      .attr("stroke-width", 10)
+      .attr("d", line(data))
+  var atRight = true;
+  var bs_modo=2
+  var rect = g.append("rect")
+      .attr("x", 10*bs_modo)
+      .attr("y", 10*bs_modo)
+      .attr("rx", 22*bs_modo)
+      .attr("ry", 22*bs_modo)
+      .style("fill", "lightgray")
+      .attr("width", 64*bs_modo)
+      .attr("height", 40*bs_modo)
+      .on("click", function(){
+
+//             datapoints
+//               	.forEach(d => d.Sex = "male");
+				if(atRight) {
+            }
+        else{
+        }
+      setAtRight(!atRight);
+
+      });
+
+  var circle = g.append("circle")
+      .attr("cx", 30*bs_modo)
+      .attr("cy", 30*bs_modo)
+      .attr("r", 16*bs_modo)
+      .style("fill", "white")
+//     		.on("click", function(){
+//             .style("fill", atRight ? d => d.Sex === "male" ? "#355C7D": "#F67280")
+//         });
+      .on("click", function(){
+
+//             datapoints
+//               	.forEach(d => d.Sex = "male");
+				if(atRight) {
+            }
+        else{
+        }
+      setAtRight(!atRight);
+
+      });
+
+
+    var setAtRight = function(newValue) {
+        atRight = newValue;
+        circle.transition().duration(700)
+            .attr("cx", (atRight? (30*bs_modo) : (54*bs_modo)))
+            .style("fill", "white");
+        rect.transition().duration(700)
+            .style("fill", atRight? "lightgray" : "FF8888");
+        histo.transition().duration(700)
+              .call(atRight? scale1 : scale2)
+              .attr("fill", "none")
+              .attr("stroke", atRight? "#FF8888" : "purple")
+              .attr("stroke-linejoin", "round")
+              .attr("stroke-linecap", "round")
+              .attr("stroke-width", 10)
+              .attr("d", atRight? line(data) : line2(data));
+        yaxis.transition().duration(700)
+              .call(d3.axisLeft(y));
+
+    };
+
+
+    var res = {
+        'getValue': function() { return atRight; },
+        'setValue': setAtRight,
+        'remove': function() { circle.remove(); }
+    };
+
+
+
+});
+</script>

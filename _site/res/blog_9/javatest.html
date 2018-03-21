@@ -1,0 +1,80 @@
+<canvas id="c" width="1920" height="1080"></canvas>
+
+<script>
+var c = document.getElementById('c'); // in your HTML this element appears as <canvas id="myCanvas"></canvas>
+var x = c.getContext('2d');
+// var s = window.innerWidth/1920
+// console.log(s);
+t = new Date();
+var background = new Image();
+background.src = "planet.png";
+
+// Make sure the image is loaded first otherwise nothing will draw.
+background.onload = function(){
+    x.drawImage(background,900,400);
+}
+
+function myFunction (t) {
+    var s = window.innerWidth/1920
+    c.width=1920;
+    var circle = new Path2D();
+    var ship = new Path2D();
+    var trail = new Path2D();
+
+    for(i=100;i--;){
+    trail.ellipse((960+400*Math.sin((t-10*i)/1800+16*.01))*s,(100+25*Math.cos((t-10*i)/1800+16*.01))*s,((15-i*.1)*Math.sin(16*.1)+5)*s,((100-i)*Math.sin(16*.1)+5)*s,(1.6+.5*Math.sin((t-10*i)/1800*.5)),9.5,0*s,6.3*s);
+    x.globalAlpha = .35
+    x.lineWidth=0
+    x.fillStyle="#00FF00";
+
+    }
+    x.fill(trail);
+
+
+    for(i=32;i--;)
+
+
+      ship.ellipse(s*(960+400*Math.sin(t/1800+i*.01)),(100+25*Math.cos(t/1800+i*.01))*s,(15*Math.sin(i*.1)+5)*s,(100*Math.sin(i*.1)+5)*s,1.6+.5*Math.sin(t/1800*.5),9.5,0,6.3*s);
+      x.globalAlpha = 1.0
+      x.lineWidth=.25
+      x.strokeStyle="slategrey";
+      x.fillStyle="white";
+
+      x.fill(ship);
+      x.stroke(ship);
+    //
+    //
+    //
+    //
+    //
+    //
+    //
+      circle.arc((960+400*Math.sin(t/1800+16*.01))*s, (100+25*Math.cos(t/1800+16*.01))*s,50*s,(1.6+.5*Math.sin(t/1800*.5)+Math.PI/2+.25),(1.6+.5*Math.sin(t/1800*.5)-Math.PI/2-.25))
+      x.lineWidth=4
+      x.strokeStyle="slategrey";
+      x.fillStyle="slategrey";
+      x.fill(circle);
+
+      x.stroke(circle);
+
+
+
+
+
+
+
+
+    // x.ellipse(1e3,500,15,45,1.6,9.5,0,6.3);
+    // //
+    // x.stroke();
+
+
+
+   requestAnimationFrame(myFunction);
+}
+
+requestAnimationFrame(myFunction);
+background.onload = function(){
+    x.drawImage(background,900,400);
+}
+</script>
