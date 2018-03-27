@@ -6,6 +6,18 @@ comments: yes
 ---
 
 
+<style>
+  h1,h2,h3,head,title {
+
+    font-color: black;
+    color: black;
+    background-color: #EF6648;
+  }
+  <!-- header{
+    background-color: #d3d3d3;
+  } -->
+
+</style>
 
 ## Smoking is a lot more prevalent in certain places
 

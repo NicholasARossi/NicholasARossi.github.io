@@ -40,7 +40,7 @@ function bubbleChart() {
                 });
         }
 
-        var colorCircles = d3.scaleOrdinal(d3.schemeCategory10);
+        var colorCircles = ['#A5E399','#FF8888'];
         var scaleRadius = d3.scaleLinear().domain([d3.min(data, function(d) {
             return +d[columnForRadius];
         }), d3.max(data, function(d) {
@@ -54,8 +54,8 @@ function bubbleChart() {
             .attr('r', function(d) {
                 return scaleRadius(d[columnForRadius])
             })
-            .style("fill", function(d) {
-                return colorCircles(d[columnForColors])
+            .style("fill", function(d,i) {
+                return colorCircles[i]
             })
             .attr('transform', 'translate(' + [width / 2, height / 2] + ')')
             .on("mouseover", function(d) {

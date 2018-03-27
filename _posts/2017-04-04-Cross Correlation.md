@@ -4,6 +4,19 @@ layout: post
 description: "What tools from signals and systems analysis can help us understand trends in the political process"
 comments: yes
 ---
+<style>
+  h1,h2,h3,head,title {
+
+    font-color: white;
+    color: white;
+    background-color: #a284e0;
+  }
+  <!-- header{
+    background-color: #d3d3d3;
+  } -->
+
+</style>
+
 <script type="text/x-mathjax-config">
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 </script>
