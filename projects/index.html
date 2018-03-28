@@ -59,6 +59,50 @@
 h1{
 background: linear-gradient(90deg, #2c7bb6,#00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e2e, #e76818,#d7191c);
 }
+@-webkit-keyframes featherlightLoader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+@keyframes featherlightLoader {
+	0% {
+		-webkit-transform: rotate(0deg);
+		transform: rotate(0deg);
+	}
+
+	100% {
+		-webkit-transform: rotate(360deg);
+		transform: rotate(360deg);
+	}
+}
+
+.featherlight-loading .featherlight-content {
+  -webkit-animation: featherlightLoader 1s infinite linear;
+          animation: featherlightLoader 1s infinite linear;
+  background: transparent;
+  border: 8px solid #8f8f8f;
+  border-left-color: #fff;
+  border-radius: 80px;
+  width: 80px;
+  height: 80px;
+  min-width: 0;
+}
+
+.featherlight-loading .featherlight-content > * {
+  display: none !important;
+}
+
+.featherlight-loading .featherlight-close,
+.featherlight-loading .featherlight-inner {
+  display: none;
+}
 #rig {
     max-width:900px;
     margin:0 auto; /*center aligned*/
@@ -107,7 +151,7 @@ background: linear-gradient(90deg, #2c7bb6,#00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e
     bottom: 0;
     right: 0;
     margin: auto;
-    background: #000 url(img/link.png) no-repeat center 20%;
+    background: #fff url(img/link.png) no-repeat center 20%;
     background-size:50px 50px;
     opacity:0;
     filter:alpha(opacity=0);/*For IE6 - IE8*/
@@ -129,17 +173,16 @@ background: linear-gradient(90deg, #2c7bb6,#00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e
     text-transform:capitalize;
     font-size:18px;
     font-weight:bold;
-    font-family: 'Oswald', sans-serif;
     font-weight:normal!important;
     top:40%;
-    color:white;
+    color:black;
     opacity:0;
     filter:alpha(opacity=0);/*For older IE*/
-    transform:translateY(-20px);
+    transform:translateY(-50px);
     transition:all .3s;
 }
 #rig li:hover .rig-text {
-    transform:translateY(0px);
+    transform:translateY(-30px);
     opacity:0.9;
 }
 
@@ -173,14 +216,14 @@ background: linear-gradient(90deg, #2c7bb6,#00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e
       <a class="rig-cell" href="#" data-featherlight="gallery/hist_comp.png">
           <img class="rig-img" src="gallery/hist_comp.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Linear and Logorithmic bins</span>
+          <span class="rig-text">Linear and Logorithmic bins</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/radial_hist.png">
           <img class="rig-img" src="gallery/radial_hist.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Quantifying the colors in natgeo's instagram</span>
+          <span class="rig-text">Colors of Natgeo</span>
       </a>
   </li>
   <li>
@@ -194,56 +237,56 @@ background: linear-gradient(90deg, #2c7bb6,#00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e
       <a class="rig-cell" href="#" data-featherlight="gallery/synbio.png">
           <img class="rig-img" src="gallery/synbio.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Synbio Mascot</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/mask.png">
+      <a class="rig-cell" href="#" data-featherlight="gallery/mask.webm">
           <img class="rig-img" src="gallery/mask.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Vaporwave Animation</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/NYC.png">
           <img class="rig-img" src="gallery/NYC.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">NYC Demographics</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/marA.png">
           <img class="rig-img" src="gallery/marA.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Fluorescing Cells</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/cells2.png">
           <img class="rig-img" src="gallery/cells2.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Annihilation Film Art #1</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/annihilation.png">
           <img class="rig-img" src="gallery/annihilation.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Annihilation Film Art #2</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/cells.png">
           <img class="rig-img" src="gallery/cells.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Annihilation Film Art #3</span>
       </a>
   </li>
   <li>
       <a class="rig-cell" href="#" data-featherlight="gallery/mandala.png">
           <img class="rig-img" src="gallery/mandala.png">
           <span class="rig-overlay"></span>
-          <span class="rig-text">Visualizing Entropy</span>
+          <span class="rig-text">Annihilation Film Art #4</span>
       </a>
   </li>
 </ul>
