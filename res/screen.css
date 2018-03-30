@@ -398,7 +398,7 @@ a.post-excerpt {
     color:white;
     /*background-color:#444;*/
     /*This is the highlighting background color */
-    background: linear-gradient(90deg, #00a6ca,#00ccbc,#90eb9d,#f9d057,#f29e2e, #e76818);
+    background: linear-gradient(90deg, #2c7bb6, #00ccbc, #90eb9d,#ff9966,#ff5e62);
     background-size: 800% 800%;
 
     -webkit-animation: Gradient 15s ease infinite;
