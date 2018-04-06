@@ -2,8 +2,9 @@
 layout: page
 title: About
 ---
-<iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
+<iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
 <style>
 ul{
