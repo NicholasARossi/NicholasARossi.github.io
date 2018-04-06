@@ -2,13 +2,10 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/about/brand-logo/bosFig_blank2.png" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/brand-logo/index.html" afterPath="$PROJECT_DIR$/_site/about/brand-logo/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/brand-logo/index.html" afterPath="$PROJECT_DIR$/about/brand-logo/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.md" afterPath="$PROJECT_DIR$/about/index.md" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
@@ -52,8 +49,8 @@
       <file leaf-file-name="index.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/about/index.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="242">
-              <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+            <state relative-caret-position="150">
+              <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
               <folding />
             </state>
           </provider>
@@ -62,8 +59,8 @@
       <file leaf-file-name="style.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about/brand-logo/css/style.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="90">
-              <caret line="6" column="14" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
+            <state relative-caret-position="345">
+              <caret line="101" column="49" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="49" />
               <folding />
             </state>
           </provider>
@@ -137,7 +134,7 @@
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="-1888" />
+    <option name="x" value="-1886" />
     <option name="y" value="3" />
     <option name="width" value="1790" />
     <option name="height" value="709" />
@@ -434,7 +431,7 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-1888" y="3" width="1790" height="709" extended-state="0" />
+    <frame x="-1886" y="3" width="1790" height="709" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.17750141" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -790,14 +787,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about/brand-logo/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="90">
-          <caret line="6" column="14" selection-start-line="6" selection-start-column="0" selection-end-line="7" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/brand-logo/css/bosFig_blank2.png">
       <provider selected="true" editor-type-id="images">
         <state />
@@ -811,18 +800,18 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about/brand-logo/css/style2.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="60">
-          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/brand-logo/buttons.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="120">
           <caret line="22" column="139" selection-start-line="22" selection-start-column="139" selection-end-line="22" selection-end-column="139" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/brand-logo/css/style2.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="60">
+          <caret line="4" column="0" selection-start-line="4" selection-start-column="0" selection-end-line="4" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -837,10 +826,18 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/about/brand-logo/css/style.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="345">
+          <caret line="101" column="49" selection-start-line="101" selection-start-column="42" selection-end-line="101" selection-end-column="49" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/about/index.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="242">
-          <caret line="33" column="20" selection-start-line="33" selection-start-column="20" selection-end-line="33" selection-end-column="20" />
+        <state relative-caret-position="150">
+          <caret line="10" column="17" selection-start-line="10" selection-start-column="17" selection-end-line="10" selection-end-column="17" />
           <folding />
         </state>
       </provider>
