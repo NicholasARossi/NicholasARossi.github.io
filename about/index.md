@@ -2,8 +2,8 @@
 layout: page
 title: About
 ---
+<iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
-<img src="port3.jpg" width="30%" align="right">
 
 # Intro :
 
