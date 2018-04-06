@@ -16,7 +16,7 @@ body {
 
   overflow: hidden;
   font-family: 'Permanent Marker', sans-serif;
-  font-size: 8vw;
+  font-size: 8vh;
   line-height: 4vw;
   color: #000;
 }
@@ -80,48 +80,39 @@ body {
             transform: translate3d(0, 0, 0);
     background: -webkit-gradient(linear, left top, right top, from(#FC5C7D), to(#6A82FB));
     background: linear-gradient(to right, #FC5C7D 0%, #6A82FB 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+    -webkit-text-fill-color:#fff;
   }
   16.66%, 29.32% {
     -webkit-transform: translate3d(0, -25%, 0);
             transform: translate3d(0, -25%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#2c7bb6), to(#40E0D0));
     background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
   }
   33.32%,45.98% {
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#ff9966), to(#ff5e62));
     background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   49.98%,62.64% {
     -webkit-transform: translate3d(0, -75%, 0);
             transform: translate3d(0, -75%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#C779D0), to(#4BC0C8));
     background: linear-gradient(to right, #C779D0 0%, #4BC0C8 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   66.64%,79.3% {
     -webkit-transform: translate3d(0, -50%, 0);
             transform: translate3d(0, -50%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#ff9966), to(#ff5e62));
     background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
   }
   83.3%,95.96% {
     -webkit-transform: translate3d(0, -25%, 0);
             transform: translate3d(0, -25%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#2c7bb6), to(#40E0D0));
     background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
-    -webkit-background-clip: text;
-    -webkit-text-fill-color: transparent;
+
   }
 }
 #demo {
