@@ -4,7 +4,12 @@ body {
   position: fixed;
   background-color: #fff;
 }
+img {
+    position: absolute;
+      bottom: -20%;
 
+  left: 0%;
+}
 .content {
   position: absolute;
   top: 50%;
@@ -19,6 +24,8 @@ body {
   font-size: 8vh;
   line-height: 4vw;
   color: #000;
+   z-index: 2;
+
 }
 .content__container {
   font-weight: 600;
