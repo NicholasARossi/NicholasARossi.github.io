@@ -23,16 +23,6 @@ Rossi NA, Dunlop MJ (2017) Customized Regulation of Diverse Stress Response Gene
 # Contact
 
 
-
-<style>
-
-</style>
-<div>
-<a href="#" ><img src="brand-logo/twitter.png"></a>
-<a href="#" ><img src="brand-logo/youtube.png"></a>
-<a href="#" ><img src="brand-logo/github.png"></a>
-<a href="#" ><img src="brand-logo/insta.png"></a>
-</div>
 Email : nrossi (at) bu.edu
 
 - [Twitter](https://twitter.com/DivergentData)
