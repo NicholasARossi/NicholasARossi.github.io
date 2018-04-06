@@ -13,7 +13,7 @@ ul{
 }
 </style>
 
-My name is Nicholas Rossi and I'm a PhD candidate at Boston University studying in the <a href="http://www.dunloplab.com/">Dunlop Lab</a>. Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I try to achieve end to end control in science by
+My name is  <span style="color:#ff5e62; font-family:Permanent Marker">**Nicholas Rossi**</span> and I'm a PhD candidate at Boston University studying in the <a href="http://www.dunloplab.com/">Dunlop Lab</a>. Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I am a full-stack scientist and I spend my days...
 
 * Running experiments
 * Building models
