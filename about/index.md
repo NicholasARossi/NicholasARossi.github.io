@@ -5,7 +5,7 @@ title: About
 <iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
 
-# Intro :
+
 
 Hello. My name is Nicholas Rossi. I'm a PhD candidate at Boston University studying in the <a href="http://www.dunloplab.com/">Dunlop Lab</a>. Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I try to achieve end to end control in science by running experiments, building models and analyzing statistical phenomena.
 
@@ -22,6 +22,17 @@ Rossi NA, Dunlop MJ (2017) Customized Regulation of Diverse Stress Response Gene
 
 # Contact
 
+
+
+<style>
+
+</style>
+<div>
+<a href="#" ><img src="brand-logo/twitter.png"></a>
+<a href="#" ><img src="brand-logo/youtube.png"></a>
+<a href="#" ><img src="brand-logo/github.png"></a>
+<a href="#" ><img src="brand-logo/insta.png"></a>
+</div>
 Email : nrossi (at) bu.edu
 
 - [Twitter](https://twitter.com/DivergentData)

@@ -3,13 +3,19 @@ body {
   height: 100%;
   position: fixed;
   background-color: #fff;
+
+  background: #2f363d url(bosFig_blank2.png) repeat 0 0;
+
+
 }
 img {
     position: absolute;
       bottom: -20%;
 
-  left: 0%;
+  left: -1%;
 }
+
+
 .content {
   position: absolute;
   top: 50%;
@@ -119,6 +125,45 @@ img {
             transform: translate3d(0, -25%, 0);
     background: -webkit-gradient(linear, left top, right top, from(#2c7bb6), to(#40E0D0));
     background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+
+  }
+}
+
+@-webkit-keyframes nomove {
+  0%, 12.66%, 100% {
+    -webkit-text-fill-color:#6A82FB;
+
+  }
+  16.66%, 29.32% {
+
+
+   -webkit-text-fill-color:#40E0D0;
+
+  }
+  33.32%,45.98% {
+
+
+   -webkit-text-fill-color:#ff5e62;
+
+  }
+  49.98%,62.64% {
+
+
+       -webkit-text-fill-color:#4BC0C8;
+
+  }
+  66.64%,79.3% {
+
+
+           -webkit-text-fill-color:#ff5e62;
+
+  }
+  83.3%,95.96% {
+
+
+
+               -webkit-text-fill-color:#40E0D0;
+
 
   }
 }
