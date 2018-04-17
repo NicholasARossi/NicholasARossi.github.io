@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" >
+
+<head>
+  <meta charset="UTF-8">
+  <title>Linear_log</title>
+  
+  
+  
+  
+  
+</head>
+
+<body>
+
+  <!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+    font-family: "SF Cartoonist Hand", sans-serif;
+    color: white;
+    font-size: 25px;
+  background: linear-gradient(45deg,#2c7bb6,#40E0D0);
+}
+
+.chart-container {
+    position: relative;
+}
+
+.chart-container .controls {
+    position: absolute;
+    top: 12px;
+    left: 18px;
+}
+
+.chart path,
+.chart line,
+.chart rect {
+    shape-rendering: crispEdges;
+}
+
+.chart .axis path,
+.chart .axis line {
+    fill: none;
+    stroke: #fff;
+}
+
+.chart .linear .point {
+    fill: 
+      #fff;
+}
+
+.chart .pow .point {
+    fill: #fff;
+}
+
+</style>
+<body>
+
+<div class="chart-container js-chart-container">
+    <form class="controls">
+        Scale:
+        <label><input type="radio" name="x-scale" value="linear" checked>Linear</label>
+
+        <label><input type="radio" name="x-scale" value="log10">Logarithmic</label>
+    </form>
+    <svg class="chart js-chart"></svg>
+</div>
+
+<script src="https://d3js.org/d3.v4.min.js"></script>
+
+</body>
+  
+  
+
+    <script  src="js/index.js"></script>
+
+
+
+
+</body>
+
+</html>

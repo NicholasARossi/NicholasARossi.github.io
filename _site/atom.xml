@@ -3,12 +3,122 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-04-06T10:10:19-04:00</updated>
+  <updated>2018-04-17T08:35:06-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
+  
+  <entry>
+    <title>How to Lie with Histograms</title>
+    <link href="http://nicholasarossi.github.io//LinLog"/>
+    <updated>2018-03-01T00:00:00-05:00</updated>
+    <id>http://nicholasarossi.github.io//LinLog</id>
+    <content type="html">&lt;html&gt;
+&lt;style&gt;
+@font-face {
+  font-family: &#39;SFCartoonistHand&#39;;
+  src: url(&#39;/res/blog_13/SFCartoonistHand.ttf&#39;) format(&#39;truetype&#39;);
+  font-weight: normal;
+  font-style: normal;
+}
+  h1,h2,h3,h4,h5,h6,head,title,pre, code, tt {
+    font-family: &#39;SFCartoonistHand&#39;,serif;
+    color: white;
+    background-color: turquoise;
+  }
+&lt;/style&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&quot;same-data-different-stories&quot;&gt;Same Data, Different Stories&lt;/h3&gt;
+&lt;p&gt;One of the most foundational techniques used in visualization is the histogram. This type of figure allows us to look at populations of numerical data an intuit how values are distributed -
+and what the general statistics of the system are. Basically it’s a way of looking how common something is. The only problem with them is they’re easily manipulated. You can bamboozle someone easily depending on how you plot them.
+This comes from the fact that data in histograms is &lt;strong&gt;binned&lt;/strong&gt; - that mean you put the data in little categories in order to plot it.&lt;/p&gt;
+
+&lt;p&gt;As a case study lets check out some data on undergraduate acceptance rates.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_13/acceptance_hist.png&quot;&gt;
+&lt;img src=&quot;/res/blog_13/acceptance_hist.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;Now in this case, we have linearly spaced bins between 0 and 100% acceptance rates. It demonstrates clearly how the majority of schools accept the majority of students and how elite, picky institutions are relatively rare.&lt;/p&gt;
+
+&lt;p&gt;The first failure point in the presentation of this data is the scale. Projecting the same data onto a logarithmic x-axis produces a qualitatively different impression from the data.&lt;/p&gt;
+
+&lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;!-- &lt;source src=&quot;/res/blog_13/seed_logo.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot;&gt; --&gt;
+&lt;source src=&quot;/res/blog_13/schoollinlog.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
+
+Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;p&gt;Even without considering histograms, granular data itself changes it’s qualitative impression through the lense of a different axis.
+Consider the interactive figure below to see how a simple, normally distributed random variable looks different on these two scales.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_13/linear_log/index.html&quot; width=&quot;100%&quot; height=&quot;200px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;So why would we ever want to use anything besides linear scales if they change the qualitative impression of the data? Well, certain data sets lose a lot of their nuance when  projected onto
+linear axis. Consider the distribution of U.S. firm sizes. There are lots of big firms and a few small ones. This doesn’t look great on a linear axis.&lt;/p&gt;
+
+&lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;!-- &lt;source src=&quot;/res/blog_13/seed_logo.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot;&gt; --&gt;
+&lt;source src=&quot;/res/blog_13/firms_linlog.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
+
+Your browser does not support the video tag.
+&lt;/video&gt;
+
+&lt;h3 id=&quot;scaling-the-bins&quot;&gt;Scaling the bins&lt;/h3&gt;
+
+&lt;p&gt;Walking back a bit - it’s important to note that the bins selected for histograms are entirely arbitrary. It’s up to the visualization author to
+decide which ones to choose. In fact logarithmically scaled bins (bins that appear uniform on a logarithmic scale) will present very different impressions.&lt;/p&gt;
+
+&lt;p&gt;The simplest example of this would be a uniform distribution. Presented two bin-scales gives two very distinct impressions.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_13/uniform_hist.png&quot;&gt;
+&lt;img src=&quot;/res/blog_13/uniform_hist.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;This extends to other types of statistical distributions like the gamma distribution…&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_13/test_hist.png&quot;&gt;
+&lt;img src=&quot;/res/blog_13/test_hist.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;As well as real data. Below we see the distributions of the &lt;strong&gt;sizes of global cities and towns&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_13/data_hist.png&quot;&gt;
+&lt;img src=&quot;/res/blog_13/data_hist.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;So clearly there is a lot of subjectivity in how distributions are presented with histograms. This comes in many ways because there is no truely &lt;em&gt;right&lt;/em&gt; way to do it.
+There are only a few guidelines:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;If you’re &lt;strong&gt;consuming&lt;/strong&gt; data, pay attention to the pitfalls that can happen here. If the author is unclear about how they binned or projected the data it’s an immediate red flag.&lt;/li&gt;
+  &lt;li&gt;If you’re &lt;strong&gt;creating&lt;/strong&gt; data, help out the viewer by drawing attention to your axis if you do anything besides a linear scale.&lt;/li&gt;
+  &lt;li&gt;If you have the ability, try to find and present the granular data (individual points) it’s always better.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Watch the video essay below for further analysis:
+&lt;a href=&quot;https://www.youtube.com/watch?v=m2lPYvrPlrY&quot;&gt;
+&lt;img src=&quot;/res/blog_13/hist_thumb.jpg&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/log_lin_distribution_comparisons&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The city data retrieved from &lt;a href=&quot;https://simplemaps.com/data/world-cities&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Shared Actors between the 2018 Best Picture Nominees</title>
@@ -945,21 +1055,6 @@ The network bellow shows one such markov chain that hops around the pentatonic s
   &lt;li&gt;First visualization was done with the &lt;a href=&quot;http://mpld3.github.io/&quot;&gt;mpld3&lt;/a&gt;; the others were done with &lt;a href=&quot;https://stanford.edu/~mwaskom/software/seaborn/&quot;&gt;seaborn&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Code can be found &lt;a href=&quot;https://github.com/NicholasARossi/pizza_math&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Welcome!</title>
-    <link href="http://nicholasarossi.github.io//welcome"/>
-    <updated>2016-08-01T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//welcome</id>
-    <content type="html">&lt;p&gt;Hey! This is the first post in what will hopefully be a long and fruitful foray into the overcrowded world of data science blogging. I hope to share with you some insightful bits and well as a good helping of glorious infectious confusion. Later!
-&lt;br /&gt;
--Nick&lt;/p&gt;
 </content>
     <author>
       <name>Nicholas Rossi</name>
