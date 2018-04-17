@@ -2,39 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/brand-logo/bosFig_blank2.png" afterPath="$PROJECT_DIR$/_site/about/brand-logo/bosFig_blank2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/brand-logo/scss/bosFig_blank2.png" afterPath="$PROJECT_DIR$/_site/about/brand-logo/scss/bosFig_blank2.png" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_layouts/default.html" afterPath="$PROJECT_DIR$/_layouts/default.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Academy.html" afterPath="$PROJECT_DIR$/_site/Academy.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Cross-Correlation.html" afterPath="$PROJECT_DIR$/_site/Cross-Correlation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/EBRC.html" afterPath="$PROJECT_DIR$/_site/EBRC.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Musical-Systems.html" afterPath="$PROJECT_DIR$/_site/Musical-Systems.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Wheat.html" afterPath="$PROJECT_DIR$/_site/Wheat.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/spotify/index.html" afterPath="$PROJECT_DIR$/_site/about/spotify/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/index.html" afterPath="$PROJECT_DIR$/_site/archive/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/sidebar.html" afterPath="$PROJECT_DIR$/_site/archive/sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/cigarettes.html" afterPath="$PROJECT_DIR$/_site/cigarettes.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/congress.html" afterPath="$PROJECT_DIR$/_site/congress.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/eames-design/index.html" afterPath="$PROJECT_DIR$/_site/eames-design/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/home.html" afterPath="$PROJECT_DIR$/_site/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/index0.html" afterPath="$PROJECT_DIR$/_site/index0.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/natgeo.html" afterPath="$PROJECT_DIR$/_site/natgeo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/papers/index.html" afterPath="$PROJECT_DIR$/_site/papers/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/pizza.html" afterPath="$PROJECT_DIR$/_site/pizza.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/projects/Science-Designs/index.html" afterPath="$PROJECT_DIR$/_site/projects/Science-Designs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/projects/drones/index.html" afterPath="$PROJECT_DIR$/_site/projects/drones/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_9/2018-01-02-UFO.html" afterPath="$PROJECT_DIR$/_site/res/blog_9/2018-01-02-UFO.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_9/2018-01-10-Lego.html" afterPath="$PROJECT_DIR$/_site/res/blog_9/2018-01-10-Lego.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/temps/1.html" afterPath="$PROJECT_DIR$/_site/res/temps/1.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/temps/2.html" afterPath="$PROJECT_DIR$/_site/res/temps/2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/temps/2018-03-15-Lego.html" afterPath="$PROJECT_DIR$/_site/res/temps/2018-03-15-Lego.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/temps/3.html" afterPath="$PROJECT_DIR$/_site/res/temps/3.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/segregation.html" afterPath="$PROJECT_DIR$/_site/segregation.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/welcome.html" afterPath="$PROJECT_DIR$/_site/welcome.html" />
+      <change type="MOVED" beforePath="$PROJECT_DIR$/_posts/2018-05-01-NatGeo.md" afterPath="$PROJECT_DIR$/res/2018-05-01-NatGeo.md" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -78,8 +46,8 @@
       <file leaf-file-name="2018-03-01-LinLog.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-LinLog.md">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="459">
-              <caret line="107" column="79" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="79" />
+            <state relative-caret-position="54">
+              <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
               <folding />
             </state>
           </provider>
@@ -417,19 +385,19 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/blog_14" />
-      <recent name="$PROJECT_DIR$/about/brand-logo/css" />
-      <recent name="$PROJECT_DIR$/about/brand-logo" />
-      <recent name="$PROJECT_DIR$/about/brand-logo/js" />
-      <recent name="$PROJECT_DIR$/about" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/blog_14/pixel-smear" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/res/temps/temp" />
       <recent name="$PROJECT_DIR$/res" />
       <recent name="$PROJECT_DIR$/about/brand-logo/css" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$/res/blog_14" />
+      <recent name="$PROJECT_DIR$/about/brand-logo/css" />
+      <recent name="$PROJECT_DIR$/about/brand-logo" />
+      <recent name="$PROJECT_DIR$/about/brand-logo/js" />
     </key>
   </component>
   <component name="RunManager">
@@ -597,9 +565,9 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="140" y="23" width="1680" height="959" extended-state="0" />
-    <editor active="true" />
+    <editor active="false" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21157324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="true" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21157324" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.23760092" sideWeight="0.5101078" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
@@ -975,8 +943,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-LinLog.md">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="459">
-          <caret line="107" column="79" selection-start-line="107" selection-start-column="79" selection-end-line="107" selection-end-column="79" />
+        <state relative-caret-position="54">
+          <caret line="80" column="38" selection-start-line="80" selection-start-column="38" selection-end-line="80" selection-end-column="38" />
           <folding />
         </state>
       </provider>
