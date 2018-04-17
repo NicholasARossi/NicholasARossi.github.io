@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-04-17T09:06:40-04:00</updated>
+  <updated>2018-04-17T09:27:03-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -32,8 +32,8 @@
 &lt;/html&gt;
 
 &lt;h3 id=&quot;same-data-different-stories&quot;&gt;Same Data, Different Stories&lt;/h3&gt;
-&lt;p&gt;One of the most foundational techniques used in visualization is the histogram. This type of figure allows us to look at populations of numerical data an intuit how values are distributed -
-and what the general statistics of the system are. Basically it’s a way of looking how common something is. The only problem with them is they’re easily manipulated. You can bamboozle someone easily depending on how you plot them.
+&lt;p&gt;One of the most foundational techniques used in visualization is the histogram. This type of figure allows us to look at populations of numerical data and intuit how values are distributed,
+as well as what the general statistics of the system are. Basically it’s a way of looking how common something is. The only problem with them is they’re easily manipulated. You can bamboozle someone easily depending on how you plot them.
 This comes from the fact that data in histograms is &lt;strong&gt;binned&lt;/strong&gt; - that mean you put the data in little categories in order to plot it.&lt;/p&gt;
 
 &lt;p&gt;As a case study lets check out some data on undergraduate acceptance rates.&lt;/p&gt;
@@ -53,7 +53,7 @@ This comes from the fact that data in histograms is &lt;strong&gt;binned&lt;/str
 Your browser does not support the video tag.
 &lt;/video&gt;
 
-&lt;p&gt;Even without considering histograms, granular data itself changes it’s qualitative impression through the lense of a different axis.
+&lt;p&gt;Even without considering histograms, granular data itself changes its qualitative impression through the lense of a different axis.
 Consider the interactive figure below to see how a simple, normally distributed random variable looks different on these two scales.&lt;/p&gt;
 
 &lt;iframe src=&quot;/res/blog_13/linear_log/index.html&quot; width=&quot;100%&quot; height=&quot;200px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
