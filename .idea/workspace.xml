@@ -3,8 +3,6 @@
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -39,8 +37,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="60">
-                <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+              <first_editor relative-caret-position="120">
+                <caret line="45" column="87" selection-start-line="45" selection-start-column="87" selection-end-line="45" selection-end-column="87" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -884,8 +882,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="60">
-            <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
+          <first_editor relative-caret-position="120">
+            <caret line="45" column="87" selection-start-line="45" selection-start-column="87" selection-end-line="45" selection-end-column="87" />
             <folding />
           </first_editor>
           <second_editor>
