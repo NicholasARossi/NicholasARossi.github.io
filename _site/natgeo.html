@@ -36,7 +36,7 @@
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
     
-    <meta property="article:published_time" content="2018-03-01">
+    <meta property="article:published_time" content="2018-04-20">
     
     <script>window.initFuncs = [];</script>
   </head>
@@ -79,8 +79,8 @@
   <div class="post single">
     
     <h1>The Colors of National Geographic</h1>
-    <info datetime="2018-03-01">
-      Mar 01, 2018
+    <info datetime="2018-04-20">
+      Apr 20, 2018
     </info>
     
     <div class="body"><style>
@@ -100,28 +100,59 @@
 
 <iframe src="/res/blog_14/pixel-smear/smear.html" width="100%" height="250px" scrolling="no"></iframe>
 
-<p>Everyone know natgeo, they’re great. I think if there is one group that can tell us what earth looks like, it’s them.</p>
+<p>In this project, I wanted to dig into photos of the earth to see what colors were the most commom.
+National Geographic seemed like a good group to cross-section the natural world. I think if there is one group that can tell us what earth looks like, it’s them.</p>
 
-<p>To this end I was curious about what the primary color compostion photos of their work were. So What I did was I scraped their instgram acound and pulled all their photos ~10000. And chopped them up to look for the most common colors.
-Using adapted code from elsewhere, I applied k-means esitmation to parse out what the most common colors from each photo were.</p>
+<h1 id="mining-the-data">Mining the data</h1>
+<p>After scraping all the photos from national geographic’s instagram account, I used <a href="https://en.wikipedia.org/wiki/K-means_clustering">k-means clustering</a> to find the primary 5 colors of each photo. K-means is a mechanism of finding groups in continuous space.</p>
 
-<p>I took the top five colors from each photo and compiled them across all photos.
-<a href="/res/blog_14/girl.png">
+<p><a href="/res/blog_14/girl.png">
 <img src="/res/blog_14/girl.png" />
-</a>﻿
-In addition, I excluded black and white from the analysis. I only care about the colors used.</p>
+</a>﻿</p>
+
+<p>I then repeated this process across all photos that I pulled from instagram.</p>
+
+<h1 id="cleaning-and-plotting-the-data">Cleaning and Plotting the Data</h1>
+<p>Ok so now I have the primary colors over all the photos now what? The goal is to plot these is a way that’s representatitive of the entire set.</p>
+
+<p>Color is a multi-dimensional thing. Typically we think of things in terms of Red, Blue and Green values (or CMYK). Alternatively you can consider color in terms of Hue, Saturation and Value.</p>
+
+<p><img src="/res/blog_14/hsv-01.png" alt="HSV" /></p>
+
+<p>Considering the image above from (wikipedia)[https://en.wikipedia.org/wiki/HSL_and_HSV] we see that Hue is the apparent absolute rainbow color, saturation is the <em>whiteness</em> and value is the <em>blacknesss</em>. With these three values you can express any color.</p>
+
+<p>I wasn’t interested in black and white photos, I wanted to look at color so I decided I wanted to plot hue. So using the data scraped, I discared the greyscale colors and generated a histogram of all the hues.</p>
+
+<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">hlist</span> <span class="o">=</span> <span class="p">[]</span>
+<span class="k">for</span> <span class="n">group</span> <span class="ow">in</span> <span class="n">storage</span><span class="p">:</span> <span class="c">#Loop over all photos</span>
+    <span class="k">for</span> <span class="n">color</span> <span class="ow">in</span> <span class="n">group</span><span class="p">:</span> <span class="c">#Loop over all colors for each photo</span>
+        <span class="n">h</span><span class="p">,</span><span class="n">s</span><span class="p">,</span><span class="n">v</span><span class="o">=</span><span class="n">get_hsv</span><span class="p">(</span><span class="n">color</span><span class="p">)</span>
+        <span class="k">if</span> <span class="n">s</span><span class="o">&gt;</span><span class="mf">0.1</span> <span class="ow">and</span> <span class="n">v</span><span class="o">&gt;</span><span class="mf">0.1</span><span class="p">:</span> <span class="c">#disgard low saturation and value colors</span>
+            <span class="n">hlist</span><span class="o">.</span><span class="n">append</span><span class="p">(</span><span class="n">h</span><span class="p">)</span>
+
+<span class="n">bins</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">arange</span><span class="p">(</span><span class="o">-</span><span class="mf">0.01</span><span class="p">,</span><span class="mf">1.01</span><span class="p">,</span><span class="mf">0.01</span><span class="p">)</span>
+
+<span class="n">probs</span><span class="p">,</span> <span class="n">bons</span> <span class="o">=</span> <span class="n">np</span><span class="o">.</span><span class="n">histogram</span><span class="p">(</span><span class="n">hlist</span><span class="p">,</span> <span class="n">normed</span><span class="o">=</span><span class="mi">1</span><span class="p">,</span> <span class="n">bins</span><span class="o">=</span><span class="n">bins</span><span class="p">)</span>
+</code></pre>
+</div>
+
+<p>To make it <em>extra</em> pretty I just wrapped the histogram circularly and interpolated along the curve to make it nice and smooth.</p>
 
 <p><a href="/res/blog_14/radial_hist.png">
 <img src="/res/blog_14/radial_hist.png" />
 </a>﻿</p>
 
+<p>Et voila! Those are the most predominant hues in Natgeo’s instagram photos.</p>
+
 <h3 id="conclusion">Conclusion</h3>
-<p>Just as with action stars getting reused in blockbuster cinema, it appears there is a culture of employing the same actors in the award targeting niche.</p>
+
+<p>Natgeo takes a lot of photos of people, and the peak of <em>orangish</em> colors could be picking that. Next step is to remove the people photos and then sort by geo tags to see what the colors of particular places are.</p>
 
 <h3 id="notes">Notes:</h3>
 <ul>
-  <li>This was written in Python and D3.js : see code <a href="https://github.com/NicholasARossi/academy_awards/tree/master">here</a></li>
-  <li>The data was taken from <a href="https://www.themoviedb.org">the movie db</a></li>
+  <li>THis was an extension of the blogpost I read <a href="http://charlesleifer.com/blog/using-python-and-k-means-to-find-the-dominant-colors-in-images/">here</a></li>
+  <li>Code for batch color analysis and plotting is available <a href="https://github.com/NicholasARossi/color_me_impressed">here</a></li>
+  <li>The data was taken from Natgeo’s instagram account using <a href="https://github.com/althonos/InstaLooter">instalooter</a></li>
 </ul>
 </div>
     <!-- <div class="breaker"></div> -->

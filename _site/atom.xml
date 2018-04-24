@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-04-17T09:27:03-04:00</updated>
+  <updated>2018-04-24T08:33:04-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -11,9 +11,92 @@
   </author>
   
   <entry>
+    <title>The Colors of National Geographic</title>
+    <link href="http://nicholasarossi.github.io//NatGeo"/>
+    <updated>2018-04-20T00:00:00-04:00</updated>
+    <id>http://nicholasarossi.github.io//NatGeo</id>
+    <content type="html">&lt;style&gt;
+@font-face {
+  font-family: &#39;ebgaramond&#39;;
+  src: url(&#39;/res/blog_12/EBGaramond.ttf&#39;) format(&#39;truetype&#39;);
+  font-weight: normal;
+  font-style: normal;
+}
+  h1,h2,h3,head,title {
+    font-family: &#39;permanent marker&#39;,sans-serif;
+    color: Black;
+  }
+&lt;/style&gt;
+
+&lt;h1 id=&quot;what-are-the-common-colors-of-nature&quot;&gt;What are the common colors of nature?&lt;/h1&gt;
+
+&lt;iframe src=&quot;/res/blog_14/pixel-smear/smear.html&quot; width=&quot;100%&quot; height=&quot;250px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;In this project, I wanted to dig into photos of the earth to see what colors were the most commom.
+National Geographic seemed like a good group to cross-section the natural world. I think if there is one group that can tell us what earth looks like, it’s them.&lt;/p&gt;
+
+&lt;h1 id=&quot;mining-the-data&quot;&gt;Mining the data&lt;/h1&gt;
+&lt;p&gt;After scraping all the photos from national geographic’s instagram account, I used &lt;a href=&quot;https://en.wikipedia.org/wiki/K-means_clustering&quot;&gt;k-means clustering&lt;/a&gt; to find the primary 5 colors of each photo. K-means is a mechanism of finding groups in continuous space.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_14/girl.png&quot;&gt;
+&lt;img src=&quot;/res/blog_14/girl.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;I then repeated this process across all photos that I pulled from instagram.&lt;/p&gt;
+
+&lt;h1 id=&quot;cleaning-and-plotting-the-data&quot;&gt;Cleaning and Plotting the Data&lt;/h1&gt;
+&lt;p&gt;Ok so now I have the primary colors over all the photos now what? The goal is to plot these is a way that’s representatitive of the entire set.&lt;/p&gt;
+
+&lt;p&gt;Color is a multi-dimensional thing. Typically we think of things in terms of Red, Blue and Green values (or CMYK). Alternatively you can consider color in terms of Hue, Saturation and Value.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/res/blog_14/hsv-01.png&quot; alt=&quot;HSV&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Considering the image above from (wikipedia)[https://en.wikipedia.org/wiki/HSL_and_HSV] we see that Hue is the apparent absolute rainbow color, saturation is the &lt;em&gt;whiteness&lt;/em&gt; and value is the &lt;em&gt;blacknesss&lt;/em&gt;. With these three values you can express any color.&lt;/p&gt;
+
+&lt;p&gt;I wasn’t interested in black and white photos, I wanted to look at color so I decided I wanted to plot hue. So using the data scraped, I discared the greyscale colors and generated a histogram of all the hues.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all photos&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all colors for each photo&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_hsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#disgard low saturation and value colors&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;span class=&quot;n&quot;&gt;probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;histogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;
+&lt;/div&gt;
+
+&lt;p&gt;To make it &lt;em&gt;extra&lt;/em&gt; pretty I just wrapped the histogram circularly and interpolated along the curve to make it nice and smooth.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_14/radial_hist.png&quot;&gt;
+&lt;img src=&quot;/res/blog_14/radial_hist.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;Et voila! Those are the most predominant hues in Natgeo’s instagram photos.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Natgeo takes a lot of photos of people, and the peak of &lt;em&gt;orangish&lt;/em&gt; colors could be picking that. Next step is to remove the people photos and then sort by geo tags to see what the colors of particular places are.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes:&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;THis was an extension of the blogpost I read &lt;a href=&quot;http://charlesleifer.com/blog/using-python-and-k-means-to-find-the-dominant-colors-in-images/&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Code for batch color analysis and plotting is available &lt;a href=&quot;https://github.com/NicholasARossi/color_me_impressed&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The data was taken from Natgeo’s instagram account using &lt;a href=&quot;https://github.com/althonos/InstaLooter&quot;&gt;instalooter&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
+  
+  <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-01T00:00:00-05:00</updated>
+    <updated>2018-03-15T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -1005,55 +1088,6 @@ The network bellow shows one such markov chain that hops around the pentatonic s
   &lt;li&gt;
     &lt;p&gt;I used matlab to write the evolutionary algorithm to combine the themes and write the novel music (I almost never use matlab but I had some code I previously wrote that made it easy). Not available on github, but just email me if you have questions.&lt;/p&gt;
   &lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Pizza Post</title>
-    <link href="http://nicholasarossi.github.io//pizza"/>
-    <updated>2016-08-07T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//pizza</id>
-    <content type="html">&lt;p&gt;So we all know the bigger the pizza, &lt;a href=&quot;http://www.npr.org/sections/money/2014/02/26/282132576/74-476-reasons-you-should-always-get-the-bigger-pizza&quot;&gt;the better the deal&lt;/a&gt;. The price per square inch decreases dramatically as you increase pizza size. But there&#39;s so much more to do with pizza math! For the following graphs I assume uniform thickness among pizzas (obvious conciet) but beyond that we just need equations for area an circumference of a circle. Presto pesto!&lt;/p&gt;
-&lt;div class=&quot;language-go highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;def&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pizza_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calculates&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;square&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inch&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;**&lt;/span&gt;&lt;span class=&quot;m&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;def&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crust_value&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;err&quot;&gt;#&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;calculates&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;per&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;inch&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;of&lt;/span&gt;&lt;span class=&quot;x&quot;&gt; &lt;/span&gt;&lt;span class=&quot;n&quot;&gt;crust&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-    &lt;/span&gt;&lt;span class=&quot;k&quot;&gt;return&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;price&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pi&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;diameter&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;x&quot;&gt;
-&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
-
-&lt;h2 id=&quot;pizza-geometry&quot;&gt;Pizza Geometry&lt;/h2&gt;
-&lt;p&gt;What does pizza size mean visually? Mouse over the data below for sample pizzas from the &lt;font color=&quot;red&quot;&gt;Pizza Hut&lt;/font&gt;, &lt;font color=&quot;blue&quot;&gt;Dominos&lt;/font&gt; and &lt;font color=&quot;green&quot;&gt;Papa Johns&lt;/font&gt; in Minnesota. A lower price per square inch means a better deal on the pizza.&lt;/p&gt;
-&lt;iframe src=&quot;/res/blog_1/minnesota.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;We see how value scales with increased pizza size, but what of other qualities? Well, we should talk about crust. Crust is the pulp of pizza - a highly divisive feature and one that should always be considered when choosing pizza size. The data below shows some randomly sampled pizza from across the states and how they scale pizza value () &lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/res/blog_1/swarm.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;The Big take away from this is that due to trends in pizza pricing, if you really like crust you should just get a bunch of personal pan pizzas from Pizza hoot, or get cheese pizzas from dominoms.&lt;/p&gt;
-
-&lt;h2 id=&quot;a-tale-of-three-pizzas&quot;&gt;A tale of three pizzas&lt;/h2&gt;
-&lt;p&gt;Zooming in again on pizza value, combining data from all the states and all venders shows considerable price differences between pizzahoot, dominoms and pepe jose&#39;s&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/res/blog_1/stateviolin.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;the-state-of-pizza&quot;&gt;The state of pizza&lt;/h2&gt;
-&lt;p&gt;Also, where you&#39;re buying your pizza can really affect things. A sampling of different states for all three venders shows DC is actually the most expensive place, while the midwest and the south show cheaper prices on average. Although, with the variability in specialty toppings there ends up being a lot of overlap.&lt;/p&gt;
-&lt;p&gt;&lt;img src=&quot;/res/blog_1/statebox.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;big-take-aways&quot;&gt;Big take aways&lt;/h2&gt;
-&lt;p&gt;Buy bigger pizza if you can afford it. Live in Mississipi if you can. Only pizza hut can help you if you really love crust.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes&quot;&gt;Notes:&lt;/h2&gt;
-&lt;ol&gt;
-  &lt;li&gt;This was all done in Python&lt;/li&gt;
-  &lt;li&gt;I used &lt;a href=&quot;http://www.seleniumhq.org/&quot;&gt;selenium&lt;/a&gt; and &lt;a href=&quot;https://www.crummy.com/software/BeautifulSoup/&quot;&gt;beautiful soup&lt;/a&gt; for webscrapping the data that I got from &lt;a href=&quot;http://www.fastfoodmenuprices.com/&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;First visualization was done with the &lt;a href=&quot;http://mpld3.github.io/&quot;&gt;mpld3&lt;/a&gt;; the others were done with &lt;a href=&quot;https://stanford.edu/~mwaskom/software/seaborn/&quot;&gt;seaborn&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;Code can be found &lt;a href=&quot;https://github.com/NicholasARossi/pizza_math&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ol&gt;
 </content>
     <author>
