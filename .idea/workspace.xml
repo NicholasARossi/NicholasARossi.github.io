@@ -2,19 +2,9 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/_posts/2018-03-01-LinLog.md" afterPath="" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Gemfile.lock" afterPath="$PROJECT_DIR$/_site/Gemfile.lock" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/LinLog.html" afterPath="$PROJECT_DIR$/_site/LinLog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/index.html" afterPath="$PROJECT_DIR$/_site/archive/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/sidebar.html" afterPath="$PROJECT_DIR$/_site/archive/sidebar.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md" afterPath="$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/home.html" afterPath="$PROJECT_DIR$/_site/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/natgeo.html" afterPath="$PROJECT_DIR$/_site/natgeo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/projects/index.html" afterPath="$PROJECT_DIR$/_site/projects/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/index.html" afterPath="$PROJECT_DIR$/projects/index.html" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -49,8 +39,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="195">
-                <caret line="78" column="64" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="64" />
+              <first_editor relative-caret-position="60">
+                <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -894,8 +884,8 @@
     <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="195">
-            <caret line="78" column="64" selection-start-line="78" selection-start-column="64" selection-end-line="78" selection-end-column="64" />
+          <first_editor relative-caret-position="60">
+            <caret line="3" column="63" selection-start-line="3" selection-start-column="63" selection-end-line="3" selection-end-column="63" />
             <folding />
           </first_editor>
           <second_editor>
