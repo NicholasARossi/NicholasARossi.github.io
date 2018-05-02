@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-05-01T22:35:01-04:00</updated>
+  <updated>2018-05-01T23:28:36-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -27,6 +27,10 @@
         1px -1px 0 #000,
         -1px 1px 0 #000,
         1px 1px 0 #000;
+        iframe{
+  width: 1px;
+  min-width: 100%;
+}
 &lt;/style&gt;
 
 &lt;iframe src=&quot;/res/blog_10/lego_dance2.html&quot; width=&quot;100%&quot; height=&quot;200px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
