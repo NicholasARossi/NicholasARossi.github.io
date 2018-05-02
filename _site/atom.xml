@@ -3,12 +3,93 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-05-01T22:31:09-04:00</updated>
+  <updated>2018-05-01T22:35:01-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
+  
+  <entry>
+    <title>Lego Datascience</title>
+    <link href="http://nicholasarossi.github.io//Lego"/>
+    <updated>2018-05-01T00:00:00-04:00</updated>
+    <id>http://nicholasarossi.github.io//Lego</id>
+    <content type="html">&lt;style&gt;
+      h1,h2,h3,head,title {
+        font-family: &#39;futura&#39;;
+        font-weight: 1000;
+        outline-color: black;
+        color: black;
+        background-color: #FF8888;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+&lt;/style&gt;
+
+&lt;iframe src=&quot;/res/blog_10/lego_dance2.html&quot; width=&quot;100%&quot; height=&quot;200px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;The Danish building toy has come a long way from its humble roots. From the 1950s to today,
+the brand has expanded to include an ever increasing variety of kit sizes. The animation below summerizes how
+the company has exploded over 7 decades.&lt;/p&gt;
+
+&lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot;&gt;
+&lt;source src=&quot;/res/blog_10/submit.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
+ &lt;source src=&quot;/res/blog_10/submit.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
+&lt;/video&gt;
+
+&lt;p&gt;This video contains tons of information, so let’s take it peice by peice.&lt;/p&gt;
+
+&lt;h3 id=&quot;distributions-over-time&quot;&gt;DISTRIBUTIONS OVER TIME&lt;/h3&gt;
+
+&lt;p&gt;We want to know not only how the mean kit size has changes, but also how the variety of kit sizes has changed.
+To do that we need to overlay populations.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_10/two_pannel.png&quot;&gt;
+&lt;img src=&quot;/res/blog_10/two_pannel.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;However this is sort of a mess, I think we can clean it up though using cumulative distributions instead of normal distributions.
+&lt;a href=&quot;https://en.wikipedia.org/wiki/Cumulative_distribution_function&quot;&gt;Cumulative distributions&lt;/a&gt; are just density functions (or histograms)
+that are summed along the x-axis. To play with that idea click on the interactive below that toggles between the normal histogram
+and the cumuulative histogogram for all lego kits ever made.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_10/line_transition2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;We see that they encode the same information! In the animation above demonstrates how it’s easier to see the differences in the cumulative distribution over time.&lt;/p&gt;
+
+&lt;h3 id=&quot;from-starwars-to-bionicle--lego-themes&quot;&gt;FROM STARWARS TO BIONICLE : LEGO THEMES&lt;/h3&gt;
+
+&lt;p&gt;So as the kits themselves explode over time so do the variety of themes. There are an incredible variety of lego themes
+even though the majority have less than ten kits in each. See the figure for how the number of themes has expanded as well as the
+top themes (by number of sets) of all time.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;/res/blog_10/themes.png&quot;&gt;
+&lt;img src=&quot;/res/blog_10/themes.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;CONCLUSION&lt;/h3&gt;
+
+&lt;p&gt;See the video below for more information on this:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=COhT9Bj3yLc&quot;&gt;
+&lt;img src=&quot;/res/blog_10/maxresdefault.jpg&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;NOTES&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/lego&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The data was retrieved from &lt;a href=&quot;https://www.kaggle.com/rtatman/lego-database&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>The Colors of National Geographic</title>
@@ -85,87 +166,6 @@ National Geographic seemed like a good group to cross-section the natural world.
   &lt;li&gt;THis was an extension of the blogpost I read &lt;a href=&quot;http://charlesleifer.com/blog/using-python-and-k-means-to-find-the-dominant-colors-in-images/&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Code for batch color analysis and plotting is available &lt;a href=&quot;https://github.com/NicholasARossi/color_me_impressed&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;The data was taken from Natgeo’s instagram account using &lt;a href=&quot;https://github.com/althonos/InstaLooter&quot;&gt;instalooter&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Lego Datascience</title>
-    <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-04-15T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//Lego</id>
-    <content type="html">&lt;style&gt;
-      h1,h2,h3,head,title {
-        font-family: &#39;futura&#39;;
-        font-weight: 1000;
-        outline-color: black;
-        color: black;
-        background-color: #FF8888;
-        text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
-&lt;/style&gt;
-
-&lt;iframe src=&quot;/res/blog_10/lego_dance2.html&quot; width=&quot;100%&quot; height=&quot;200px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;The Danish building toy has come a long way from its humble roots. From the 1950s to today,
-the brand has expanded to include an ever increasing variety of kit sizes. The animation below summerizes how
-the company has exploded over 7 decades.&lt;/p&gt;
-
-&lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot;&gt;
-&lt;source src=&quot;/res/blog_10/submit.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
- &lt;source src=&quot;/res/blog_10/submit.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
-&lt;/video&gt;
-
-&lt;p&gt;This video contains tons of information, so let’s take it peice by peice.&lt;/p&gt;
-
-&lt;h3 id=&quot;distributions-over-time&quot;&gt;DISTRIBUTIONS OVER TIME&lt;/h3&gt;
-
-&lt;p&gt;We want to know not only how the mean kit size has changes, but also how the variety of kit sizes has changed.
-To do that we need to overlay populations.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/res/blog_10/two_pannel.png&quot;&gt;
-&lt;img src=&quot;/res/blog_10/two_pannel.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;p&gt;However this is sort of a mess, I think we can clean it up though using cumulative distributions instead of normal distributions.
-&lt;a href=&quot;https://en.wikipedia.org/wiki/Cumulative_distribution_function&quot;&gt;Cumulative distributions&lt;/a&gt; are just density functions (or histograms)
-that are summed along the x-axis. To play with that idea click on the interactive below that toggles between the normal histogram
-and the cumuulative histogogram for all lego kits ever made.&lt;/p&gt;
-
-&lt;iframe src=&quot;/res/blog_10/line_transition2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;We see that they encode the same information! In the animation above demonstrates how it’s easier to see the differences in the cumulative distribution over time.&lt;/p&gt;
-
-&lt;h3 id=&quot;from-starwars-to-bionicle--lego-themes&quot;&gt;FROM STARWARS TO BIONICLE : LEGO THEMES&lt;/h3&gt;
-
-&lt;p&gt;So as the kits themselves explode over time so do the variety of themes. There are an incredible variety of lego themes
-even though the majority have less than ten kits in each. See the figure for how the number of themes has expanded as well as the
-top themes (by number of sets) of all time.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/res/blog_10/themes.png&quot;&gt;
-&lt;img src=&quot;/res/blog_10/themes.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;CONCLUSION&lt;/h3&gt;
-
-&lt;p&gt;See the video below for more information on this:&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=COhT9Bj3yLc&quot;&gt;
-&lt;img src=&quot;/res/blog_10/maxresdefault.jpg&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;h3 id=&quot;notes&quot;&gt;NOTES&lt;/h3&gt;
-
-&lt;ul&gt;
-  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/lego&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The data was retrieved from &lt;a href=&quot;https://www.kaggle.com/rtatman/lego-database&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 </content>
     <author>

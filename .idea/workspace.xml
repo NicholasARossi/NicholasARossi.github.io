@@ -2,22 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-01-01-segregation.md" afterPath="$PROJECT_DIR$/_posts/2018-01-01-segregation.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/Lego.html" afterPath="$PROJECT_DIR$/_site/Lego.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/LinLog.html" afterPath="$PROJECT_DIR$/_site/LinLog.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/index.html" afterPath="$PROJECT_DIR$/_site/archive/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/sidebar.html" afterPath="$PROJECT_DIR$/_site/archive/sidebar.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/home.html" afterPath="$PROJECT_DIR$/_site/home.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/natgeo.html" afterPath="$PROJECT_DIR$/_site/natgeo.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_10/bremer_test.html" afterPath="$PROJECT_DIR$/_site/res/blog_10/bremer_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_10/line_transition2.html" afterPath="$PROJECT_DIR$/_site/res/blog_10/line_transition2.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/about/index.md" afterPath="$PROJECT_DIR$/about/index.md" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_10/bremer_test.html" afterPath="$PROJECT_DIR$/res/blog_10/bremer_test.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_10/line_transition2.html" afterPath="$PROJECT_DIR$/res/blog_10/line_transition2.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-04-15-Lego.md" afterPath="$PROJECT_DIR$/_posts/2018-04-15-Lego.md" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -56,12 +41,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-04-15-Lego.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2018-04-15-Lego.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-Lego.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="708">
-                <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
+              <first_editor relative-caret-position="45">
+                <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -84,12 +69,12 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="360">
-                <caret line="143" column="52" selection-start-line="143" selection-start-column="52" selection-end-line="143" selection-end-column="52" />
+              <first_editor relative-caret-position="75">
+                <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -226,8 +211,8 @@
         <option value="$PROJECT_DIR$/res/blog_10/bremer_test.html" />
         <option value="$PROJECT_DIR$/res/blog_10/line_transition2.html" />
         <option value="$PROJECT_DIR$/res/blog_10/lego_dance2.html" />
-        <option value="$PROJECT_DIR$/_posts/2018-04-15-Lego.md" />
         <option value="$PROJECT_DIR$/_posts/2018-01-01-segregation.md" />
+        <option value="$PROJECT_DIR$/_posts/2018-04-15-Lego.md" />
       </list>
     </option>
   </component>
@@ -962,27 +947,11 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-Lego.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="708">
-            <caret line="68" column="52" selection-start-line="68" selection-start-column="52" selection-end-line="68" selection-end-column="52" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="360">
-            <caret line="143" column="52" selection-start-line="143" selection-start-column="52" selection-end-line="143" selection-end-column="52" />
+          <first_editor relative-caret-position="75">
+            <caret line="5" column="3" selection-start-line="5" selection-start-column="3" selection-end-line="5" selection-end-column="3" />
             <folding />
           </first_editor>
           <second_editor>
@@ -994,6 +963,22 @@
         <state relative-caret-position="2130">
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="145" selection-end-column="5" />
           <folding />
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-15-Lego.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="45">
+            <caret line="3" column="60" selection-start-line="3" selection-start-column="60" selection-end-line="3" selection-end-column="60" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
         </state>
       </provider>
       <provider editor-type-id="Gfm">
