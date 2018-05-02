@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<svg width="960" height="500"></svg>
+<svg id="chart" width="960" height="300" viewBox="0 0 960 300" preserveAspectRatio="xMidYMid meet"></svg>
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 
@@ -11,16 +11,23 @@ d3.csv('cumsum_totale.csv',function(d){
 
   };
 },function(data){
-
+var aspect = width / height,
+    chart = d3.select('#chart');
+d3.select(window)
+  .on("resize", function() {
+    var targetWidth = chart.node().getBoundingClientRect().width;
+    chart.attr("width", targetWidth);
+    chart.attr("height", targetWidth / aspect);
+  });
 
 console.log()
+var width = window.innerWidth*.9;
+var height = window.innerHeight*.75;
 
-
-var svg = d3.select("svg").attr('viewBox',"0 0 1920 1080").attr('preserveAspectRatio',"xMidYMid meet"),
-    margin = {top: 20, right: 20, bottom: 100, left: 100},
-    width = +svg.attr("width") - margin.left - margin.right,
-    height = +svg.attr("height") - margin.top - margin.bottom,
+var svg = d3.select("svg"),
+    margin = {top: 20, right: 20, bottom: 30, left: 50},
     g = svg.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
 
 var parseTime = d3.timeParse("%d-%b-%y");
 
@@ -62,32 +69,18 @@ var line2 = d3.line()
           .append('text') // y-axis Label
           .attr('class','label')
           .attr('transform','rotate(-90)')
-          .attr('x',0)
-          .attr('y',-50)
+          .attr('x',-15)
+          .attr('y',10)
           .style("opacity",.25)
           .style("font-family","futura")
-          .style("font-size","60px")
+          .style("font-size","30px")
           .attr("lineWidth",100)
           .attr("strokeStyle","black")
           // .attr('dy','.71em')
           .style('text-anchor','end')
           .text('Number of Sets');
 
-var ylabel=g.append('g')
-        .append('text') // y-axis Label
-        .attr('class','label')
-        .attr('y',100)
-        .attr('x',width/5)
-        .attr('transform', 'translate(0,' + height + ')')
 
-        .style("opacity",.25)
-        .style("font-family","futura")
-        .style("font-size","60px")
-        .attr("lineWidth",100)
-        .attr("strokeStyle","black")
-        // .attr('dy','.71em')
-        .style('text-anchor','front')
-        .text('Number of Pieces');
 
   var yaxis=g.append("g")
       .attr("stroke-width", 0)
@@ -99,10 +92,10 @@ var ylabel=g.append('g')
       .attr("stroke", "#FF8888")
       .attr("stroke-linejoin", "round")
       .attr("stroke-linecap", "round")
-      .attr("stroke-width", 10)
+      .attr("stroke-width", 5)
       .attr("d", line(data))
   var atRight = true;
-  var bs_modo=2
+  var bs_modo=1
   var rect = g.append("rect")
       .attr("x", 10*bs_modo)
       .attr("y", 10*bs_modo)
@@ -143,7 +136,21 @@ var ylabel=g.append('g')
 
       });
 
+    var ylabel=g.append('g')
+            .append('text') // y-axis Label
+            .attr('class','label')
+            .attr('y',-10)
+            .attr('x',width/3)
+            .attr('transform', 'translate(0,' + height + ')')
 
+            .style("opacity",.25)
+            .style("font-family","futura")
+            .style("font-size","20px")
+            .attr("lineWidth",100)
+            .attr("strokeStyle","black")
+            // .attr('dy','.71em')
+            .style('text-anchor','front')
+            .text('Number of Pieces');
     var setAtRight = function(newValue) {
         atRight = newValue;
         circle.transition().duration(700)
@@ -157,7 +164,7 @@ var ylabel=g.append('g')
               .attr("stroke", atRight? "#FF8888" : "purple")
               .attr("stroke-linejoin", "round")
               .attr("stroke-linecap", "round")
-              .attr("stroke-width", 10)
+              .attr("stroke-width", 5)
               .attr("d", atRight? line(data) : line2(data));
         yaxis.transition().duration(700)
               .call(d3.axisLeft(y));

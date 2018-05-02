@@ -141,7 +141,7 @@ US government data is highly racialized which lends itself to testing these sort
 Still, these data represent quantitatively disprove the hypothesis that segregation is exclusively a top-down phenomenon that was part of the historical record. It still exists today in part because of the emergent clustering produced from humans tendency to self-associate.
 
 Watch the video essay below for further analysis:
-<a href="https://www.youtube.com/watch?v=uszdal33edo?rel=0">
+<a href="https://www.youtube.com/watch?v=VUwzI4DOYOU">
 <img class="lazyload" src="/res/blog_8/thumb.png">
 </a>﻿
 

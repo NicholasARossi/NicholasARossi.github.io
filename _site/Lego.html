@@ -36,17 +36,16 @@
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
     
-    <meta property="article:published_time" content="2018-03-15">
+    <meta property="article:published_time" content="2018-04-15">
     
     <script>window.initFuncs = [];</script>
   </head>
   <body>
     <header>
       <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
-      <ul class="navigation">
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
         <li><a href="/home.html">Blog</a></li>
-
-        <li><a href="/papers/" title="Publicaitons and presentations">Papers</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
 
         <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
         <li><a href="/archive/" title="Archived articles">Archive</a></li>
@@ -80,50 +79,88 @@
   <div class="post single">
     
     <h1>Lego Datascience</h1>
-    <info datetime="2018-03-15">
-      Mar 15, 2018
+    <info datetime="2018-04-15">
+      Apr 15, 2018
     </info>
     
-    <div class="body"><html>
-  <head>
-    <link rel="stylesheet" href="/res/blog_9/bonus_style.css" /><style>
+    <div class="body"><style>
       h1,h2,h3,head,title {
         font-family: 'futura';
-        <!-- color: #FF8888;
-        background-color: lightgray; -->
-        color: lightgray;
-        background-color: #FF8888;
-      }
-
-      body {
-        <!-- font-family: 'timesnewroman',serif; -->
+        font-weight: 1000;
+        outline-color: black;
         color: black;
+        background-color: #FF8888;
+        text-shadow:
+        -1px -1px 0 #000,
+        1px -1px 0 #000,
+        -1px 1px 0 #000,
+        1px 1px 0 #000;
+</style>
 
+<iframe src="/res/blog_10/lego_dance2.html" width="100%" height="200px" scrolling="no"></iframe>
 
-      }
-    </style>
-  </head>
-</html>
-<p style="text-align: center; background-color: lightgray;"></p>
+<p>The Danish building toy has come a long way from its humble roots. From the 1950s to today,
+the brand has expanded to include an ever increasing variety of kit sizes. The animation below summerizes how
+the company has exploded over 7 decades.</p>
 
-<h2 id="how-do-we-compute-legos">How do we compute legos?</h2>
+<video controls="" loop="" autoplay="" width="100%">
+<source src="/res/blog_10/submit.webm" autoplay="true" type="video/webm" />
+ <source src="/res/blog_10/submit.mp4" autoplay="true" type="video/mp4" />
+</video>
 
-<p><img src="/res/blog_10/men.png" alt="banner" />
-&lt;!–</p>
-<iframe src="/res/blog_10/line_transition2.html" width="100%" height="100%" scrolling="no"></iframe>
-<p>–&gt;</p>
+<p>This video contains tons of information, so let’s take it peice by peice.</p>
 
-<style>.embed-container { position: relative; padding-bottom: 100%; height: 0; overflow: hidden; max-width: 100%; } .embed-container iframe, .embed-container object, .embed-container embed { position: absolute; top: 0; left: 0; width: 100%; height: 100%; }</style>
-<div class="embed-container"><iframe src="/res/blog_10/line_transition2.html" frameborder="0" allowfullscreen="" scrolling="no"></iframe></div>
+<h3 id="distributions-over-time">DISTRIBUTIONS OVER TIME</h3>
 
-<p>Typing</p>
+<p>We want to know not only how the mean kit size has changes, but also how the variety of kit sizes has changed.
+To do that we need to overlay populations.</p>
+
+<p><a href="/res/blog_10/two_pannel.png">
+<img src="/res/blog_10/two_pannel.png" />
+</a>﻿</p>
+
+<p>However this is sort of a mess, I think we can clean it up though using cumulative distributions instead of normal distributions.
+<a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">Cumulative distributions</a> are just density functions (or histograms)
+that are summed along the x-axis. To play with that idea click on the interactive below that toggles between the normal histogram
+and the cumuulative histogogram for all lego kits ever made.</p>
+
+<iframe src="/res/blog_10/line_transition2.html" width="100%" height="300px" scrolling="no"></iframe>
+
+<p>We see that they encode the same information! In the animation above demonstrates how it’s easier to see the differences in the cumulative distribution over time.</p>
+
+<h3 id="from-starwars-to-bionicle--lego-themes">FROM STARWARS TO BIONICLE : LEGO THEMES</h3>
+
+<p>So as the kits themselves explode over time so do the variety of themes. There are an incredible variety of lego themes
+even though the majority have less than ten kits in each. See the figure for how the number of themes has expanded as well as the
+top themes (by number of sets) of all time.</p>
+
+<p><a href="/res/blog_10/themes.png">
+<img src="/res/blog_10/themes.png" />
+</a>﻿</p>
+
+<h3 id="conclusion">CONCLUSION</h3>
+
+<p>See the video below for more information on this:</p>
+
+<p><a href="https://www.youtube.com/watch?v=COhT9Bj3yLc">
+<img src="/res/blog_10/maxresdefault.jpg" />
+</a>﻿</p>
+
+<h3 id="notes">NOTES</h3>
+
+<ul>
+  <li>This was written in Python and D3.js : see code <a href="https://github.com/NicholasARossi/lego">here</a></li>
+  <li>The data was retrieved from <a href="https://www.kaggle.com/rtatman/lego-database">here</a></li>
+</ul>
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
     <div class="PageNavigation">
       
-        <a class="prev" href="/Academy">&laquo; Shared Actors between the 2018 Best Picture Nominees</a>
+        <a class="prev" href="/LinLog">&laquo; How to Lie with Histograms</a>
       
+      
+        <a class="next" href="/NatGeo">The Colors of National Geographic &raquo;</a>
       
     </div>
 
