@@ -31,8 +31,6 @@ d3.csv('data_total.csv', function (data) {
 	var svg = body.append('svg')
 	     .attr('height',h + margin.top + margin.bottom)
 	     .attr('width',w + margin.left + margin.right)
-//      .attr('viewBox',"0 0 650 500")
-      .attr('preserveAspectRatio',"xMidYMid meet")
 	  .append('g')
 	    .attr('transform','translate(' + margin.left + ',' + margin.top + ')')
 	// X-axis

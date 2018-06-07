@@ -3,15 +3,12 @@
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" afterPath="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/flightdelays.html" afterPath="$PROJECT_DIR$/_site/flightdelays.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/home.html" afterPath="$PROJECT_DIR$/_site/home.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_16/flight_delay_viz.js" afterPath="$PROJECT_DIR$/_site/res/blog_16/flight_delay_viz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_16/scatter.html" afterPath="$PROJECT_DIR$/_site/res/blog_16/scatter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_16/scatterscript.js" afterPath="$PROJECT_DIR$/_site/res/blog_16/scatterscript.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_16/flight_delay_viz.js" afterPath="$PROJECT_DIR$/res/blog_16/flight_delay_viz.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_16/scatter.html" afterPath="$PROJECT_DIR$/res/blog_16/scatter.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_16/scatterscript.js" afterPath="$PROJECT_DIR$/res/blog_16/scatterscript.js" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -50,44 +47,6 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-05-15-PythonAnimations.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_15/2018-05-15-PythonAnimations.md">
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="285">
-                <caret line="19" column="8" selection-start-line="19" selection-start-column="8" selection-end-line="19" selection-end-column="8" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <js_state />
-              </second_editor>
-            </state>
-          </provider>
-          <provider editor-type-id="Gfm">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="highlight.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/highlight.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="270">
-              <caret line="18" column="14" selection-start-line="18" selection-start-column="14" selection-end-line="18" selection-end-column="14" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="manni.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_15/manni.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="34" column="53" selection-start-line="34" selection-start-column="11" selection-end-line="34" selection-end-column="53" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="scatter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
           <provider selected="true" editor-type-id="text-editor">
@@ -98,11 +57,41 @@
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="script.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_8/script.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="330">
+              <caret line="28" column="14" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="states_scatter.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_8/states_scatter.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-186">
+              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="flight_wrapper.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="-414">
+              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="flight_delay_viz.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/blog_16/flight_delay_viz.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="176">
-              <caret line="351" column="22" selection-start-line="351" selection-start-column="18" selection-end-line="351" selection-end-column="22" />
+            <state relative-caret-position="-225">
+              <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
               <folding />
             </state>
           </provider>
@@ -144,7 +133,7 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="true">
+      <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
@@ -162,11 +151,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="scatterscript.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="scatterscript.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/blog_16/scatterscript.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="2910">
-              <caret line="194" column="6" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
+            <state relative-caret-position="150">
+              <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
               <folding />
             </state>
           </provider>
@@ -233,13 +222,13 @@
         <option value="$PROJECT_DIR$/res/blog_16/bar_wrapper2.html" />
         <option value="$PROJECT_DIR$/res/blog_16/bar.js" />
         <option value="$PROJECT_DIR$/res/blog_16/bar2.js" />
-        <option value="$PROJECT_DIR$/res/blog_16/scatterscript.js" />
         <option value="$PROJECT_DIR$/res/blog_15/manni.css" />
         <option value="$PROJECT_DIR$/res/highlight.css" />
         <option value="$PROJECT_DIR$/_posts/2018-05-15-PythonAnimations.md" />
         <option value="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" />
         <option value="$PROJECT_DIR$/res/blog_16/scatter.html" />
         <option value="$PROJECT_DIR$/res/blog_16/flight_delay_viz.js" />
+        <option value="$PROJECT_DIR$/res/blog_16/scatterscript.js" />
       </list>
     </option>
   </component>
@@ -303,6 +292,42 @@
             </PATH_ELEMENT>
             <PATH_ELEMENT>
               <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog_9" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog_8" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -604,13 +629,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/swap2.jsx">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="18" column="37" selection-start-line="18" selection-start-column="37" selection-end-line="18" selection-end-column="37" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/swap.jsx">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="385">
@@ -655,13 +673,6 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_15/easing_javascript.py" />
     <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-PythonAnimations.md" />
-    <entry file="file://$PROJECT_DIR$/res/blog_8/script.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_8/script2.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -871,14 +882,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/assets/css/layout.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-27">
@@ -959,30 +962,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/scatterscript.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2910">
-          <caret line="194" column="6" selection-start-line="194" selection-start-column="6" selection-end-line="194" selection-end-column="6" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="195">
-          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_delay_viz.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="176">
-          <caret line="351" column="22" selection-start-line="351" selection-start-column="18" selection-end-line="351" selection-end-column="22" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2017-05-02-Wheat.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
@@ -1034,6 +1013,54 @@
       </provider>
       <provider editor-type-id="Gfm">
         <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="195">
+          <caret line="13" column="0" selection-start-line="13" selection-start-column="0" selection-end-line="13" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_8/script.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="330">
+          <caret line="28" column="14" selection-start-line="28" selection-start-column="0" selection-end-line="29" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_8/states_scatter.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-186">
+          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-414">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_delay_viz.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-225">
+          <caret line="7" column="13" selection-start-line="7" selection-start-column="13" selection-end-line="7" selection-end-column="13" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_16/scatterscript.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="150">
+          <caret line="32" column="54" selection-start-line="32" selection-start-column="54" selection-end-line="32" selection-end-column="54" />
+          <folding />
+        </state>
       </provider>
     </entry>
   </component>
