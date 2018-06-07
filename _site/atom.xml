@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-06-07T12:00:59-07:00</updated>
+  <updated>2018-06-07T12:04:53-07:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -15,7 +15,9 @@
     <link href="http://nicholasarossi.github.io//flightdelays"/>
     <updated>2018-06-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//flightdelays</id>
-    <content type="html">&lt;style&gt;
+    <content type="html">&lt;html&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Playfair+Display&quot; /&gt;
+&lt;style&gt;
 
       h1,h2,h3,head,title {
         font-family: &#39;playfair display&#39;;
@@ -24,6 +26,7 @@
         background-color: slategrey;
 }
 &lt;/style&gt;
+&lt;/html&gt;
 
 &lt;h3 id=&quot;the-worst-airports-in-america&quot;&gt;The Worst Airports in America&lt;/h3&gt;
 

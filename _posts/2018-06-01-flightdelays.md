@@ -4,7 +4,9 @@ layout: post
 description: "Which is the Worst Airport in America?"
 comments: yes
 ---
-
+<html>
+<link rel="stylesheet"
+      href="https://fonts.googleapis.com/css?family=Playfair+Display">
 <style>
 
       h1,h2,h3,head,title {
@@ -14,6 +16,7 @@ comments: yes
         background-color: slategrey;
 }
 </style>
+</html>
 
 ### The Worst Airports in America
 
