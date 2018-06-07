@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-05-02T00:19:41-04:00</updated>
+  <updated>2018-06-07T11:35:43-07:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -11,9 +11,78 @@
   </author>
   
   <entry>
+    <title>Flight Delays</title>
+    <link href="http://nicholasarossi.github.io//flightdelays"/>
+    <updated>2018-06-01T00:00:00-07:00</updated>
+    <id>http://nicholasarossi.github.io//flightdelays</id>
+    <content type="html">&lt;style&gt;
+
+      h1,h2,h3,head,title {
+        font-family: &#39;playfair display&#39;;
+        outline-color: white;
+        color: white;
+        background-color: slategrey;
+}
+&lt;/style&gt;
+
+&lt;h3 id=&quot;the-worst-airports-in-america&quot;&gt;The Worst Airports in America&lt;/h3&gt;
+
+&lt;p&gt;What makes a bad airport? There’s a lot that can go wrong with a flight - like having to ride in a snow crawler like in &lt;a href=&quot;https://en.wikipedia.org/wiki/Mobile_lounge&quot;&gt;Washington Dulles&lt;/a&gt;. But we can all agree that having your flight delayed is one of the worst things.&lt;/p&gt;
+
+&lt;p&gt;By extension, looking at the number of delays of per airport is a good way to rank them. The chart below shows the worst airports for total numbers of delays.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_16/bar_wrapper.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Anyone that’s been to O’hare shouldn’t be suprised by this. I should note that I scraped this data over two weeks in April 2018. But there’s no reason to believe this data isn’t representative of the norm as there were no big weather events.&lt;/p&gt;
+
+&lt;p&gt;Clearly, we’ve selected a lot of big airports here. So naturally the next question is which airports have the worst percentage of delays.&lt;/p&gt;
+
+&lt;p&gt;Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small airfeilds with bad track records.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_16/bar_wrapper2.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Surprisingly, O’hare isn’t even on this list. Take that Midway! Memphis takes the cake with an astounding 35% of flights delayed.&lt;/p&gt;
+
+&lt;h3 id=&quot;relationship-between-size-of-airport-and-number-of-delays&quot;&gt;Relationship between size of airport and number of delays?&lt;/h3&gt;
+
+&lt;p&gt;Does a bigger airport necessarily mean more delays? Not so much. You can explore the data below to find out for yourself. Mouse over to see airport details. The toggle switch changes between linear and log axis for the number of airport delays (this helps visualize the data). The size of the dots scales with the number of total flights from that airport.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_16/scatter.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Turns out Portland and Minneapolis are both really good for their size, while Memphis, Midway and Philly aren’t so good.&lt;/p&gt;
+
+&lt;h3 id=&quot;locations-of-bad-airports&quot;&gt;Locations of bad airports&lt;/h3&gt;
+
+&lt;p&gt;To visualize this spatially, we can plot the total number of delays by location. The animation cycles between total delays, the percentage delayed at those airports and the state in which they’re located.&lt;/p&gt;
+
+&lt;iframe src=&quot;/res/blog_16/flight_wrapper.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;Watch the video below for a presentation on this material:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;https://www.youtube.com/watch?v=9GZRw3MA730&quot;&gt;
+&lt;img src=&quot;/res/blog_16/rez-01.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;NOTES&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/VizSnacks&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The data was retrieved from &lt;a href=&quot;https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The gooey effect was taken from Nadieh Bremmers work &lt;a href=&quot;http://bl.ocks.org/nbremer/8df57868090f11e59175804e2062b2aa&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
+  
+  <entry>
     <title>Lego Datascience</title>
     <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-05-01T00:00:00-04:00</updated>
+    <updated>2018-05-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -29,10 +98,10 @@
         color: black;
         background-color: #FF8888;
         text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+        -.75px -.75px 0 #000,
+        .75px -.75px 0 #000,
+        -.75px .75px 0 #000,
+        .75px .75px 0 #000;
 }
 		iframe {
 			width: 10px;
@@ -44,7 +113,7 @@
 &lt;iframe src=&quot;/res/blog_10/lego_dance2.html&quot; height=&quot;200px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;The Danish building toy has come a long way from its humble roots. From the 1950s to today,
-the brand has expanded to include an ever increasing variety of kit sizes. The animation below summerizes how
+LEGO has expanded to include an ever increasing variety of kit sizes. The animation below summarizes how
 the company has exploded over 7 decades.&lt;/p&gt;
 
 &lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot;&gt;
@@ -52,12 +121,12 @@ the company has exploded over 7 decades.&lt;/p&gt;
  &lt;source src=&quot;/res/blog_10/submit.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
 &lt;/video&gt;
 
-&lt;p&gt;This video contains tons of information, so let’s take it peice by peice.&lt;/p&gt;
+&lt;p&gt;This video contains tons of information, so let’s take it piece by piece.&lt;/p&gt;
 
 &lt;h3 id=&quot;distributions-over-time&quot;&gt;DISTRIBUTIONS OVER TIME&lt;/h3&gt;
 
 &lt;p&gt;We want to know not only how the mean kit size has changes, but also how the variety of kit sizes has changed.
-To do that we need to overlay populations.&lt;/p&gt;
+To do that we need to overlay distributions.&lt;/p&gt;
 
 &lt;p&gt;&lt;a href=&quot;/res/blog_10/two_pannel.png&quot;&gt;
 &lt;img src=&quot;/res/blog_10/two_pannel.png&quot; /&gt;
@@ -66,7 +135,7 @@ To do that we need to overlay populations.&lt;/p&gt;
 &lt;p&gt;However this is sort of a mess, I think we can clean it up though using cumulative distributions instead of normal distributions.
 &lt;a href=&quot;https://en.wikipedia.org/wiki/Cumulative_distribution_function&quot;&gt;Cumulative distributions&lt;/a&gt; are just density functions (or histograms)
 that are summed along the x-axis. To play with that idea click on the interactive below that toggles between the normal histogram
-and the cumuulative histogogram for all lego kits ever made.&lt;/p&gt;
+and the cumulative histogram for all lego kits ever made.&lt;/p&gt;
 
 &lt;iframe src=&quot;/res/blog_10/line_transition2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
@@ -106,7 +175,7 @@ top themes (by number of sets) of all time.&lt;/p&gt;
   <entry>
     <title>The Colors of National Geographic</title>
     <link href="http://nicholasarossi.github.io//NatGeo"/>
-    <updated>2018-04-20T00:00:00-04:00</updated>
+    <updated>2018-04-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -189,7 +258,7 @@ National Geographic seemed like a good group to cross-section the natural world.
   <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-15T00:00:00-04:00</updated>
+    <updated>2018-03-15T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -299,7 +368,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Shared Actors between the 2018 Best Picture Nominees</title>
     <link href="http://nicholasarossi.github.io//Academy"/>
-    <updated>2018-03-01T00:00:00-05:00</updated>
+    <updated>2018-03-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//Academy</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -355,7 +424,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Schools are still segregated</title>
     <link href="http://nicholasarossi.github.io//segregation"/>
-    <updated>2018-01-01T00:00:00-05:00</updated>
+    <updated>2018-01-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//segregation</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -513,7 +582,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-04:00</updated>
+    <updated>2017-06-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -651,7 +720,7 @@ document.getElementById(&quot;video1&quot;).currentTime = 14;
   <entry>
     <title>Quantifying Genetic Entropy in Humans and Wheat</title>
     <link href="http://nicholasarossi.github.io//Wheat"/>
-    <updated>2017-05-02T00:00:00-04:00</updated>
+    <updated>2017-05-02T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//Wheat</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -753,7 +822,7 @@ Domestic Wheat seems more ready than us to withstand the apocalypse than us. Tha
   <entry>
     <title>Forecasting the 2018 Midterms Using Tools from Engineering</title>
     <link href="http://nicholasarossi.github.io//Cross-Correlation"/>
-    <updated>2017-04-04T00:00:00-04:00</updated>
+    <updated>2017-04-04T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//Cross Correlation</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {
@@ -930,7 +999,7 @@ Your browser does not support the video tag.
   <entry>
     <title>How Term Limits Might Affect How Congress Works</title>
     <link href="http://nicholasarossi.github.io//congress"/>
-    <updated>2016-10-20T00:00:00-04:00</updated>
+    <updated>2016-10-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//congress</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {
@@ -1016,80 +1085,6 @@ Your browser does not support the video tag.
   &lt;/li&gt;
   &lt;li&gt;
     &lt;p&gt;Code and Data available &lt;a href=&quot;https://github.com/NicholasARossi/Congressional-Tenure-Analysis&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-&lt;/ol&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Global Trends in Cigarette Consumption</title>
-    <link href="http://nicholasarossi.github.io//cigarettes"/>
-    <updated>2016-10-15T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//cigarettes</id>
-    <content type="html">&lt;style&gt;
-  h1,h2,h3,head,title {
-
-    font-color: black;
-    color: black;
-    background-color: #EF6648;
-  }
-  &lt;!-- header{
-    background-color: #d3d3d3;
-  } --&gt;
-
-&lt;/style&gt;
-
-&lt;h2 id=&quot;smoking-is-a-lot-more-prevalent-in-certain-places&quot;&gt;Smoking is a lot more prevalent in certain places&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/res/blog_3/smoker.jpg&quot; align=&quot;left&quot; width=&quot;30%&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;There are certain countries that have a much larger smoking population than others - ranging from countries like Ethiopia that have less than 5% of a smoking population to countries like Jordan where it’s closer to 40%.
-&lt;!-- &lt;div class=&quot;full zoomable&quot;&gt;&lt;img src=&quot;/res/blog_3/Percentage_smokers.PNG&quot;&gt;&lt;/div&gt; --&gt;
-&lt;!-- ![Percentage Smokers](/res/blog_3/Percentage_smokers.PNG) --&gt;
-&lt;a href=&quot;/res/blog_3/Percentage_smokers.png&quot;&gt;
-&lt;img src=&quot;/res/blog_3/Percentage_smokers.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;h2 id=&quot;certain-countries-have-super-intense-smokers&quot;&gt;Certain countries have super intense smokers&lt;/h2&gt;
-
-&lt;p&gt;Just looking at the average number of cigarettes that a smoker consumes per country, it’s clear to see that not everyone smokes the same way. While we can imagine that there is a distribution of cigarette consumption among smokers in a country, just looking at the mean consumption per smoker shows that there are countries like Slovenia and Bulgaria where smokers consume on average just under 40 cigarettes per day (about 2 packs).
-&lt;img src=&quot;/res/blog_3/cigarettes_per_smoker.png&quot; alt=&quot;Cigarettes per Smoker&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;countries-that-have-the-most-smokers-do-not-necessarily-smoke-the-most&quot;&gt;Countries that have the most smokers do not necessarily smoke the most&lt;/h2&gt;
-
-&lt;p&gt;The graph below show the weak correlation between the the percentage of smokers in a country and the average number of cigarettes they smoke per day (Spearman’s R: 0.36, p value=0.0001).&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/res/blog_3/comparison.png&quot; alt=&quot;Relationship&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;A good example the disparity between frequency and volume France vs the USA. &lt;a href=&quot;/res/blog_3/letired.png&quot;&gt;Stereotypes&lt;/a&gt; would have us believe that everyone in France smokes. Indeed, smoking is more common France - about ~27.6% of people smoke in France compared to ~17.2% in the states. However, Americans always believe that if something is worth doing, it’s worth overdoing - so american smokers consume on average 17 cigarettes per day (there are 20 in a pack) while French people struggle to consume just under 10 on average. USA! USA! USA!&lt;/p&gt;
-
-&lt;p&gt;The chart below shows the countries where smoking is the most frequent, and the countries that have the most &lt;em&gt;committed&lt;/em&gt; smokers. There is some overlap, but the rankings are very different for the two metrics.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/res/blog_3/cig_subplots.png&quot; alt=&quot;Top Countries&quot; /&gt;&lt;/p&gt;
-
-&lt;h2 id=&quot;why-cigarettes-per-smoker-and-not-cigarettes-per-capita&quot;&gt;Why cigarettes per smoker and not cigarettes per capita?&lt;/h2&gt;
-
-&lt;p&gt;Well simply put cigarette consumption follows a &lt;a href=&quot;https://en.wikipedia.org/wiki/Multimodal_distribution&quot;&gt;non-normal distribution&lt;/a&gt;, therefore the “mean” doesn’t have much significance. To use (albeit crude) statistics humor - humans have on average one testicle and one breast which doesn’t cary much information about how human anatomy is distributed! Similarly there are people that smoke and those that don’t - it’s best to understand how those groups function independently.&lt;/p&gt;
-
-&lt;h2 id=&quot;notes-for-nerds&quot;&gt;Notes for Nerds:&lt;/h2&gt;
-
-&lt;ol&gt;
-  &lt;li&gt;
-    &lt;p&gt;The data came from the &lt;a href=&quot;http://apps.who.int/gho/data/node.sdg.3-a-viz?lang=en&quot;&gt;WHO&lt;/a&gt; as well as &lt;a href=&quot;https://en.wikipedia.org/wiki/List_of_countries_by_cigarette_consumption_per_capita&quot;&gt;wikipedia&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Analysis was done with Python; visualizations with &lt;a href=&quot;http://vincent.readthedocs.io/en/latest/&quot;&gt;vincent&lt;/a&gt; and &lt;a href=&quot;http://stanford.edu/~mwaskom/software/seaborn/&quot;&gt;seaborn&lt;/a&gt;. Maps touched up with Illustrator.&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Code and munged data available &lt;a href=&quot;https://github.com/NicholasARossi/Global-Smoking-Analysis/tree/master&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
-  &lt;/li&gt;
-  &lt;li&gt;
-    &lt;p&gt;Disregard cigarettes, acquire dry land
-&lt;img src=&quot;/res/blog_3/the_gentleman_guppy.gif&quot; alt=&quot;Gentleman Guppy&quot; /&gt;&lt;/p&gt;
   &lt;/li&gt;
 &lt;/ol&gt;
 </content>

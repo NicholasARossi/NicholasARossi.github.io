@@ -97,10 +97,10 @@
         color: black;
         background-color: #FF8888;
         text-shadow:
-        -1px -1px 0 #000,
-        1px -1px 0 #000,
-        -1px 1px 0 #000,
-        1px 1px 0 #000;
+        -.75px -.75px 0 #000,
+        .75px -.75px 0 #000,
+        -.75px .75px 0 #000,
+        .75px .75px 0 #000;
 }
 		iframe {
 			width: 10px;
@@ -112,7 +112,7 @@
 <iframe src="/res/blog_10/lego_dance2.html" height="200px" width="100%" scrolling="no"></iframe>
 
 <p>The Danish building toy has come a long way from its humble roots. From the 1950s to today,
-the brand has expanded to include an ever increasing variety of kit sizes. The animation below summerizes how
+LEGO has expanded to include an ever increasing variety of kit sizes. The animation below summarizes how
 the company has exploded over 7 decades.</p>
 
 <video controls="" loop="" autoplay="" width="100%">
@@ -120,12 +120,12 @@ the company has exploded over 7 decades.</p>
  <source src="/res/blog_10/submit.mp4" autoplay="true" type="video/mp4" />
 </video>
 
-<p>This video contains tons of information, so let’s take it peice by peice.</p>
+<p>This video contains tons of information, so let’s take it piece by piece.</p>
 
 <h3 id="distributions-over-time">DISTRIBUTIONS OVER TIME</h3>
 
 <p>We want to know not only how the mean kit size has changes, but also how the variety of kit sizes has changed.
-To do that we need to overlay populations.</p>
+To do that we need to overlay distributions.</p>
 
 <p><a href="/res/blog_10/two_pannel.png">
 <img src="/res/blog_10/two_pannel.png" />
@@ -134,7 +134,7 @@ To do that we need to overlay populations.</p>
 <p>However this is sort of a mess, I think we can clean it up though using cumulative distributions instead of normal distributions.
 <a href="https://en.wikipedia.org/wiki/Cumulative_distribution_function">Cumulative distributions</a> are just density functions (or histograms)
 that are summed along the x-axis. To play with that idea click on the interactive below that toggles between the normal histogram
-and the cumuulative histogogram for all lego kits ever made.</p>
+and the cumulative histogram for all lego kits ever made.</p>
 
 <iframe src="/res/blog_10/line_transition2.html" width="100%" height="300px" scrolling="no"></iframe>
 
@@ -171,6 +171,8 @@ top themes (by number of sets) of all time.</p>
       
         <a class="prev" href="/NatGeo">&laquo; The Colors of National Geographic</a>
       
+      
+        <a class="next" href="/flightdelays">Flight Delays &raquo;</a>
       
     </div>
 

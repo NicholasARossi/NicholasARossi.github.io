@@ -1,0 +1,128 @@
+
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+body {
+  background: linear-gradient(45deg,#77A1D3,#79cbca,#e684ae);
+}
+
+.axis--y .domain,
+.axis .tick:nth-child(2n - 1) text {
+  display: none;
+}
+
+.axis--x .domain {
+  fill: linear-gradient(45deg,#77A1D3,#79cbca,#e684ae);
+  stroke: none;
+}
+
+.axis .tick line {
+  stroke: #fff;
+  stroke-width: 0px;
+}
+
+.axis .tick:nth-child(2n - 1) line {
+  stroke-opacity: 0.5;
+}
+
+.line path {
+  fill: none;
+  stroke: #000;
+  stroke-width: 5px;
+}
+
+#ease-type {
+  position: absolute;
+  top: 20px;
+  left: 30px;
+}
+
+</style>
+<select id="ease-type">
+  <option selected value="linear">linear</option>
+  <option value="quadInOut">quadInOut</option>
+  <option value="cubicInOut">cubicInOut</option>
+  <option value="expInOut">expInOut</option>
+</select>
+<script src="//d3js.org/d3.v4.0.0-alpha.49.min.js"></script>
+<script>
+
+var margin = {top: 20, right: 60, bottom: 20, left: 20},
+    width =  window.innerWidth - margin.left - margin.right,
+    height = 300 - margin.top - margin.bottom;
+
+var x = d3.scaleLinear()
+    .range([0, width]);
+
+var y = d3.scaleLinear()
+    .range([height, 0]);
+
+var path = d3.line()
+    .x(function(t) { return x(t); })
+    .y(function(t) { return y(ease(t)); });
+
+var ease;
+
+var svg = d3.select("body").append("svg")
+    .attr("width", width + margin.left + margin.right)
+    .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+    .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+svg.append("g")
+    .attr("class", "axis axis--x")
+    .attr("transform", "translate(0," + height + ")")
+    .call(d3.axisBottom(x)
+        .tickSize(0)
+        .tickPadding(6))
+  .append("text")
+    .attr("class", "axis-title")
+    .attr("x", width - 10)
+    .attr("y", 8)
+    .attr("dy", ".71em")
+    .attr("text-anchor", "end")
+    .attr("font-weight", "bold")
+    .text("t = ");
+
+svg.append("g")
+    .attr("class", "axis axis--y")
+    .call(d3.axisLeft(y)
+        .tickSize(0)
+        .tickPadding(6))
+  .append("text")
+    .attr("class", "axis-title")
+    .attr("x", -24)
+    .attr("dy", ".32em")
+    .attr("text-anchor", "end")
+    .attr("font-weight", "bold")
+    .text("ease(t) = ");
+
+var line = svg.append("g")
+    .attr("class", "line")
+  .append("path")
+    .datum(d3.range(0, 1, 0.002).concat(1));
+
+var dot1 = svg.append("circle")
+    .attr("r", 15);
+
+var dot2 = svg.append("circle")
+    .attr("cx", width + 20)
+    .attr("r", 15);
+
+var select = d3.select("#ease-type")
+    .on("change", changed)
+    .property("value", top.location.hash ? top.location.hash.slice(1) : "linear")
+    .each(changed);
+
+function changed() {
+  ease = d3["ease" + this.value[0].toUpperCase() + this.value.slice(1)] || d3.easeLinearIn;
+  line.attr("d", path);
+}
+
+d3.timer(function(elapsed) {
+  var t = (elapsed % 1500) / 1500;
+  dot1.attr("cx", x(t)).attr("cy", y(ease(t)));
+  dot2.attr("cy", y(ease(t)));
+});
+
+</script>

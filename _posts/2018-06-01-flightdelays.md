@@ -1,0 +1,66 @@
+---
+title: "Flight Delays"
+layout: post
+description: ""
+comments: yes
+---
+
+<style>
+
+      h1,h2,h3,head,title {
+        font-family: 'playfair display';
+        outline-color: white;
+        color: white;
+        background-color: slategrey;
+}
+</style>
+
+### The Worst Airports in America
+
+What makes a bad airport? There's a lot that can go wrong with a flight - like having to ride in a snow crawler like in [Washington Dulles](https://en.wikipedia.org/wiki/Mobile_lounge). But we can all agree that having your flight delayed is one of the worst things.
+
+By extension, looking at the number of delays of per airport is a good way to rank them. The chart below shows the worst airports for total numbers of delays.
+
+
+
+
+ <iframe src="/res/blog_16/bar_wrapper.html" height="400px" width="100%" scrolling="no"></iframe>
+
+Anyone that's been to O'hare shouldn't be suprised by this. I should note that I scraped this data over two weeks in April 2018. But there's no reason to believe this data isn't representative of the norm as there were no big weather events.
+
+Clearly, we've selected a lot of big airports here. So naturally the next question is which airports have the worst percentage of delays.
+
+Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small airfeilds with bad track records.
+
+ <iframe src="/res/blog_16/bar_wrapper2.html" height="400px" width="100%" scrolling="no"></iframe>
+
+Surprisingly, O'hare isn't even on this list. Take that Midway! Memphis takes the cake with an astounding 35% of flights delayed.
+
+### Relationship between size of airport and number of delays?
+
+Does a bigger airport necessarily mean more delays? Not so much. You can explore the data below to find out for yourself. Mouse over to see airport details. The toggle switch changes between linear and log axis for the number of airport delays (this helps visualize the data). The size of the dots scales with the number of total flights from that airport.
+
+<iframe src="/res/blog_16/scatter.html" height="400px" width="100%" scrolling="no"></iframe>
+
+Turns out Portland and Minneapolis are both really good for their size, while Memphis, Midway and Philly aren't so good.
+
+### Locations of bad airports
+
+To visualize this spatially, we can plot the total number of delays by location. The animation cycles between total delays, the percentage delayed at those airports and the state in which they're located.
+
+<iframe src="/res/blog_16/flight_wrapper.html" height="400px" width="100%" scrolling="no"></iframe>
+
+
+### Conclusion
+
+Watch the video below for a presentation on this material:
+
+<a href="https://www.youtube.com/watch?v=9GZRw3MA730">
+<img src="/res/blog_16/rez-01.png">
+</a>﻿
+
+### NOTES
+
+* This was written in Python and D3.js : see code [here](https://github.com/NicholasARossi/VizSnacks)
+* The data was retrieved from [here](https://www.icao.int/safety/iStars/Pages/API-Data-Service.aspx)
+* The gooey effect was taken from Nadieh Bremmers work [here](http://bl.ocks.org/nbremer/8df57868090f11e59175804e2062b2aa)
