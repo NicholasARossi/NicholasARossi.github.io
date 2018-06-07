@@ -27,23 +27,6 @@ var svg = d3.select('#chart')
 //SVG filter for the gooey effect
 //Code taken from http://tympanus.net/codrops/2015/03/10/creative-gooey-effects/
 var defs = svg.append("defs");
-var filter = defs.append("filter").attr("id","gooeyCodeFilter");
-filter.append("feGaussianBlur")
-    .attr("in","SourceGraphic")
-    .attr("stdDeviation","10")
-    //to fix safari: http://stackoverflow.com/questions/24295043/svg-gaussian-blur-in-safari-unexpectedly-lightens-image
-    .attr("color-interpolation-filters","sRGB")
-    .attr("result","blur");
-filter.append("feColorMatrix")
-    .attr("class", "blurValues")
-    .attr("in","blur")
-    .attr("mode","matrix")
-    .attr("values","1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5")
-    .attr("result","gooey");
-filter.append("feBlend")
-    .attr("in2","SourceGraphic")
-    .attr("in","gooey")
-    .attr("operator","atop");
 
 ///////////////////////////////////////////////////////////////////////////
 //////////////////////////// Set-up Map /////////////////////////////////
@@ -92,7 +75,7 @@ populations.forEach(function(d,i) {
 //Wrapper for the cities
 var cityWrapper = svg.append("g")
     .attr("class", "cityWrapper")
-    .style("filter", "url(#gooeyCodeFilter)");
+
 
 //Place the city circles
 var cities = cityWrapper.selectAll(".cities")
@@ -279,12 +262,7 @@ function placeCities () {
 
     //"Remove" gooey filter from cities during the transition
     //So at the end they do not appear to melt together anymore
-    d3.selectAll(".blurValues")
-        .transition().duration(6000)
-        .attrTween("values", function() {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5",
-										"1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5");
-        });
+
 
 }//placeCities
 //color all the airports based on how many flights they miss
@@ -372,12 +350,7 @@ function clusterCountry() {
         .style("opacity", 0.8);
 
     //Reset gooey filter values back to a visible "gooey" effect
-    d3.selectAll(".blurValues")
-        .transition().duration(0)
-        .attrTween("values", function() {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 6 -5",
-                                        "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6");
-        });
+
 
 }//clusterCountry
 
@@ -413,12 +386,7 @@ function backToCenter () {
         .style("fill", 'turquoise')
         .style("opacity", 0.8);
 
-    d3.selectAll(".blurValues")
-        .transition().duration(1000).delay(1000)
-        .attrTween("values", function() {
-            return d3.interpolateString("1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 35 -6",
-                                        "1 0 0 0 0  0 1 0 0 0  0 0 1 0 0  0 0 0 18 -5");
-        });
+
 
 }//backToCenter
 
