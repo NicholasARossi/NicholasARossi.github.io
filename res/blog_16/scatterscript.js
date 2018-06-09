@@ -3,7 +3,7 @@ d3.csv('data_total.csv', function (data) {
   var body = d3.select('body')
 	var margin = { top: 0, right: 0, bottom: 50, left: 50 }
 	var h =400- margin.top -margin.bottom
-	var w =400-margin.left - margin.right
+	var w =window.innerWidth-margin.left - margin.right
 	var formatPercent = d3.format('.0%')
 	// Scales
   // var colorScale = d3.scale.category20()
@@ -27,9 +27,13 @@ d3.csv('data_total.csv', function (data) {
     	])
     .range([h,0])
 	// SVG
+   var bonus=0
 
+    if (w > 400) {
+    bonus=200
+}
 	var svg = body.append('svg')
-	      .attr('viewBox',"0 0 650 500")
+	      .attr('viewBox',bonus+" 0 450 500")
       .attr('preserveAspectRatio',"xMidYMid meet")
 	     .attr('height',h + margin.top + margin.bottom)
 	     .attr('width',w + margin.left + margin.right)
