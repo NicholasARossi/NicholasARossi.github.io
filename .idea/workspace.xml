@@ -2,13 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_16/scatter.html" afterPath="$PROJECT_DIR$/_site/res/blog_16/scatter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_16/scatterscript.js" afterPath="$PROJECT_DIR$/_site/res/blog_16/scatterscript.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_16/scatter.html" afterPath="$PROJECT_DIR$/res/blog_16/scatter.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_16/scatterscript.js" afterPath="$PROJECT_DIR$/res/blog_16/scatterscript.js" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,8 +80,8 @@
       <file leaf-file-name="flight_wrapper.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="50" column="32" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+            <state relative-caret-position="321">
+              <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="30" />
               <folding />
             </state>
           </provider>
@@ -116,8 +110,8 @@
       <file leaf-file-name="states_scatter.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/blog_8/states_scatter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-159">
-              <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+            <state relative-caret-position="381">
+              <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
               <folding />
             </state>
           </provider>
@@ -126,8 +120,8 @@
       <file leaf-file-name="scatter.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="171">
-              <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+            <state relative-caret-position="261">
+              <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
               <folding />
             </state>
           </provider>
@@ -1007,10 +1001,10 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
+    <entry file="file://$PROJECT_DIR$/res/blog_16/scatterscript.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="50" column="32" selection-start-line="50" selection-start-column="0" selection-end-line="51" selection-end-column="0" />
+        <state relative-caret-position="255">
+          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
           <folding />
         </state>
       </provider>
@@ -1025,24 +1019,24 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_8/states_scatter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-159">
-          <caret line="16" column="26" selection-start-line="16" selection-start-column="26" selection-end-line="16" selection-end-column="26" />
+        <state relative-caret-position="381">
+          <caret line="52" column="0" selection-start-line="52" selection-start-column="0" selection-end-line="52" selection-end-column="0" />
           <folding />
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/scatterscript.js">
+    <entry file="file://$PROJECT_DIR$/res/blog_16/flight_wrapper.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="65" column="0" selection-start-line="65" selection-start-column="0" selection-end-line="65" selection-end-column="0" />
+        <state relative-caret-position="321">
+          <caret line="57" column="8" selection-start-line="57" selection-start-column="8" selection-end-line="57" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="171">
-          <caret line="23" column="1" selection-start-line="23" selection-start-column="1" selection-end-line="23" selection-end-column="1" />
+        <state relative-caret-position="261">
+          <caret line="30" column="25" selection-start-line="30" selection-start-column="25" selection-end-line="30" selection-end-column="25" />
           <folding />
         </state>
       </provider>
