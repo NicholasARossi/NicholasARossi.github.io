@@ -43,7 +43,7 @@ Surprisingly, O'hare isn't even on this list. Take that Midway! Memphis takes th
 
 Does a bigger airport necessarily mean more delays? Not so much. You can explore the data below to find out for yourself. Mouse over to see airport details. The toggle switch changes between linear and log axis for the number of airport delays (this helps visualize the data). The size of the dots scales with the number of total flights from that airport.
 
-<iframe src="/res/blog_16/scatter.html" height="400px" width="100%" scrolling="no"></iframe>
+<iframe src="/res/blog_16/scatter.html" height="400px" width="100%" scrolling="no" ></iframe>
 
 Turns out Portland and Minneapolis are both really good for their size, while Memphis, Midway and Philly aren't so good.
 
@@ -51,7 +51,7 @@ Turns out Portland and Minneapolis are both really good for their size, while Me
 
 To visualize this spatially, we can plot the total number of delays by location. The animation cycles between total delays, the percentage delayed at those airports and the state in which they're located.
 
-<iframe src="/res/blog_16/flight_wrapper.html" height="400px" width="100%" scrolling="no"></iframe>
+<iframe src="/res/blog_16/flight_wrapper.html" height="400px" width="100%" scrolling="no" ></iframe>
 
 
 ### Conclusion
