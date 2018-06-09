@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-06-08T17:49:06-07:00</updated>
+  <updated>2018-06-08T21:41:30-06:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Flight Delays</title>
     <link href="http://nicholasarossi.github.io//flightdelays"/>
-    <updated>2018-06-01T00:00:00-07:00</updated>
+    <updated>2018-06-01T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//flightdelays</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Playfair+Display&quot; /&gt;
@@ -85,7 +85,7 @@
   <entry>
     <title>Lego Datascience</title>
     <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-05-01T00:00:00-07:00</updated>
+    <updated>2018-05-01T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -178,7 +178,7 @@ top themes (by number of sets) of all time.&lt;/p&gt;
   <entry>
     <title>The Colors of National Geographic</title>
     <link href="http://nicholasarossi.github.io//NatGeo"/>
-    <updated>2018-04-20T00:00:00-07:00</updated>
+    <updated>2018-04-20T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -261,7 +261,7 @@ National Geographic seemed like a good group to cross-section the natural world.
   <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-15T00:00:00-07:00</updated>
+    <updated>2018-03-15T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -585,7 +585,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-07:00</updated>
+    <updated>2017-06-20T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -723,7 +723,7 @@ document.getElementById(&quot;video1&quot;).currentTime = 14;
   <entry>
     <title>Quantifying Genetic Entropy in Humans and Wheat</title>
     <link href="http://nicholasarossi.github.io//Wheat"/>
-    <updated>2017-05-02T00:00:00-07:00</updated>
+    <updated>2017-05-02T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//Wheat</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -825,7 +825,7 @@ Domestic Wheat seems more ready than us to withstand the apocalypse than us. Tha
   <entry>
     <title>Forecasting the 2018 Midterms Using Tools from Engineering</title>
     <link href="http://nicholasarossi.github.io//Cross-Correlation"/>
-    <updated>2017-04-04T00:00:00-07:00</updated>
+    <updated>2017-04-04T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//Cross Correlation</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {
@@ -1002,7 +1002,7 @@ Your browser does not support the video tag.
   <entry>
     <title>How Term Limits Might Affect How Congress Works</title>
     <link href="http://nicholasarossi.github.io//congress"/>
-    <updated>2016-10-20T00:00:00-07:00</updated>
+    <updated>2016-10-20T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//congress</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {
