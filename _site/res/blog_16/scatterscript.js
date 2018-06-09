@@ -29,6 +29,7 @@ d3.csv('data_total.csv', function (data) {
 	// SVG
 
 	var svg = body.append('svg')
+      .attr('preserveAspectRatio',"xMidYMid meet")
 	     .attr('height',h + margin.top + margin.bottom)
 	     .attr('width',w + margin.left + margin.right)
 	  .append('g')
