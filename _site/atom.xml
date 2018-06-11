@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-06-08T22:12:06-06:00</updated>
+  <updated>2018-06-11T08:20:48-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>Flight Delays</title>
     <link href="http://nicholasarossi.github.io//flightdelays"/>
-    <updated>2018-06-01T00:00:00-06:00</updated>
+    <updated>2018-06-01T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//flightdelays</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Playfair+Display&quot; /&gt;
@@ -30,9 +30,9 @@
 
 &lt;h3 id=&quot;the-worst-airports-in-america&quot;&gt;The Worst Airports in America&lt;/h3&gt;
 
-&lt;p&gt;What makes a bad airport? There’s a lot that can go wrong with a flight - like having to ride in a snow crawler like in &lt;a href=&quot;https://en.wikipedia.org/wiki/Mobile_lounge&quot;&gt;Washington Dulles&lt;/a&gt;. But we can all agree that having your flight delayed is one of the worst things.&lt;/p&gt;
+&lt;p&gt;What makes a bad airport? There’s a lot that can go wrong with a flight - like having to ride in a snow crawler as in &lt;a href=&quot;https://en.wikipedia.org/wiki/Mobile_lounge&quot;&gt;Washington Dulles&lt;/a&gt;. But we can all agree that having your flight delayed is one of the worst things.&lt;/p&gt;
 
-&lt;p&gt;By extension, looking at the number of delays of per airport is a good way to rank them. The chart below shows the worst airports for total numbers of delays.&lt;/p&gt;
+&lt;p&gt;By extension, looking at the number of delays per airport is a good way to rank the quality of those airports. The chart below shows the worst airports for total numbers of delays.&lt;/p&gt;
 
 &lt;iframe src=&quot;/res/blog_16/bar_wrapper.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
@@ -40,11 +40,18 @@
 
 &lt;p&gt;Clearly, we’ve selected a lot of big airports here. So naturally the next question is which airports have the worst percentage of delays.&lt;/p&gt;
 
-&lt;p&gt;Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small airfeilds with bad track records.&lt;/p&gt;
+&lt;p&gt;Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small air-feilds with bad track records. I’m not interested in airports that made 100% or 0% of their on-time numbers if they only had a few flights period.&lt;/p&gt;
 
 &lt;iframe src=&quot;/res/blog_16/bar_wrapper2.html&quot; height=&quot;400px&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
 &lt;p&gt;Surprisingly, O’hare isn’t even on this list. Take that Midway! Memphis takes the cake with an astounding 35% of flights delayed.&lt;/p&gt;
+
+&lt;h3 id=&quot;case-study-new-york-airports&quot;&gt;Case Study: New York Airports&lt;/h3&gt;
+
+&lt;p&gt;Let’s just consider for a second some comparable airports - those that surround NYC. They each serve comparable volume with JFK and EWR each running ~4000 fights a week and LGA launching ~3500 (data averaged over 2 weeks in april). Now if you’re going to book a ticket through one of them which should you pick?
+Well, JFK is the best in terms of on-time flights with just slightly below the national average for on-time rates. However, they’re not radically different from each other compared to the outlier major airports of Memphis and Minneapolis.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;/res/blog_16/flights-01.png&quot; width=&quot;100%&quot; /&gt;&lt;/p&gt;
 
 &lt;h3 id=&quot;relationship-between-size-of-airport-and-number-of-delays&quot;&gt;Relationship between size of airport and number of delays?&lt;/h3&gt;
 
@@ -88,7 +95,7 @@
   <entry>
     <title>Lego Datascience</title>
     <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-05-01T00:00:00-06:00</updated>
+    <updated>2018-05-01T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -181,7 +188,7 @@ top themes (by number of sets) of all time.&lt;/p&gt;
   <entry>
     <title>The Colors of National Geographic</title>
     <link href="http://nicholasarossi.github.io//NatGeo"/>
-    <updated>2018-04-20T00:00:00-06:00</updated>
+    <updated>2018-04-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -264,7 +271,7 @@ National Geographic seemed like a good group to cross-section the natural world.
   <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-15T00:00:00-06:00</updated>
+    <updated>2018-03-15T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -374,7 +381,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Shared Actors between the 2018 Best Picture Nominees</title>
     <link href="http://nicholasarossi.github.io//Academy"/>
-    <updated>2018-03-01T00:00:00-07:00</updated>
+    <updated>2018-03-01T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//Academy</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -430,7 +437,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Schools are still segregated</title>
     <link href="http://nicholasarossi.github.io//segregation"/>
-    <updated>2018-01-01T00:00:00-07:00</updated>
+    <updated>2018-01-01T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//segregation</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -588,7 +595,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-06:00</updated>
+    <updated>2017-06-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -726,7 +733,7 @@ document.getElementById(&quot;video1&quot;).currentTime = 14;
   <entry>
     <title>Quantifying Genetic Entropy in Humans and Wheat</title>
     <link href="http://nicholasarossi.github.io//Wheat"/>
-    <updated>2017-05-02T00:00:00-06:00</updated>
+    <updated>2017-05-02T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Wheat</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
@@ -828,7 +835,7 @@ Domestic Wheat seems more ready than us to withstand the apocalypse than us. Tha
   <entry>
     <title>Forecasting the 2018 Midterms Using Tools from Engineering</title>
     <link href="http://nicholasarossi.github.io//Cross-Correlation"/>
-    <updated>2017-04-04T00:00:00-06:00</updated>
+    <updated>2017-04-04T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//Cross Correlation</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {
@@ -1005,7 +1012,7 @@ Your browser does not support the video tag.
   <entry>
     <title>How Term Limits Might Affect How Congress Works</title>
     <link href="http://nicholasarossi.github.io//congress"/>
-    <updated>2016-10-20T00:00:00-06:00</updated>
+    <updated>2016-10-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//congress</id>
     <content type="html">&lt;style&gt;
   h1,h2,h3,head,title {

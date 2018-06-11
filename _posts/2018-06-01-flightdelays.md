@@ -20,11 +20,9 @@ comments: yes
 
 ### The Worst Airports in America
 
-What makes a bad airport? There's a lot that can go wrong with a flight - like having to ride in a snow crawler like in [Washington Dulles](https://en.wikipedia.org/wiki/Mobile_lounge). But we can all agree that having your flight delayed is one of the worst things.
+What makes a bad airport? There's a lot that can go wrong with a flight - like having to ride in a snow crawler as in [Washington Dulles](https://en.wikipedia.org/wiki/Mobile_lounge). But we can all agree that having your flight delayed is one of the worst things.
 
-By extension, looking at the number of delays of per airport is a good way to rank them. The chart below shows the worst airports for total numbers of delays.
-
-
+By extension, looking at the number of delays per airport is a good way to rank the quality of those airports. The chart below shows the worst airports for total numbers of delays.
 
 
  <iframe src="/res/blog_16/bar_wrapper.html" height="400px" width="100%" scrolling="no"></iframe>
@@ -33,11 +31,19 @@ Anyone that's been to O'hare shouldn't be suprised by this. I should note that I
 
 Clearly, we've selected a lot of big airports here. So naturally the next question is which airports have the worst percentage of delays.
 
-Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small airfeilds with bad track records.
+Note, I just looked at airports that had more than 1000 flights over the last two weeks. That removed all the small air-feilds with bad track records. I'm not interested in airports that made 100% or 0% of their on-time numbers if they only had a few flights period.
 
  <iframe src="/res/blog_16/bar_wrapper2.html" height="400px" width="100%" scrolling="no"></iframe>
 
 Surprisingly, O'hare isn't even on this list. Take that Midway! Memphis takes the cake with an astounding 35% of flights delayed.
+
+### Case Study: New York Airports
+
+Let's just consider for a second some comparable airports - those that surround NYC. They each serve comparable volume with JFK and EWR each running ~4000 fights a week and LGA launching ~3500 (data averaged over 2 weeks in april). Now if you're going to book a ticket through one of them which should you pick?
+Well, JFK is the best in terms of on-time flights with just slightly below the national average for on-time rates. However, they're not radically different from each other compared to the outlier major airports of Memphis and Minneapolis.
+
+<img src="/res/blog_16/flights-01.png" width="100%">
+
 
 ### Relationship between size of airport and number of delays?
 
