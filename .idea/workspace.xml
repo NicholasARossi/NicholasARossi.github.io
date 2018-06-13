@@ -5,10 +5,7 @@
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" afterPath="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/flightdelays.html" afterPath="$PROJECT_DIR$/_site/flightdelays.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/projects/index.html" afterPath="$PROJECT_DIR$/_site/projects/index.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/projects/index.html" afterPath="$PROJECT_DIR$/projects/index.html" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,12 +26,15 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="2018-06-01-flightdelays.md" pinned="false" current-in-tab="false">
+      <file leaf-file-name="2018-06-01-flightdelays.md" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-300">
-                <caret line="33" column="266" selection-start-line="33" selection-start-column="266" selection-end-line="33" selection-end-column="266" />
+              <first_editor relative-caret-position="173">
+                <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
                 <folding />
               </first_editor>
               <second_editor>
@@ -46,6 +46,9 @@
       </file>
       <file leaf-file-name="2016-08-07-pizza.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2016-08-07-pizza.md">
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="435">
@@ -99,11 +102,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="472">
-              <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
+            <state relative-caret-position="4650">
+              <caret line="310" column="7" selection-start-line="310" selection-start-column="7" selection-end-line="310" selection-end-column="7" />
               <folding />
             </state>
           </provider>
@@ -111,6 +114,9 @@
       </file>
       <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
           <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
             <state split_layout="SPLIT">
               <first_editor relative-caret-position="1935">
@@ -210,16 +216,16 @@
         <option value="$PROJECT_DIR$/res/blog_16/scatter.html" />
         <option value="$PROJECT_DIR$/res/blog_16/script.js" />
         <option value="$PROJECT_DIR$/res/blog_16/scatterscript.js" />
-        <option value="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" />
         <option value="$PROJECT_DIR$/projects/index.html" />
+        <option value="$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="x" value="23" />
-    <option name="y" value="134" />
-    <option name="width" value="1628" />
-    <option name="height" value="844" />
+    <option name="x" value="-1871" />
+    <option name="y" value="94" />
+    <option name="width" value="1697" />
+    <option name="height" value="989" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -246,7 +252,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -399,6 +404,7 @@
           </PATH>
         </subPane>
       </pane>
+      <pane id="Scope" />
       <pane id="Scratches" />
     </panes>
   </component>
@@ -408,19 +414,19 @@
     <property name="SearchEverywhereHistoryKey" value="h*&#9;FILE&#9;file:///Users/nicholasrossi/Documents/work_docs/Website/NicholasARossi.github.io/res/blog_16/scatter.html" />
   </component>
   <component name="RecentsManager">
-    <key name="MoveFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/blog_16" />
-      <recent name="$PROJECT_DIR$/res/blog_15" />
-      <recent name="$PROJECT_DIR$/res" />
-      <recent name="$PROJECT_DIR$/res/blog_14" />
-      <recent name="$PROJECT_DIR$/about/brand-logo/css" />
-    </key>
     <key name="CopyFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/projects/gallery" />
       <recent name="$PROJECT_DIR$/res/blog_16" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/res/blog_15" />
       <recent name="$PROJECT_DIR$" />
+    </key>
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/blog_16" />
+      <recent name="$PROJECT_DIR$/res/blog_15" />
+      <recent name="$PROJECT_DIR$/res" />
+      <recent name="$PROJECT_DIR$/res/blog_14" />
+      <recent name="$PROJECT_DIR$/about/brand-logo/css" />
     </key>
   </component>
   <component name="RunManager">
@@ -587,13 +593,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="23" y="134" width="1628" height="844" extended-state="0" />
+    <frame x="-1871" y="94" width="1697" height="989" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21878941" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22114803" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.22739361" sideWeight="0.5128593" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2269188" sideWeight="0.5128593" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24984026" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -677,6 +683,9 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_15/countries_map.js" />
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-15-LinLog.md">
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="123">
@@ -687,9 +696,6 @@
             <js_state />
           </second_editor>
         </state>
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_8/map2.html">
@@ -821,6 +827,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_15/2018-05-15-PythonAnimations.md">
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="285">
@@ -832,11 +841,11 @@
           </second_editor>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-04-04-Cross Correlation.md">
       <provider editor-type-id="Gfm">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-04-04-Cross Correlation.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="300">
@@ -848,11 +857,11 @@
           </second_editor>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2017-05-02-Wheat.md">
       <provider editor-type-id="Gfm">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2017-05-02-Wheat.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="0">
@@ -864,11 +873,11 @@
           </second_editor>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
       <provider editor-type-id="Gfm">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="330">
@@ -880,11 +889,11 @@
           </second_editor>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
       <provider editor-type-id="Gfm">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="900">
@@ -896,11 +905,11 @@
           </second_editor>
         </state>
       </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-Academy.md">
       <provider editor-type-id="Gfm">
         <state />
       </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-Academy.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="135">
@@ -911,9 +920,6 @@
             <js_state />
           </second_editor>
         </state>
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_8/script.js">
@@ -941,7 +947,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -949,7 +954,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -998,6 +1002,9 @@
           <caret line="142" column="0" selection-start-line="142" selection-start-column="0" selection-end-line="145" selection-end-column="5" />
         </state>
       </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="1935">
@@ -1008,9 +1015,6 @@
             <js_state />
           </second_editor>
         </state>
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_16/flight_delay_viz.js">
@@ -1030,6 +1034,9 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2016-08-07-pizza.md">
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
           <first_editor relative-caret-position="435">
@@ -1042,27 +1049,27 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/projects/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="4650">
+          <caret line="310" column="7" selection-start-line="310" selection-start-column="7" selection-end-line="310" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
       <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
         <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-300">
-            <caret line="33" column="266" selection-start-line="33" selection-start-column="266" selection-end-line="33" selection-end-column="266" />
+          <first_editor relative-caret-position="173">
+            <caret line="44" column="0" selection-start-line="44" selection-start-column="0" selection-end-line="44" selection-end-column="0" />
             <folding />
           </first_editor>
           <second_editor>
             <js_state />
           </second_editor>
-        </state>
-      </provider>
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/projects/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="472">
-          <caret line="332" column="0" selection-start-line="332" selection-start-column="0" selection-end-line="332" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
