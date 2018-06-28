@@ -1,0 +1,619 @@
+<!DOCTYPE html>
+<head>
+  <meta charset="utf-8">
+  <link rel="stylesheet" type="text/css" href="//fonts.googleapis.com/css?family=EB+Garamond" />
+  <script src="JS/d3v4.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/1.15.1/TweenMax.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/2.1.3/jquery.min.js"></script>
+
+  <!--<script src="JS/step.js"></script>-->
+  <script src="JS/waypoint.js"></script>
+  <!--<script src="JS/step.js"></script>-->
+
+  <meta charset="utf-8">
+
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+
+  <style>
+  html {
+	 box-sizing: border-box;
+}
+ *, *:after, *:before {
+	 box-sizing: inherit;
+}
+ html, body {
+	 height: 100%;
+}
+
+ h1 {
+	 margin: 0;
+	 padding: 0;
+}
+ section {
+	 display: flex;
+	 justify-content: center;
+	 align-items: center;
+	 min-height: 100%;
+	 height: 100%;
+	 width: 100%;
+
+}
+ .Quick-navigation {
+	 position: fixed;
+	 z-index: 1;
+	 margin: 0;
+	 top: 50%;
+	 right: 0;
+	 transform: translateY(-50%);
+}
+ .Quick-navigation-item {
+	 color: rgba(0,0,0,0.4);
+	 text-decoration: none;
+	 font-size: .75em;
+	 transition: color 0.3s;
+	 padding: 0.25em;
+	 display: block;
+}
+ .Quick-navigation-item:hover, .Quick-navigation-item.current {
+	 color: #fff;
+}
+
+
+
+
+ .Scroll-to-top {
+	 position: fixed;
+	 font-family: EB garamond;
+	 right: 20px;
+	 bottom: 0;
+	 z-index: 1;
+	 background-color: rgba(0,0,0,0.2);
+	 border: none;
+	 color: rgba(255,255,255);
+	 font-size: 1rem;
+	 padding: 0em;
+	 cursor: pointer;
+	 transform: translateY(100%);
+	 transition: all 0.3s;
+	 outline: none;
+}
+ .Scroll-to-top.visible {
+	 transform: translateY(0);
+}
+ .Scroll-to-top:hover {
+	 color: rgba(255,255,255,0.9);
+}
+
+  html,
+  body{
+    font-family: EB garamond;
+    text-align: center;
+    font-size: 4vw;
+
+     background: white url(marble.jpg) repeat 0 0;
+     opacity: 1.0;
+     color: black;
+  }
+
+  .container {
+    height: 100%;
+    max-width: 100%;
+    width: 100%;
+    margin: 0;
+    padding: 0;
+    position: absolute;
+    height: 100%;
+    line-height: 1.5;
+    text-align: center;
+    z-index: 0;
+
+  }
+  .container div {
+    height: 100%;
+    display: block;
+    padding: 0 0px;
+    text-align: center;
+  }
+  .fixed {
+    position: fixed;
+    width:100%;
+    height: 100%;
+    top: 0px;
+    left: -1em;
+    text-align: center;
+  }
+
+  #scroll-animate
+{
+  overflow: hidden;
+}
+
+#scroll-animate-main
+{
+  width: 100%;
+  left: 0;
+  position: fixed;
+}
+
+#heightPage,
+#heightScroll
+{
+  width: 10px;
+  top: 0;
+  position: absolute;
+}
+
+#heightPage
+{
+  left: 0;
+}
+
+#heightScroll
+{
+  right: 0;
+}
+
+
+#intro
+{
+z-index: 6;
+}
+#graphic2
+{
+ z-index: 0
+}
+#graphic
+{
+
+    z-index: 1;
+
+}
+.tooltip {
+    position: absolute;
+    font-family: EB garamond;
+    font-size: 1 vw;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+}
+
+h1{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  top: 10%;
+  right: 0;
+  left: 0;
+  text-transform: uppercase;
+  text-align: center;
+  position: absolute;
+  font-family: EB garamond;
+  font-size: 10vw;
+  color: #9C1C29;
+}
+
+hx{
+  width: 100%;
+  height: 100%;
+  padding: 0;
+  margin: 0;
+  top: 70%;
+  right: 0;
+  left: 10%;
+  text-transform: uppercase;
+  text-align: left;
+  position: absolute;
+  font-family: EB garamond;
+  font-size: 0.75em;
+  color: #fff;
+}
+.skull{
+  <!--position: absolute;-->
+
+    <!--left: 15%;-->
+
+    <!--height:10em;-->
+
+}
+header h1{}
+
+.content h1{
+  line-height: 1000px;
+  color: #999;
+}
+.legend{
+  text-align: left;
+  left:
+  	 display: block;
+  width: 25%;
+  background: white url(fabric.png) repeat 0 0;
+  transform: translateY(-10%);
+
+}
+
+ .legend-item {
+	 color: rgba(0,0,0,0.4);
+	 text-decoration: none;
+	 font-size: .75em;
+	 transition: color 0.3s;
+	 padding: 0em;
+	 display: block;
+}
+
+footer h1
+{
+  line-height: 300px;
+}
+jam {
+    background-color: #000;
+}
+
+  </style>
+</head>
+
+<body>
+
+<nav class="Quick-navigation">
+  <a href="#A" class="Quick-navigation-item">I</a>
+  <a href="#B" class="Quick-navigation-item">II</a>
+  <a href="#C" class="Quick-navigation-item">III</a>
+  <a href="#D" class="Quick-navigation-item">IV</a>
+  <a href="#E" class="Quick-navigation-item">V</a>
+  <a href="#F" class="Quick-navigation-item">VI</a>
+  <a href="#G" class="Quick-navigation-item">VII</a>
+  <a href="#H" class="Quick-navigation-item">VIII</a>
+
+</nav>
+
+</div>
+   <div id="graphic2">
+       <div class="fixed">
+<img src="garland.svg" id="garland" viewBox="-250 -250 500 500" width="100%" height="100%">
+</div>
+
+
+
+  <div class="container">
+        <section id="A" class="js-scroll-step">
+          <iframe src="low-poly-portrait/index.html" width="100%"  height="100%" scrolling="no" frameBorder="0"></iframe>
+
+    <div id="intro">
+
+      <h1>Ave Imperator!</h1>
+            <hx><jam>Rossidata MMXVIII </jam><br/><jam>The rise and fall of the roman emperors</jam><br/>
+            <jam>Mouse over each section for addtional info</jam></hx>
+
+    </div>
+                </section>
+    <section id="B" class="js-scroll-step">
+    <div id="div1">
+      <h2>68 Emperors Forged Early Rome</h2>
+    </div>
+      </section>
+    <section id="C"  class="js-scroll-step">
+    <div id="div2">
+      <h2>They were born throughout the empire</h2>
+    </div>
+      </section>
+        <section id="D"  class="js-scroll-step">
+          <div id="div3">
+      <h2>and found power through different means</h2>
+
+<nav class="legend">
+  <!--['#ccac00','#9c1c29','darkgrey','#a85350','slategrey','#ad7f7b','#a9a9a9']-->
+  <a class="legend-item"  style="color:#ccac00">Birthright</a>
+  <a class="legend-item"   style="color:#9c1c29">Seized Power</a>
+  <a class="legend-item" style="color:darkgrey">Given by Guard</a>
+  <a class="legend-item"  style="color:#a85350">Given by Senate</a>
+  <a class="legend-item" style="color:slategrey">Purchased</a>
+  <a class="legend-item"  style="color:#013220">Given by Army</a>
+  <a class="legend-item"  style="color:#a9a9a9">Given by Emperor</a>
+  <a class="legend-item"  style="color:black">Purchased</a>
+</nav>
+    </div>
+                </section>
+        <section id="E"  class="js-scroll-step">
+
+          <div id="div4">
+      <h2>Some Lasted Longer than others</h2>
+    </div>
+          </section>
+            <section id="F"  class="js-scroll-step">
+
+    <div id="div5">
+      <h2>But each was brought down eventually</h2>
+
+      <nav class="legend"   style="width: 20%">
+<!--let colors =['#fff','#9c1c29','darkgrey','#a85350','slategrey','#ad7f7b','#a9a9a9'];-->
+  <a class="legend-item"  style="color:#9c1c29">Assassination</a>
+  <a class="legend-item"   style="color:darkgrey">Suicide</a>
+  <a class="legend-item" style="color:#ccac00">Natural Causes</a>
+  <a class="legend-item"  style="color:slategrey">Execution</a>
+  <a class="legend-item" style="color:#013220">Combat</a>
+        <a class="legend-item" style="color:#a9a9a9">Captivity</a>
+        <a class="legend-item" style="color:black">Unkown</a>
+</nav>
+    </div>
+                        </section>
+            <section id="G"  class="js-scroll-step">
+
+    <div id="div6">
+      <h2 style="font-size:1em">Memento mori for in the end death claims us all</h2>
+<img src="skull.svg" id="skull" style="left:-2em" width="100%" height="100%">
+
+    </div>
+                        </section>
+
+                <section id="H"  class="js-scroll-step">
+
+    <div id="div7">
+      <h2 style="font-size:3em">Credits</h2>
+      <nav class="legend"   style="transform: translateY(-50%);
+width: 100%; z-position:11">
+<!--let colors =['#fff','#9c1c29','darkgrey','#a85350','slategrey','#ad7f7b','#a9a9a9'];-->
+  <a class="legend-item"  >Created by Nicholas Rossi, MMXVIII  </a>
+  <a class="legend-item" href="https://www.rossidata.com"  >rossidata.com</a>
+  <a class="legend-item" href="https://twitter.com/DivergentData"  >@DivergentData</a>
+          <a class="legend-item" >Made with Python and D3.js</a>
+
+        <a class="legend-item" href="https://github.com/zonination/emperors/blob/master/emperors.csv">Data from June r/dataisbeautiful challenge </a>
+
+</nav>
+
+    </div>
+                        </section>
+
+
+
+
+
+  </div>
+<button class="Scroll-to-top">Scroll To Top</button>
+
+    <div id="graphic">
+
+
+
+  <!-- svg -->
+  <div class="fixed"><svg id="graphic" width="100%" height="100%" viewBox="-250 -250 500 500">
+
+
+
+</svg></div>
+
+       </div>
+  <!-- /graphic -->
+
+<script src="JS/romanglory.js"></script>
+<script>
+    (function () {
+
+   //////////////////////
+	// Utils
+  //////////////////////
+    function throttle(fn, delay, scope) {
+        // Default delay
+        delay = delay || 250;
+        var last, defer;
+        return function () {
+            var context = scope || this,
+                now = +new Date(),
+                args = arguments;
+            if (last && now < last + delay) {
+                clearTimeout(defer);
+                defer = setTimeout(function () {
+                    last = now;
+                    fn.apply(context, args);
+                }, delay);
+            } else {
+                last = now;
+                fn.apply(context, args);
+            }
+        }
+    }
+
+    function extend(destination, source) {
+        for (var k in source) {
+            if (source.hasOwnProperty(k)) {
+                destination[k] = source[k];
+            }
+        }
+        return destination;
+    }
+
+   //////////////////////
+	// END Utils
+  //////////////////////
+
+   //////////////////////
+   // Scroll Module
+   //////////////////////
+
+    var ScrollManager = (function () {
+
+        var defaults = {
+
+                steps: null,
+                navigationContainer: null,
+                links: null,
+                scrollToTopBtn: null,
+
+                navigationElementClass: '.Quick-navigation',
+                currentStepClass: 'current',
+                smoothScrollEnabled: true,
+                stepsCheckEnabled: true,
+
+                // Callbacks
+                onScroll: null,
+
+                onStepChange: function (step) {
+                    var self = this;
+                    var relativeLink = [].filter.call(options.links, function (link) {
+                        link.classList.remove(self.currentStepClass);
+                        return link.hash === '#' + step.id;
+                    });
+                    relativeLink[0].classList.add(self.currentStepClass);
+                },
+
+                // Provide a default scroll animation
+                smoothScrollAnimation: function (target) {
+                    $('html, body').animate({
+                        scrollTop: target
+                    }, 'slow');
+                }
+            },
+
+            options = {};
+
+        // Privates
+        var _animation = null,
+            currentStep = null,
+            throttledGetScrollPosition = null;
+
+        return {
+
+            scrollPosition: 0,
+
+            init: function (opts) {
+
+                options = extend(defaults, opts);
+
+                if (options.steps === null) {
+                    console.warn('Smooth scrolling require some sections or steps to scroll to :)');
+                    return false;
+                }
+
+                // Allow to customize the animation engine ( jQuery / GSAP / velocity / ... )
+                _animation = function (target) {
+                    target = typeof target === 'number' ? target : $(target).offset().top;
+                    return options.smoothScrollAnimation(target);
+                };
+
+                // Activate smooth scrolling
+                if (options.smoothScrollEnabled)  this.smoothScroll();
+
+                // Scroll to top handling
+                if (options.scrollToTopBtn) {
+                    options.scrollToTopBtn.addEventListener('click', function () {
+                        options.smoothScrollAnimation(0);
+                    });
+                }
+
+                // Throttle for performances gain
+                throttledGetScrollPosition = throttle(this.getScrollPosition).bind(this);
+                window.addEventListener('scroll', throttledGetScrollPosition);
+                window.addEventListener('resize', throttledGetScrollPosition);
+
+                this.getScrollPosition();
+            },
+
+            getScrollPosition: function () {
+                this.scrollPosition = window.pageYOffset || window.scrollY;
+                if (options.stepsCheckEnabled) this.checkActiveStep();
+                if (typeof  options.onScroll === 'function') options.onScroll(this.scrollPosition);
+            },
+
+            scrollPercentage: function () {
+                var body = document.body,
+                    html = document.documentElement,
+                    documentHeight = Math.max(body.scrollHeight, body.offsetHeight,
+                        html.clientHeight, html.scrollHeight, html.offsetHeight);
+
+                var percentage = Math.round(this.scrollPosition / (documentHeight - window.innerHeight) * 100);
+                if (percentage < 0)  percentage = 0;
+                if (percentage > 100)  percentage = 100;
+                return percentage;
+            },
+
+            doSmoothScroll: function (e) {
+                if (e.target.nodeName === 'A') {
+                    e.preventDefault();
+                    if (location.pathname.replace(/^\//, '') === e.target.pathname.replace(/^\//, '') && location.hostname === e.target.hostname) {
+                        var targetStep = document.querySelector(e.target.hash);
+                        targetStep ? _animation(targetStep) : console.warn('Hi! You should give an animation callback function to the Scroller module! :)');
+                    }
+                }
+            },
+
+            smoothScroll: function () {
+                if (options.navigationContainer !== null) options.navigationContainer.addEventListener('click', this.doSmoothScroll);
+            },
+
+            checkActiveStep: function () {
+                var scrollPosition = this.scrollPosition;
+
+                [].forEach.call(options.steps, function (step) {
+                    var bBox = step.getBoundingClientRect(),
+                        position = step.offsetTop,
+                        height = position + bBox.height;
+
+                    if (scrollPosition >= position && scrollPosition < height && currentStep !== step) {
+                        currentStep = step;
+                        step.classList.add(self.currentStepClass);
+                        if (typeof options.onStepChange === 'function') options.onStepChange(step);
+                    }
+                    step.classList.remove(options.currentStepClass);
+                });
+            },
+
+            destroy: function () {
+                window.removeEventListener('scroll', throttledGetScrollPosition);
+                window.removeEventListener('resize', throttledGetScrollPosition);
+                options.navigationContainer.removeEventListener('click', this.doSmoothScroll);
+            }
+        }
+    })();
+     //////////////////////
+     // END scroll Module
+     //////////////////////
+
+
+    //////////////////////
+    // APP init
+    //////////////////////
+
+    var scrollToTopBtn = document.querySelector('.Scroll-to-top'),
+        steps = document.querySelectorAll('.js-scroll-step'),
+        navigationContainer = document.querySelector('.Quick-navigation'),
+        links = navigationContainer.querySelectorAll('a'),
+        progressIndicator = document.querySelector('.Scroll-progress-indicator');
+
+    ScrollManager.init({
+        steps: steps,
+        scrollToTopBtn: scrollToTopBtn,
+        navigationContainer: navigationContainer,
+        links: links,
+
+        // Customize onScroll behavior
+        onScroll: function () {
+            var percentage = ScrollManager.scrollPercentage();
+            percentage >= 90 ? scrollToTopBtn.classList.add('visible') : scrollToTopBtn.classList.remove('visible');
+
+
+        },
+
+		// Behavior when a step changes
+		// default : highlight links
+
+		// onStepChange: function (step) {},
+
+		// Customize the animation with jQuery, GSAP or velocity
+     // default : jQuery animate()
+     // Eg with GSAP scrollTo plugin
+
+		//smoothScrollAnimation: function (target) {
+		//		TweenLite.to(window, 2, {scrollTo:{y:target}, ease:Power2.easeOut});
+  	 //}
+
+    });
+
+    //////////////////////
+    // END APP init
+    //////////////////////
+
+})();
+</script>
+</body>
