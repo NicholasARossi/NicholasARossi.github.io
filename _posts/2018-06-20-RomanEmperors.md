@@ -9,5 +9,5 @@ Click on the image below to check it out:
 
 
 <a href="res/blog_11_romans/emperor_scroll/scrollytelling.html">
-<img src="res/blog_11_romans/vapor.jpg">
+<img src="res/blog_11_romans/vapor.JPG">
 </a>﻿
