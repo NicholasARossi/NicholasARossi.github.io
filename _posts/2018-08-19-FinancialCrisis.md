@@ -70,7 +70,7 @@ The net result of the assets of the rich being protected was expected but not in
  platform was, it seems the net product of his stimulus allocation was indistinguishable from what a hypothetical republican administration would have done. For more information, watch the
  video below outlining these results:
 
-<a href="res/blog_17/obama_thumb.png">
+<a href="https://www.youtube.com/watch?v=JE3KrmFy1u4">
 <img src="res/blog_17/obama_thumb.png">
 </a>﻿
 
