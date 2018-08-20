@@ -109,7 +109,7 @@
 
 <p>Take for instance an example animation like the one created exclusively in python below:</p>
 
-<figure class="highlight"><pre><code class="language-python3" data-lang="python3"><table style="border-spacing: 0"><tbody><tr><td class="gutter gl" style="text-align: right"><pre class="lineno">1
+<figure class="highlight"><pre><code class="language-python3" data-lang="python3"><table class="rouge-table"><tbody><tr><td class="gutter gl"><pre class="lineno">1
 2
 3
 4
@@ -135,7 +135,8 @@
 24
 25
 26
-27</pre></td><td class="code"><pre>import matplotlib.pyplot as plt
+27
+</pre></td><td class="code"><pre>import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import animation
 plt.close('all')
@@ -161,8 +162,7 @@ ax.set_facecolor('#d3d3d3')
 writer = animation.writers['ffmpeg'](fps=10)
 dpi=300
 
-anim.save('dot.mp4', writer=writer,dpi=dpi)<span class="w">
-</span></pre></td></tr></tbody></table></code></pre></figure>
+anim.save('dot.mp4', writer=writer,dpi=dpi)</pre></td></tr></tbody></table></code></pre></figure>
 
 <p><img src="/res/blog_15/gif.gif" alt="dots" /></p>
 
@@ -188,10 +188,9 @@ anim.save('dot.mp4', writer=writer,dpi=dpi)<span class="w">
 
 <p>All you have to do to make it work is pass in an original datavector, it’s time vector and and output vector. Then execute one of the interpolation functions on it and it will return nice interpolated data:</p>
 
-<div class="language-python highlighter-rouge"><pre class="highlight"><code><span class="n">ease</span> <span class="o">=</span> <span class="n">Eased</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">input_time_vector</span><span class="p">,</span> <span class="n">output_time_vector</span><span class="p">)</span>
+<div class="language-python highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">ease</span> <span class="o">=</span> <span class="n">Eased</span><span class="p">(</span><span class="n">data</span><span class="p">,</span> <span class="n">input_time_vector</span><span class="p">,</span> <span class="n">output_time_vector</span><span class="p">)</span>
 <span class="n">out_data</span> <span class="o">=</span> <span class="n">ease</span><span class="o">.</span><span class="n">power_ease</span><span class="p">(</span><span class="n">n</span><span class="p">)</span>
-</code></pre>
-</div>
+</code></pre></div></div>
 
 <p>All the code necessary to implement this can be found <a href="https://github.com/NicholasARossi/Easing-Animations-with-Python">here</a></p>
 

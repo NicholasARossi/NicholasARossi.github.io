@@ -3,12 +3,96 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-06-29T20:16:50-04:00</updated>
+  <updated>2018-08-20T18:20:04-04:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
+  
+  <entry>
+    <title>How the Financial Crisis Hurt the Poor and Helped the Rich</title>
+    <link href="http://nicholasarossi.github.io//FinancialCrisis"/>
+    <updated>2018-08-20T00:00:00-04:00</updated>
+    <id>http://nicholasarossi.github.io//FinancialCrisis</id>
+    <content type="html">&lt;html&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Indie+Flower&quot; /&gt;
+&lt;style&gt;
+
+      h1,h2,h3,head,title {
+
+        font-family: 'Indie Flower',serif;
+        outline-color: white;
+        color: black;
+        background: black url(res/blog_17/leaves2.jpg) repeat 0 0;
+
+        &lt;!-- background-color: slategrey; --&gt;
+}
+&lt;/style&gt;
+&lt;/html&gt;
+
+&lt;h3 id=&quot;winners-and-losers&quot;&gt;Winners and Losers&lt;/h3&gt;
+
+&lt;p&gt;The 2007 financial crisis affected each of us differently, with there the “winners” and “losers” falling sharply
+into economic lines. The graph below compares how the bottom 20% of income earners with the top 10%. Adjusted for inflation,
+there is an obvious difference in how the two group faired through the financial crisis (highlighted in gray).
+&lt;a href=&quot;res/blog_17/wealth.png&quot;&gt;
+&lt;img src=&quot;res/blog_17/wealth.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;Why did this happen? Why did the poor do so much worse through the crisis? The answer lies in how people keep their assets.&lt;/p&gt;
+
+&lt;h3 id=&quot;home-is-where-the-heart-is-if-youre-poor&quot;&gt;Home is where the heart is… if you’re poor&lt;/h3&gt;
+
+&lt;p&gt;Looking at just the most recent data from 2016, we see that the majority of lower income earners have almost all of their wealth in their home.
+Very little of their total wealth is in financial products such as stocks, bonds, futures etc.&lt;/p&gt;
+&lt;iframe src=&quot;res/blog_17/rich-and-poor-pie2/index.html&quot; height=&quot;500&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;Compare this to the top earners which have a sizable portion of their total assets tied up in financial products:&lt;/p&gt;
+&lt;iframe src=&quot;res/blog_17/rich-and-poor-pie/index.html&quot; height=&quot;500&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
+
+&lt;p&gt;This difference is not mearly cosmetic, it had a profound impact on why the rich did better in the recession.&lt;/p&gt;
+
+&lt;h3 id=&quot;no-one-was-totally-spared-from-the-mortgage-crisis&quot;&gt;No one was totally spared from the mortgage crisis&lt;/h3&gt;
+
+&lt;p&gt;Despite the total wealth increasing through the recession, the rich did lose money on their homes as the poor did when the bubble burst in 2007.
+The graph below show the median wealth tied up in the homes of both groups.
+&lt;a href=&quot;res/blog_17/housing.png&quot;&gt;
+&lt;img src=&quot;res/blog_17/housing.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;financial-instruments-are-the-refuge-of-the-wealthy&quot;&gt;Financial instruments are the refuge of the wealthy&lt;/h3&gt;
+
+&lt;p&gt;However, the rich were mostly insulated from the affects of the crisis thanks to their financial investment which accrued value through the recession.&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;res/blog_17/finance.png&quot;&gt;
+&lt;img src=&quot;res/blog_17/finance.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;p&gt;This illustrates how the difference in how both groups responded to the financial catastrophe can be primarily attributed to a difference in how their assets were allocated.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;The net result of the assets of the rich being protected was expected but not inevitable. The post-2007 recovery policies that focused on distribution of the 700+ billion dollars allocated
+ by congress favored the preservation of financial institutions over the welfare of individual citizens. While the Obama administration was relatively “left” leaning compared to what McCain’s
+ platform was, it seems the net product of his stimulus allocation was indistinguishable from what a hypothetical republican administration would have done. For more information, watch the
+ video below outlining these results:&lt;/p&gt;
+
+&lt;p&gt;&lt;a href=&quot;res/blog_17/obama_thumb.png&quot;&gt;
+&lt;img src=&quot;res/blog_17/obama_thumb.png&quot; /&gt;
+&lt;/a&gt;﻿&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Code used to generate these graphs can be found &lt;a href=&quot;https://github.com/NicholasARossi/VizSnacks&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;Data taken from the &lt;a href=&quot;https://www.federalreserve.gov/econres/scfindex.htm&quot;&gt;survey of consumer finances&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Roman Emperor Scrollytelling</title>
@@ -59,7 +143,7 @@ Click on the image below to check it out:&lt;/p&gt;
 
 &lt;p&gt;Take for instance an example animation like the one created exclusively in python below:&lt;/p&gt;
 
-&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python3&quot; data-lang=&quot;python3&quot;&gt;&lt;table style=&quot;border-spacing: 0&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot; style=&quot;text-align: right&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-python3&quot; data-lang=&quot;python3&quot;&gt;&lt;table class=&quot;rouge-table&quot;&gt;&lt;tbody&gt;&lt;tr&gt;&lt;td class=&quot;gutter gl&quot;&gt;&lt;pre class=&quot;lineno&quot;&gt;1
 2
 3
 4
@@ -85,16 +169,17 @@ Click on the image below to check it out:&lt;/p&gt;
 24
 25
 26
-27&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;import matplotlib.pyplot as plt
+27
+&lt;/pre&gt;&lt;/td&gt;&lt;td class=&quot;code&quot;&gt;&lt;pre&gt;import matplotlib.pyplot as plt
 import numpy as np
 from matplotlib import animation
-plt.close(&#39;all&#39;)
-colors = [ &#39;teal&#39;]
+plt.close('all')
+colors = [ 'teal']
 
 fig_animate, ax = plt.subplots()
 dots = []
 
-dots.append(ax.plot([], [], linestyle=&#39;none&#39;, marker=&#39;h&#39;, markersize=30, color=colors[0]))
+dots.append(ax.plot([], [], linestyle='none', marker='h', markersize=30, color=colors[0]))
 
 ax.set_xlim([-1,11])
 ax.set_ylim([-1,11])
@@ -107,12 +192,11 @@ def animate(z):
 
 anim = animation.FuncAnimation(fig_animate, animate, frames=len(data), blit=False)
 
-ax.set_facecolor(&#39;#d3d3d3&#39;)
-writer = animation.writers[&#39;ffmpeg&#39;](fps=10)
+ax.set_facecolor('#d3d3d3')
+writer = animation.writers['ffmpeg'](fps=10)
 dpi=300
 
-anim.save(&#39;dot.mp4&#39;, writer=writer,dpi=dpi)&lt;span class=&quot;w&quot;&gt;
-&lt;/span&gt;&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+anim.save('dot.mp4', writer=writer,dpi=dpi)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;/res/blog_15/gif.gif&quot; alt=&quot;dots&quot; /&gt;&lt;/p&gt;
 
@@ -138,10 +222,9 @@ anim.save(&#39;dot.mp4&#39;, writer=writer,dpi=dpi)&lt;span class=&quot;w&quot;&
 
 &lt;p&gt;All you have to do to make it work is pass in an original datavector, it’s time vector and and output vector. Then execute one of the interpolation functions on it and it will return nice interpolated data:&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Eased&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Eased&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;span class=&quot;n&quot;&gt;out_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;power_ease&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;All the code necessary to implement this can be found &lt;a href=&quot;https://github.com/NicholasARossi/Easing-Animations-with-Python&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
 
@@ -204,7 +287,7 @@ Your browser does not support the video tag.
 &lt;style&gt;
 
       h1,h2,h3,head,title {
-        font-family: &#39;playfair display&#39;;
+        font-family: 'playfair display';
         outline-color: white;
         color: white;
         background-color: slategrey;
@@ -285,13 +368,13 @@ Well, JFK is the best in terms of on-time flights with just slightly below the n
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
-  font-family: &#39;futura&#39;;
-  src: url(&#39;/res/blog_10/futura.ttf&#39;) format(&#39;truetype&#39;);
+  font-family: 'futura';
+  src: url('/res/blog_10/futura.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
       h1,h2,h3,head,title {
-        font-family: &#39;futura&#39;;
+        font-family: 'futura';
         font-weight: 1000;
         outline-color: black;
         color: black;
@@ -378,13 +461,13 @@ top themes (by number of sets) of all time.&lt;/p&gt;
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
-  font-family: &#39;ebgaramond&#39;;
-  src: url(&#39;/res/blog_12/EBGaramond.ttf&#39;) format(&#39;truetype&#39;);
+  font-family: 'ebgaramond';
+  src: url('/res/blog_12/EBGaramond.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
   h1,h2,h3,head,title {
-    font-family: &#39;permanent marker&#39;,sans-serif;
+    font-family: 'permanent marker',sans-serif;
     color: Black;
   }
 &lt;/style&gt;
@@ -416,7 +499,7 @@ National Geographic seemed like a good group to cross-section the natural world.
 
 &lt;p&gt;I wasn’t interested in black and white photos, I wanted to look at color so I decided I wanted to plot hue. So using the data scraped, I discared the greyscale colors and generated a histogram of all the hues.&lt;/p&gt;
 
-&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
 &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all photos&lt;/span&gt;
     &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all colors for each photo&lt;/span&gt;
         &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_hsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
@@ -426,8 +509,7 @@ National Geographic seemed like a good group to cross-section the natural world.
 &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
 &lt;span class=&quot;n&quot;&gt;probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;histogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;/code&gt;&lt;/pre&gt;
-&lt;/div&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;To make it &lt;em&gt;extra&lt;/em&gt; pretty I just wrapped the histogram circularly and interpolated along the curve to make it nice and smooth.&lt;/p&gt;
 
@@ -462,13 +544,13 @@ National Geographic seemed like a good group to cross-section the natural world.
     <content type="html">&lt;html&gt;
 &lt;style&gt;
 @font-face {
-  font-family: &#39;SFCartoonistHand&#39;;
-  src: url(&#39;/res/blog_13/SFCartoonistHand.ttf&#39;) format(&#39;truetype&#39;);
+  font-family: 'SFCartoonistHand';
+  src: url('/res/blog_13/SFCartoonistHand.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
   h1,h2,h3,h4,h5,h6,head,title,pre, code, tt {
-    font-family: &#39;SFCartoonistHand&#39;,serif;
+    font-family: 'SFCartoonistHand',serif;
     color: white;
     background-color: turquoise;
   }
@@ -575,13 +657,13 @@ There are only a few guidelines:&lt;/p&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=SFCar&quot; /&gt;
 &lt;style&gt;
 @font-face {
-  font-family: &#39;ebgaramond&#39;;
-  src: url(&#39;/res/blog_12/EBGaramond.ttf&#39;) format(&#39;truetype&#39;);
+  font-family: 'ebgaramond';
+  src: url('/res/blog_12/EBGaramond.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }
   h1,h2,h3,head,title {
-    font-family: &#39;ebgaramond&#39;,serif;
+    font-family: 'ebgaramond',serif;
     color: Black;
     background-color: yellow;
   }
@@ -634,11 +716,11 @@ There are only a few guidelines:&lt;/p&gt;
     &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Permanent+Marker&quot; /&gt;
     &lt;style&gt;
       &lt;!-- h1,h2,h3,title {
-        font-family: &#39;Permanent Marker&#39;,serif;
+        font-family: 'Permanent Marker',serif;
         color: darkturquoise;
       } --&gt;
       h1,h2,h3,h4,h5,h6,pre, code, tt {
-        font-family: &#39;Permanent Marker&#39;,serif;
+        font-family: 'Permanent Marker',serif;
         color: darkturquoise;
       }
       h1,head,title{
@@ -647,14 +729,14 @@ There are only a few guidelines:&lt;/p&gt;
       }
 
       body {
-        &lt;!-- font-family: &#39;timesnewroman&#39;,serif; --&gt;
+        &lt;!-- font-family: 'timesnewroman',serif; --&gt;
         color: black;
       }
     &lt;/style&gt;
   &lt;/head&gt;
 &lt;/html&gt;
 &lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-  MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 &lt;/script&gt;
 
 &lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
@@ -784,7 +866,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
     <updated>2017-06-20T00:00:00-04:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-  MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
 &lt;/script&gt;
 
 &lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
@@ -909,108 +991,6 @@ Your browser does not support the video tag.
 &lt;script&gt;
 document.getElementById(&quot;video1&quot;).currentTime = 14;
 &lt;/script&gt; --&gt;&lt;/p&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Quantifying Genetic Entropy in Humans and Wheat</title>
-    <link href="http://nicholasarossi.github.io//Wheat"/>
-    <updated>2017-05-02T00:00:00-04:00</updated>
-    <id>http://nicholasarossi.github.io//Wheat</id>
-    <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-  MathJax.Hub.Config({tex2jax: {inlineMath: [[&#39;$&#39;,&#39;$&#39;], [&#39;\\(&#39;,&#39;\\)&#39;]]}});
-&lt;/script&gt;
-
-&lt;style&gt;
-  h1,h2,h3,head,title {
-
-    font-color: black;
-    color: #5E5E5E;
-    background-color: #A5E399;
-  }
-  &lt;!-- header{
-    background-color: #d3d3d3;
-  } --&gt;
-
-&lt;/style&gt;
-
-&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
-&lt;/script&gt;
-
-&lt;h3 id=&quot;how-different-are-we&quot;&gt;How different are we?&lt;/h3&gt;
-&lt;p&gt;What does it mean to be genetically distinct? Within a species, we need to be able to calculate how much variability there is.&lt;/p&gt;
-
-&lt;p&gt;We need a metric to quantify just how diverse a given genome is - be it plant or animal. To do this we turn to &lt;a href=&quot;https://www.youtube.com/watch?v=sDhLY-5fGD0&quot;&gt;entropy&lt;/a&gt;&lt;/p&gt;
-&lt;center&gt;
-$$H(x)=-\sum_{i=1}^{n} P(x_i)log_2P(x_i)$$
-&lt;/center&gt;
-
-&lt;p&gt;This is a terrific, non-parametric method for evaluating total diversity in a set. Here, a discrete valued variable x has a set of values n. I chose to compute entropy with log base 2 to give a score in bits (base e for nats, the choice is yours).&lt;/p&gt;
-
-&lt;p&gt;The non-parametric nature of the entropy calculation allows us to determine the diversity of a given variable regardless of how that diversity is distributed.
-To illustrate this point consider the groups of colored dots below:&lt;/p&gt;
-
-&lt;center&gt;
-&lt;a align=&quot;center&quot; href=&quot;/res/blog_6/entropy_comparison.png&quot;&gt;
-&lt;img src=&quot;/res/blog_6/entropy_comparison.png&quot; /&gt;
-&lt;/a&gt;﻿
-&lt;/center&gt;
-&lt;p&gt;Each of the groups above has the same entropy score (2 bits). The group to the left is split evenly between two genotypes while the group to the right has a total of eight potential variations at the same point. Basically we see the entropy score doesn’t care if you have a split group or one group dominating with a smatering of other random genotypes.&lt;/p&gt;
-
-&lt;p&gt;In order to use entropy to calculate a diversity score for an entire organism, we average the diversity throughout a set of SNPs (&lt;a href=&quot;https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism&quot;&gt;Single-nucleotide polymorphisms&lt;/a&gt;). These are high-variability locations in the genome that serve to distinguish the genetic variance of individuals of the species.
-SNP data sets are available for many organisms I chose to compare all of humanity with one of our favorite domesticated crops : wheat. Thousands of human SNPs were collected globally from about 900 individuals for the human set. Similar numbers of SNPs were used for the wheat data set.&lt;/p&gt;
-
-&lt;p&gt;Calculating the average SNP entropy over the an entire set of SNPs for a given organism produces the following equation:&lt;/p&gt;
-
-&lt;center&gt;
-$$H_{average}(k)=-\frac{1}{k}\sum_{j=1}^{k}\sum_{i=1}^{n} P(k_{ji})log_2P(k_{ji})$$
-&lt;/center&gt;
-
-&lt;p&gt;Where k is a given SNP location within a population. Each potential SNP sequence at a given location has a particular probability &lt;script type=&quot;math/tex&quot;&gt;P(k_{ji})&lt;/script&gt; within that population.&lt;/p&gt;
-
-&lt;p&gt;This calculation serves as a loose upper bound to the genetic entropy of a given organism. We call this an upper bound because SNPs are targeted for sequencing because they are diversity hotspots by nature. Calculating the average diversity at those locations produces a diversity score for the entire organism.&lt;/p&gt;
-
-&lt;h3 id=&quot;this-is-what-diversity-looks-like&quot;&gt;This is what diversity looks like!&lt;/h3&gt;
-&lt;p&gt;The central question I wanted to ask is : who has more genetic variability - us or an organism we’ve bred? To answer this I applied the above metric to a multinational data set of human SNPs (see notes) versus one from a british domestic wheat set.&lt;/p&gt;
-
-&lt;center&gt;
-&lt;a align=&quot;center&quot; href=&quot;/res/blog_6/swarm_plot2.png&quot;&gt;
-&lt;img src=&quot;/res/blog_6/swarm_plot2.png&quot; /&gt;
-&lt;/a&gt;﻿
-&lt;/center&gt;
-
-&lt;p&gt;I included the upper an lower bound sets as well (random and uniform). These represent the maximum entropy you could generate at a given SNP in a diploid organism with 4 base-pairs (4 bits) versus a completely isogenic population (0 bits of entropy). We see real organisms are in the middle with some diversity but not total anarchy.&lt;/p&gt;
-
-&lt;p&gt;As for the analyzed data, the raw score for the domesticated wheat is (surprise) higher than us. Yet, this value is not overwhelming different.
-The subtle difference of the average SNP complexity between humans and wheat might not seem like much at first glance, but we have to factor in the radical difference in genome size that this complexity scales with.&lt;/p&gt;
-
-&lt;p&gt;First, the wheat genome is about &lt;a href=&quot;https://www.cshl.edu/news-a-features/bread-wheats-large-and-complex-genome-is-revealed.html&quot;&gt;5 times larger&lt;/a&gt; than humans. We would imagine that the complexity functions on each individual choice as an exponent.
-Given the average entropy of human genome is 1.116 bits per SNP and the average entropy of wheat genome is 1.251 bits per SNP, a back of the envelope calculations would yield something like:&lt;/p&gt;
-&lt;center&gt;
-Total Complexity = genome size&lt;sup&gt;entropy per base&lt;/sup&gt;
-&lt;/center&gt;
-&lt;p&gt;Applying this straight forward calculation yields the chart below where the small dot represents the apparent complexity of all of humanity while the large dot represent that of domestic wheat.
-&lt;!-- width=&quot;100%&quot; height=&quot;400&quot; --&gt;&lt;/p&gt;
-&lt;iframe src=&quot;/res/blog_6/bubble_chart.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;diversity-is-good&quot;&gt;Diversity is good!&lt;/h3&gt;
-
-&lt;p&gt;Isogenic or low diversity populations are &lt;a href=&quot;https://www.nationalgeographic.org/encyclopedia/biodiversity/&quot;&gt;fragile&lt;/a&gt;. Maintaining populations of high-variability is key to successful species. This metric doesn’t necessarily guarantee survivorship, but it may show how robust a species is to some unknown future environmental condition.&lt;/p&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;While quantifying diversity is a non-trivial problem, entropy is a good first pass metric to use to understand the variability in a given set.
-Domestic Wheat seems more ready than us to withstand the apocalypse than us. That doesn’t matter though because humans aren’t going to survive the apocalypse, we’re going to &lt;a href=&quot;https://www.youtube.com/watch?v=VEJ8lpCQbyw&quot;&gt;become it&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;I got the Human SNP dataset from &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/20643205&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;I got the Wheat SNP dataset from &lt;a href=&quot;http://www.cerealsdb.uk.net/cerealgenomics/CerealsDB/indexNEW.php&quot;&gt;here&lt;/a&gt; (the kasp set)&lt;/li&gt;
-  &lt;li&gt;Python code used for analysis of this data can be found &lt;a href=&quot;https://github.com/NicholasARossi/SNP_analysis&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
     <author>
       <name>Nicholas Rossi</name>

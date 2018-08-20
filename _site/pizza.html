@@ -84,14 +84,13 @@
     </info>
     
     <div class="body"><p>So we all know the bigger the pizza, <a href="http://www.npr.org/sections/money/2014/02/26/282132576/74-476-reasons-you-should-always-get-the-bigger-pizza">the better the deal</a>. The price per square inch decreases dramatically as you increase pizza size. But there's so much more to do with pizza math! For the following graphs I assume uniform thickness among pizzas (obvious conciet) but beyond that we just need equations for area an circumference of a circle. Presto pesto!</p>
-<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="n">def</span><span class="x"> </span><span class="n">pizza_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="x"> </span><span class="n">diameter</span><span class="p">)</span><span class="o">:</span><span class="x">
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span><span class="x"> </span><span class="n">pizza_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="x"> </span><span class="n">diameter</span><span class="p">)</span><span class="o">:</span><span class="x">
     </span><span class="err">#</span><span class="n">calculates</span><span class="x"> </span><span class="n">price</span><span class="x"> </span><span class="n">per</span><span class="x"> </span><span class="n">square</span><span class="x"> </span><span class="n">inch</span><span class="x">
     </span><span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">**</span><span class="m">2</span><span class="p">))</span><span class="x">
 </span><span class="n">def</span><span class="x"> </span><span class="n">crust_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="x"> </span><span class="n">diameter</span><span class="p">)</span><span class="o">:</span><span class="x">
     </span><span class="err">#</span><span class="n">calculates</span><span class="x"> </span><span class="n">price</span><span class="x"> </span><span class="n">per</span><span class="x"> </span><span class="n">inch</span><span class="x"> </span><span class="n">of</span><span class="x"> </span><span class="n">crust</span><span class="x">
     </span><span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="p">)))</span><span class="x">
-</span></code></pre>
-</div>
+</span></code></pre></div></div>
 
 <h2 id="pizza-geometry">Pizza Geometry</h2>
 <p>What does pizza size mean visually? Mouse over the data below for sample pizzas from the <font color="red">Pizza Hut</font>, <font color="blue">Dominos</font> and <font color="green">Papa Johns</font> in Minnesota. A lower price per square inch means a better deal on the pizza.</p>

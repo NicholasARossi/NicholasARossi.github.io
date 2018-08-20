@@ -2,13 +2,460 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714598979008657364.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714695953808993068.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714744755651717913.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714791982818531425.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714847010610013040.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714908385097154430.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714908427031680006.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714908440101275069.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1714977588269436189.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715081372169563424.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715166188126761557.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715217327899620419.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715326882616820077.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715384523963610723.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715438064447194472.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715526559144380128.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715597902468868189.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715672007163311291.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715732879198036039.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715788807095992294.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1715886423666440893.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716180898175325438.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716258528257954958.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716313839777941690.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716464021538803646.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716534341637501344.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716630914253729125.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716713363038118964.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716788351422224503.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716846874965410861.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716897213005660142.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1716970921875377681.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717056086983129287.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717130717509204432.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717245919412337556.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717331501358338001.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717401003039203217.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717401030847615566.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717494126209711819.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717573280913576362.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717573288589090910.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717652634536301232.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717706592990652086.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717754162865536671.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717802675293065529.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1717886937836995303.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718035314478188259.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718111257745953555.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718191301323546298.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718269818744734265.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718345134687181209.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718345137010936356.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718474982478902881.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718579076329660449.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718634307411266602.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718713214667957721.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718778494672848065.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718870275129161737.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1718945310800003542.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719025321225488171.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719096448836930701.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719163875276733246.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719193969525284936.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719269580084096719.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719405711656365615.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719552087698453900.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719627761037671035.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719700001674511137.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719776957095015012.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719823905625901819.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719823918670189194.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719873694052908850.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719957811096379871.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719957957871757888.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719958099261728592.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1719958199077702395.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720043946153673736.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169113496380711.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169113613860533.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169187903376569.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169190923339137.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169227833053585.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169228160211802.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169423044388821.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169458754846252.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720169473912960038.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720343061995696671.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720532978948214418.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720565338322273636.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720652452045163464.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720751510969620247.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720855012139947619.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720856435342904652.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1720930992166739650.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721006988760898704.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721073630547152345.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721140427539573311.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721210357853149741.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721210367105576515.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721305547129421256.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721380686701469266.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721453716723028014.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721562664817925941.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721571283701782390.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721652114994580429.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721727320232691754.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721727374137940378.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721800440725595967.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721860914519293765.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1721933421502843649.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722009164492646645.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722089296494468201.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722089305621274698.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722089312835527257.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722146090818469640.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722273644409555481.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722403307064856643.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722495713386795371.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722577905270020168.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722638455391681880.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678569656502296.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678572743409579.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678574110970689.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678577885678368.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678580083655454.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722678583422212500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722776443933318229.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722776445275502796.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722776447884440982.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722776449176165383.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722862860898315695.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1722948229085845612.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723025539512235866.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170825547207969.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170829665906045.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170836435544091.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170944984242708.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170976600756103.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723170985392087620.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723171038491859084.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723261054530447307.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723331654649132859.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723437309905332862.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723437977420308004.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723437986798751026.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723510988567566565.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723558126144170248.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723645319214581287.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723768656515368833.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723768659250055986.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723768661607263755.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1723985278660469782.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724054347690506053.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724133546509787042.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724209059895107474.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724290636020962429.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724354418197726405.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724427219210564099.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724513626377549265.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724682429707202899.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724749124073336581.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724815529158154997.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724815529183494916.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724885444624062687.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724932509219530507.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1724989431830514782.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725049573989079835.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725124330897941109.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725178892728111368.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725310455839143635.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725386228314808660.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725456718517585170.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725533146403726443.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725583432233235792.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725633821829592178.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725758473306568386.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725811480366735039.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725846225125564008.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725911109213242031.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1725994361408014332.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726084742476907409.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726142783616449436.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726200616617717967.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726285370062843976.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726345428352270285.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726404360655469402.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726404368322652708.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726460173889730218.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726524780658410382.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726605829602023985.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726605836246056110.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726605838108209879.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726605838661960829.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726727583796350474.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726893242002089105.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1726958919140378970.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727020301529488080.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727103714760437379.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727177600873255072.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727232088413778729.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727348039503294269.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727402398672808850.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727474453099522664.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727550400561667191.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727609521935581604.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727675737832413666.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727675739988067240.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727777720505254118.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727845673447873882.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1727964048534582697.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728011107459491009.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728078650601873145.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728159297722861113.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728239278410799478.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728340478477051442.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728420803332870840.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728502886709396910.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728557307887771422.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728605977307802572.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728655121179322768.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728694913933974023.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728760221864375003.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1728850449212014789.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729001242535773148.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729076820135755500.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729144146902258189.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729203514708494733.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729274513940402877.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729344768691899043.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729399457693230251.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729480989820680317.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729654460714541254.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729730464011021288.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729730488287638618.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729800362489982628.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729882420390209801.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1729960039492288016.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730035745077209038.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730110009306294730.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730110029715772056.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730110044060464808.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730110055007645264.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730110081398077082.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730186779355415563.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730272914496776922.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730272918556753905.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730272923019625314.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730272927566101248.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730272928841318779.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730363568102897025.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730442460008327264.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730487167270946887.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730528589067918041.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730596726098390323.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730647179297477555.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730709608668637890.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730771493459899504.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730818721734154548.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730868514741062867.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1730942678550232727.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731005588714579137.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731095055668435749.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731192886769145911.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731244573781165982.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731340047246874743.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731416406505663237.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731492508326625409.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731567812734721346.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731644061557599530.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731722660381724806.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731874534745449739.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1731955069568361216.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1732033093479193460.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1732108431668343938.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/1732183946823469690.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Academy0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/CNAME" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Distributions.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/animation_driver.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/figures/graph_cm.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/figures/hist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/figures/kit_complexity.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/figures/scatter.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/figures/two_pannel.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/futur.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/lego_animate.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/lego_driver.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/lego_plot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/sets.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/Website/2018_misc/lego/lego_analysis/themes.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/S5k_cfplaa/1.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/S5k_cfplaa/2.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/S5k_cfplaa/3.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/1.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/2.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/3.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/4.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/5.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/SVK_cfplaa/6.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/directory_settings.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/meta_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/meta_plot.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/movie_functions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/s5k.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/static_plot.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/static_plots.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/svk.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/tl.npy" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/tl/1.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/tl/2.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/2017/01_25_17_OU_animations/bacterial_slideshow/github_rep/tl/3.mat" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/paper_2017/code/bacterial_movies/diversity_generation.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Documents/work_docs/lab_work/paper_2017/code/bacterial_movies/image_functions.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/Gemfile.lock" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/SEED2017.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/UFO.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/UFO0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/IMG_3158.JPG" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/MorphSVGPlugin.min.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/Untitled 3.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/Untitled-1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/floral_snake.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/marsox.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/rozes.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/small_molecules.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/snake.svg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/brand-logo/stress.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/port.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/about/streets.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/cars/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/lin_log.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/lin_log0.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/papers/journal.pcbi.1005310.pdf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/photos/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/Science-Designs/images/BIOCIRCUITS.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/Science-Designs/images/GENETIC NETWORKS.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/Fred.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/MovieS2.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/NYC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/africa.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/annihilation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/brazil_gif.gif" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/cells.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/cells2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/entropy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/hist_comp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/imane1.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/interracial.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/mandala.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/marA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/mask.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/mask.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/mask.webm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/oscillators.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/radial_hist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/stochastic.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery copy/synbio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/Fred-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/fred.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/NYC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/annihilation.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/cells.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/cells2.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/entropy.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/hist_comp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/mandala.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/marA.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/mask.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/mask.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/mask.webm" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/radial_hist.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/gallery/synbio.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/imane1-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/stochastic-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/projects/gallery/videogames-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/2018-03-15-natgeo.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_10/Screen Shot 2018-03-19 at 8.19.00 AM.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/Anders.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/EBGaramond.ttf" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/common.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/out.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/out0.csv" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/raiseandfall.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/raiseandfall_animate.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/rise_and_fall_cluster.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/style.css" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11/vector.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11_romans/45-degree-fabric-light.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11_romans/fabric.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_11_romans/grilled-noise.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/NYC.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/girl-01.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/girl-01.png.tmp$$" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/hist_comp.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/logo.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/pixel-smear/girl.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/pixel-smear/namibia.jpg" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_14/radial_hist-01.png.tmp$$" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_15/2018-05-15-PythonAnimations.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_15/countries_map.js" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_15/easing_javascript.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/blog_7/ergodic.mp4" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/res/temps/4.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/segragation.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/MANIFEST.in" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/README.md" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/django_simple_poll.egg-info/PKG-INFO" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/django_simple_poll.egg-info/SOURCES.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/django_simple_poll.egg-info/dependency_links.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/django_simple_poll.egg-info/top_level.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/admin.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/cs/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/cs/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/es_AR/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/es_AR/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/ru/LC_MESSAGES/django.mo" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/locale/ru/LC_MESSAGES/django.po" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/migrations/0001_initial.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/models.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/templates/poll/base.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/templates/poll/poll.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/templates/poll/result.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/templatetags/poll_tags.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/tests.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/urls.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/utils.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/poll/views.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/src/django-simple-poll/setup.py" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/apple-touch-icon-114x114-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/apple-touch-icon-57x57-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/apple-touch-icon-72x72-precomposed.png" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/apple-touch-icon-WxH-precomposed.psd" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/index.appcache" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/thatwednesday/index.html" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/votr/bin/python3" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/votr/lib/python3.5/no-global-site-packages.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/votr/lib/python3.5/orig-prefix.txt" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/_site/votr/lib/python3.5/site.py" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/Gemfile.lock" afterPath="$PROJECT_DIR$/Gemfile.lock" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/PythonAnimations.html" afterPath="$PROJECT_DIR$/_site/PythonAnimations.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/RomanEmperors.html" afterPath="$PROJECT_DIR$/_site/RomanEmperors.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/index.html" afterPath="$PROJECT_DIR$/_site/about/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/about/spotify/index.html" afterPath="$PROJECT_DIR$/_site/about/spotify/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/index.html" afterPath="$PROJECT_DIR$/_site/archive/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/archive/sidebar.html" afterPath="$PROJECT_DIR$/_site/archive/sidebar.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/atom.xml" afterPath="$PROJECT_DIR$/_site/atom.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_11_romans/emperor_scroll/scrollytelling.html" afterPath="$PROJECT_DIR$/_site/res/blog_11_romans/emperor_scroll/scrollytelling.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/res/blog_11_romans/scrollytelling.html" afterPath="$PROJECT_DIR$/_site/res/blog_11_romans/scrollytelling.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/home.html" afterPath="$PROJECT_DIR$/_site/home.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/natgeo.html" afterPath="$PROJECT_DIR$/_site/natgeo.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/papers/index.html" afterPath="$PROJECT_DIR$/_site/papers/index.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/pizza.html" afterPath="$PROJECT_DIR$/_site/pizza.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/_site/sitemap.xml" afterPath="$PROJECT_DIR$/_site/sitemap.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/scrollytelling.html" afterPath="$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/scrollytelling.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/res/blog_11_romans/scrollytelling.html" afterPath="$PROJECT_DIR$/res/blog_11_romans/scrollytelling.html" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -29,105 +476,102 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="bosFig_blank2.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about/brand-logo/scss/bosFig_blank2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="bosFig_blank2.png" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about/brand-logo/css/bosFig_blank2.png">
-          <provider selected="true" editor-type-id="images">
-            <state />
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="jquery.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/jquery.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-9400">
-              <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="scrollytelling.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="scrollytelling.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/scrollytelling.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="158">
-              <caret line="362" column="46" selection-start-line="362" selection-start-column="46" selection-end-line="362" selection-end-column="46" />
+            <state relative-caret-position="148">
+              <caret line="93" column="28" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+                <element signature="n#style#0;n#h2#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#nav#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
+      <file leaf-file-name="2018-08-20-FinancialCrisis.md" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-08-20-FinancialCrisis.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="1140">
+                <caret line="76" column="149" selection-start-line="76" selection-start-column="149" selection-end-line="76" selection-end-column="149" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/js/index.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="287">
+              <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="2018-01-01-segregation.md" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="210">
+                <caret line="14" column="31" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+                <folding />
+              </first_editor>
+              <second_editor>
+                <js_state />
+              </second_editor>
+            </state>
+          </provider>
+          <provider editor-type-id="Gfm">
+            <state />
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.babel" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/babel/index.babel">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.babel" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/babel/index.babel">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="120">
+              <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/low-poly-portrait/index.html">
+        <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1110">
-              <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
+            <state relative-caret-position="223">
+              <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="tween.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/tween.js">
+      <file leaf-file-name="index.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="240">
-              <caret line="16" column="5229" selection-start-line="16" selection-start-column="5229" selection-end-line="16" selection-end-column="5229" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018-06-10-PythonAnimations.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
-          <provider editor-type-id="Gfm">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="1965">
-                <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="134" selection-end-column="5" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <js_state />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="2018-06-20-RomanEmperors.md" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-RomanEmperors.md">
-          <provider editor-type-id="Gfm">
-            <state />
-          </provider>
-          <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="165">
-                <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-                <folding />
-              </first_editor>
-              <second_editor>
-                <js_state />
-              </second_editor>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="d3v4.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/d3v4.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="105">
+              <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -150,11 +594,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/_posts/4.html" />
-        <option value="$PROJECT_DIR$/_site/res/temps/3.html" />
-        <option value="$PROJECT_DIR$/_site/res/temps/2.html" />
-        <option value="$PROJECT_DIR$/res/blog_14/pixel-smear/css/style.css" />
-        <option value="$PROJECT_DIR$/_posts/2018-03-01-NatGeo.md" />
         <option value="$PROJECT_DIR$/res/blog_14/pixel-smear/smear.html" />
         <option value="$PROJECT_DIR$/res/test_server" />
         <option value="$PROJECT_DIR$/res/blog_13/linear_log/js/index.js" />
@@ -201,13 +640,19 @@
         <option value="$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/low-poly-portrait/index.html" />
         <option value="$PROJECT_DIR$/res/blog_11_romans/scrollytelling.html" />
         <option value="$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/scrollytelling.html" />
+        <option value="$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/index.html" />
+        <option value="$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/js/index.js" />
+        <option value="$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/babel/index.babel" />
+        <option value="$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/js/index.js" />
+        <option value="$PROJECT_DIR$/_posts/2018-08-20-FinancialCrisis.md" />
       </list>
     </option>
   </component>
   <component name="ProjectFrameBounds">
-    <option name="y" value="23" />
-    <option name="width" value="1280" />
-    <option name="height" value="714" />
+    <option name="x" value="-1920" />
+    <option name="y" value="-135" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager" settingsEditedManually="false">
     <OptionsSetting value="true" id="Add" />
@@ -280,7 +725,7 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="blog_9" />
+              <option name="myItemId" value="blog_17" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -298,7 +743,11 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="blog_11_romans" />
+              <option name="myItemId" value="blog_17" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rich-and-poor-pie2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -316,11 +765,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="blog_11_romans" />
+              <option name="myItemId" value="blog_17" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="emperor_scroll" />
+              <option name="myItemId" value="rich-and-poor-pie2" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -338,29 +791,15 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="blog_11_romans" />
+              <option name="myItemId" value="blog_17" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="emperor_scroll" />
+              <option name="myItemId" value="rich-and-poor-pie2" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="low-poly-portrait" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NicholasARossi.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="NicholasARossi.github.io" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="projects" />
+              <option name="myItemId" value="babel" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
@@ -374,35 +813,84 @@
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="_layouts" />
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog_17" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rich-and-poor-pie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="res" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="blog_17" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="rich-and-poor-pie" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="NicholasARossi.github.io" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="_posts" />
               <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.PsiDirectoryNode" />
             </PATH_ELEMENT>
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
-    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$/../2018_misc/emperor_scroll" />
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="h*&#9;FILE&#9;file:///Users/nicholasrossi/Documents/work_docs/Website/NicholasARossi.github.io/res/blog_16/scatter.html" />
+    <property name="FullScreen" value="true" />
   </component>
   <component name="RecentsManager">
+    <key name="CopyFile.RECENT_KEYS">
+      <recent name="$PROJECT_DIR$/res/blog_17" />
+      <recent name="$PROJECT_DIR$/_posts" />
+      <recent name="$PROJECT_DIR$/res/blog_11_romans" />
+      <recent name="$PROJECT_DIR$/res/blog_15" />
+      <recent name="$PROJECT_DIR$/projects/gallery" />
+    </key>
     <key name="MoveFile.RECENT_KEYS">
       <recent name="$PROJECT_DIR$/res/blog_15" />
       <recent name="$PROJECT_DIR$/_posts" />
       <recent name="$PROJECT_DIR$/res/blog_16" />
       <recent name="$PROJECT_DIR$/res" />
       <recent name="$PROJECT_DIR$/res/blog_14" />
-    </key>
-    <key name="CopyFile.RECENT_KEYS">
-      <recent name="$PROJECT_DIR$/res/blog_11_romans" />
-      <recent name="$PROJECT_DIR$/_posts" />
-      <recent name="$PROJECT_DIR$/res/blog_15" />
-      <recent name="$PROJECT_DIR$/projects/gallery" />
-      <recent name="$PROJECT_DIR$/res/blog_16" />
     </key>
   </component>
   <component name="RunManager">
@@ -569,13 +1057,13 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="23" width="1280" height="714" extended-state="6" />
+    <frame x="-1920" y="-135" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
       <window_info id="GfmBrowser" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.1825525" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.12193823" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
-      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.15916398" sideWeight="0.5128593" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.099802375" sideWeight="0.5128593" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Python Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.24954683" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -608,116 +1096,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/projects/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4650">
-          <caret line="310" column="7" selection-start-line="310" selection-start-column="7" selection-end-line="310" selection-end-column="7" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="539">
-            <caret line="71" column="0" selection-start-line="71" selection-start-column="0" selection-end-line="73" selection-end-column="5" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="188">
-            <caret line="48" column="0" selection-start-line="48" selection-start-column="0" selection-end-line="48" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_16/scatter.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="555">
-          <caret line="40" column="16" selection-start-line="40" selection-start-column="0" selection-end-line="41" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2016-08-07-pizza.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="435">
-            <caret line="29" column="16" selection-start-line="29" selection-start-column="0" selection-end-line="30" selection-end-column="0" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/rise_and_fall_cluster.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="405">
-          <caret line="83" column="36" selection-start-line="83" selection-start-column="14" selection-end-line="83" selection-end-column="36" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/raiseandfall_animate.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="255">
-          <caret line="17" column="5" selection-start-line="17" selection-start-column="4" selection-end-line="17" selection-end-column="5" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/scroll.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="300">
-          <caret line="20" column="27" selection-start-line="20" selection-start-column="0" selection-end-line="21" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/port3.jpg">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/index.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="0">
-            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/brand.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="180">
-          <caret line="12" column="0" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/brand-logo/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-330">
@@ -875,65 +1253,16 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/d3v4.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="1965">
-            <caret line="131" column="0" selection-start-line="131" selection-start-column="0" selection-end-line="134" selection-end-column="5" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-RomanEmperors.md">
-      <provider editor-type-id="Gfm">
-        <state />
-      </provider>
-      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="165">
-            <caret line="11" column="38" selection-start-line="11" selection-start-column="38" selection-end-line="11" selection-end-column="38" />
-            <folding />
-          </first_editor>
-          <second_editor>
-            <js_state />
-          </second_editor>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/tween.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="240">
-          <caret line="16" column="5229" selection-start-line="16" selection-start-column="5229" selection-end-line="16" selection-end-column="5229" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_11_romans/scrollytelling.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="143">
           <caret line="48" column="23" selection-start-line="48" selection-start-column="14" selection-end-line="48" selection-end-column="23" />
-          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/jquery.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-9400">
+        <state relative-caret-position="60">
           <caret line="4" column="35" selection-start-line="4" selection-start-column="35" selection-end-line="4" selection-end-column="35" />
           <folding />
         </state>
@@ -946,22 +1275,207 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/low-poly-portrait/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1110">
+        <state relative-caret-position="3630">
           <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/tween.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="240">
+          <caret line="16" column="5229" selection-start-line="16" selection-start-column="5229" selection-end-line="16" selection-end-column="5229" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/d3v4.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="105">
+            <caret line="7" column="0" selection-start-line="7" selection-start-column="0" selection-end-line="19" selection-end-column="8" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-RomanEmperors.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="135">
+            <caret line="9" column="0" selection-start-line="9" selection-start-column="0" selection-end-line="12" selection-end-column="5" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="285">
+            <caret line="35" column="0" selection-start-line="35" selection-start-column="0" selection-end-line="36" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/babel/index.babel">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="105">
+          <caret line="8" column="31" selection-start-line="8" selection-start-column="31" selection-end-line="8" selection-end-column="31" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="223">
+          <caret line="20" column="0" selection-start-line="20" selection-start-column="0" selection-end-line="20" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie2/babel/index.babel">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="120">
+          <caret line="8" column="30" selection-start-line="8" selection-start-column="30" selection-end-line="8" selection-end-column="30" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/scrollytelling.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="158">
-          <caret line="362" column="46" selection-start-line="362" selection-start-column="46" selection-end-line="362" selection-end-column="46" />
+        <state relative-caret-position="148">
+          <caret line="93" column="28" selection-start-line="93" selection-start-column="0" selection-end-line="94" selection-end-column="0" />
           <folding>
             <element signature="n#style#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#h2#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#nav#0;n#div#0;n#section#0;n#div#0;n#body#0;n#!!top" expanded="true" />
           </folding>
         </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-15-LinLog.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-Academy.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="8" column="6" selection-start-line="8" selection-start-column="6" selection-end-line="8" selection-end-column="6" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="0">
+            <caret line="0" column="0" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="210">
+            <caret line="14" column="31" selection-start-line="14" selection-start-column="0" selection-end-line="15" selection-end-column="0" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/js/index.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="287">
+          <caret line="51" column="7" selection-start-line="51" selection-start-column="7" selection-end-line="51" selection-end-column="7" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-08-20-FinancialCrisis.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;MarkdownPreviewEditor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="1140">
+            <caret line="76" column="149" selection-start-line="76" selection-start-column="149" selection-end-line="76" selection-end-column="149" />
+            <folding />
+          </first_editor>
+          <second_editor>
+            <js_state />
+          </second_editor>
+        </state>
+      </provider>
+      <provider editor-type-id="Gfm">
+        <state />
       </provider>
     </entry>
   </component>
