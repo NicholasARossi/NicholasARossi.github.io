@@ -24,7 +24,7 @@ comments: yes
 
 ### Winners and Losers
 
-The 2007 financial crisis affected each of us differently, with there the "winners" and "losers" falling sharply
+The 2007 financial crisis affected each of us differently, with the "winners" and "losers" falling sharply
 into economic lines. The graph below compares how the bottom 20% of income earners with the top 10%. Adjusted for inflation,
 there is an obvious difference in how the two group faired through the financial crisis (highlighted in gray).
 <a href="res/blog_17/wealth.png">
@@ -42,7 +42,7 @@ Very little of their total wealth is in financial products such as stocks, bonds
 Compare this to the top earners which have a sizable portion of their total assets tied up in financial products:
  <iframe src="res/blog_17/rich-and-poor-pie/index.html" height="500" width="100%" scrolling="no"></iframe>
 
-This difference is not mearly cosmetic, it had a profound impact on why the rich did better in the recession.
+This difference is not merely cosmetic, it had a profound impact on why the rich did better in the recession.
 
 ### No one was totally spared from the mortgage crisis
 
@@ -77,3 +77,8 @@ The net result of the assets of the rich being protected was expected but not in
 ### Notes
 * Code used to generate these graphs can be found [here](https://github.com/NicholasARossi/VizSnacks)
 * Data taken from the [survey of consumer finances](https://www.federalreserve.gov/econres/scfindex.htm)
+
+ <!-- * Write up with all graphs [here](https://www.rossidata.com/FinancialCrisis) -->
+ <!-- * Longer video explanation [here](https://www.youtube.com/watch?v=JE3KrmFy1u4) -->
+ <!-- * Code used to generate these graphs can be found [here](https://github.com/NicholasARossi/VizSnacks) -->
+ <!-- * Data taken from the [survey of consumer finances](https://www.federalreserve.gov/econres/scfindex.htm) -->
