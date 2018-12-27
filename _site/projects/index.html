@@ -291,6 +291,8 @@ z-index: 999999;
     width: 90%;
     height: 75%;
 }
+.inline { display: none }
+.caption { position: relative; bottom: 20px; height: 0; color: black }
 </style>
           <div class="spinner-wrapper">
 <div class="spinner">
@@ -303,8 +305,8 @@ z-index: 999999;
 </div>
 <ul id="rig">
   <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/logo.png">
-          <img class="rig-img" src="gallery2/logo.png">
+      <a class="rig-cell" href="#" data-featherlight="gallery/logo.png"  alt="hello">
+          <img alt="hello" class="rig-img" src="gallery2/logo.png" >
           <span class="rig-overlay"></span>
           <span class="rig-text">New Brand Logo</span>
       </a>
@@ -431,20 +433,20 @@ z-index: 999999;
           <!--<span class="rig-text">Singl-Cell Movie</span>-->
       <!--</a>-->
   <!--</li>-->
-  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/africa.png">
-          <img class="rig-img" src="gallery2/africa.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Conflict in Africa</span>
-      </a>
-  </li>
-  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/annihilation.png">
-          <img class="rig-img" src="gallery2/annihilation.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Annihilation Film Art #2</span>
-      </a>
-  </li>
+  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/africa.png">-->
+          <!--<img class="rig-img" src="gallery2/africa.png">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Conflict in Africa</span>-->
+      <!--</a>-->
+  <!--</li>-->
+  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/annihilation.png">-->
+          <!--<img class="rig-img" src="gallery2/annihilation.png">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Annihilation Film Art #2</span>-->
+      <!--</a>-->
+  <!--</li>-->
   <!--<li>-->
       <!--<a class="rig-cell" href="#" data-featherlight="gallery/cells.png">-->
           <!--<img class="rig-img" src="gallery2/cells.png">-->
@@ -452,13 +454,43 @@ z-index: 999999;
           <!--<span class="rig-text">Annihilation Film Art #3</span>-->
       <!--</a>-->
   <!--</li>-->
-  <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/mandala.png">-->
-          <!--<img class="rig-img" src="gallery2/mandala.png">-->
-          <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Annihilation Film Art #4</span>-->
-      <!--</a>-->
-  <!--</li>-->
+  <li>
+      <a class="rig-cell" href="#" data-featherlight="gallery/mandala.png">
+          <img class="rig-img" src="gallery2/mandala.png">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Annihilation Film Art #4</span>
+      </a>
+  </li>
+
+      <li>
+      <a class="rig-cell" href="#" data-featherlight="gallery/housing.gif">
+          <img class="rig-img" src="gallery/housing.gif">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Annihilation Film Art #4</span>
+      </a>
+  </li>
+
+          <li>
+      <a class="rig-cell" href="#" data-featherlight="gallery/faranfina.gif">
+          <img class="rig-img" src="gallery/faranfina.gif">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Annihilation Film Art #4</span>
+      </a>
+  </li>
+              <li>
+      <a class="rig-cell" href="#" data-featherlight="gallery/rome_bust.gif">
+          <img class="rig-img" src="gallery/rome_bust.gif">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Annihilation Film Art #4</span>
+      </a>
+  </li>
+                  <li>
+      <a class="rig-cell" href="#" data-featherlight="gallery/NYC.png">
+          <img class="rig-img" src="gallery/NYC.png">
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Annihilation Film Art #4</span>
+      </a>
+  </li>
 </ul>
 <script>
 $(document).ready(function() {
@@ -472,6 +504,12 @@ preloader.fadeOut(preloaderFadeOutTime);
 hidePreloader();
 });
 });
+$.featherlightGallery.prototype.afterContent = function() {
+  debugger
+  var caption = this.$currentTarget.find('img').attr('alt');
+  this.$instance.find('.caption').remove();
+  $('<div class="caption">').text(caption).appendTo(this.$instance.find('.featherlight-content'));
+};
 </script>
 <script>
   (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){

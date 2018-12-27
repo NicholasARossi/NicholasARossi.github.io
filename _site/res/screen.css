@@ -70,6 +70,7 @@ a:link:hover, a:active:hover, a:visited:hover { text-decoration:underline; }
 a:link:hover, a:active:hover { color:#FF4500; }
 /*a:link:hover, a:active:hover { color:#006be4; }*/
 a:visited:hover { color:#af00cf; }
+
 /*a > img { margin-bottom:-1px; }*/
 a.img { border:none; background:transparent !important; }
 

@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2018-08-21T07:46:52-04:00</updated>
+  <updated>2018-12-26T18:36:34-06:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>How the Financial Crisis Hurt the Poor and Helped the Rich</title>
     <link href="http://nicholasarossi.github.io//FinancialCrisis"/>
-    <updated>2018-08-19T00:00:00-04:00</updated>
+    <updated>2018-08-19T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//FinancialCrisis</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Indie+Flower&quot; /&gt;
@@ -33,7 +33,7 @@
 
 &lt;h3 id=&quot;winners-and-losers&quot;&gt;Winners and Losers&lt;/h3&gt;
 
-&lt;p&gt;The 2007 financial crisis affected each of us differently, with there the “winners” and “losers” falling sharply
+&lt;p&gt;The 2007 financial crisis affected each of us differently, with the “winners” and “losers” falling sharply
 into economic lines. The graph below compares how the bottom 20% of income earners with the top 10%. Adjusted for inflation,
 there is an obvious difference in how the two group faired through the financial crisis (highlighted in gray).
 &lt;a href=&quot;res/blog_17/wealth.png&quot;&gt;
@@ -51,7 +51,7 @@ Very little of their total wealth is in financial products such as stocks, bonds
 &lt;p&gt;Compare this to the top earners which have a sizable portion of their total assets tied up in financial products:&lt;/p&gt;
 &lt;iframe src=&quot;res/blog_17/rich-and-poor-pie/index.html&quot; height=&quot;500&quot; width=&quot;100%&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
 
-&lt;p&gt;This difference is not mearly cosmetic, it had a profound impact on why the rich did better in the recession.&lt;/p&gt;
+&lt;p&gt;This difference is not merely cosmetic, it had a profound impact on why the rich did better in the recession.&lt;/p&gt;
 
 &lt;h3 id=&quot;no-one-was-totally-spared-from-the-mortgage-crisis&quot;&gt;No one was totally spared from the mortgage crisis&lt;/h3&gt;
 
@@ -87,6 +87,7 @@ The graph below show the median wealth tied up in the homes of both groups.
   &lt;li&gt;Code used to generate these graphs can be found &lt;a href=&quot;https://github.com/NicholasARossi/VizSnacks&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
   &lt;li&gt;Data taken from the &lt;a href=&quot;https://www.federalreserve.gov/econres/scfindex.htm&quot;&gt;survey of consumer finances&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
+
 </content>
     <author>
       <name>Nicholas Rossi</name>
@@ -97,7 +98,7 @@ The graph below show the median wealth tied up in the homes of both groups.
   <entry>
     <title>Roman Emperor Scrollytelling</title>
     <link href="http://nicholasarossi.github.io//RomanEmperors"/>
-    <updated>2018-06-20T00:00:00-04:00</updated>
+    <updated>2018-06-20T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//RomanEmperors</id>
     <content type="html">&lt;p&gt;For an r/dataisbeautiful challenge I took a look at data surrounding the roman emperors.
 Click on the image below to check it out:&lt;/p&gt;
@@ -115,7 +116,7 @@ Click on the image below to check it out:&lt;/p&gt;
   <entry>
     <title>Easing Animations with Python</title>
     <link href="http://nicholasarossi.github.io//PythonAnimations"/>
-    <updated>2018-06-10T00:00:00-04:00</updated>
+    <updated>2018-06-10T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//PythonAnimations</id>
     <content type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/res/blog_15/manni.css&quot; /&gt;
 
@@ -280,7 +281,7 @@ Your browser does not support the video tag.
   <entry>
     <title>Flight Delays</title>
     <link href="http://nicholasarossi.github.io//flightdelays"/>
-    <updated>2018-06-01T00:00:00-04:00</updated>
+    <updated>2018-06-01T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//flightdelays</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Playfair+Display&quot; /&gt;
@@ -364,7 +365,7 @@ Well, JFK is the best in terms of on-time flights with just slightly below the n
   <entry>
     <title>Lego Datascience</title>
     <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-05-01T00:00:00-04:00</updated>
+    <updated>2018-05-01T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -457,7 +458,7 @@ top themes (by number of sets) of all time.&lt;/p&gt;
   <entry>
     <title>The Colors of National Geographic</title>
     <link href="http://nicholasarossi.github.io//NatGeo"/>
-    <updated>2018-04-20T00:00:00-04:00</updated>
+    <updated>2018-04-20T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -539,7 +540,7 @@ National Geographic seemed like a good group to cross-section the natural world.
   <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-15T00:00:00-04:00</updated>
+    <updated>2018-03-15T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -649,7 +650,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Shared Actors between the 2018 Best Picture Nominees</title>
     <link href="http://nicholasarossi.github.io//Academy"/>
-    <updated>2018-03-01T00:00:00-05:00</updated>
+    <updated>2018-03-01T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//Academy</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -705,7 +706,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Schools are still segregated</title>
     <link href="http://nicholasarossi.github.io//segregation"/>
-    <updated>2018-01-01T00:00:00-05:00</updated>
+    <updated>2018-01-01T00:00:00-06:00</updated>
     <id>http://nicholasarossi.github.io//segregation</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -863,7 +864,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-04:00</updated>
+    <updated>2017-06-20T00:00:00-05:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});

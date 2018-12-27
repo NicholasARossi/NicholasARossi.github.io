@@ -6,7 +6,7 @@ markdown: kramdown
 # Since GH pages override this to "true", we test this value to see if we are running locally
 safe: false
 include: [".well-known"]
-gems:
+plugins:
   - jekyll-redirect-from
   - rdiscount
 url: "http://www.rossidata.com" # the base hostname & protocol for your site

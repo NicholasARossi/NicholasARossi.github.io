@@ -78,7 +78,4 @@ The net result of the assets of the rich being protected was expected but not in
 * Code used to generate these graphs can be found [here](https://github.com/NicholasARossi/VizSnacks)
 * Data taken from the [survey of consumer finances](https://www.federalreserve.gov/econres/scfindex.htm)
 
- <!-- * Write up with all graphs [here](https://www.rossidata.com/FinancialCrisis) -->
- <!-- * Longer video explanation [here](https://www.youtube.com/watch?v=JE3KrmFy1u4) -->
- <!-- * Code used to generate these graphs can be found [here](https://github.com/NicholasARossi/VizSnacks) -->
- <!-- * Data taken from the [survey of consumer finances](https://www.federalreserve.gov/econres/scfindex.htm) -->
+
