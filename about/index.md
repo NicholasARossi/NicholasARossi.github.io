@@ -25,8 +25,8 @@ My name is  <span style="color:#ff5e62; font-family:Permanent Marker">**Nicholas
 
 # Papers:
 1. [**Forecasting when cells die during antibiotic exposure using stochastic gene expression**](https://www.biorxiv.org/content/early/2018/02/26/272120) Rossi NA, Meouche IEM & Dunlop, MJ  **IN SUBMISSION**
-2. [**Active degradation of a regulator controls coordination of downstream genes**](https://www.biorxiv.org/content/early/2018/02/26/272120)
-Rossi NA, Mora T, Walczak AM & Dunlop, MJ (2018) **IN PUBLICATION** at PLoS Computational Biology
+2. [**Active degradation of a regulator controls coordination of downstream genes**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006634)
+Rossi NA, Mora T, Walczak AM & Dunlop, MJ (2018) PLoS Computational Biology, 14(12), e1006634.
 
 3. [**Making Waves with Synthetic Oscillators**](https://www.sciencedirect.com/science/article/pii/S2405471218301418) Rossi NA, & Dunlop MJ (2018). Cell Systems, 6(4), 406-407.
 
