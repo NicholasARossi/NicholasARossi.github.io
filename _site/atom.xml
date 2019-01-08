@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2019-01-02T21:01:03-06:00</updated>
+  <updated>2019-01-08T14:49:48-06:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -462,8 +462,8 @@ top themes (by number of sets) of all time.&lt;/p&gt;
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
-  font-family: 'ebgaramond';
-  src: url('/res/blog_12/EBGaramond.ttf') format('truetype');
+  font-family: 'permanent markercmd';
+  src: url('/res/blog_12/PermanentMarker.ttf') format('truetype');
   font-weight: normal;
   font-style: normal;
 }

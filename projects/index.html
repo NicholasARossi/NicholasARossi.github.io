@@ -124,6 +124,8 @@ background: linear-gradient(90deg,#ff9966,#ff5e62);
     box-sizing:border-box;
     margin:0;
     padding:0;
+    background-color:#fff;
+
 }
 
 /* The wrapper for each item */
@@ -284,12 +286,15 @@ z-index: 999999;
     height: 75%;
 
     margin: 0;
-    background: none;
+    background-color:#fff;
+
 }
 .featherlight-iframe .featherlight-inner {
     margin: 0 auto;
     width: 90%;
     height: 75%;
+    background-color:#fff;
+
 }
 .inline { display: none }
 .caption { position: relative; bottom: 20px; height: 0; color: black }
@@ -305,28 +310,58 @@ z-index: 999999;
 </div>
 <ul id="rig">
   <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/logo.png"  alt="hello">
-          <img alt="hello" class="rig-img" src="gallery2/logo.png" >
+      <a class="rig-cell" href="../flightdelays">
+        <video autoplay loop  class="rig-img">
+    <source src="widgets/webflight.mp4" type="video/mp4" />
+        </video>
           <span class="rig-overlay"></span>
-          <span class="rig-text">New Brand Logo</span>
+          <span class="rig-text">The Worst Airports in America</span>
+      </a>
+  </li>
+    <li>
+      <a class="rig-cell" href="../lego">
+        <video autoplay loop  class="rig-img">
+    <source src="widgets/lego_low.mp4" type="video/mp4" />
+        </video>
+          <span class="rig-overlay"></span>
+          <span class="rig-text">The Evolution of Lego over Time</span>
+      </a>
+  </li>
+      <li>
+      <a class="rig-cell" href="https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006634">
+        <video autoplay loop  class="rig-img">
+    <source src="widgets/Movies2.mp4" type="video/mp4" />
+        </video>
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Growing Bacterial Microcolonies</span>
+      </a>
+  </li>
+        <li>
+      <a class="rig-cell" href="https://www.biorxiv.org/content/early/2018/02/26/272120">
+        <video autoplay loop  class="rig-img">
+    <source src="widgets/Ms_1.mp4" type="video/mp4" />
+        </video>
+          <span class="rig-overlay"></span>
+          <span class="rig-text">Growing Bacterial Microcolonies</span>
       </a>
   </li>
   <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/hist_comp.png">
+      <a class="rig-cell" href="../LinLog">
           <img class="rig-img" src="gallery2/hist_comp.png">
           <span class="rig-overlay"></span>
           <span class="rig-text">Linear and Logorithmic bins</span>
       </a>
   </li>
+
   <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/radial_hist.png">
+      <a class="rig-cell" href="../natgeo">
           <img class="rig-img" src="gallery2/radial_hist.png">
           <span class="rig-overlay"></span>
           <span class="rig-text">Colors of Natgeo</span>
       </a>
   </li>
       <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/entropy.png">
+      <a class="rig-cell" href="../Wheat">
           <img class="rig-img" src="gallery2/entropy.png">
           <span class="rig-overlay"></span>
           <span class="rig-text">Visualizing Entropy</span>
@@ -341,150 +376,152 @@ z-index: 999999;
           <span class="rig-text">Videogame Genres over Time</span>
       </a>
   </li>
-                  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/brazil_gif.gif">
-          <img class="rig-img" src="gallery2/brazil_gif.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Brazilian Air Traffic</span>
-      </a>
-  </li>
+                  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery2/brazil_gif.mp4">-->
+        <!--<video autoplay loop  class="rig-img">-->
+    <!--<source src="widgets/brazil.mp4" type="video/mp4" />-->
+        <!--</video>-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Brazilian Air Traffic</span>-->
+      <!--</a>-->
+  <!--</li>-->
 
+      <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/delays.gif">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery/delays.gif">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Visualizing Entropy</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/oscillators.png">-->
+          <!--<img class="rig-img" src="gallery2/oscillators.png">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Schematic Figure</span>-->
+      <!--</a>-->
+
+  <!--</li>-->
+                  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/interracial.png">-->
+          <!--<img class="rig-img" src="gallery/interracial.png">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Interracial Marriage Rates</span>-->
+      <!--</a>-->
+  <!--</li>-->
+
+      <!--&lt;!&ndash;</li>&ndash;&gt;-->
+                  <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/logo.gif">-->
+          <!--<img class="rig-img" src="gallery/logo.gif">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Brand Logo Gif</span>-->
+      <!--</a>-->
+  <!--</li>-->
+                      <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/lego_gif.gif">-->
+          <!--<img class="rig-img" src="gallery/lego_gif.gif">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Lego over Time</span>-->
+      <!--</a>-->
+  <!--</li>-->
       <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/delays.gif">-->
-          <!--<img class="rig-img" src="gallery/delays.gif">-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/Fred.png">-->
+          <!--<img class="rig-img" src="gallery2/Fred.png">-->
           <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Visualizing Entropy</span>-->
+          <!--<span class="rig-text">lowpoly portrait #1</span>-->
       <!--</a>-->
   <!--</li>-->
-                  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/oscillators.png">
-          <img class="rig-img" src="gallery2/oscillators.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Schematic Figure</span>
-      </a>
-
-  </li>
-                  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/interracial.png">
-          <img class="rig-img" src="gallery/interracial.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Interracial Marriage Rates</span>
-      </a>
-  </li>
-
-      <!--</li>-->
-                  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/logo.gif">
-          <img class="rig-img" src="gallery/logo.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Brand Logo Gif</span>
-      </a>
-  </li>
-                      <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/lego_gif.gif">
-          <img class="rig-img" src="gallery/lego_gif.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Lego over Time</span>
-      </a>
-  </li>
-      <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/Fred.png">
-          <img class="rig-img" src="gallery2/Fred.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">lowpoly portrait #1</span>
-      </a>
-  </li>
-          <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/imane1.png">
-          <img class="rig-img" src="gallery2/imane1.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">lowpoly portrait #2</span>
-      </a>
-  </li>
+          <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/imane1.png">-->
+          <!--<img class="rig-img" src="gallery2/imane1.png">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">lowpoly portrait #2</span>-->
+      <!--</a>-->
+  <!--</li>-->
 
 
 
 
-  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/synbio.png">
-          <img class="rig-img" src="gallery2/synbio.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Synbio Mascot</span>
-      </a>
-  </li>
   <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/mask.png">-->
-          <!--<img class="rig-img" src="gallery2/mask.png">-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/synbio.png">-->
+          <!--<img class="rig-img" src="gallery2/synbio.png">-->
           <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Vaporwave Animation</span>-->
+          <!--<span class="rig-text">Synbio Mascot</span>-->
       <!--</a>-->
   <!--</li>-->
-  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/NYC.png">
-          <img class="rig-img" src="gallery2/NYC.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">NYC Demographics</span>
-      </a>
-  </li>
+  <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/mask.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery2/mask.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Vaporwave Animation</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
   <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/marA.png">-->
-          <!--<img class="rig-img" src="gallery2/marA.png">-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/NYC.png">-->
+          <!--<img class="rig-img" src="gallery2/NYC.png">-->
           <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Singl-Cell Movie</span>-->
+          <!--<span class="rig-text">NYC Demographics</span>-->
       <!--</a>-->
   <!--</li>-->
+  <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/marA.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery2/marA.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Singl-Cell Movie</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
+  <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/africa.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery2/africa.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Conflict in Africa</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
+  <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/annihilation.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery2/annihilation.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Annihilation Film Art #2</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
+  <!--&lt;!&ndash;<li>&ndash;&gt;-->
+      <!--&lt;!&ndash;<a class="rig-cell" href="#" data-featherlight="gallery/cells.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<img class="rig-img" src="gallery2/cells.png">&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-overlay"></span>&ndash;&gt;-->
+          <!--&lt;!&ndash;<span class="rig-text">Annihilation Film Art #3</span>&ndash;&gt;-->
+      <!--&lt;!&ndash;</a>&ndash;&gt;-->
+  <!--&lt;!&ndash;</li>&ndash;&gt;-->
   <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/africa.png">-->
-          <!--<img class="rig-img" src="gallery2/africa.png">-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/mandala.png">-->
+          <!--<img class="rig-img" src="gallery2/mandala.png">-->
           <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Conflict in Africa</span>-->
+          <!--<span class="rig-text">Glitch art mandala</span>-->
       <!--</a>-->
   <!--</li>-->
-  <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/annihilation.png">-->
-          <!--<img class="rig-img" src="gallery2/annihilation.png">-->
-          <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Annihilation Film Art #2</span>-->
-      <!--</a>-->
-  <!--</li>-->
-  <!--<li>-->
-      <!--<a class="rig-cell" href="#" data-featherlight="gallery/cells.png">-->
-          <!--<img class="rig-img" src="gallery2/cells.png">-->
-          <!--<span class="rig-overlay"></span>-->
-          <!--<span class="rig-text">Annihilation Film Art #3</span>-->
-      <!--</a>-->
-  <!--</li>-->
-  <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/mandala.png">
-          <img class="rig-img" src="gallery2/mandala.png">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Glitch art mandala</span>
-      </a>
-  </li>
 
 
 
-          <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/faranfina.gif">
-          <img class="rig-img" src="gallery/faranfina.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Violent conflict in Africa over time</span>
-      </a>
-  </li>
-              <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/rome_bust.gif">
-          <img class="rig-img" src="gallery/rome_bust.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">Roman Emperor Scollytelling </span>
-      </a>
-  </li>
-          <li>
-      <a class="rig-cell" href="#" data-featherlight="gallery/housing.gif">
-          <img class="rig-img" src="gallery/housing.gif">
-          <span class="rig-overlay"></span>
-          <span class="rig-text">How the housing crisis affected the poor</span>
-      </a>
-  </li>
+          <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/faranfina.gif">-->
+          <!--<img class="rig-img" src="gallery/faranfina.gif">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Violent conflict in Africa over time</span>-->
+      <!--</a>-->
+  <!--</li>-->
+              <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/rome_bust.gif">-->
+          <!--<img class="rig-img" src="gallery/rome_bust.gif">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">Roman Emperor Scollytelling </span>-->
+      <!--</a>-->
+  <!--</li>-->
+          <!--<li>-->
+      <!--<a class="rig-cell" href="#" data-featherlight="gallery/housing.gif">-->
+          <!--<img class="rig-img" src="gallery/housing.gif">-->
+          <!--<span class="rig-overlay"></span>-->
+          <!--<span class="rig-text">How the housing crisis affected the poor</span>-->
+      <!--</a>-->
+  <!--</li>-->
 
 </ul>
 <script>
