@@ -3,11 +3,9 @@
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/atom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/natgeo.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/natgeo.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/projects/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/projects/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/projects/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/projects/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/widgets/Ms_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/projects/widgets/brazil.mp4" beforeDir="false" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
@@ -86,8 +84,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/projects/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="237">
-              <caret line="378" selection-start-line="378" selection-end-line="386" selection-end-column="11" />
+            <state relative-caret-position="8296">
+              <caret line="488" column="2" selection-start-line="488" selection-start-column="2" selection-end-line="488" selection-end-column="2" />
             </state>
           </provider>
         </entry>
@@ -584,8 +582,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="237">
-          <caret line="378" selection-start-line="378" selection-end-line="386" selection-end-column="11" />
+        <state relative-caret-position="8296">
+          <caret line="488" column="2" selection-start-line="488" selection-start-column="2" selection-end-line="488" selection-end-column="2" />
         </state>
       </provider>
     </entry>
