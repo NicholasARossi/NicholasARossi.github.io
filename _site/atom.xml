@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2019-01-08T14:49:48-06:00</updated>
+  <updated>2020-06-01T21:55:06-07:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -13,7 +13,7 @@
   <entry>
     <title>How the Financial Crisis Hurt the Poor and Helped the Rich</title>
     <link href="http://nicholasarossi.github.io//FinancialCrisis"/>
-    <updated>2018-08-19T00:00:00-05:00</updated>
+    <updated>2018-08-19T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//FinancialCrisis</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Indie+Flower&quot; /&gt;
@@ -98,7 +98,7 @@ The graph below show the median wealth tied up in the homes of both groups.
   <entry>
     <title>Roman Emperor Scrollytelling</title>
     <link href="http://nicholasarossi.github.io//RomanEmperors"/>
-    <updated>2018-06-20T00:00:00-05:00</updated>
+    <updated>2018-06-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//RomanEmperors</id>
     <content type="html">&lt;p&gt;For an r/dataisbeautiful challenge I took a look at data surrounding the roman emperors.
 Click on the image below to check it out:&lt;/p&gt;
@@ -116,7 +116,7 @@ Click on the image below to check it out:&lt;/p&gt;
   <entry>
     <title>Easing Animations with Python</title>
     <link href="http://nicholasarossi.github.io//PythonAnimations"/>
-    <updated>2018-06-10T00:00:00-05:00</updated>
+    <updated>2018-06-10T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//PythonAnimations</id>
     <content type="html">&lt;link rel=&quot;stylesheet&quot; href=&quot;/res/blog_15/manni.css&quot; /&gt;
 
@@ -197,7 +197,8 @@ ax.set_facecolor('#d3d3d3')
 writer = animation.writers['ffmpeg'](fps=10)
 dpi=300
 
-anim.save('dot.mp4', writer=writer,dpi=dpi)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+anim.save('dot.mp4', writer=writer,dpi=dpi)
+&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/tbody&gt;&lt;/table&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
 
 &lt;p&gt;&lt;img src=&quot;/res/blog_15/gif.gif&quot; alt=&quot;dots&quot; /&gt;&lt;/p&gt;
 
@@ -224,7 +225,7 @@ anim.save('dot.mp4', writer=writer,dpi=dpi)&lt;/pre&gt;&lt;/td&gt;&lt;/tr&gt;&lt
 &lt;p&gt;All you have to do to make it work is pass in an original datavector, it’s time vector and and output vector. Then execute one of the interpolation functions on it and it will return nice interpolated data:&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;Eased&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;input_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;output_time_vector&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-&lt;span class=&quot;n&quot;&gt;out_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;power_ease&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;out_data&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ease&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;power_ease&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;All the code necessary to implement this can be found &lt;a href=&quot;https://github.com/NicholasARossi/Easing-Animations-with-Python&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
@@ -281,7 +282,7 @@ Your browser does not support the video tag.
   <entry>
     <title>Flight Delays</title>
     <link href="http://nicholasarossi.github.io//flightdelays"/>
-    <updated>2018-06-01T00:00:00-05:00</updated>
+    <updated>2018-06-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//flightdelays</id>
     <content type="html">&lt;html&gt;
 &lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=Playfair+Display&quot; /&gt;
@@ -365,7 +366,7 @@ Well, JFK is the best in terms of on-time flights with just slightly below the n
   <entry>
     <title>Lego Datascience</title>
     <link href="http://nicholasarossi.github.io//Lego"/>
-    <updated>2018-05-01T00:00:00-05:00</updated>
+    <updated>2018-05-01T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//Lego</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -458,7 +459,7 @@ top themes (by number of sets) of all time.&lt;/p&gt;
   <entry>
     <title>The Colors of National Geographic</title>
     <link href="http://nicholasarossi.github.io//NatGeo"/>
-    <updated>2018-04-20T00:00:00-05:00</updated>
+    <updated>2018-04-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//NatGeo</id>
     <content type="html">&lt;style&gt;
 @font-face {
@@ -501,15 +502,15 @@ National Geographic seemed like a good group to cross-section the natural world.
 &lt;p&gt;I wasn’t interested in black and white photos, I wanted to look at color so I decided I wanted to plot hue. So using the data scraped, I discared the greyscale colors and generated a histogram of all the hues.&lt;/p&gt;
 
 &lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
-&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all photos&lt;/span&gt;
-    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#Loop over all colors for each photo&lt;/span&gt;
-        &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_hsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
-        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c&quot;&gt;#disgard low saturation and value colors&lt;/span&gt;
-            &lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;storage&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Loop over all photos
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;color&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;group&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#Loop over all colors for each photo
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;get_hsv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;color&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;if&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;s&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;and&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;v&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;&amp;gt;&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt; &lt;span class=&quot;c1&quot;&gt;#disgard low saturation and value colors
+&lt;/span&gt;            &lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;h&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;1.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.01&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 
-&lt;span class=&quot;n&quot;&gt;probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;histogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;probs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bons&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;histogram&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;hlist&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;normed&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
 &lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
 
 &lt;p&gt;To make it &lt;em&gt;extra&lt;/em&gt; pretty I just wrapped the histogram circularly and interpolated along the curve to make it nice and smooth.&lt;/p&gt;
@@ -540,7 +541,7 @@ National Geographic seemed like a good group to cross-section the natural world.
   <entry>
     <title>How to Lie with Histograms</title>
     <link href="http://nicholasarossi.github.io//LinLog"/>
-    <updated>2018-03-15T00:00:00-05:00</updated>
+    <updated>2018-03-15T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//LinLog</id>
     <content type="html">&lt;html&gt;
 &lt;style&gt;
@@ -650,7 +651,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Shared Actors between the 2018 Best Picture Nominees</title>
     <link href="http://nicholasarossi.github.io//Academy"/>
-    <updated>2018-03-01T00:00:00-06:00</updated>
+    <updated>2018-03-01T00:00:00-08:00</updated>
     <id>http://nicholasarossi.github.io//Academy</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -706,7 +707,7 @@ There are only a few guidelines:&lt;/p&gt;
   <entry>
     <title>Schools are still segregated</title>
     <link href="http://nicholasarossi.github.io//segregation"/>
-    <updated>2018-01-01T00:00:00-06:00</updated>
+    <updated>2018-01-01T00:00:00-08:00</updated>
     <id>http://nicholasarossi.github.io//segregation</id>
     <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
 
@@ -864,7 +865,7 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   <entry>
     <title>SEED 2017</title>
     <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-05:00</updated>
+    <updated>2017-06-20T00:00:00-07:00</updated>
     <id>http://nicholasarossi.github.io//EBRC</id>
     <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
   MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});

@@ -1,7 +1,27 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="" />
+    <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/PythonAnimations.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/PythonAnimations.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about/brand-logo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about/brand-logo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about/resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about/resume.pdf" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/about/spotify/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/about/spotify/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/assets/css/style.css" beforeDir="false" afterPath="$PROJECT_DIR$/_site/assets/css/style.css" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/atom.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/natgeo.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/natgeo.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/pizza.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/pizza.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/projects/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/widgets/Ms_1.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/projects/widgets/brazil.mp4" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/res/blog_10/master/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/res/blog_10/master/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/brand-logo/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/about/brand-logo/index.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/index.md" beforeDir="false" afterPath="$PROJECT_DIR$/about/index.md" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/about/resume.pdf" beforeDir="false" afterPath="$PROJECT_DIR$/about/resume.pdf" afterDir="false" />
+    </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -18,12 +38,12 @@
   </component>
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file pinned="false" current-in-tab="false">
+      <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/about/index.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-            <state split_layout="SPLIT">
-              <first_editor relative-caret-position="476">
-                <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
+            <state split_layout="FIRST">
+              <first_editor relative-caret-position="150">
+                <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
               </first_editor>
               <second_editor />
             </state>
@@ -31,8 +51,15 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about/portrait_2.png">
-          <provider selected="true" editor-type-id="images" />
+        <entry file="file://$PROJECT_DIR$/_posts/2016-08-07-pizza.md">
+          <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+            <state split_layout="SPLIT">
+              <first_editor relative-caret-position="270">
+                <caret line="18" column="14" selection-start-line="18" selection-end-line="19" />
+              </first_editor>
+              <second_editor />
+            </state>
+          </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
@@ -46,11 +73,6 @@
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/about/brand-logo/alt_port.png">
-          <provider selected="true" editor-type-id="images" />
-        </entry>
-      </file>
-      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about/brand-logo/port.png">
           <provider selected="true" editor-type-id="images" />
         </entry>
@@ -58,29 +80,29 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about/brand-logo/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="697">
-              <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
+            <state relative-caret-position="367">
+              <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
             </state>
           </provider>
         </entry>
       </file>
       <file pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
+        <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="272">
-                <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+              <first_editor relative-caret-position="565">
+                <caret line="115" selection-start-line="115" selection-end-line="117" selection-end-column="5" />
               </first_editor>
               <second_editor />
             </state>
           </provider>
         </entry>
       </file>
-      <file pinned="false" current-in-tab="true">
+      <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/projects/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="153">
-              <caret line="9" column="73" lean-forward="true" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+            <state relative-caret-position="135">
+              <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
             </state>
           </provider>
         </entry>
@@ -88,7 +110,7 @@
       <file pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/about/brand-logo/js/index.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="102">
+            <state relative-caret-position="90">
               <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
             </state>
           </provider>
@@ -121,7 +143,6 @@
       <list>
         <option value="$PROJECT_DIR$/res/blog_10/line_transition2.html" />
         <option value="$PROJECT_DIR$/res/blog_10/lego_dance2.html" />
-        <option value="$PROJECT_DIR$/_posts/2018-01-01-segregation.md" />
         <option value="$PROJECT_DIR$/_posts/2018-04-15-Lego.md" />
         <option value="$PROJECT_DIR$/_posts/2018-05-01-Lego.md" />
         <option value="$PROJECT_DIR$/swap.jsx" />
@@ -166,14 +187,15 @@
         <option value="$PROJECT_DIR$/res/screen.css" />
         <option value="$PROJECT_DIR$/projects/adf" />
         <option value="$PROJECT_DIR$/projects/featherlight.min.js" />
-        <option value="$PROJECT_DIR$/about/index.md" />
-        <option value="$PROJECT_DIR$/about/brand-logo/index.html" />
         <option value="$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md" />
         <option value="$PROJECT_DIR$/projects/index.html" />
+        <option value="$PROJECT_DIR$/about/brand-logo/index.html" />
+        <option value="$PROJECT_DIR$/_posts/2018-01-01-segregation.md" />
+        <option value="$PROJECT_DIR$/about/index.md" />
       </list>
     </option>
   </component>
-  <component name="ProjectFrameBounds">
+  <component name="ProjectFrameBounds" extendedState="6" fullScreen="true">
     <option name="x" value="-14" />
     <option name="y" value="35" />
     <option name="width" value="1927" />
@@ -187,7 +209,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
       <pane id="ProjectPane">
         <subPane>
           <expand>
@@ -198,35 +219,29 @@
             <path>
               <item name="NicholasARossi.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="NicholasARossi.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="projects" type="462c0819:PsiDirectoryNode" />
+              <item name="_posts" type="462c0819:PsiDirectoryNode" />
+            </path>
+            <path>
+              <item name="NicholasARossi.github.io" type="b2602c69:ProjectViewProjectNode" />
+              <item name="NicholasARossi.github.io" type="462c0819:PsiDirectoryNode" />
+              <item name="about" type="462c0819:PsiDirectoryNode" />
             </path>
             <path>
               <item name="NicholasARossi.github.io" type="b2602c69:ProjectViewProjectNode" />
               <item name="NicholasARossi.github.io" type="462c0819:PsiDirectoryNode" />
               <item name="projects" type="462c0819:PsiDirectoryNode" />
-              <item name="widgets" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NicholasARossi.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NicholasARossi.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-            </path>
-            <path>
-              <item name="NicholasARossi.github.io" type="b2602c69:ProjectViewProjectNode" />
-              <item name="NicholasARossi.github.io" type="462c0819:PsiDirectoryNode" />
-              <item name="res" type="462c0819:PsiDirectoryNode" />
-              <item name="blog_10" type="462c0819:PsiDirectoryNode" />
             </path>
           </expand>
           <select />
         </subPane>
       </pane>
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
     <property name="DefaultHtmlFileTemplate" value="HTML File" />
     <property name="SearchEverywhereHistoryKey" value="h*&#9;FILE&#9;file:///Users/nicholasrossi/Documents/work_docs/Website/NicholasARossi.github.io/res/blog_16/scatter.html" />
-    <property name="last_opened_file_path" value="$PROJECT_DIR$/../../paper_cookbooks/paper_3_cookbook/Forecasting-2019" />
+    <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="settings.editor.selected.configurable" value="preferences.lookFeel" />
     <property name="settings.editor.splitter.proportion" value="0.2" />
   </component>
@@ -259,6 +274,17 @@
     </option>
   </component>
   <component name="RunManager">
+    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
+      <option name="INTERPRETER_OPTIONS" value="" />
+      <option name="INTERPRETER_PATH" value="/bin/bash" />
+      <option name="PROJECT_INTERPRETER" value="false" />
+      <option name="WORKING_DIRECTORY" value="" />
+      <option name="PARENT_ENVS" value="true" />
+      <option name="SCRIPT_NAME" value="" />
+      <option name="PARAMETERS" value="" />
+      <module name="" />
+      <method v="2" />
+    </configuration>
     <configuration default="true" type="tests" factoryName="Attests">
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -278,17 +304,6 @@
       <option name="USE_PATTERN" value="false" />
       <method />
     </configuration>
-    <configuration default="true" type="BashConfigurationType" factoryName="Bash">
-      <option name="INTERPRETER_OPTIONS" value="" />
-      <option name="INTERPRETER_PATH" value="/bin/bash" />
-      <option name="PROJECT_INTERPRETER" value="false" />
-      <option name="WORKING_DIRECTORY" value="" />
-      <option name="PARENT_ENVS" value="true" />
-      <option name="SCRIPT_NAME" value="" />
-      <option name="PARAMETERS" value="" />
-      <module name="" />
-      <method v="2" />
-    </configuration>
   </component>
   <component name="SvnConfiguration">
     <configuration />
@@ -304,10 +319,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="-14" y="35" width="1927" height="1046" extended-state="0" />
+    <frame x="0" y="0" width="1920" height="1080" extended-state="6" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17628375" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.17640863" />
       <window_info id="Structure" order="1" weight="0.24954683" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -317,7 +332,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5128593" side_tool="true" visible="true" weight="0.07338445" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5128593" side_tool="true" visible="true" weight="0.07029703" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -336,13 +351,6 @@
     </option>
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/low-poly-portrait/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3630">
-          <caret line="242" column="25" selection-start-line="242" selection-start-column="25" selection-end-line="242" selection-end-column="25" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/res/blog_11_romans/emperor_scroll/JS/tween.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="240">
@@ -394,7 +402,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md" />
     <entry file="file://$PROJECT_DIR$/res/blog_17/rich-and-poor-pie/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="765">
@@ -526,23 +533,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/about/index.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="476">
-            <caret line="28" column="48" selection-start-line="28" selection-start-column="48" selection-end-line="28" selection-end-column="48" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/portrait_2.png">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/portrait.jpg">
-      <provider selected="true" editor-type-id="images" />
-    </entry>
-    <entry file="file://$PROJECT_DIR$/about/port3.jpg">
       <provider selected="true" editor-type-id="images" />
     </entry>
     <entry file="file://$PROJECT_DIR$/about/brand-logo/alt_port.png">
@@ -551,34 +542,70 @@
     <entry file="file://$PROJECT_DIR$/about/brand-logo/port.png">
       <provider selected="true" editor-type-id="images" />
     </entry>
-    <entry file="file://$PROJECT_DIR$/about/brand-logo/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="697">
-          <caret line="41" column="8" selection-start-line="41" selection-start-column="8" selection-end-line="41" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="272">
-            <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/about/brand-logo/js/index.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="102">
+        <state relative-caret-position="90">
           <caret line="6" column="48" selection-start-line="6" selection-start-column="48" selection-end-line="6" selection-end-column="48" />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/projects/index.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="153">
-          <caret line="9" column="73" lean-forward="true" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        <state relative-caret-position="135">
+          <caret line="9" column="73" selection-start-line="9" selection-start-column="73" selection-end-line="9" selection-end-column="73" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/port3.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/portrait.jpg">
+      <provider selected="true" editor-type-id="images" />
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2016-08-07-pizza.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="270">
+            <caret line="18" column="14" selection-start-line="18" selection-end-line="19" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/brand-logo/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="367">
+          <caret line="34" column="63" selection-start-line="34" selection-start-column="63" selection-end-line="34" selection-end-column="63" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-04-20-NatGeo.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="240">
+            <caret line="16" column="37" selection-start-line="16" selection-start-column="37" selection-end-line="16" selection-end-column="37" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-01-01-segregation.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="565">
+            <caret line="115" selection-start-line="115" selection-end-line="117" selection-end-column="5" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/about/index.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="FIRST">
+          <first_editor relative-caret-position="150">
+            <caret line="10" lean-forward="true" selection-start-line="10" selection-end-line="10" />
+          </first_editor>
+          <second_editor />
         </state>
       </provider>
     </entry>

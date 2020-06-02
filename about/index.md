@@ -6,25 +6,20 @@ title: About
 
 <iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
-<style>
-ul{
-  font-family: 'Permanent Marker', sans-serif;
-   color: #2c7bb6;
-}
-</style>
 
-My name is  <span style="color:#ff5e62; font-family:Permanent Marker">**Nicholas Rossi**</span> and I am a results-focused data scientist and systems biologist. I am achieving my PhD from Boston University (expected graduation date January, 2019) studying in the <a href="http://www.dunloplab.com/">Dunlop Lab</a>. Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I spend my days...
+# My name is Nick!
+# I am a PhD Bioinformatician building systems with machine learning
 
-* Unpacking, cleaning and analyzing disparate, unstructured data for hidden trends
-* Running experiments
-* Analyzing statistical phenomena
-* Creating beautiful, effective information visualizations
+I am a results-focused data scientist and bioinformatician. Right now I'm building the algorithmic core of several key techologies at [Synthego](http://www.synthego.com/). Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/) and achieved my PhD with the [Dunlop lab](http://www.dunloplab.com/) at Boston University.
+
+# I'm a datascience story teller
+
+![img](headline_stories.png)
 
 
+# And a published Academic:
+1. [**Forecasting when cells die during antibiotic exposure using stochastic gene expression**](https://www.nature.com/articles/s42003-019-0509-0) Rossi NA, Meouche IEM & Dunlop, MJ (2019) Communications Biology, 2(1), 1-7.
 
-
-# Papers:
-1. [**Forecasting when cells die during antibiotic exposure using stochastic gene expression**](https://www.biorxiv.org/content/early/2018/02/26/272120) Rossi NA, Meouche IEM & Dunlop, MJ  **IN SUBMISSION**
 2. [**Active degradation of a regulator controls coordination of downstream genes**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006634)
 Rossi NA, Mora T, Walczak AM & Dunlop, MJ (2018) PLoS Computational Biology, 14(12), e1006634.
 
@@ -42,7 +37,7 @@ iframe{
 </style>
 <iframe src="brand-logo/buttons.html" width="100%"  height="85px" frameBorder="0" ></iframe>
 
-Email : nrossi (at) bu.edu
+Email : nicholas.rossi2 (at) gmail.com
 
 
 [resume](resume.pdf)
