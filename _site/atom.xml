@@ -3,12 +3,197 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2020-06-01T21:55:06-07:00</updated>
+  <updated>2020-09-03T17:26:00-07:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
+  
+  <entry>
+    <title>Uncertainty Quantification Part 1: Ensemble Methods</title>
+    <link href="http://nicholasarossi.github.io//Uncertainty-Quantification-and-Ensemble-Learning"/>
+    <updated>2020-09-02T00:00:00-07:00</updated>
+    <id>http://nicholasarossi.github.io//Uncertainty Quantification and Ensemble Learning</id>
+    <content type="html">&lt;html&gt;
+
+&lt;style&gt;
+      h1,h2,h3,head,title {
+        font-family: 'open-sans';
+        font-weight: 1000;
+        outline-color: white;
+        color: black;
+        background: #ffcccc url(res/blog_17/leaves2.jpg) repeat 0 0;
+
+        text-shadow:
+        -.5px -.5px 0 #000,
+        .5px -.5px 0 #000,
+        -.5px .5px 0 #000,
+        .5px .5px 0 #000;
+}
+&lt;/style&gt;
+&lt;/html&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/open_figure_new.png&quot; alt=&quot;/res/blog_18/open_figure_new.png&quot; /&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;uncertainly-quantification-and-how-much-we-pay-for-lunch&quot;&gt;Uncertainly Quantification and How much we pay for lunch.&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/food2-01.png&quot; alt=&quot;/res/blog_18/food.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Uncertainly quantification can be something of an abstract concept, but let’s try to anchor it to a simple question.&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;Can&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;you&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;guess&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;how&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;much&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;someone&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;spent&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;lunch&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;based&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;on&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;how&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;much&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;they&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;make&lt;/span&gt;&lt;span class=&quot;err&quot;&gt;?&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+&lt;p&gt;While the initial intuition might be “yeah it simply correlates with how much they earn” - consider this : rich people still eat the occasional fast food. Mark ZUCC might have a banana and some bread for lunch (cheap) or he might eat some endangered animal (expensive). However, poor people don’t have those kind of options.  They’re basically restricted to budgeting on every meal. In other words, the uncertainty of how much someone spends on a meal increases as a function of their income. This is an example of &lt;a href=&quot;https://en.wikipedia.org/wiki/Heteroscedasticity&quot;&gt;heteroscedastic&lt;/a&gt; uncertainty : variability that is not uniform across the feature space. If we were tasked with building a lunch price forecasting model, it may be necessary to quantify this kind of uncertainty.&lt;/p&gt;
+
+&lt;p&gt;Consider the following graphs:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/meal_expenses.png&quot; alt=&quot;/res/blog_18/meal_expenses.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The graph to the left shows some raw imagined data relating how wealthy someone is to how much they spent on their last meal (grey dots). While there is a clear trend line (turquoise), this fails to capture the uniqueness of the data : that the uncertainly from that trend increases as a function of wealth as well. The graph to the right shows the perfect analytical mapping of this data. Using the closed form solution to the standard deviation of a uniform distribution (how the data was generated) we see the goal of our uncertainty model - to perfectly capture the uncertainty.&lt;/p&gt;
+
+&lt;p&gt;The important thing is that &lt;em&gt;uncertainty&lt;/em&gt; is part of this system. Its not something we want to filter out, its’ something we want to quantify. The only question is how do we do it? For our first attempt, we will use a collection of linear models, collated into an ensemble.&lt;/p&gt;
+
+&lt;h3 id=&quot;using-ensemble-learning-to-quantify-uncertainty--linear-models&quot;&gt;Using ensemble learning to quantify uncertainty : linear models&lt;/h3&gt;
+
+&lt;p&gt;Ensemble models are simply meta machine learning models built from several smaller models. These individual member models can all have the same or different architectures and be trained on smaller slices of the total training dataset. Each member model then offers up a prediction as to what it thinks the solution will be. All the member predictions are then synthesized to form a final prediction based on taking some average or biased sum of all the members. The uncertainty measure is derived from how much these member models disagree with each other.&lt;/p&gt;
+
+&lt;p&gt;The simplest implementation of this that I’ll start with is an ensemble model built from a series of linear regressions, each trained on a different subset of the training data.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/LINEAR_uq-01.png&quot; alt=&quot;/res/blog_18/LINEAR_uq-01.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;A very simple implementation of this can be seen below. Here we train 5 (n_splits=5) linear regression models with shuffle split fractions of the data. In the predict method we then use each of these models to find a solution and then take the mean response. The &lt;em&gt;uncertainty&lt;/em&gt; is simply the standard deviation of predictions around this mean.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;class&lt;/span&gt; &lt;span class=&quot;nc&quot;&gt;LinearUncertaintyPredictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;():&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;__init__&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_data&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_data&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;train_models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_splits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;kernal&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'linear'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;s&quot;&gt;'''Function for training models 
+        Inputs:
+        X_dataset: Inputs of the training data (MxN)
+        y_dataset: Outputs of the trainig data (1xN)
+        params: the parameters of the LGBM model
+        n_split: the number of splits to be used to creat int(n_splits) seperate models
+
+        Returns:
+        models: int(n_splits) number of independent models trained on the folds of the data
+        '''&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ShuffleSplit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_splits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_splits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_splits&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random_state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+        &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;coeffs&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_index&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;ss&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X_val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:],&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,:],&lt;/span&gt; 
+            &lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_val&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;],&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;reg&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;LinearRegression&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit_intercept&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;).&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;fit&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_train&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            
+            &lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;coeffs&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;reg&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coef_&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;][&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coefficients&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;coeffs&lt;/span&gt;
+        
+    &lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+        &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;model&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+            &lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;append&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predict&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+        
+        &lt;span class=&quot;c1&quot;&gt;# Values chosen by mean committe
+&lt;/span&gt;        &lt;span class=&quot;n&quot;&gt;ensemble_predictions&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mean&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;ensemble_uncertainty&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;std&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'prediction'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ensemble_predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'uncertainty'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;ensemble_uncertainty&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;}&lt;/span&gt;
+        &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;raw_predictions&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;{&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'X'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;squeeze&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stack&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;axis&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))}&lt;/span&gt;
+        
+        &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;bp&quot;&gt;self&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;predictions&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;To evaluate this model, we simply split off a true holdout set and then train our ensemble on the remaining fraction.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;X_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;X_holdout&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_holdout&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;train_test_split&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y_values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;test_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random_state&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;88&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Linear_Uncertainty_Predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;X_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y_dataset&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;Predictor&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;train_models&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_splits&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Now, let’s see how it performed.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/linear_model_summary.png&quot; alt=&quot;/res/blog_18/linear_model_summary.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;First, the “prediction” of this model seems to correlate perfectly with our expected trend (left). But that’s no surprise. What’s more important is that our uncertainty correlates monotonically with income (right). This shows that our ensemble effectively did map out the underlying uncertainty of the data as a function of the feature space. This shows that even a series of simple member models can reveal interesting things about the uncertainty of a dataset.&lt;/p&gt;
+
+&lt;h3 id=&quot;more-sophisiticated-models--lightgbm&quot;&gt;More sophisiticated models : LightGBM&lt;/h3&gt;
+
+&lt;p&gt;In order to show how more flexible base models impact the results, we simply swap out the linear regression for LightGBM (The code and notebooks can be found &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods&quot;&gt;here&lt;/a&gt;). Tree based algorithms like light GBM offer a lot more flexibility for complex, non-linear relationships. Below we see how a 5 member LGBM ensemble model looks after being trained.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/multiplanel.png&quot; alt=&quot;/res/blog_18/multiplanel.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We see that each model becomes more erratic in its predictions as the income of the person increases, with the ensemble model showing higher error bars indicating higher uncertainty.&lt;/p&gt;
+
+&lt;p&gt;Furthermore, the animation below shows how the individual preditions move a as a function of the member model, with predictions for higher earners moving them most.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/LGBM.gif&quot; alt=&quot;/res/blog_18/LGBM.gif&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Together, we see incorporating more complex or flexible models enables accurate recapitulation of underlying data uncertainty.&lt;/p&gt;
+
+&lt;h3 id=&quot;real-data-multiple-features-and-stratification&quot;&gt;Real Data, Multiple Features and Stratification&lt;/h3&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/boston-01.png&quot; alt=&quot;/res/blog_18/boston-01.png&quot; /&gt;
+So far we’ve only looked at a synthetic data set with one input feature and one output, but these sort of uncertainty quantification methods generalize well to more complex datasets. To illustrate this, let’s take a look at the boston housing dataset, one of the canonical datasets for regression problems.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;from&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;sklearn.datasets&lt;/span&gt; &lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_boston&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;X&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;y&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;load_boston&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;return_X_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;True&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Not only does this dataset not have artificial levels of uncertainty, it also has multiple input features that can be used to predict the price of a house in Boston (location, crime statistics, schooling etc). One additional point of interest is the “skew” of the dataset, that is to say that there aren’t equal numbers of every price of home. Broadly, this is described as the &lt;em&gt;imbalanced class&lt;/em&gt; problem, and it works for continuous data as well. This can pose a real problem for this sort of uncertainty quantification in certain circumstances so it’s an important thing to keep in mind. The figure below illustrates the skew of the data.
+&lt;img src=&quot;../res/blog_18/sampling_figure.png&quot; alt=&quot;/res/blog_18/sampling_figure.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;The turquoise line illustrates the shape of all training data, with most houses priced towards the lower end of the arbitrary scale, with a fat tail of higher priced homes. We need to sample from this distribution for the data subsets for our candidate models - but which technique to use? Broadly we could use &lt;strong&gt;k-fold&lt;/strong&gt; or &lt;strong&gt;shuffle&lt;/strong&gt; splitting to pull random samples from the underlying distribution (pink line). Or we could attempt to stratify sample this data (grey line). Stratify sampling attempts to sample evenly throughout the space. It involves first binning the data and then assuring that you get an even number of samples from each bin. A minimal implementation of a stratified split helper function can be seen below.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;continuous_stratification&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mf&quot;&gt;0.1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;s&quot;&gt;'''Function that returns the stratified indexes of a continously valued y'''&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;linspace&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;digitized_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitize&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bins&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;index_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;stratified_indexes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[]&lt;/span&gt;
+
+    &lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;test_size&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;bucket_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitized_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;n_samples_per_bucket&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;int&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_samples&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bucket_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+
+    &lt;span class=&quot;k&quot;&gt;for&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;bucket&lt;/span&gt; &lt;span class=&quot;ow&quot;&gt;in&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;set&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitized_y&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)):&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sub_index_list&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;digitized_y&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;==&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;sample_indexes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;random&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;choice&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sub_index_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;size&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;n_samples_per_bucket&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;replace&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;bp&quot;&gt;False&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+        &lt;span class=&quot;n&quot;&gt;stratified_indexes&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+=&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample_indexes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# returns test and train indexes
+&lt;/span&gt;    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;array&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stratified_indexes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;),&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;setdiff1d&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;index_list&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;stratified_indexes&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;So the question is now : how do these sampling techniques add up? To test them, we trained a 5 member LGBM ensemble using shuffle splitting, stratified splitting or kfold to resample the data subsets to train the models with. Then we measured their performance against a holdout set.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/multi_sample_predict.png&quot; alt=&quot;/res/blog_18/multi_sample_predict.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;So it actually seems like the stratified sample has the worst correlation between predicted and true values (should be 1:1). But remember that’s only half of the functionality of a model like this. We should be seeing correlations between uncertainty and error - suggesting this model is self aware of the mistakes it’s making.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_18/multi_sample_error.png&quot; alt=&quot;/res/blog_18/multi_sample_error.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;This figure shows little correlation between any of these models uncertainty and error, however k-fold performs the best. This highlights that while these methods have clear merit on synthetic data, they struggle more with real world examples where the uncertainty is more subtle.&lt;/p&gt;
+
+&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
+
+&lt;p&gt;This served as an introduction to the power of ensemble methods for uncertainty quantification. While they have their limitations, they serve a low complexity solution to this burgeoning field of machine learning. Future posts will focus on more complex implimentations of PyMC3 and Tensorflow probability to solve similar problems.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Notebook necessary to generate all the graphs and more &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/Ensemble_methods.ipynb&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The rest of the model and helper scripts &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>How the Financial Crisis Hurt the Poor and Helped the Rich</title>
@@ -855,144 +1040,6 @@ z=\frac{|\hat{p}(x)-p(x)|}{\sqrt{\frac{1}{n}(p(x)*(1-p(x)))}}
   &lt;li&gt;Data can be found &lt;a href=&quot;https://ocrdata.ed.gov/&quot;&gt;here&lt;/a&gt;; the urbanization and state demographics just from wikipedia&lt;/li&gt;
   &lt;li&gt;&lt;a href=&quot;https://github.com/NicholasARossi/Segregation&quot;&gt;Code&lt;/a&gt; ; maps were made with &lt;a href=&quot;https://matplotlib.org/basemap/&quot;&gt;basemap&lt;/a&gt; - ideas for the map figures came from &lt;a href=&quot;http://ramiro.org/notebook/new-york-roads-railways/&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>SEED 2017</title>
-    <link href="http://nicholasarossi.github.io//EBRC"/>
-    <updated>2017-06-20T00:00:00-07:00</updated>
-    <id>http://nicholasarossi.github.io//EBRC</id>
-    <content type="html">&lt;script type=&quot;text/x-mathjax-config&quot;&gt;
-  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
-&lt;/script&gt;
-
-&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
-&lt;/script&gt;
-
-&lt;p&gt;The following is an online supplement to the &lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;poster&lt;/a&gt; I’m presenting at the &lt;a href=&quot;http://synbioconference.org/2017&quot;&gt;2017 SEED conference&lt;/a&gt; in Vancouver and a talk that I gave at the &lt;a href=&quot;https://www.ebrc.org/Fall2017&quot;&gt;2017 EBRC conference&lt;/a&gt;.&lt;/p&gt;
-
-&lt;h3 id=&quot;using-synthetic-biology-to-understand-the-utility-of-active-degradation&quot;&gt;Using Synthetic Biology to Understand the Utility of Active Degradation&lt;/h3&gt;
-&lt;video controls=&quot;&quot; loop=&quot;&quot; autoplay=&quot;&quot; width=&quot;100%&quot; height=&quot;300&quot;&gt;
-&lt;source src=&quot;/res/blog_7/seed_logo.webm&quot; autoplay=&quot;true&quot; type=&quot;video/webm&quot; /&gt;
-
-  &lt;source src=&quot;/res/blog_7/seed_logo.mp4&quot; autoplay=&quot;true&quot; type=&quot;video/mp4&quot; /&gt;
-
-Your browser does not support the video tag.
-&lt;/video&gt;
-
-&lt;p&gt;What is the utility of active degradation in bacterial genetic networks and how can synthetic biology help us tease out its role in bet-hedging systems? Using a combination of synthetic reporter plasmids and mathematical modeling we investigate this problem.&lt;/p&gt;
-
-&lt;h2 id=&quot;phenotypic-diversity-in-isogenic-bacteria-can-help-survive-unexpected-antibiotic-stress&quot;&gt;Phenotypic diversity in isogenic bacteria can help survive unexpected antibiotic stress&lt;/h2&gt;
-&lt;p&gt;As shown in &lt;a href=&quot;https://www.nature.com/articles/srep19538&quot;&gt;this fantastic paper&lt;/a&gt;, even bacteria that are genetically identical can demonstrate differing susceptibility to antibiotics.&lt;/p&gt;
-
-&lt;p&gt;The video below shows a growing bacterial microcolony that’s hit with a temporary dose of carbenicillin. Red coloration is a propidium iodide indication of cell death. Cyan represents diversity in a transcriptional reporter for the multiple antibiotic resistance activator MarA&lt;/p&gt;
-
-&lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
-&lt;source src=&quot;/res/blog_7/media6.webm&quot; type=&quot;video/webm&quot; /&gt;
-
-  &lt;source src=&quot;/res/blog_7/media6.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-
-Your browser does not support the video tag.
-&lt;/video&gt;
-
-&lt;p&gt;We see that some cells die and others live - the cells that live go on to reproduce the same diversity. Moreover we see that this survivorship is correlated with MarA level. From &lt;a href=&quot;https://www.ncbi.nlm.nih.gov/pubmed/15009903&quot;&gt;literature&lt;/a&gt;, we know that MarA is actively degraded by Lon protease. How does turnover in MarA affect the distribution of the resistance phenotype?&lt;/p&gt;
-
-&lt;h2 id=&quot;not-all-phenotypic-distributions-are-made-equally&quot;&gt;Not all phenotypic distributions are made equally&lt;/h2&gt;
-
-&lt;p&gt;Consider the following distributions&lt;/p&gt;
-&lt;iframe src=&quot;/res/blog_7/gaussian.html&quot; width=&quot;100%&quot; height=&quot;200&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Produced by the following &lt;a href=&quot;https://en.wikipedia.org/wiki/Stationary_ergodic_process&quot;&gt;stationary ergodic processes&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;Even though the distributions have the same statistics, we see that the processes that produce each distribution are changing differently in time.&lt;/p&gt;
-
-&lt;iframe src=&quot;/res/blog_7/waves.html&quot; width=&quot;100%&quot; height=&quot;400&quot; scrolling=&quot;no&quot; align=&quot;center&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;This difference can be described by the metric correlation time, which is to say how well knowing the state of the processes now informs where it will be in the future. For instance, pure white noise has a correlation time of 0 minutes - knowing where it is now does not inform at all where it will be in the future.&lt;/p&gt;
-
-&lt;p&gt;Additionally, thanks to the assumption of ergodicity we can assume that following one time trace for a sufficiently long period of time is the same as ob many processes at the same time point.&lt;/p&gt;
-
-&lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
-&lt;source src=&quot;/res/blog_7/1gene_ts.webm&quot; type=&quot;video/webm&quot; /&gt;
-
-  &lt;source src=&quot;/res/blog_7/1gene_ts.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-
-Your browser does not support the video tag.
-&lt;/video&gt;
-
-&lt;!-- Watch the following animation to see how
-&lt;video controls id=&quot;video1&quot; width=&quot;100%&quot;&gt;
-  &lt;source src=&quot;/res/blog_7/ergodic.mp4&quot; type=&quot;video/mp4&quot;&gt;
-Your browser does not support the video tag.
-&lt;/video&gt; --&gt;
-
-&lt;h2 id=&quot;how-does-a-bacterial-population-go-from-a-few-cells-to-rich-phenotypic-diversity&quot;&gt;How does a bacterial population go from a few cells to rich phenotypic diversity?&lt;/h2&gt;
-
-&lt;p&gt;&lt;img src=&quot;/res/blog_7/diversity.png&quot; alt=&quot;diversity&quot; /&gt;
-Cell growth is clearly important for the development of a diverse population, but more than that the noise profile of the genes of interest is important as well.&lt;/p&gt;
-
-&lt;p&gt;We can model the development of diversity in noisy genes by an &lt;a href=&quot;https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process&quot;&gt;Ornstein–Uhlenbeck processes&lt;/a&gt;&lt;/p&gt;
-
-&lt;center&gt;
-$$\frac{dX}{dt} = -\theta_{x} X_{t} dt+\sigma_{x} \eta_{x}$$
-&lt;/center&gt;
-
-&lt;p&gt;Where &lt;script type=&quot;math/tex&quot;&gt;\theta_{x}&lt;/script&gt; scales with the half-life of the molecule.&lt;/p&gt;
-
-&lt;p&gt;Below we see simulation of several trajectories as well as the analytical solutions to the variance over time of the function for a short half-life activator. Click links for interactive versions.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/res/blog_7/short.html&quot;&gt;
-&lt;img src=&quot;/res/blog_7/first_int.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;!-- &lt;iframe src=&quot;/res/blog_7/short.html&quot; width=&quot;100%&quot; height=&quot;400&quot;  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
-
-&lt;p&gt;Increasing the half-life of the activator demonstrates a slower accumulation of diversity over time.&lt;/p&gt;
-
-&lt;!-- &lt;iframe src=&quot;/res/blog_7/long.html&quot; width=&quot;100%&quot; height=&quot;400&quot;  scrolling=&quot;no&quot;&gt;&lt;/iframe&gt; --&gt;
-&lt;p&gt;&lt;a href=&quot;/res/blog_7/long.html&quot;&gt;
-&lt;img src=&quot;/res/blog_7/second_int.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;h2 id=&quot;active-degradation-increases-the-rate-of-diversity-accumulation&quot;&gt;Active degradation increases the rate of diversity accumulation&lt;/h2&gt;
-
-&lt;p&gt;Mirroring the computational results, experimental results for activators with differing half-lives demonstrate different rates of diversity generation. Here we compare a system with wild type MarA that is actively degraded to a system with synthetically modified MarA that is not.&lt;/p&gt;
-
-&lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
-&lt;source src=&quot;/res/blog_5/short_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
-
-  &lt;source src=&quot;/res/blog_7/short_halflife.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-
-Your browser does not support the video tag.
-&lt;/video&gt;
-
-&lt;video controls=&quot;&quot; width=&quot;100%&quot;&gt;
-&lt;source src=&quot;/res/blog_5/long_halflife.webm&quot; type=&quot;video/webm&quot; /&gt;
-
-  &lt;source src=&quot;/res/blog_7/long_halflife.mp4&quot; type=&quot;video/mp4&quot; /&gt;
-
-Your browser does not support the video tag.
-&lt;/video&gt;
-
-&lt;h2 id=&quot;conclusion--complete-poster&quot;&gt;Conclusion / Complete Poster&lt;/h2&gt;
-&lt;p&gt;So far we’ve only discussed diversity in an activator, but MarA doesn’t operate in isolation, it goes on to activate multiple downstream genes to coordinate a cohesive resistance phenoptype.&lt;/p&gt;
-
-&lt;p&gt;&lt;img src=&quot;/res/blog_7/schema.png&quot; alt=&quot;schema&quot; /&gt;&lt;/p&gt;
-
-&lt;p&gt;For more information on half-life may affect downstream coordination, please see the associated &lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;poster&lt;/a&gt;.&lt;/p&gt;
-
-&lt;p&gt;&lt;a href=&quot;/res/blog_7/seed_posterNAR.pdf&quot;&gt;
-&lt;img src=&quot;/res/blog_7/seed_posterNAR.JPG&quot; /&gt;
-&lt;/a&gt;﻿
-&lt;!--
-&lt;script&gt;
-document.getElementById(&quot;video1&quot;).currentTime = 14;
-&lt;/script&gt; --&gt;&lt;/p&gt;
 </content>
     <author>
       <name>Nicholas Rossi</name>
