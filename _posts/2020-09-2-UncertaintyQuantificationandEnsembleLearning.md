@@ -24,7 +24,7 @@ comments: yes
 </html>
 
 
-![/res/blog_18/open_figure_new.png](../res/blog_18/open_figure_new.png)
+![/res/blog_18/open_figure_new-01.png](../res/blog_18/open_figure_new-01.png)
 
 
 ### Uncertainly Quantification and How much we pay for lunch.
@@ -40,7 +40,7 @@ Consider the following graphs:
 
 ![/res/blog_18/meal_expenses.png](../res/blog_18/meal_expenses.png)
 
-The graph to the left shows some raw imagined data relating how wealthy someone is to how much they spent on their last meal (grey dots). While there is a clear trend line (turquoise), this fails to capture the uniqueness of the data : that the uncertainly from that trend increases as a function of wealth as well. The graph to the right shows the perfect analytical mapping of this data. Using the closed form solution to the standard deviation of a uniform distribution (how the data was generated) we see the goal of our uncertainty model - to perfectly capture the uncertainty.
+The graph to the left shows some raw imagined data relating how wealthy someone is to how much they spent on their last meal (grey dots). While there is a clear trend line (turquoise), this fails to capture the uniqueness of the data : that the uncertainly from that trend increases as a function of wealth as well. The graph to the right shows the analytical mapping of this data. Using the closed form solution to the standard deviation of a uniform distribution (how the data was generated) we see the goal of our uncertainty model - to perfectly capture the uncertainty.
 
 The important thing is that *uncertainty* is part of this system. Its not something we want to filter out, its' something we want to quantify. The only question is how do we do it? For our first attempt, we will use a collection of linear models, collated into an ensemble.
 
@@ -126,7 +126,7 @@ In order to show how more flexible base models impact the results, we simply swa
 
 We see that each model becomes more erratic in its predictions as the income of the person increases, with the ensemble model showing higher error bars indicating higher uncertainty. 
 
-Furthermore, the animation below shows how the individual preditions move a as a function of the member model, with predictions for higher earners moving them most.
+Furthermore, the animation below shows how the individual predictions move a as a function of the member model, with predictions for higher earners moving the most.
 
 ![/res/blog_18/LGBM.gif](../res/blog_18/LGBM.gif)
 
