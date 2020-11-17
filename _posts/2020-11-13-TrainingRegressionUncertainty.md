@@ -25,9 +25,11 @@ comments: yes
 
 ![/res/blog_18/open_figure_new-01.png](../res/blog_19/training_uncertainty_schema.png)
 
+**TLDR;  Notebook necessary to explore this data process hands on and generate all the graphs** [here](https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/01_Training_on_uncertainty.ipynb) 
+
 In our [previous episode](https://www.rossidata.com/UncertaintyQuantificationandEnsembleLearning) we investigated how ensemble methods could be leveraged to quantify the uncertainty of an underlying data-set. While this approach was super easy to implement it fell short of recapitulating the exact discordance between observed and predicted values for the most part. Here we explore a more conceptually straight forward approach to training models simultaneously to predict both a value an the underlying uncertainty of that prediction. Per usual, we start with the simplest implementation : a linear model.
 
-### Linear Regression trained to predict value and uncertainty simultaneously
+### Linear Regression Trained to Predict Output Value and Uncertainty Simultaneously
 
 Linear models in sk-learn or any comparable ecosystem are well equipped to handel predictions of multiple values simultaneously. We simply need to feed in the relevant data for both mean value and associated uncertainty. 
 
@@ -115,7 +117,7 @@ First, the test/training split shows that this technique generalizes well. Secon
 
 The example above is as simple as it gets, however we know machine learning really shines with the synthesis of multiple features - which is tackled in the next section.
 
-### Multiple Feature Dimensions and More powerful models
+### Multiple Feature Dimensions and More Powerful Models
 ![../res/blog_19/mulitin_multiout.png](../res/blog_19/mulitin_multiout.png)
 
 We see that binning along the feature space can be an effective way to establish the relationship between the feature values and their output uncertainty. However this problem become much more complicated in the case of multiple features. Consider two features below:
@@ -184,7 +186,7 @@ However we still see it's not a perfect mapping. This is due to the shallowness 
 
 All in all, leveraging both **dimensionality reduction** along with a more **large data** enables us to recover the nonlinear relationships between mean and uncertainty of the output variable.
 
-### Training uncertainty regression  models on real data
+### Training Uncertainty Regression  Models on Real Data
 
 It's fun enough to train models on data that is designed to show off uncertainty quantification - but what happens when we use more realistic data-sets? Leveraging our uncertainty quantification models with dimensionality reduction as above on the canonical **boston housing data-set** we see the methods generally hold up.
 
@@ -220,7 +222,7 @@ model.fit(X, y)
 
 We see once more that there isn't a perfect relationship between **error** and **uncertainty** but we shouldn't expect it -- uncertainty terms are meant as upper limits to your models fidelity and are meant as safe guards for operational decisions made by a model.
 
-### Uncertainty regression on categorical features
+### Uncertainty Regression on Categorical Features
 
 The good news is that if you have categorical values instead of continuous, these methods are much easier to apply. Simply grouping by your features and calculating summary statisitcs will allow you to map the data into something usable but an uncertainty regression model.
 ![../res/blog_19/feature_groups.png](../res/blog_19/feature_groups.png)

@@ -3,7 +3,7 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2020-11-15T19:58:24-08:00</updated>
+  <updated>2020-11-17T11:08:28-08:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
@@ -34,9 +34,11 @@
 
 &lt;p&gt;&lt;img src=&quot;../res/blog_19/training_uncertainty_schema.png&quot; alt=&quot;/res/blog_18/open_figure_new-01.png&quot; /&gt;&lt;/p&gt;
 
+&lt;p&gt;&lt;strong&gt;TLDR;  Notebook necessary to explore this data process hands on and generate all the graphs&lt;/strong&gt; &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/01_Training_on_uncertainty.ipynb&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
 &lt;p&gt;In our &lt;a href=&quot;https://www.rossidata.com/UncertaintyQuantificationandEnsembleLearning&quot;&gt;previous episode&lt;/a&gt; we investigated how ensemble methods could be leveraged to quantify the uncertainty of an underlying data-set. While this approach was super easy to implement it fell short of recapitulating the exact discordance between observed and predicted values for the most part. Here we explore a more conceptually straight forward approach to training models simultaneously to predict both a value an the underlying uncertainty of that prediction. Per usual, we start with the simplest implementation : a linear model.&lt;/p&gt;
 
-&lt;h3 id=&quot;linear-regression-trained-to-predict-value-and-uncertainty-simultaneously&quot;&gt;Linear Regression trained to predict value and uncertainty simultaneously&lt;/h3&gt;
+&lt;h3 id=&quot;linear-regression-trained-to-predict-output-value-and-uncertainty-simultaneously&quot;&gt;Linear Regression Trained to Predict Output Value and Uncertainty Simultaneously&lt;/h3&gt;
 
 &lt;p&gt;Linear models in sk-learn or any comparable ecosystem are well equipped to handel predictions of multiple values simultaneously. We simply need to feed in the relevant data for both mean value and associated uncertainty.&lt;/p&gt;
 
@@ -118,7 +120,7 @@
 
 &lt;p&gt;The example above is as simple as it gets, however we know machine learning really shines with the synthesis of multiple features - which is tackled in the next section.&lt;/p&gt;
 
-&lt;h3 id=&quot;multiple-feature-dimensions-and-more-powerful-models&quot;&gt;Multiple Feature Dimensions and More powerful models&lt;/h3&gt;
+&lt;h3 id=&quot;multiple-feature-dimensions-and-more-powerful-models&quot;&gt;Multiple Feature Dimensions and More Powerful Models&lt;/h3&gt;
 &lt;p&gt;&lt;img src=&quot;../res/blog_19/mulitin_multiout.png&quot; alt=&quot;../res/blog_19/mulitin_multiout.png&quot; /&gt;&lt;/p&gt;
 
 &lt;p&gt;We see that binning along the feature space can be an effective way to establish the relationship between the feature values and their output uncertainty. However this problem become much more complicated in the case of multiple features. Consider two features below:&lt;/p&gt;
@@ -184,7 +186,7 @@
 
 &lt;p&gt;All in all, leveraging both &lt;strong&gt;dimensionality reduction&lt;/strong&gt; along with a more &lt;strong&gt;large data&lt;/strong&gt; enables us to recover the nonlinear relationships between mean and uncertainty of the output variable.&lt;/p&gt;
 
-&lt;h3 id=&quot;training-uncertainty-regression--models-on-real-data&quot;&gt;Training uncertainty regression  models on real data&lt;/h3&gt;
+&lt;h3 id=&quot;training-uncertainty-regression--models-on-real-data&quot;&gt;Training Uncertainty Regression  Models on Real Data&lt;/h3&gt;
 
 &lt;p&gt;It’s fun enough to train models on data that is designed to show off uncertainty quantification - but what happens when we use more realistic data-sets? Leveraging our uncertainty quantification models with dimensionality reduction as above on the canonical &lt;strong&gt;boston housing data-set&lt;/strong&gt; we see the methods generally hold up.&lt;/p&gt;
 
@@ -219,7 +221,7 @@
 
 &lt;p&gt;We see once more that there isn’t a perfect relationship between &lt;strong&gt;error&lt;/strong&gt; and &lt;strong&gt;uncertainty&lt;/strong&gt; but we shouldn’t expect it – uncertainty terms are meant as upper limits to your models fidelity and are meant as safe guards for operational decisions made by a model.&lt;/p&gt;
 
-&lt;h3 id=&quot;uncertainty-regression-on-categorical-features&quot;&gt;Uncertainty regression on categorical features&lt;/h3&gt;
+&lt;h3 id=&quot;uncertainty-regression-on-categorical-features&quot;&gt;Uncertainty Regression on Categorical Features&lt;/h3&gt;
 
 &lt;p&gt;The good news is that if you have categorical values instead of continuous, these methods are much easier to apply. Simply grouping by your features and calculating summary statisitcs will allow you to map the data into something usable but an uncertainty regression model.
 &lt;img src=&quot;../res/blog_19/feature_groups.png&quot; alt=&quot;../res/blog_19/feature_groups.png&quot; /&gt;&lt;/p&gt;

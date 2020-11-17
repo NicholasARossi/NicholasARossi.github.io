@@ -3,11 +3,8 @@
   <component name="ChangeListManager">
     <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/archive/index.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/archive/index.html" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/archive/sidebar.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/archive/sidebar.html" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/_posts/2020-11-13-TrainingRegressionUncertainty.md" beforeDir="false" afterPath="$PROJECT_DIR$/_posts/2020-11-13-TrainingRegressionUncertainty.md" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/atom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/atom.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/_site/home.html" beforeDir="false" afterPath="$PROJECT_DIR$/_site/home.html" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/_site/sitemap.xml" beforeDir="false" afterPath="$PROJECT_DIR$/_site/sitemap.xml" afterDir="false" />
     </list>
     <ignored path="NicholasARossi.github.io.iws" />
@@ -30,7 +27,7 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="-309">
+              <first_editor relative-caret-position="120">
                 <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="1" />
               </first_editor>
               <second_editor />
@@ -52,7 +49,7 @@
         <entry file="file://$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="827">
+              <first_editor relative-caret-position="2820">
                 <caret line="188" column="156" selection-start-line="188" selection-start-column="156" selection-end-line="188" selection-end-column="156" />
               </first_editor>
               <second_editor />
@@ -64,8 +61,8 @@
         <entry file="file://$PROJECT_DIR$/_posts/2020-11-13-TrainingRegressionUncertainty.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="FIRST">
-              <first_editor relative-caret-position="653">
-                <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+              <first_editor relative-caret-position="600">
+                <caret line="224" column="43" selection-start-line="224" selection-start-column="43" selection-end-line="224" selection-end-column="43" />
               </first_editor>
               <second_editor />
             </state>
@@ -76,7 +73,7 @@
         <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
           <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
             <state split_layout="SPLIT">
-              <first_editor relative-caret-position="690">
+              <first_editor relative-caret-position="900">
                 <caret line="60" column="5" selection-start-line="60" selection-end-line="61" />
               </first_editor>
               <second_editor />
@@ -222,9 +219,9 @@
     </option>
   </component>
   <component name="ProjectFrameBounds" fullScreen="true">
-    <option name="y" value="63" />
-    <option name="width" value="1792" />
-    <option name="height" value="977" />
+    <option name="x" value="-1920" />
+    <option name="width" value="1920" />
+    <option name="height" value="1080" />
   </component>
   <component name="ProjectLevelVcsManager">
     <ConfirmationsSetting value="1" id="Add" />
@@ -356,10 +353,10 @@
     <servers />
   </component>
   <component name="ToolWindowManager">
-    <frame x="0" y="0" width="1792" height="1120" extended-state="0" />
+    <frame x="-1920" y="0" width="1920" height="1080" extended-state="0" />
     <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.3032185" />
+      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.15745129" />
       <window_info id="Structure" order="1" weight="0.24954683" />
       <window_info id="Favorites" order="2" side_tool="true" />
       <window_info anchor="bottom" id="Message" order="0" />
@@ -369,7 +366,7 @@
       <window_info anchor="bottom" id="Cvs" order="4" weight="0.25" />
       <window_info anchor="bottom" id="Inspection" order="5" weight="0.4" />
       <window_info anchor="bottom" id="TODO" order="6" />
-      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5128593" side_tool="true" visible="true" weight="0.032380953" />
+      <window_info anchor="bottom" id="Event Log" order="7" sideWeight="0.5128593" side_tool="true" visible="true" weight="0.06138614" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Terminal" order="9" />
       <window_info anchor="bottom" id="Python Console" order="10" />
@@ -608,6 +605,62 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="120">
+            <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="1" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="2820">
+            <caret line="188" column="156" selection-start-line="188" selection-start-column="156" selection-end-line="188" selection-end-column="156" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="900">
+            <caret line="60" column="5" selection-start-line="60" selection-end-line="61" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-08-19-FinancialCrisis.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor relative-caret-position="240">
+            <caret line="16" column="49" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="49" />
+          </first_editor>
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-RomanEmperors.md">
+      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
+        <state split_layout="SPLIT">
+          <first_editor />
+          <second_editor />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2018-03-01-Academy.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="SPLIT">
@@ -636,67 +689,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-01-flightdelays.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-20-RomanEmperors.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor />
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-08-19-FinancialCrisis.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="240">
-            <caret line="16" column="49" selection-start-line="16" selection-start-column="34" selection-end-line="16" selection-end-column="49" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-06-10-PythonAnimations.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="690">
-            <caret line="60" column="5" selection-start-line="60" selection-end-line="61" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2018-05-01-Lego.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="-309">
-            <caret line="8" selection-start-line="8" selection-end-line="13" selection-end-column="1" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md">
-      <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
-        <state split_layout="SPLIT">
-          <first_editor relative-caret-position="827">
-            <caret line="188" column="156" selection-start-line="188" selection-start-column="156" selection-end-line="188" selection-end-column="156" />
-          </first_editor>
-          <second_editor />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/_posts/2020-11-13-TrainingRegressionUncertainty.md">
       <provider selected="true" editor-type-id="split-provider[text-editor;markdown-preview-editor]">
         <state split_layout="FIRST">
-          <first_editor relative-caret-position="653">
-            <caret line="226" lean-forward="true" selection-start-line="226" selection-end-line="226" />
+          <first_editor relative-caret-position="600">
+            <caret line="224" column="43" selection-start-line="224" selection-start-column="43" selection-end-line="224" selection-end-column="43" />
           </first_editor>
           <second_editor />
         </state>
