@@ -2,23 +2,30 @@
 <urlset xmlns="http://www.sitemaps.org/schemas/sitemap/0.9">
   <url>
     <loc>http://rossidata.com/</loc>
-    <lastmod>2020-11-17T11:08:28-08:00</lastmod>
+    <lastmod>2020-12-06T11:15:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>1.0</priority>
   </url>
   <url>
     <loc>http://rossidata.com/about/</loc>
-    <lastmod>2020-11-17T11:08:28-08:00</lastmod>
+    <lastmod>2020-12-06T11:15:00-08:00</lastmod>
     <changefreq>monthly</changefreq>
     <priority>0.8</priority>
   </url>
   <url>
     <loc>http://rossidata.com/archive/</loc>
-    <lastmod>2020-11-17T11:08:28-08:00</lastmod>
+    <lastmod>2020-12-06T11:15:00-08:00</lastmod>
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
   
+  <url>
+    <loc>http://rossidata.com/BaysianTimePointChangeUncertainty</loc>
+    <lastmod>2020-12-05T00:00:00-08:00</lastmod>
+    <changefreq>monthly</changefreq>
+    <priority>0.5</priority>
+   </url>
+   
   <url>
     <loc>http://rossidata.com/TrainingRegressionUncertainty</loc>
     <lastmod>2020-11-13T00:00:00-08:00</lastmod>

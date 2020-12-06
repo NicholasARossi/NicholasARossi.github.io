@@ -3,12 +3,166 @@
   <title>Nicholas Rossi</title>
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
-  <updated>2020-11-17T11:08:28-08:00</updated>
+  <updated>2020-12-06T11:15:00-08:00</updated>
   <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
+  
+  <entry>
+    <title>Uncertainty Quantification Part 3: Time Series Change point detection with baysian uncertainty</title>
+    <link href="http://nicholasarossi.github.io//BaysianTimePointChangeUncertainty"/>
+    <updated>2020-12-05T00:00:00-08:00</updated>
+    <id>http://nicholasarossi.github.io//BaysianTimePointChangeUncertainty</id>
+    <content type="html">&lt;html&gt;
+&lt;link rel=&quot;stylesheet&quot; href=&quot;/res/blog_15/manni.css&quot; /&gt;
+&lt;style&gt;
+@font-face {
+  font-family: 'futura';
+  src: url('/res/blog_10/futura.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+  h1,h2,h3,head,title {
+    font-family: 'futura',serif;
+    color: Black;
+    background-color: lightgrey;
+  }
+&lt;/style&gt;
+&lt;/html&gt;
+&lt;script type=&quot;text/javascript&quot; async=&quot;&quot; src=&quot;https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML&quot;&gt;
+&lt;/script&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/header.png&quot; alt=&quot;/res/blog_18/open_figure_new-01.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;&lt;strong&gt;TLDR;  Notebook necessary to explore this data process hands on and generate all the graphs&lt;/strong&gt; &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/02_PyMC3_methods.ipynb&quot;&gt;here&lt;/a&gt;&lt;/p&gt;
+
+&lt;p&gt;In this entry in our &lt;em&gt;quantifying uncertainty&lt;/em&gt; series, we take our first look at time-series data. There are tons of really interesting questions that can be answered about time-series data with ML methods - from forecasting to causality inference -which all have room for uncertainty quantification.&lt;/p&gt;
+
+&lt;p&gt;In this post, I will take a look at one of the simplest methods to apply to a time-series trace : &lt;strong&gt;change point detection&lt;/strong&gt;.&lt;/p&gt;
+
+&lt;h3 id=&quot;did-my-partner-moving-in-make-me-a-better-programmer&quot;&gt;Did my Partner Moving in Make Me a Better Programmer?&lt;/h3&gt;
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/emoji-01.png&quot; alt=&quot;../res/blog_20/emoji-01.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;If you’re given a time series trace like the price of a stock or traffic patterns over time, one of the simplest questions you can ask about it is : is there a moment in time where things changed, and by how  much did they change?&lt;/p&gt;
+
+&lt;p&gt;Recently, I bought a house with my partner and we moved in together for the first time. Lots of things change about your behavior when you live with someone else vs alone, and in the age of covid and permanent WFH I wondered if having a high-powered finance person in the house would motivate me to look more busy.&lt;/p&gt;
+
+&lt;p&gt;To begin, I used the &lt;a href=&quot;https://www.rescuetime.com/apidoc&quot;&gt;rescue time API&lt;/a&gt; to pull the stats of how much time I spend programming every day. This doesn’t count meetings and other work related stuff, just time spent in the terminal, IDE or a localhost.&lt;/p&gt;
+
+&lt;p&gt;Before asking if living together changed my behavior, lets ask the generic question…&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-buildoutcfg&quot;&gt;&quot;From September to November, were there any points where I started programming more or less? If so, by how much?&quot;
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;Typically, there are some established packages in Python like &lt;a href=&quot;https://github.com/deepcharles/ruptures&quot;&gt;ruptures&lt;/a&gt; to infer if something changed during a time-series. In fact, if we use a package like this, it will detect a change in a type series as below:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/raw_TS_rupture.png&quot; alt=&quot;../res/blog_20/raw_TS_rupture.png&quot; /&gt;&lt;/p&gt;
+
+&lt;pre&gt;&lt;code class=&quot;language-buildoutcfg&quot;&gt;Rupture Change detected at : 2020-10-02 00:00:00
+&lt;/code&gt;&lt;/pre&gt;
+
+&lt;p&gt;We see that packages like ruptures do detect changes. For instance here ruptures finds an event that happened on the second of October. However we have no idea how certain we are that that is the exact date, nor are we certain about what direction the &lt;em&gt;change&lt;/em&gt; happened. To elucidate the answers to these questions, we need a more sophisticated model and one that carries with it a mechanism to quantify our uncertainty our our estimates.&lt;/p&gt;
+
+&lt;h3 id=&quot;baysian-change-point-detection-with-uncertainty-quantification&quot;&gt;Baysian Change Point Detection with Uncertainty Quantification&lt;/h3&gt;
+
+&lt;p&gt;In order to compute a nuanced metric around &lt;strong&gt;what&lt;/strong&gt; happened and &lt;strong&gt;when&lt;/strong&gt; it did, we turn now to &lt;a href=&quot;https://docs.pymc.io/&quot;&gt;PyMC3&lt;/a&gt;, a baysian framework for probabilistic model fitting. This ecosystem will enable us to quantify our uncertainty around which date the change in my programming behavior happened, and by how much it changed. This type of probabilistic ecosystem is structured around a model that it in turn infers the parameters of. For this we construct a modified logistic regression equation.&lt;/p&gt;
+
+&lt;center&gt;
+$$f(x)=\frac{L}{1+e^{-k(x-x_{0})}}+A$$
+&lt;/center&gt;
+
+&lt;p&gt;This is one of several equations you could use to map a change point detection algorithm, but I prefer this one because it represents the two values that are most interesting to me very plainly:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;L&lt;/strong&gt; : is the value that represents the magnitude of the change; can be postive or negative&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;x0&lt;/strong&gt; : is the value that represents the change-point; in this case when we changed from programming at one rate to another.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;Other values that we will represent in this model are:&lt;/p&gt;
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;k&lt;/strong&gt; : the steepness of the change from&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;A&lt;/strong&gt; : the baseline level of programming before the changepoint.
+Thuis&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;python-implementation&quot;&gt;Python Implementation&lt;/h3&gt;
+&lt;p&gt;First I simply load in my data from the rescuetime API (preprocessed)&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;read_csv&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'../data/rescuetime_data.csv'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;pd&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;to_datetime&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;])&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;set_index&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Date'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'order_val'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;arange&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;len&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;))&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Next we build out our model within the pyMC3 ecosystem&lt;/p&gt;
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;kn&quot;&gt;import&lt;/span&gt; &lt;span class=&quot;nn&quot;&gt;pymc3&lt;/span&gt; &lt;span class=&quot;k&quot;&gt;as&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;
+
+&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;log_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;):&lt;/span&gt;
+    &lt;span class=&quot;k&quot;&gt;return&lt;/span&gt; &lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;/&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;np&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;exp&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;*&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;-&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)))&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;+&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;
+
+
+&lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Model&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;()&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# Priors for unknown model parameters
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Uniform&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'x0'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;min&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'order_val'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]),&lt;/span&gt; &lt;span class=&quot;nb&quot;&gt;max&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'order_val'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;]))&lt;/span&gt;    
+    &lt;span class=&quot;n&quot;&gt;k&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'k'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;L&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'L'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;2&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;A&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'A'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;6&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sd&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;1&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+    
+    &lt;span class=&quot;c1&quot;&gt;# Expected value of outcome
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'order_val'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;
+    &lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;log_function&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;x0&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;k&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;A&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;L&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+
+    &lt;span class=&quot;c1&quot;&gt;# Likelihood (sampling distribution) of observations
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;y_obs&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;Normal&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'y_obs'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;mu&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;observed&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;rescue_time_data&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;[&lt;/span&gt;&lt;span class=&quot;s&quot;&gt;'Hours'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;].&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;values&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;Each of our parameters requires us to define our priors. Here I’ve set the change point to a uniform distribution between the begining and end of the dataset, and the rest to simply be normal distributions.&lt;/p&gt;
+
+&lt;p&gt;Next we evolve our posterior distributions - that is to say our infered model parameters that fit the data.&lt;/p&gt;
+
+&lt;div class=&quot;language-python highlighter-rouge&quot;&gt;&lt;div class=&quot;highlight&quot;&gt;&lt;pre class=&quot;highlight&quot;&gt;&lt;code&gt;&lt;span class=&quot;k&quot;&gt;with&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;mod&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;:&lt;/span&gt;
+    &lt;span class=&quot;c1&quot;&gt;# draw 10000 posterior samples
+&lt;/span&gt;    &lt;span class=&quot;n&quot;&gt;trace&lt;/span&gt; &lt;span class=&quot;o&quot;&gt;=&lt;/span&gt; &lt;span class=&quot;n&quot;&gt;pm&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;.&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;sample&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;10000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;,&lt;/span&gt;&lt;span class=&quot;n&quot;&gt;tune&lt;/span&gt;&lt;span class=&quot;o&quot;&gt;=&lt;/span&gt;&lt;span class=&quot;mi&quot;&gt;5000&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;/code&gt;&lt;/pre&gt;&lt;/div&gt;&lt;/div&gt;
+
+&lt;p&gt;I sorta went overkill with the sample size but there is no real harm except for computation time.&lt;/p&gt;
+
+&lt;p&gt;If we plot a sampling of our fitted models over our data we get something like this:&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/programming_model_fit.png&quot; alt=&quot;../res/blog_20/programming_model_fit.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;We see clearly there is convergence to a general specific time point with some variance in both exact moment and magnitude of the change. Extracting our posterior paramter x0 (the changepoint) and plotting the distribution we get the following graph.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/x0_posterior.png&quot; alt=&quot;../res/blog_20/x0_posterior.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;Here we see our model is relatively certain that a changepoint occured sometime between the 1st and the 5th of October. This confirm our suscpicioius that it’s possible moving in with my partner on the 4th changed my programming behavior (no other life changes occured during this time). 
+Next, we ask the question by &lt;strong&gt;how much&lt;/strong&gt; did my programming time increase. This was represented in our model by the &lt;strong&gt;L&lt;/strong&gt; parameter, which we can observe the distribution of below.&lt;/p&gt;
+
+&lt;p&gt;&lt;img src=&quot;../res/blog_20/L_posterior.png&quot; alt=&quot;../res/blog_20/L_posterior.png&quot; /&gt;&lt;/p&gt;
+
+&lt;p&gt;According to this model fit, we can see clearly that there was a jump in productivity following the change point of around an hour and half per day. Of course there is some uncertainty around this estimate, represented elegently by the width of the distribution. However, taken together we see our estimates for &lt;em&gt;x0&lt;/em&gt; and &lt;em&gt;L&lt;/em&gt; infer that moving in with my partner &lt;strong&gt;did&lt;/strong&gt; have a positve impact on my programming habits.&lt;/p&gt;
+
+&lt;h3 id=&quot;causality-is-very-complicated-but-uncertainty-quantification-can-ground-our-conclusions&quot;&gt;Causality is Very Complicated, but Uncertainty Quantification can Ground our Conclusions&lt;/h3&gt;
+
+&lt;p&gt;While it is very difficult to say definitively say that moving in my partner was the only reason for the increase my programming volume, our naive models about change point detection obseveved that there was a changepoint that fell near the move in date, and my programming did experience a jump in volume. In essence we’re able to disprove the hypothesis that other changes happend at other points in time.&lt;/p&gt;
+
+&lt;p&gt;By looking at the distributions we see significant uncertainty around the exact jump (between 1 and 2 hours of programming productivity gained). This is a valuable number to consider and speaks to the power of these nuanced models that paint a better picture of the limitations of their inferences.&lt;/p&gt;
+
+&lt;p&gt;Thanks very much for reading, and see the links below to continue play further with this dataset and these methods.&lt;/p&gt;
+
+&lt;h3 id=&quot;notes&quot;&gt;Notes&lt;/h3&gt;
+&lt;ul&gt;
+  &lt;li&gt;Notebook necessary to generate all the graphs and more &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/02_PyMC3_methods.ipynb&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+  &lt;li&gt;The rest of the model and helper scripts &lt;a href=&quot;https://github.com/NicholasARossi/UQ_methods&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
+&lt;/ul&gt;
+
+</content>
+    <author>
+      <name>Nicholas Rossi</name>
+      <uri>http://nicholasarossi.github,io/about/</uri>
+    </author>
+  </entry>
   
   <entry>
     <title>Uncertainty Quantification Part 2: Training Regression Models on Uncertainty</title>
@@ -1059,62 +1213,6 @@ There are only a few guidelines:&lt;/p&gt;
   &lt;li&gt;The city data retrieved from &lt;a href=&quot;https://simplemaps.com/data/world-cities&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
 &lt;/ul&gt;
 
-</content>
-    <author>
-      <name>Nicholas Rossi</name>
-      <uri>http://nicholasarossi.github,io/about/</uri>
-    </author>
-  </entry>
-  
-  <entry>
-    <title>Shared Actors between the 2018 Best Picture Nominees</title>
-    <link href="http://nicholasarossi.github.io//Academy"/>
-    <updated>2018-03-01T00:00:00-08:00</updated>
-    <id>http://nicholasarossi.github.io//Academy</id>
-    <content type="html">&lt;script src=&quot;https://cdn.jsdelivr.net/npm/lazyload@2.0.0-beta.2/lazyload.js&quot;&gt;&lt;/script&gt;
-
-&lt;html&gt;
-&lt;link rel=&quot;stylesheet&quot; href=&quot;https://fonts.googleapis.com/css?family=SFCar&quot; /&gt;
-&lt;style&gt;
-@font-face {
-  font-family: 'ebgaramond';
-  src: url('/res/blog_12/EBGaramond.ttf') format('truetype');
-  font-weight: normal;
-  font-style: normal;
-}
-  h1,h2,h3,head,title {
-    font-family: 'ebgaramond',serif;
-    color: Black;
-    background-color: yellow;
-  }
-&lt;/style&gt;
-&lt;/html&gt;
-
-&lt;h3 id=&quot;familiar-faces&quot;&gt;Familiar Faces&lt;/h3&gt;
-
-&lt;p&gt;There are a lot of recurrent actors in this year’s best picture nominees. The  network diagram below shows how they connect.
-&lt;a href=&quot;/res/blog_12/cluster.png&quot;&gt;
-&lt;img class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster.png&quot; /&gt;
-&lt;/a&gt;﻿&lt;/p&gt;
-
-&lt;p&gt;The most outrageous example of this is &lt;a href=&quot;https://en.wikipedia.org/wiki/Michael_Stuhlbarg&quot;&gt;Michael Stuhlbarg&lt;/a&gt;. He appears in “The Post”, “The Shape of Water” and “Call Me by Your Name”. If the academy awards were purely random, he would have a 33% chance of being in a movie that would win best picture!&lt;/p&gt;
-
-&lt;p&gt;Breaking this down a bit, let’s just look at this year’s two WWII epics : Dunkirk and Darkest Hour. There’s only one actor that unites the two films. Mouse over for the complete cast list.&lt;/p&gt;
-
-&lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/cluster_ww2.html&quot; width=&quot;100%&quot; height=&quot;300px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;p&gt;Phantom thread is on it’s own, having shared no actors with any other films. The main cluster contains the remain 6 films and can be investigated below:&lt;/p&gt;
-
-&lt;iframe class=&quot;lazyload&quot; src=&quot;/res/blog_12/other_sets.html&quot; width=&quot;100%&quot; height=&quot;500px&quot; scrolling=&quot;no&quot;&gt;&lt;/iframe&gt;
-
-&lt;h3 id=&quot;conclusion&quot;&gt;Conclusion&lt;/h3&gt;
-&lt;p&gt;Just as with action stars getting reused in blockbuster cinema, it appears there is a culture of employing the same actors in the award targeting niche.&lt;/p&gt;
-
-&lt;h3 id=&quot;notes&quot;&gt;Notes:&lt;/h3&gt;
-&lt;ul&gt;
-  &lt;li&gt;This was written in Python and D3.js : see code &lt;a href=&quot;https://github.com/NicholasARossi/academy_awards/tree/master&quot;&gt;here&lt;/a&gt;&lt;/li&gt;
-  &lt;li&gt;The data was taken from &lt;a href=&quot;https://www.themoviedb.org&quot;&gt;the movie db&lt;/a&gt;&lt;/li&gt;
-&lt;/ul&gt;
 </content>
     <author>
       <name>Nicholas Rossi</name>
