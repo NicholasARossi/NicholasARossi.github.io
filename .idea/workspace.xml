@@ -1,7 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="" />
+    <list default="true" id="eea18b18-22ea-425a-8ad7-ebd34049d9b3" name="Default" comment="">
+      <change beforePath="$PROJECT_DIR$/Gemfile.lock" beforeDir="false" afterPath="$PROJECT_DIR$/Gemfile.lock" afterDir="false" />
+    </list>
     <ignored path="NicholasARossi.github.io.iws" />
     <ignored path=".idea/workspace.xml" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -48,8 +50,8 @@
       <file pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/Gemfile.lock">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="244">
-              <caret line="212" column="8" selection-start-line="212" selection-start-column="4" selection-end-line="212" selection-end-column="8" />
+            <state relative-caret-position="639">
+              <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
             </state>
           </provider>
         </entry>
@@ -129,6 +131,7 @@
       <find>#fff</find>
       <find>comsething</find>
       <find>One final check would be to split the data into test and training components and see how they perform</find>
+      <find>noko</find>
     </findStrings>
   </component>
   <component name="Git.Settings">
@@ -137,7 +140,6 @@
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/res/blog_15/easing_javascript.py" />
         <option value="$PROJECT_DIR$/res/blog_8/d3.legend.js" />
         <option value="$PROJECT_DIR$/res/blog_15/easing_javascript.html" />
         <option value="$PROJECT_DIR$/res/blog_15/countries_map.js" />
@@ -188,6 +190,7 @@
         <option value="$PROJECT_DIR$/_posts/2020-09-2-UncertaintyQuantificationandEnsembleLearning.md" />
         <option value="$PROJECT_DIR$/_posts/2020-11-13-TrainingRegressionUncertainty.md" />
         <option value="$PROJECT_DIR$/_posts/2020-11-28-BaysianTimePointChangeUncertainty.md" />
+        <option value="$PROJECT_DIR$/Gemfile.lock" />
       </list>
     </option>
   </component>
@@ -683,8 +686,8 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/Gemfile.lock">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="244">
-          <caret line="212" column="8" selection-start-line="212" selection-start-column="4" selection-end-line="212" selection-end-column="8" />
+        <state relative-caret-position="639">
+          <caret line="75" column="24" selection-start-line="75" selection-start-column="24" selection-end-line="75" selection-end-column="24" />
         </state>
       </provider>
     </entry>
