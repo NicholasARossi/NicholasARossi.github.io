@@ -1,0 +1,259 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>How Term Limits Might Affect How Congress Works &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+    <meta property="og:title" content="How Term Limits Might Affect How Congress Works">
+      
+      <meta name="description" content="Ever wonder if giving congress people term limits would be a good idea? Here, I use logistic regression to look at a few landmark pieces of legislation and determine what role (if any) limiting term limits would play on the outcome of the vote">
+      <meta name="og:description" content="Ever wonder if giving congress people term limits would be a good idea? Here, I use logistic regression to look at a few landmark pieces of legislation and determine what role (if any) limiting term limits would play on the outcome of the vote">
+      
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/congress">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2016-10-20">
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
+  <div class="post single">
+    
+    <h1>How Term Limits Might Affect How Congress Works</h1>
+    <info datetime="2016-10-20">
+      Oct 20, 2016
+    </info>
+    
+    <div class="body"><style>
+  h1,h2,h3,head,title {
+
+    font-color: black;
+    color: black;
+    background-color: #F07F7F;
+  }
+  <!-- header{
+    background-color: #d3d3d3;
+  } -->
+
+</style>
+
+<h3 id="question">Question!:</h3>
+
+<p>Ever wonder if giving congress people term limits would be a good idea? Here we retcon history and imagine how things would have played out differently with only a “junior” congress.</p>
+
+<h3 id="methodology">Methodology:</h3>
+<p>I’m going to look at a number of landmark pieces of legislation and see first how the number of years a congressman affected their vote, and how the vote hypothetically would have played out differently if there were term limits.</p>
+
+<p>For the first bit I use <a href="https://en.wikipedia.org/wiki/Logistic_regression">logistic regression</a> which is a great way to measure correlation between a categorical variable (like alive/dead, vote yea/nay) and a continuous variable (ex age, height, weight). It basically shows how the probability of being in one of the states changes with the continuous variable - in this case voting yea or nay as a function of tenure.</p>
+
+<p>Next, I compare the votes as they happened historically versus if everyone that had been in the house longer than 8 years wasn’t allowed to vote. This is a rough estimate to see how a “junior” congress would behave differently than the mixed bag we’ve got currently.</p>
+
+<p><em>Note</em> tenure was calculated as the number of years the congress person had been serving up to the year of the particular vote, not the total number of years they would end up serving.</p>
+
+<h2 id="first-landmark--the-voting-rights-act-of-1965">First Landmark : The Voting Rights Act of 1965</h2>
+
+<p>Below we’ve got our first set of logistic regression plots split up by party. As you can see, the probability that a democratic congressman decided to be on the wrong side of history and vote “no” for the voting rights act does correlate with how long they had been in the house.</p>
+
+<p>Republicans on the other hand don’t seem to be swayed by the duration of their tenure.</p>
+
+<p><a href="/res/blog_4/0.png">
+<img src="/res/blog_4/0.png" />
+</a>﻿</p>
+
+<p>Imagining how this vote would have played out had we installed term limits, we see that the same decision would have been made, albeit with more conviction.</p>
+
+<iframe src="/res/blog_4/donut1.html" width="100%" height="400" scrolling="no"></iframe>
+
+<h2 id="second-landmark--the-auto-industry-financing-and-restructuring-act-of-2008">Second Landmark : The Auto Industry Financing and Restructuring Act of 2008</h2>
+
+<p>Interestingly, this second bill to “save” the auto-industry is in many ways the opposite of the voting rights act. The Dems don’t correlate their votes with tenure, while the more senior republicans were more likely to vote in favor of the bail-out.</p>
+
+<p><a href="/res/blog_4/1.png">
+<img src="/res/blog_4/1.png" />
+</a>﻿</p>
+
+<p>Consequently, if we had installed term limits this vote may not have gone the same way. Discounting all senior congressmen shows that the results would have played out differently.</p>
+
+<iframe src="/res/blog_4/donut2.html" width="100%" height="400" scrolling="no"></iframe>
+
+<h2 id="third-landmark--the-authorization-for-use-of-military-force-against-iraq-resolution-of-2002">Third Landmark : The Authorization for Use of Military Force Against Iraq Resolution of 2002</h2>
+
+<p>This is possibly the most contentious act of congress in the last 20 years - one that would define the political careers of many. Incidentally, it is also the case I examined that showed the lowest degree of relationship with tenure.</p>
+
+<p><a href="/res/blog_4/2.png">
+<img src="/res/blog_4/2.png" />
+</a>﻿</p>
+
+<p>Additionally, had their been term limits, it’s doubtful much would have changed.</p>
+
+<iframe src="/res/blog_4/donut3.html" width="100%" height="400" scrolling="no"></iframe>
+
+<h3 id="big-take-aways">Big Take Aways:</h3>
+<ol>
+  <li>
+    <p>Term limits do have the power to affect decisions like the auto-bailout and the voting rights act where conservative ideology plays a stronger role.</p>
+  </li>
+  <li>
+    <p>More personal or partisan decisions like the Iraq war vote seem less affected.</p>
+  </li>
+</ol>
+
+<h3 id="notes-for-nerds">Notes for Nerds:</h3>
+<ol>
+  <li>
+    <p>Analysis done with Python using data from <a href="https://www.govtrack.us/">govetrack.us</a>.</p>
+  </li>
+  <li>
+    <p>Visualizations were done with seaborn and D3.js</p>
+  </li>
+  <li>
+    <p>Code and Data available <a href="https://github.com/NicholasARossi/Congressional-Tenure-Analysis">here</a></p>
+  </li>
+</ol>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/cigarettes">&laquo; Global Trends in Cigarette Consumption</a>
+      
+      
+        <a class="next" href="/Cross-Correlation">Forecasting the 2018 Midterms Using Tools from Engineering &raquo;</a>
+      
+    </div>
+
+  
+  </div>
+</div>
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

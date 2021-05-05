@@ -1,0 +1,12 @@
+<object id="my-svg" type="image/svg+xml" data="jupiter.svg"></object>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+
+<script src='Vivus.js'></script>
+<script src='pathformer.js'></script>
+<body bgcolor="slategrey">
+<script>
+new Vivus('my-svg', {}, function (myVivus) {
+myVivus.play(myVivus.getStatus() === 'end' ? -1 : 1);
+})
+</script>
+</body>

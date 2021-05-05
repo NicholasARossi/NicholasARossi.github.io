@@ -1,0 +1,258 @@
+<script src="//cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/gsap/1.20.4/TweenMax.min.js"></script>
+<script src="MorphSVGPlugin.min.js"></script>
+<body>
+<img src="port.png">
+<svg id="demo" xmlns="http://www.w3.org/2000/svg" viewBox="-150 75 1000 1000">
+ <path id="circle" d="M733.79,849.1L728,852.44a376,376,0,0,1-376,0l-5.79-3.34a376,376,0,0,1-188-325.63v-6.68a376,376,0,0,1,188-325.63l5.79-3.34a376,376,0,0,1,376,0l5.79,3.34a376,376,0,0,1,188,325.63v6.68A376,376,0,0,1,733.79,849.1Z" fill="none" stroke="#d3d3d3" stroke-width="40" stroke-dasharray="0,40" stroke-linecap="round" stroke-miterlimit="10"/>
+    <path id="hex" d="M882.06,768.35L587.4,938.47a94.8,94.8,0,0,1-94.8,0L197.94,768.35a94.8,94.8,0,0,1-47.4-82.1V346a94.8,94.8,0,0,1,47.4-82.1L492.6,93.79a94.8,94.8,0,0,1,94.8,0L882.06,263.91a94.8,94.8,0,0,1,47.4,82.1V686.25A94.8,94.8,0,0,1,882.06,768.35Z" />
+  <path id="square" d="M649.6,516.13L902.94,262.79a77.73,77.73,0,0,0,0-109.6h0a77.73,77.73,0,0,0-109.6,0L540,406.53,286.66,153.2a77.73,77.73,0,0,0-109.6,0h0a77.73,77.73,0,0,0,0,109.6L430.4,516.13,177.06,769.47a77.73,77.73,0,0,0,0,109.6h0a77.73,77.73,0,0,0,109.6,0L540,625.73,793.34,879.07a77.73,77.73,0,0,0,109.6,0h0a77.73,77.73,0,0,0,0-109.6Z" />
+  <path id="star" d="M502.37,898.23L132.45,257.5c-16.72-29,4.18-65.18,37.63-65.18H909.93c33.45,0,54.35,36.21,37.63,65.18L577.63,898.23C560.91,927.2,519.09,927.2,502.37,898.23Z" />
+
+</svg>
+
+
+<link href="https://fonts.googleapis.com/css?family=Lato" rel="stylesheet">
+
+<div class="content">
+  <div class="content__container">
+    <p class="content__container__text">
+      I am a  </p>
+
+    <ul class="content__container__list">
+            <li class="content__container__list__item">Data Scientist</li>
+      <li class="content__container__list__item">Systems Biologist</li>
+      <li class="content__container__list__item">Math Nerd</li>
+      <li class="content__container__list__item">Graphic Designer</li>
+
+    </ul>
+
+  </div>
+</div>
+
+<style>
+
+body {
+  width: 100%;
+  height: 100%;
+  position: fixed;
+  background-color: #fff;
+}
+
+.content {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  height: 160px;
+  overflow:hidden;
+
+  font-family: 'Permanent Marker', sans-serif;
+  font-size: 35px;
+  line-height: 40px;
+  color: #000;
+
+  &__container {
+    font-weight: 600;
+    overflow: hidden;
+    height: 40px;
+    padding: 0 40px;
+
+    &:before {
+      content: '[';
+      left: 0;
+    }
+
+    &:after {
+      content: ']';
+      position: absolute;
+      right: 0;
+    }
+
+    &:after, &:before {
+      position: absolute;
+      top: 0;
+
+      color: #939393;
+      font-size: 42px;
+      line-height: 40px;
+
+      -webkit-animation-name: opacity;
+      -webkit-animation-duration: 2s;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: opacity;
+      animation-duration: 2s;
+      animation-iteration-count: infinite;
+    }
+
+    &__text {
+      display: inline;
+      float: left;
+      margin: 0;
+    }
+
+    &__list {
+      margin-top: 0;
+      padding-left: 130px;
+      text-align: left;
+      list-style: none;
+
+      -webkit-animation-name: change;
+      -webkit-animation-duration: 12s;
+      -webkit-animation-iteration-count: infinite;
+      animation-name: change;
+      animation-duration: 12s;
+      animation-iteration-count: infinite;
+
+      &__item {
+        line-height:40px;
+        margin:0;
+      }
+    }
+  }
+}
+
+@-webkit-keyframes opacity {
+  0%, 100% {opacity:0;}
+  50% {opacity:1;}
+}
+
+@-webkit-keyframes change {
+  0%, 12.66%, 100% {transform:translate3d(0,0,0); 	background: linear-gradient(to right, #FC5C7D 0%, #6A82FB 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  16.66%, 29.32% {transform:translate3d(0,-25%,0);	background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  33.32%,45.98% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  49.98%,62.64% {transform:translate3d(0,-75%,0);background: linear-gradient(to right, #C779D0 0%, #4BC0C8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  66.64%,79.3% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  83.3%,95.96% {transform:translate3d(0,-25%,0);background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+}
+#demo {
+  width: auto;
+  height: auto;
+  max-width: 90%;
+  max-height: 90%;
+}
+
+
+#square,
+#hex,
+#star {
+  visibility: hidden;
+}
+@-o-keyframes opacity {
+0%, 100% {opacity:0;}
+50% {opacity:1;}
+}
+
+@-o-keyframes change {
+  0%, 12.66%, 100% {transform:translate3d(0,0,0); 	background: linear-gradient(to right, #FC5C7D 0%, #6A82FB 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  16.66%, 29.32% {transform:translate3d(0,-25%,0);	background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  33.32%,45.98% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  49.98%,62.64% {transform:translate3d(0,-75%,0);background: linear-gradient(to right, #C779D0 0%, #4BC0C8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  66.64%,79.3% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  83.3%,95.96% {transform:translate3d(0,-25%,0);background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+}
+
+@-moz-keyframes opacity {
+0%, 100% {opacity:0;}
+50% {opacity:1;}
+}
+
+@-moz-keyframes change {
+  0%, 12.66%, 100% {transform:translate3d(0,0,0); 	background: linear-gradient(to right, #FC5C7D 0%, #6A82FB 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  16.66%, 29.32% {transform:translate3d(0,-25%,0);	background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  33.32%,45.98% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  49.98%,62.64% {transform:translate3d(0,-75%,0);background: linear-gradient(to right, #C779D0 0%, #4BC0C8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  66.64%,79.3% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  83.3%,95.96% {transform:translate3d(0,-25%,0);background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+}
+
+@keyframes opacity {
+0%, 100% {opacity:0;}
+50% {opacity:1;}}
+
+@keyframes change {
+  0%, 12.66%, 100% {transform:translate3d(0,0,0); 	background: linear-gradient(to right, #FC5C7D 0%, #6A82FB 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  16.66%, 29.32% {transform:translate3d(0,-25%,0);	background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  33.32%,45.98% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  49.98%,62.64% {transform:translate3d(0,-75%,0);background: linear-gradient(to right, #C779D0 0%, #4BC0C8 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  66.64%,79.3% {transform:translate3d(0,-50%,0);background: linear-gradient(to right, #ff9966 0%, #ff5e62 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+  83.3%,95.96% {transform:translate3d(0,-25%,0);background: linear-gradient(to right, #2c7bb6 0%, #40E0D0 100%);
+	-webkit-background-clip: text;
+	-webkit-text-fill-color: transparent;}
+}
+
+// // 6 is the number of animation.
+// // Here, there are 4 lines :
+
+// // 1 to 2
+// // 2 to 3
+// // 3 to 4
+// // 4 to 3
+// // 3 to 2
+// // 2 to 1
+
+// // 6x + 6y = 100 (100% duration)
+
+// // HERE :
+// y = 4 -> Animation between two lines
+// x = 12.66 -> Time spent on a line
+
+// You can define a value and calculate the other if you want change speed or the number of lines
+
+</style>
+
+<script>
+    TweenLite.defaultEase = Power3.easeInOut;
+var dur = 2;
+var tl = new TimelineMax({ repeat: -1 });
+tl.to("#circle", dur, { morphSVG: "#star" });
+tl.to("#circle", dur, { morphSVG: "#square" });
+tl.to("#circle", dur, { morphSVG: "#hex" });
+tl.to("#circle", dur, { morphSVG: "#circle" });
+</script>

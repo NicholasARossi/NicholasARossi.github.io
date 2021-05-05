@@ -7,10 +7,10 @@ layout: null
   <link href="http://nicholasarossi.github,io/atom.xml" rel="self"/>
   <link href="http://nicholasarossi.github.io/"/>
   <updated>{{ site.time | date_to_xmlschema }}</updated>
-  <id>http://rsms.me/</id>
+  <id>http://www.rossidata.com</id>
   <author>
     <name>Nicholas Rossi</name>
-    <email>nrossi1@uvm.edu</email>
+    <email>nrossi@bu.edu</email>
   </author>
   {% for post in site.posts limit:10 %}
   <entry>

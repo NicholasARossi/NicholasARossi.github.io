@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
     <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
     <link rel="shortcut icon" href="/small.ico">
-    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@divergentdata">
     
-    <meta property="fb:admins" content="728642302">
-    <meta property="fb:app_id" content="38027689216">
     
     <meta property="og:title" content="Flying Robots from a true EE amateur">
       
@@ -33,7 +33,6 @@
     
     
     <meta property="og:url" content="http://nicholasarossi.github.io/projects/drones/">
-    <meta property="og:site_name" content="rsms.me">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
     
@@ -41,15 +40,40 @@
   </head>
   <body>
     <header>
-      <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
-      <ul class="navigation">
-        <li><a href="/projects/"class="active" title="Projects I am or was involved in">Projects</a></li>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/"class="m-page scene_element scene_element--fadeinup" title="Projects I am or was involved in">Portfolio</a></li>
         <li><a href="/archive/" title="Archived articles">Archive</a></li>
         <li><a href="/about/">About me</a></li>
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <div class="content">
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
   <div class="post single">
     
     <h1>Flying Robots from a true EE amateur</h1>
@@ -66,14 +90,28 @@ Simple cc3d controled 450 quad with gopro session.
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-    <!-- <info class="after">
-<div class="fb-like" data-href="//rsms.me/projects/drones/" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
-    </info> -->
+    <div class="PageNavigation">
+      
+      
+    </div>
 
   
   </div>
 </div>
 
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
 
     <!--/div-->
 
@@ -116,5 +154,20 @@ Simple cc3d controled 450 quad with gopro session.
   })();
 </script>
     <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
+
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

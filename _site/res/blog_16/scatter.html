@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<meta charset='utf-8'>
+<html>
+  <head>
+      <!--<script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>-->
+
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js" charset="utf-8"></script>
+  </head>
+  <style>
+body {
+  font-family: Playfair Display;
+    font-size: 20px;
+height: 100%;
+width: 100%;
+}
+
+.axis path,
+.axis line {
+    fill: none;
+    stroke: #000;
+    shape-rendering: crispEdges;
+}
+
+.dot {
+    stroke: none;
+}
+.tooltip {
+    position: absolute;
+    font-family: Playfair Display;
+    font-size: 20px;
+    width:  auto;
+    height: auto;
+    pointer-events: none;
+    background-color: white;
+
+
+}
+ </style>
+  <body>
+<div id="chart"></div>
+    <script src='scatterscript.js'></script>
+
+  </body>
+</html>

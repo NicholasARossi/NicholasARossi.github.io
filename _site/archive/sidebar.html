@@ -6,102 +6,31 @@
     <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
     
     <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
     <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
     <link rel="shortcut icon" href="/small.ico">
-    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@divergentdata">
     
-    <meta property="fb:admins" content="728642302">
-    <meta property="fb:app_id" content="38027689216">
     
     <meta property="og:title" content="Archive (sidebar)">
       
-      <meta name="description" content="
-
-
-
-  Photography
-  Projects
-  Archive
-  About me
-  
-
-Recent posts
-
-
-  
-    
-      Musical Systems Analysis
-      Sep 18, 2016
-    
-  
-
-  
-    
-      Pizza Post
-      Aug 07, 2016
-    
-  
-
-  
-    
-      Welcome!
-      Aug 01, 2016
-    
-  
-
-
-">
-      <meta name="og:description" content="
-
-
-
-  Photography
-  Projects
-  Archive
-  About me
-  
-
-Recent posts
-
-
-  
-    
-      Musical Systems Analysis
-      Sep 18, 2016
-    
-  
-
-  
-    
-      Pizza Post
-      Aug 07, 2016
-    
-  
-
-  
-    
-      Welcome!
-      Aug 01, 2016
-    
-  
-
-
-">
+      <meta name="description" content="Photography Projects Archive About me Recent posts Uncertainty Quantification Part 3: Time Series Change point detection with baysian uncertainty Dec 05, 2020 Uncertainty Quantification Part...">
+      <meta name="og:description" content="Photography Projects Archive About me Recent posts Uncertainty Quantification Part 3: Time Series Change point detection with baysian uncertainty Dec 05, 2020 Uncertainty Quantification Part...">
       
     
     
     
     
     <meta property="og:url" content="http://nicholasarossi.github.io/archive/sidebar">
-    <meta property="og:site_name" content="rsms.me">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
     
@@ -109,10 +38,13 @@ Recent posts
   </head>
   <body>
     <header>
-      <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
-      <ul class="navigation">
-        <li><a href="/projects/" title="Projects I am or was involved in">Projects</a></li>
-        <li><a href="/archive/"class="active" title="Archived articles">Archive</a></li>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/"class="m-page scene_element scene_element--fadeinup" title="Archived articles">Archive</a></li>
         <li><a href="/about/">About me</a></li>
       </ul>
     </header>
@@ -171,6 +103,125 @@ Recent posts
 </ul>
 <p class="h"><b>Recent posts</b></p>
 <ul>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/BaysianTimePointChangeUncertainty">
+      <span>Uncertainty Quantification Part 3: Time Series Change point detection with baysian uncertainty</span>
+      <info>Dec 05, 2020</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/TrainingRegressionUncertainty">
+      <span>Uncertainty Quantification Part 2: Training Regression Models on Uncertainty</span>
+      <info>Nov 13, 2020</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/UncertaintyQuantificationandEnsembleLearning">
+      <span>Uncertainty Quantification Part 1: Ensemble Methods</span>
+      <info>Sep 02, 2020</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/FinancialCrisis">
+      <span>How the Financial Crisis Hurt the Poor and Helped the Rich</span>
+      <info>Aug 19, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/RomanEmperors">
+      <span>Roman Emperor Scrollytelling</span>
+      <info>Jun 20, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/PythonAnimations">
+      <span>Easing Animations with Python</span>
+      <info>Jun 10, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/flightdelays">
+      <span>Flight Delays</span>
+      <info>Jun 01, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/Lego">
+      <span>Lego Datascience</span>
+      <info>May 01, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/NatGeo">
+      <span>The Colors of National Geographic</span>
+      <info>Apr 20, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/LinLog">
+      <span>How to Lie with Histograms</span>
+      <info>Mar 15, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/Academy">
+      <span>Shared Actors between the 2018 Best Picture Nominees</span>
+      <info>Mar 01, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/segregation">
+      <span>Schools are still segregated</span>
+      <info>Jan 01, 2018</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/EBRC">
+      <span>SEED 2017</span>
+      <info>Jun 20, 2017</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/Wheat">
+      <span>Quantifying Genetic Entropy in Humans and Wheat</span>
+      <info>May 02, 2017</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/Cross-Correlation">
+      <span>Forecasting the 2018 Midterms Using Tools from Engineering</span>
+      <info>Apr 04, 2017</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/congress">
+      <span>How Term Limits Might Affect How Congress Works</span>
+      <info>Oct 20, 2016</info>
+    </a>
+  </li>
+
+  <li class="posts">
+    <a onclick="return openInParent(this)" target="_top" href="/cigarettes">
+      <span>Global Trends in Cigarette Consumption</span>
+      <info>Oct 15, 2016</info>
+    </a>
+  </li>
 
   <li class="posts">
     <a onclick="return openInParent(this)" target="_top" href="/Musical-Systems">
@@ -236,5 +287,20 @@ Recent posts
   })();
 </script>
     <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
+
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

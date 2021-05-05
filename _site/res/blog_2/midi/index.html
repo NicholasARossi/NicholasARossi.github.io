@@ -1,0 +1,236 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+      <meta name="description" content="Contemporary Confusion in the fields of Bioengineering and Data Science">
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/res/blog_2/midi/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <div class="content">
+
+  <p>CODE EXAMPLES (from the repo)</p>
+
+<ul>
+  <li>./demo-Basic.html - the most basic implementation.</li>
+  <li>./demo-MIDIPlayer.html - how to parse MIDI files, and interact with the data stream.</li>
+  <li>./demo-MultipleInstruments.html - synth drum and piano playing together</li>
+  <li>./demo-WhitneyMusicBox.html - a audio/visual experiment by Jim Bumgardner</li>
+</ul>
+
+<hr />
+
+<p>DEMOS</p>
+
+<ul>
+  <li><a href="http://mudcu.be/piano/">Color Piano</a> by Michael Deal</li>
+  <li><a href="http://labs.uxmonk.com/simon-says/">Simon Says</a> by Daniel Christopher</li>
+  <li><a href="http://labs.uxmonk.com/brite-lite/">Brite Lite</a> by Daniel Christopher</li>
+  <li><a href="http://qiao.github.com/euphony/">Euphony 3D Piano</a> by Xueqiao Xu</li>
+  <li><a href="http://my.vexflow.com/articles/53">VexFlow</a> by Mohit Muthanna</li>
+  <li><a href="http://spiral.qet.me/">Spiral Keyboard</a> by Patrick Snels</li>
+  <li><a href="http://online-compute.rhcloud.com/ragamroll/">Ragamroll</a> by Mani Balasubramanian</li>
+</ul>
+
+<hr />
+
+<ul>
+  <li><a href="./js/MIDI.loadPlugin.js">MIDI.loadPlugin.js</a>: Decides which framework is best to use, and sends request.</li>
+</ul>
+
+<pre>
+// interface to download soundfont, then execute callback;
+MIDI.loadPlugin(callback);
+// simple example to get started;
+MIDI.loadPlugin({
+    instrument: "acoustic_grand_piano", // or the instrument code 1 (aka the default)
+    instruments: [ "acoustic_grand_piano", "acoustic_guitar_nylon" ], // or multiple instruments
+    callback: function() { }
+});
+</pre>
+
+<ul>
+  <li><a href="./soundfont/soundfont-ogg.js">MIDI.Soundfont.js</a>: Customizable base64 Soundfont.</li>
+  <li><a href="./js/MIDI.Plugin.js">MIDI.Plugin.js</a>: Ties together the following frameworks;</li>
+</ul>
+
+<pre>
+MIDI.noteOn(channel, note, velocity, delay);
+MIDI.noteOff(channel, note, delay);
+MIDI.chordOn(channel, chord, velocity, delay);
+MIDI.chordOff(channel, chord, delay);
+MIDI.keyToNote = object; // A0 =&gt; 21
+MIDI.noteToKey = object; // 21 =&gt; A0
+</pre>
+
+<ul>
+  <li><a href="./js/MIDI.Player.js">MIDI.Player.js</a>: Streams the MIDI to the browser.</li>
+</ul>
+
+<pre>
+MIDI.Player.currentTime = integer; // time we are at now within the song.
+MIDI.Player.endTime = integer; // time when song ends.
+MIDI.Player.playing = boolean; // are we playing? yes or no.
+MIDI.Player.loadFile(file, callback); // load .MIDI from base64 or binary XML request.
+MIDI.Player.start(); // start the MIDI track (you can put this in the loadFile callback)
+MIDI.Player.resume(); // resume the MIDI track from pause.
+MIDI.Player.pause(); // pause the MIDI track.
+MIDI.Player.stop(); // stops all audio being played, and resets currentTime to 0.
+
+// <b>Callback whenever a note is played;</b>
+MIDI.Player.removeListener(); // removes current listener.
+MIDI.Player.addListener(function(data) { // set it to your own function!
+    var now = data.now; // where we are now
+    var end = data.end; // time when song ends
+    var channel = data.channel; // channel note is playing on
+    var message = data.message; // 128 is noteOff, 144 is noteOn
+    var note = data.note; // the note
+    var velocity = data.velocity; // the velocity of the note
+    // then do whatever you want with the information!
+});
+
+// <b>Smooth animation, interpolates between onMidiEvent calls;</b>
+MIDI.Player.clearAnimation(); // clears current animation.
+MIDI.Player.setAnimation(function(data) {
+    var now = data.now; // where we are now
+    var end = data.end; // time when song ends
+    var events = data.events; // all the notes currently being processed
+    // then do what you want with the information!
+});</pre>
+
+<ul>
+  <li><a href="./js/Color.js">Color.js</a>: Color conversions, music isn’t complete without!</li>
+</ul>
+<pre>Color.Space(0xff0000, "HEX&gt;RGB&gt;HSL");</pre>
+<ul>
+  <li><a href="./js/DOMLoader.script.js">DOMLoader.script.js</a>: Loads scripts in synchronously, or asynchronously.</li>
+</ul>
+<pre>DOMLoader.script.add(src, callback);</pre>
+<ul>
+  <li><a href="./js/DOMLoader.XMLHttp.js">DOMLoader.XMLHttp.js</a>: Cross-browser XMLHttpd request.</li>
+</ul>
+<pre>DOMLoader.sendRequest(src, callback);</pre>
+<ul>
+  <li><a href="./js/MusicTheory.Synesthesia.js">MusicTheory.Synesthesia.js</a>: Note-to-color mappings (from Isaac Newton onwards).</li>
+</ul>
+<h3>Many thanks to the authors of these libraries;</h3>
+<ul>
+  <li><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/midi/specification.html">Web MIDI API</a>: W3C proposal by Jussi Kalliokoski &amp; Chris Wilson</li>
+  <li><a href="https://dvcs.w3.org/hg/audio/raw-file/tip/webaudio/specification.html">Web Audio API</a>: W3C proposal by Chris Rogers</li>
+  <li><a href="http://dev.w3.org/html5/spec/Overview.html">&lt;audio&gt;</a>: HTML5 specs</li>
+  <li>Flash package: <a href="http://www.schillmania.com/projects/soundmanager2/">SoundManager2</a> by <a href="http://schillmania.com">Scott Schiller</a></li>
+  <li><a href="https://github.com/gasman/jasmid">jasmid</a>: Reads MIDI file byte-code, and translats into a Javascript array.</li>
+  <li><a href="http://blog.danguer.com/2011/10/24/base64-binary-decoding-in-javascript/">base642binary.js</a>: Cleans up XML base64-requests for Web Audio API.</li>
+</ul>
+
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

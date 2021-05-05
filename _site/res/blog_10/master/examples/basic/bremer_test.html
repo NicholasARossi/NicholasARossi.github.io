@@ -1,0 +1,76 @@
+<canvas id="c" width="1920" height="1080"></canvas>
+<script src="//cdnjs.cloudflare.com/ajax/libs/d3/3.5.6/d3.min.js"></script>
+<script type="text/javascript" src="../../build/CCapture.all.min.js"></script>
+
+
+<!-- Include Whammy if you want to export WebM -->
+<style>
+body{
+    background-color: #696969
+  }
+</style>
+
+<script>
+// linear gradient from N. Bremers talk
+
+var colorScale = d3.scale.linear()
+    	.range(["#2c7bb6", "#00a6ca","#00ccbc","#90eb9d","#ffff8c","#f9d057","#f29e2e","#e76818","#d7191c"])
+    	.domain(d3.range(100));
+
+
+var canvas = document.querySelector('#c').getContext('2d'),side = 0,
+size = 100,
+x = 100,
+y = 100;
+idx=1
+scaler=50
+maxidx=40
+shifter=0
+trip =0
+var capturer = new CCapture( {format: 'webm'} );
+
+function myFunction (t) {
+if (Math.round(t)<10000 && trip ==0){
+  console.log('start')
+  trip=trip+1
+}
+if (Math.round(t)>10000 && trip ==1){
+  console.log('stop')
+  console.log(canvas)
+  // capturer.stop();
+  // default save, will download automatically a file called {name}.extension (webm/gif/tar)
+  capturer.save(function( blob ) {/* results.webm */ });
+
+  trip=trip+1
+}
+var remainder = Math.round(t)%100;
+
+if (Math.round(t)>10000){
+  canvas.clearRect(0, 0, 0, 1500)
+
+}
+else {
+canvas.clearRect(0, 0, 3000, 1500)
+
+}
+idx=1
+for (idx; idx < maxidx; idx++){
+var xpoints=[0,1,1,.9,.9,.6,.6,.4,.4,.1,.1,0,0]
+var ypoints=[0,0,.4,.4,.5,.5,.4,.4,.5,.5,.4,.4,0]
+side=0
+var blox = new Path2D();
+
+for (side; side < 12; side++) {
+  blox.lineTo(xpoints[side]*scaler+scaler*idx, ypoints[side]*-scaler+600+300*Math.sin(t/800+idx*Math.PI/8));
+}
+canvas.fillStyle = d3.interpolate("#ffffff","#FF8888")(idx/maxidx);
+canvas.fill(blox);
+capturer.capture(canvas);
+
+}
+
+requestAnimationFrame(myFunction);
+}
+requestAnimationFrame(myFunction);
+
+</script>

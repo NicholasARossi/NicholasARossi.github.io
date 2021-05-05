@@ -8,20 +8,20 @@
     <meta name="viewport" content="width=device-width, initial-scale=1">
     
     <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
     <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
     <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
     <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
     <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
     <link rel="shortcut icon" href="/small.ico">
-    <link rel="apple-touch-icon-precomposed" href="/res/apple-touch-icon-57x57-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="/res/apple-touch-icon-72x72-precomposed.png">
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="/res/apple-touch-icon-114x114-precomposed.png">
     <meta name="twitter:card" content="summary">
     <meta name="twitter:site" content="@divergentdata">
     
-    <meta property="fb:admins" content="728642302">
-    <meta property="fb:app_id" content="38027689216">
     
     <meta property="og:title" content="Pizza Post">
       
@@ -33,7 +33,6 @@
     
     
     <meta property="og:url" content="http://nicholasarossi.github.io/pizza">
-    <meta property="og:site_name" content="rsms.me">
     <meta property="og:type" content="article">
     <meta property="og:locale" content="en_GB" />
     
@@ -43,15 +42,40 @@
   </head>
   <body>
     <header>
-      <h1 class="logo" onclick="document.location.href='/';"><a href="../home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
-      <ul class="navigation">
-        <li><a href="/projects/" title="Projects I am or was involved in">Projects</a></li>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
         <li><a href="/archive/" title="Archived articles">Archive</a></li>
         <li><a href="/about/">About me</a></li>
       </ul>
     </header>
     <!--div class="wrapper content"-->
-      <div class="content">
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
   <div class="post single">
     
     <h1>Pizza Post</h1>
@@ -60,17 +84,16 @@
     </info>
     
     <div class="body"><p>So we all know the bigger the pizza, <a href="http://www.npr.org/sections/money/2014/02/26/282132576/74-476-reasons-you-should-always-get-the-bigger-pizza">the better the deal</a>. The price per square inch decreases dramatically as you increase pizza size. But there's so much more to do with pizza math! For the following graphs I assume uniform thickness among pizzas (obvious conciet) but beyond that we just need equations for area an circumference of a circle. Presto pesto!</p>
-<div class="language-go highlighter-rouge"><pre class="highlight"><code><span class="n">def</span><span class="x"> </span><span class="n">pizza_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="x"> </span><span class="n">diameter</span><span class="p">)</span><span class="o">:</span><span class="x">
-    </span><span class="err">#</span><span class="n">calculates</span><span class="x"> </span><span class="n">price</span><span class="x"> </span><span class="n">per</span><span class="x"> </span><span class="n">square</span><span class="x"> </span><span class="n">inch</span><span class="x">
-    </span><span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">**</span><span class="m">2</span><span class="p">))</span><span class="x">
-</span><span class="n">def</span><span class="x"> </span><span class="n">crust_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span><span class="x"> </span><span class="n">diameter</span><span class="p">)</span><span class="o">:</span><span class="x">
-    </span><span class="err">#</span><span class="n">calculates</span><span class="x"> </span><span class="n">price</span><span class="x"> </span><span class="n">per</span><span class="x"> </span><span class="n">inch</span><span class="x"> </span><span class="n">of</span><span class="x"> </span><span class="n">crust</span><span class="x">
-    </span><span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="p">)))</span><span class="x">
-</span></code></pre>
-</div>
+<div class="language-go highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="n">def</span> <span class="n">pizza_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span><span class="o">:</span>
+    <span class="err">#</span><span class="n">calculates</span> <span class="n">price</span> <span class="n">per</span> <span class="n">square</span> <span class="n">inch</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="o">/</span><span class="m">2</span><span class="p">)</span><span class="o">**</span><span class="m">2</span><span class="p">))</span>
+<span class="n">def</span> <span class="n">crust_value</span><span class="p">(</span><span class="n">price</span><span class="p">,</span> <span class="n">diameter</span><span class="p">)</span><span class="o">:</span>
+    <span class="err">#</span><span class="n">calculates</span> <span class="n">price</span> <span class="n">per</span> <span class="n">inch</span> <span class="n">of</span> <span class="n">crust</span>
+    <span class="k">return</span><span class="p">(</span><span class="n">price</span><span class="o">/</span><span class="p">(</span><span class="n">np</span><span class="o">.</span><span class="n">pi</span><span class="o">*</span><span class="p">(</span><span class="n">diameter</span><span class="p">)))</span>
+</code></pre></div></div>
 
 <h2 id="pizza-geometry">Pizza Geometry</h2>
-<p>What does pizza size mean visually? Mouse over the data below for sample pizzas from the <font color="blue">Pizza Hut</font>, <font color="green">Dominos</font> and <font color="red">Papa Johns</font> in Minnesota. A lower price per square inch means a better deal on the pizza.</p>
+<p>What does pizza size mean visually? Mouse over the data below for sample pizzas from the <font color="red">Pizza Hut</font>, <font color="blue">Dominos</font> and <font color="green">Papa Johns</font> in Minnesota. A lower price per square inch means a better deal on the pizza.</p>
 <iframe src="/res/blog_1/minnesota.html" width="100%" height="400" scrolling="no"></iframe>
 
 <p>We see how value scales with increased pizza size, but what of other qualities? Well, we should talk about crust. Crust is the pulp of pizza - a highly divisive feature and one that should always be considered when choosing pizza size. The data below shows some randomly sampled pizza from across the states and how they scale pizza value () </p>
@@ -92,29 +115,42 @@
 <h2 id="notes">Notes:</h2>
 <ol>
   <li>This was all done in Python</li>
-  <li>I used <a href="http://www.seleniumhq.org/">selenium</a> and <a href="https://www.crummy.com/software/BeautifulSoup/">beautiful soup</a> for webscrapping the data</li>
+  <li>I used <a href="http://www.seleniumhq.org/">selenium</a> and <a href="https://www.crummy.com/software/BeautifulSoup/">beautiful soup</a> for webscrapping the data that I got from <a href="http://www.fastfoodmenuprices.com/">here</a></li>
   <li>First visualization was done with the <a href="http://mpld3.github.io/">mpld3</a>; the others were done with <a href="https://stanford.edu/~mwaskom/software/seaborn/">seaborn</a></li>
   <li>Code can be found <a href="https://github.com/NicholasARossi/pizza_math">here</a></li>
 </ol>
 </div>
     <!-- <div class="breaker"></div> -->
     <div class="breaker"></div>
-    <!-- <info class="after">
-<div class="fb-like" data-href="//rsms.me/pizza" data-send="false" data-width="550" data-show-faces="false" data-font="arial"></div>
-    </info> -->
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/welcome">&laquo; Welcome!</a>
+      
+      
+        <a class="next" href="/Musical-Systems">Musical Systems Analysis &raquo;</a>
+      
+    </div>
 
   
   </div>
 </div>
 
 
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
     <!--/div-->
 
-    
-    <!--div class="content sub">
-      <h2 id="comments">Comments</h2>
-      <div class="fb-comments" data-href="//rsms.me/pizza" data-num-posts="" data-width="550" data-font="arial"></div>
-    </div-->
     
 
     
@@ -154,5 +190,20 @@
   })();
 </script>
     <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
   </body>
+
 </html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

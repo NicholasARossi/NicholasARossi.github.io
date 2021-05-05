@@ -2,15 +2,42 @@
 layout: page
 title: About
 ---
+  <link href='https://fonts.googleapis.com/css?family=Permanent+Marker' rel='stylesheet' type='text/css'>
 
-<img src="portrait.jpg" width="25%" align="right">
-
-Hello. My name is Nicholas Rossi. I'm a PhD candidate in bioengineering studying in the <a href="http://www.cems.uvm.edu/~mjdunlop/index.html">Dunlop Lab</a>. I'm currently on loan as a [chateaubriand fellow](https://www.france-science.org/-The-Chateaubriand-Fellowship-.html) to the department of theoretical physics at École Normale Supérieure in Paris working with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/). I try to achieve end to end control in science by running experiments, building models and forecasting statistical phenomena.
-
-
-You can find me at the following locations:
-- [Twitter](https://twitter.com/DivergentData)
-- [GitHub](https://github.com/nicholasarossi)
+<iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
 
-Email : nrossi1@uvm.edu
+# My name is Nick!
+# I am a PhD Bioinformatician building systems with machine learning
+
+I am a results-focused data scientist and bioinformatician. Right now I'm building the algorithmic core of several key techologies at [Synthego](http://www.synthego.com/). Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/) and achieved my PhD with the [Dunlop lab](http://www.dunloplab.com/) at Boston University.
+
+# I'm a datascience story teller
+
+![img](headline_stories.png)
+
+
+# And a published Academic:
+1. [**Forecasting when cells die during antibiotic exposure using stochastic gene expression**](https://www.nature.com/articles/s42003-019-0509-0) Rossi NA, Meouche IEM & Dunlop, MJ (2019) Communications Biology, 2(1), 1-7.
+
+2. [**Active degradation of a regulator controls coordination of downstream genes**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006634)
+Rossi NA, Mora T, Walczak AM & Dunlop, MJ (2018) PLoS Computational Biology, 14(12), e1006634.
+
+3. [**Making Waves with Synthetic Oscillators**](https://www.sciencedirect.com/science/article/pii/S2405471218301418) Rossi NA, & Dunlop MJ (2018). Cell Systems, 6(4), 406-407.
+
+4. [**Customized Regulation of Diverse Stress Response Genes by the Multiple Antibiotic Resistance Activator MarA**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005310)
+Rossi NA, Dunlop MJ (2017) PLoS Computational Biology 13(1): e1005310. doi: 10.1371/journal.pcbi.1005310
+
+
+# Contact
+<style>
+iframe{
+    overflow:hidden;
+}
+</style>
+<iframe src="brand-logo/buttons.html" width="100%"  height="85px" frameBorder="0" ></iframe>
+
+Email : nicholas.rossi2 (at) gmail.com
+
+
+[resume](resume.pdf)

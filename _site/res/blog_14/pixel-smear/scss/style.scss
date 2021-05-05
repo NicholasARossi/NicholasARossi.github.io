@@ -1,0 +1,29 @@
+html, body {
+  height: 100%;
+  background: black;
+}
+
+canvas {
+  display: block;
+  width: auto;
+  height: auto;
+  min-width: 100%;
+  min-height: 100%;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%) scale(1.025);
+  image-rendering: pixelated;
+}
+
+img {
+  height: auto;
+  position: absolute;
+  z-index: 9;
+  top: 10px;
+  left: 50%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+  border-radius: 4px;
+  box-shadow: 0px 0px 24px rgba(0,0,0,0.3);
+}

@@ -1,0 +1,313 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>CCapture.js - A library to capture canvas-based animations &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+    <meta property="og:title" content="CCapture.js - A library to capture canvas-based animations">
+      
+      <meta name="description" content="CCapture.js - A library to capture canvas-based animations CCapture.js is a library to help capturing animations created with HTML5 canvas at a fixed framerate. What...">
+      <meta name="og:description" content="CCapture.js - A library to capture canvas-based animations CCapture.js is a library to help capturing animations created with HTML5 canvas at a fixed framerate. What...">
+      
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/res/blog_10/master/">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <div class="content">
+
+  <h1 id="ccapturejs---a-library-to-capture-canvas-based-animations">CCapture.js - A library to capture canvas-based animations</h1>
+<p>CCapture.js is a library to help capturing animations created with HTML5 <code class="language-plaintext highlighter-rouge">canvas</code> at a fixed framerate.</p>
+
+<ul>
+  <li><a href="#what-is-ccapturejs-and-why-would-i-need-it">What is CCapture.js and why would I need it?</a></li>
+  <li><a href="#using-the-code">Using the code</a></li>
+  <li><a href="#limitations">Limitations</a></li>
+  <li><a href="#gallery">Gallery</a></li>
+  <li><a href="#credits">Credits</a></li>
+  <li><a href="#license">License</a></li>
+</ul>
+
+<p>An example is probably worth a lot of words: <a href="http://www.clicktorelease.com/code/conway3d_ccapture/">CCapture.js with Game of Life 3D</a>.</p>
+
+<p><img src="https://raw.githubusercontent.com/spite/ccapture.js/master/assets/sample.gif" alt="Sample" /></p>
+
+<h4 id="what-is-ccapturejs-and-why-would-i-need-it">What is CCapture.js and why would I need it?</h4>
+
+<p>Let’s say that you finally have your amazing <strong>canvas</strong>-based animation running in your browser, be it 2D or 3D with the power of <strong>WebGL</strong>. You’ve been working hard to keep it fast and smooth. If you’re using <code class="language-plaintext highlighter-rouge">requestAnimationFrame</code> you’re aiming for a framerate of 60fps or, in other words, each frame is taking 16ms or less to render.</p>
+
+<p>Now you want to record a video of it. Not a big deal, you can fire up a screen capture software that churns out a video file and be done with it. But what if you wanted to create an HD movie of your animation, and it simply cannot be rendered at higher resolutions because frames start dropping? What if you wanted to put all the quality settings up for the video? What if you wanted to push that particle count to 10 millions?</p>
+
+<p>What if, indeed. What would happen is that you’d get a choppy video at best. At higher resolutions, fillrate is a bottleneck for most <strong>canvas</strong>-based animations. High quality settings or high number of elements may be only feasible on more powerful hardware.</p>
+
+<p>With CCapture.js you can record smooth videos at a fixed framerate for all these situations, because it doesn’t run in realtime: it makes the animations run at a given, fixed framerate which can be specified. You can record animations at smooth and consistent 30 or 60fps even if each frame takes seconds to render. You can even take a 240fps capture and create motion blur with post-production software.</p>
+
+<p>The only requirement is that you step your values per frame according to ellapsed time. In other words, don’t increment your variables with a fixed value each frame, but use an ellapsed time delta to adjust those increments. CCapture.js works by hooking the common methods for obtaining that ellapsed time: <code class="language-plaintext highlighter-rouge">Date.now()</code>, <code class="language-plaintext highlighter-rouge">setTimeout</code>, <code class="language-plaintext highlighter-rouge">requestAnimationFrame</code>, etc. and making them behave like a constant time step is happening, fixed by the specified framerate.</p>
+
+<p>Methods supported so far:</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">Date.now</code>, <code class="language-plaintext highlighter-rouge">Date.prototype.getTime</code></li>
+  <li><code class="language-plaintext highlighter-rouge">setTimeout</code>, <code class="language-plaintext highlighter-rouge">clearTimeout</code>, <code class="language-plaintext highlighter-rouge">setInterval</code> (<code class="language-plaintext highlighter-rouge">clearInterval</code> pending)</li>
+  <li><code class="language-plaintext highlighter-rouge">requestAnimationFrame</code></li>
+  <li><code class="language-plaintext highlighter-rouge">performance.now</code></li>
+  <li><code class="language-plaintext highlighter-rouge">HTMLVideoElement.prototype.currentTime</code>, <code class="language-plaintext highlighter-rouge">HTMLAudioElement.prototype.currentTime</code></li>
+</ul>
+
+<p>CCapture.js is more or less <a href="http://www.farb-rausch.de/~fg/kkapture/">ryg’s kkapture</a> but for JavaScript and <code class="language-plaintext highlighter-rouge">canvas</code>.</p>
+
+<p>The library supports multiple export formats using modular encoders (`CCFrameEncoder):</p>
+
+<ul>
+  <li><code class="language-plaintext highlighter-rouge">CCWebMEncoder</code> uses <a href="http://antimatter15.com/wp/2012/08/whammy-a-real-time-javascript-webm-encoder/">Whammy.js</a> to create a WebM movie</li>
+  <li><code class="language-plaintext highlighter-rouge">CCPNGEncoder</code> and <code class="language-plaintext highlighter-rouge">CCJPEGEncoder</code> export PNG and JPEG files in a TAR file, respectively</li>
+  <li><code class="language-plaintext highlighter-rouge">CCGIFEncoder</code> uses <a href="http://jnordberg.github.io/gif.js/">gifjs</a> to create animated GIFs</li>
+  <li><code class="language-plaintext highlighter-rouge">CCFFMpegServerEncoder</code> uses <a href="https://github.com/greggman/ffmpegserver.js">ffmpegserver.js</a> to generate video on the server</li>
+</ul>
+
+<p>Forks, pull requests and code critiques are welcome!</p>
+
+<h4 id="using-the-code">Using the code</h4>
+
+<p>Include CCapture[.min].js and <a href="http://antimatter15.com/wp/2012/08/whammy-a-real-time-javascript-webm-encoder/">Whammy.js</a> or <a href="http://jnordberg.github.io/gif.js/">gifjs</a>.</p>
+
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"CCapture.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Include Whammy if you want to export WebM --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"Whammy.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Include gifjs if you want to export GIF --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"gif.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Include tar.js if you want to export PNG or JPEG --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"tar.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+<span class="c">&lt;!-- Include download.js for easier file download --&gt;</span>
+<span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"download.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Or include the whole pack</p>
+<div class="language-html highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nt">&lt;script </span><span class="na">src=</span><span class="s">"CCapture.all.min.js"</span><span class="nt">&gt;&lt;/script&gt;</span>
+</code></pre></div></div>
+<p>Or use npm or bower to install the <a href="https://www.npmjs.com/package/ccapture.js">package</a>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>npm <span class="nb">install </span>ccapture.js
+</code></pre></div></div>
+<p>Or use bower to install the <a href="https://www.npmjs.com/package/ccapture.js">package</a>:</p>
+<div class="language-bash highlighter-rouge"><div class="highlight"><pre class="highlight"><code>bower <span class="nb">install </span>ccapture.js
+</code></pre></div></div>
+
+<p>To create a CCapture object, write:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="c1">// Create a capturer that exports a WebM video</span>
+<span class="kd">var</span> <span class="nx">capturer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCapture</span><span class="p">(</span> <span class="p">{</span> <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">webm</span><span class="dl">'</span> <span class="p">}</span> <span class="p">);</span>
+
+<span class="c1">// Create a capturer that exports an animated GIF</span>
+<span class="c1">// Notices you have to specify the path to the gif.worker.js </span>
+<span class="kd">var</span> <span class="nx">capturer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCapture</span><span class="p">(</span> <span class="p">{</span> <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">gif</span><span class="dl">'</span><span class="p">,</span> <span class="na">workersPath</span><span class="p">:</span> <span class="dl">'</span><span class="s1">js/</span><span class="dl">'</span> <span class="p">}</span> <span class="p">);</span>
+
+<span class="c1">// Create a capturer that exports PNG images in a TAR file</span>
+<span class="kd">var</span> <span class="nx">capturer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCapture</span><span class="p">(</span> <span class="p">{</span> <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">png</span><span class="dl">'</span> <span class="p">}</span> <span class="p">);</span>
+
+<span class="c1">// Create a capturer that exports JPEG images in a TAR file</span>
+<span class="kd">var</span> <span class="nx">capturer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCapture</span><span class="p">(</span> <span class="p">{</span> <span class="na">format</span><span class="p">:</span> <span class="dl">'</span><span class="s1">jpg</span><span class="dl">'</span> <span class="p">}</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>This creates a CCapture object to run at 60fps, non-verbose. You can tweak the object by setting parameters on the constructor:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">var</span> <span class="nx">capturer</span> <span class="o">=</span> <span class="k">new</span> <span class="nx">CCapture</span><span class="p">(</span> <span class="p">{</span>
+	<span class="na">framerate</span><span class="p">:</span> <span class="mi">60</span><span class="p">,</span>
+	<span class="na">verbose</span><span class="p">:</span> <span class="kc">true</span>
+<span class="p">}</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p>The complete list of parameters is:</p>
+<ul>
+  <li><strong><em>framerate</em></strong>: target framerate for the capture</li>
+  <li><strong><em>motionBlurFrames</em></strong>: supersampling of frames to create a motion-blurred frame (0 or 1 make no effect)</li>
+  <li><strong><em>format</em></strong>: webm/gif/png/jpg/ffmpegserver</li>
+  <li><strong><em>quality</em></strong>: quality for webm/jpg</li>
+  <li><strong><em>name</em></strong>: name of the files to be exported. if no name is provided, a GUID will be generated</li>
+  <li><strong><em>verbose</em></strong>: dumps info on the console</li>
+  <li><strong><em>display</em></strong>: adds a widget with capturing info (WIP)</li>
+  <li><strong><em>timeLimit</em></strong>: automatically stops and downloads when reaching that time (seconds). Very convenient for long captures: set it and forget it (remember autoSaveTime!)</li>
+  <li><strong><em>autoSaveTime</em></strong>: it will automatically download the captured data every n seconds (only available for webm/png/jpg)</li>
+  <li><strong><em>startTime</em></strong>: skip to that mark (seconds)</li>
+</ul>
+
+<p>You can decide when to start the capturer. When you call the <code class="language-plaintext highlighter-rouge">.start()</code> method, the hooks are set, so from that point on <code class="language-plaintext highlighter-rouge">setTimeout</code>, <code class="language-plaintext highlighter-rouge">setInterval</code> and other methods that are hooked will behave a bit differently. When you have everything ready to start capturing, call:</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">capturer</span><span class="p">.</span><span class="nx">start</span><span class="p">();</span>
+</code></pre></div></div>
+
+<p>And then, in your <code class="language-plaintext highlighter-rouge">render()</code> method, after the frame is been drawn, call <code class="language-plaintext highlighter-rouge">.capture()</code> passing the canvas you want to capture.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="kd">function</span> <span class="nx">render</span><span class="p">(){</span>
+	<span class="nx">requestAnimationFrame</span><span class="p">(</span><span class="nx">render</span><span class="p">);</span>
+	<span class="c1">// rendering stuff ...</span>
+	<span class="nx">capturer</span><span class="p">.</span><span class="nx">capture</span><span class="p">(</span> <span class="nx">canvas</span> <span class="p">);</span>
+<span class="p">}</span>
+
+<span class="nx">render</span><span class="p">()</span>
+
+</code></pre></div></div>
+
+<p>That’s all. Once you’re done with the animation, you can call <code class="language-plaintext highlighter-rouge">.stop()</code> and then <code class="language-plaintext highlighter-rouge">.save()</code>. That will compose the video and return a URL that can be previewed or downloaded.</p>
+
+<div class="language-js highlighter-rouge"><div class="highlight"><pre class="highlight"><code><span class="nx">capturer</span><span class="p">.</span><span class="nx">stop</span><span class="p">();</span>
+
+<span class="c1">// default save, will download automatically a file called {name}.extension (webm/gif/tar)</span>
+<span class="nx">capturer</span><span class="p">.</span><span class="nx">save</span><span class="p">();</span>
+
+<span class="c1">// custom save, will get a blob in the callback</span>
+<span class="nx">capturer</span><span class="p">.</span><span class="nx">save</span><span class="p">(</span> <span class="kd">function</span><span class="p">(</span> <span class="nx">blob</span> <span class="p">)</span> <span class="p">{</span> <span class="cm">/* ... */</span> <span class="p">}</span> <span class="p">);</span>
+</code></pre></div></div>
+
+<p><strong>Note</strong>: you don’t need to <code class="language-plaintext highlighter-rouge">.stop()</code> in order to <code class="language-plaintext highlighter-rouge">.save()</code>. Call <code class="language-plaintext highlighter-rouge">capturer.save()</code> anytime you want to get a download up to that moment.</p>
+
+<h4 id="limitations">Limitations</h4>
+
+<p>CCapture.js only works on browsers that have a `canvas implementation.</p>
+
+<p><strong>Whammy.js</strong> current version only works on a browser that supports the image/webp format. Exporting video is basically Chrome-only for now :( If you want to help to make it Firefox, Opera or even Internet Explorer compatible, please do!</p>
+
+<p><strong>gif.js</strong> has some performance limitations, be careful if capturing a lot of frames.</p>
+
+<p><strong>The <em>autoSaveTime</em> parameter</strong></p>
+
+<p>Different browsers have different issues with big files: most break for big <code class="language-plaintext highlighter-rouge">Uint8Array</code> allocations, or when a file to downloads is larger than 1GB, etc. I haven’t been able to find a solid solution for all, so I introduced the <code class="language-plaintext highlighter-rouge">autoSaveTime</code> parameter, just to prevent loss of large files. If used with a webm/png/jpg capturer, it will automatically compile, download and free the captured frames every <em>n</em> seconds specified in the parameter. The downloaded file will have the structure <em>{name}-part-00000n</em> and the extension (.webm or .tar). The files inside the TAR file will have the right number of sequence.</p>
+
+<p>Use an <code class="language-plaintext highlighter-rouge">autoSaveTime</code> value that give you a file that is small enough to not trip the browser, but large enough to not generate a thousand part files. A value between 10 and 30 seconds for a 4K capture I’ve found works best: just make sure the file is under 1GB. For most regular, viewport-sized or even Full-HD captures it shouldn’t be an issue, but keep in mind this issue.</p>
+
+<p><strong>Memory allocation and garbage collection</strong></p>
+
+<p>There’s some issues in which memory -mostly from accumulated frames- will not be freed, depending on the platform and the mood of the browser. If you run into non-sawtooth like memory profiles, and are running chrome, try running it with <code class="language-plaintext highlighter-rouge">--js-flags="--expose-gc"</code>. This way CCapture will run <code class="language-plaintext highlighter-rouge">gc()</code> every frame and memory consumption should stay stable.</p>
+
+<h4 id="gallery">Gallery</h4>
+
+<p><a href="https://www.youtube.com/watch?v=rly322ijJWAY" title="cru·ci·form 4K CCapture"><img src="http://img.youtube.com/vi/rly322ijJWA/0.jpg" alt="cru·ci·form 4K CCapture" /></a>
+<a href="https://www.youtube.com/watch?v=D0qUgb6AGX8" title="obsidian by xplsv 4K CCapture"><img src="http://img.youtube.com/vi/D0qUgb6AGX8/0.jpg" alt="obsidian by xplsv 4K CCapture" /></a>
+<a href="https://www.youtube.com/watch?v=3HQBmurQps8" title="dataworld by xplsv 4K CCapture"><img src="http://img.youtube.com/vi/3HQBmurQps8/0.jpg" alt="dataworld by xplsv 4K CCapture" /></a></p>
+
+<h4 id="credits">Credits</h4>
+
+<ul>
+  <li>Slightly modified version of <a href="https://github.com/antimatter15/whammy">Whammy.js</a> (fixed variable size
+ integer calculations)</li>
+  <li>Slightly modified version of <a href="https://github.com/beatgammit/tar-js">tar.js</a> (fixed memory allocations for many files)</li>
+  <li><a href="http://danml.com/download.html">download.js</a></li>
+  <li><a href="https://github.com/jnordberg/gif.js">Gif.js</a></li>
+</ul>
+
+<h4 id="contributors">Contributors</h4>
+
+<p>Big thanks to <a href="https://github.com/hugohil">hugohil</a> and <a href="https://github.com/greggman">Greggman</a>!</p>
+
+<h4 id="license">License</h4>
+
+<p>MIT licensed</p>
+
+<p>Copyright (C) 2012-2016 Jaume Sanchez Elias, http://www.clicktorelease.com</p>
+
+</div>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

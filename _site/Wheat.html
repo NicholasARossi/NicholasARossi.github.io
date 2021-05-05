@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Quantifying Genetic Entropy in Humans and Wheat &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+    <meta property="og:title" content="Quantifying Genetic Entropy in Humans and Wheat">
+      
+      <meta name="description" content="Discount bioinformatics with premium math and dumpster dived data">
+      <meta name="og:description" content="Discount bioinformatics with premium math and dumpster dived data">
+      
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/Wheat">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2017-05-02">
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
+  <div class="post single">
+    
+    <h1>Quantifying Genetic Entropy in Humans and Wheat</h1>
+    <info datetime="2017-05-02">
+      May 02, 2017
+    </info>
+    
+    <div class="body"><script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<style>
+  h1,h2,h3,head,title {
+
+    font-color: black;
+    color: #5E5E5E;
+    background-color: #A5E399;
+  }
+  <!-- header{
+    background-color: #d3d3d3;
+  } -->
+
+</style>
+
+<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<h3 id="how-different-are-we">How different are we?</h3>
+<p>What does it mean to be genetically distinct? Within a species, we need to be able to calculate how much variability there is.</p>
+
+<p>We need a metric to quantify just how diverse a given genome is - be it plant or animal. To do this we turn to <a href="https://www.youtube.com/watch?v=sDhLY-5fGD0">entropy</a></p>
+<center>
+$$H(x)=-\sum_{i=1}^{n} P(x_i)log_2P(x_i)$$
+</center>
+
+<p>This is a terrific, non-parametric method for evaluating total diversity in a set. Here, a discrete valued variable x has a set of values n. I chose to compute entropy with log base 2 to give a score in bits (base e for nats, the choice is yours).</p>
+
+<p>The non-parametric nature of the entropy calculation allows us to determine the diversity of a given variable regardless of how that diversity is distributed.
+To illustrate this point consider the groups of colored dots below:</p>
+
+<center>
+<a align="center" href="/res/blog_6/entropy_comparison.png">
+<img src="/res/blog_6/entropy_comparison.png" />
+</a>﻿
+</center>
+<p>Each of the groups above has the same entropy score (2 bits). The group to the left is split evenly between two genotypes while the group to the right has a total of eight potential variations at the same point. Basically we see the entropy score doesn’t care if you have a split group or one group dominating with a smatering of other random genotypes.</p>
+
+<p>In order to use entropy to calculate a diversity score for an entire organism, we average the diversity throughout a set of SNPs (<a href="https://en.wikipedia.org/wiki/Single-nucleotide_polymorphism">Single-nucleotide polymorphisms</a>). These are high-variability locations in the genome that serve to distinguish the genetic variance of individuals of the species.
+SNP data sets are available for many organisms I chose to compare all of humanity with one of our favorite domesticated crops : wheat. Thousands of human SNPs were collected globally from about 900 individuals for the human set. Similar numbers of SNPs were used for the wheat data set.</p>
+
+<p>Calculating the average SNP entropy over the an entire set of SNPs for a given organism produces the following equation:</p>
+
+<center>
+$$H_{average}(k)=-\frac{1}{k}\sum_{j=1}^{k}\sum_{i=1}^{n} P(k_{ji})log_2P(k_{ji})$$
+</center>
+
+<p>Where k is a given SNP location within a population. Each potential SNP sequence at a given location has a particular probability \(P(k_{ji})\) within that population.</p>
+
+<p>This calculation serves as a loose upper bound to the genetic entropy of a given organism. We call this an upper bound because SNPs are targeted for sequencing because they are diversity hotspots by nature. Calculating the average diversity at those locations produces a diversity score for the entire organism.</p>
+
+<h3 id="this-is-what-diversity-looks-like">This is what diversity looks like!</h3>
+<p>The central question I wanted to ask is : who has more genetic variability - us or an organism we’ve bred? To answer this I applied the above metric to a multinational data set of human SNPs (see notes) versus one from a british domestic wheat set.</p>
+
+<center>
+<a align="center" href="/res/blog_6/swarm_plot2.png">
+<img src="/res/blog_6/swarm_plot2.png" />
+</a>﻿
+</center>
+
+<p>I included the upper an lower bound sets as well (random and uniform). These represent the maximum entropy you could generate at a given SNP in a diploid organism with 4 base-pairs (4 bits) versus a completely isogenic population (0 bits of entropy). We see real organisms are in the middle with some diversity but not total anarchy.</p>
+
+<p>As for the analyzed data, the raw score for the domesticated wheat is (surprise) higher than us. Yet, this value is not overwhelming different.
+The subtle difference of the average SNP complexity between humans and wheat might not seem like much at first glance, but we have to factor in the radical difference in genome size that this complexity scales with.</p>
+
+<p>First, the wheat genome is about <a href="https://www.cshl.edu/news-a-features/bread-wheats-large-and-complex-genome-is-revealed.html">5 times larger</a> than humans. We would imagine that the complexity functions on each individual choice as an exponent.
+Given the average entropy of human genome is 1.116 bits per SNP and the average entropy of wheat genome is 1.251 bits per SNP, a back of the envelope calculations would yield something like:</p>
+<center>
+Total Complexity = genome size<sup>entropy per base</sup>
+</center>
+<p>Applying this straight forward calculation yields the chart below where the small dot represents the apparent complexity of all of humanity while the large dot represent that of domestic wheat.
+<!-- width="100%" height="400" --></p>
+<iframe src="/res/blog_6/bubble_chart.html" width="100%" height="400" scrolling="no"></iframe>
+
+<h3 id="diversity-is-good">Diversity is good!</h3>
+
+<p>Isogenic or low diversity populations are <a href="https://www.nationalgeographic.org/encyclopedia/biodiversity/">fragile</a>. Maintaining populations of high-variability is key to successful species. This metric doesn’t necessarily guarantee survivorship, but it may show how robust a species is to some unknown future environmental condition.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>While quantifying diversity is a non-trivial problem, entropy is a good first pass metric to use to understand the variability in a given set.
+Domestic Wheat seems more ready than us to withstand the apocalypse than us. That doesn’t matter though because humans aren’t going to survive the apocalypse, we’re going to <a href="https://www.youtube.com/watch?v=VEJ8lpCQbyw">become it</a>.</p>
+
+<h3 id="notes">Notes</h3>
+<ul>
+  <li>I got the Human SNP dataset from <a href="https://www.ncbi.nlm.nih.gov/pubmed/20643205">here</a></li>
+  <li>I got the Wheat SNP dataset from <a href="http://www.cerealsdb.uk.net/cerealgenomics/CerealsDB/indexNEW.php">here</a> (the kasp set)</li>
+  <li>Python code used for analysis of this data can be found <a href="https://github.com/NicholasARossi/SNP_analysis">here</a></li>
+</ul>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/Cross-Correlation">&laquo; Forecasting the 2018 Midterms Using Tools from Engineering</a>
+      
+      
+        <a class="next" href="/EBRC">SEED 2017 &raquo;</a>
+      
+    </div>
+
+  
+  </div>
+</div>
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>

@@ -1,0 +1,338 @@
+<!DOCTYPE HTML>
+<html lang="en" prefix="og: http://nicholasarossi.github.io#">
+  <head>
+    <meta charset="utf-8">
+    <title>Forecasting the 2018 Midterms Using Tools from Engineering &mdash; Nicholas A. Rossi</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+    
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    
+    <!-- <link href='//fonts.googleapis.com/css?family=Poly:400' rel='stylesheet' type='text/css'> -->
+    <link rel="stylesheet" href="../assets/css/normalize.css">
+    <link rel="stylesheet" href="../assets/css/keyframes.css">
+    <link rel="stylesheet" href="../assets/css/layout.css">
+    <link rel="stylesheet" href="../assets/css/pageTransitions.css">
+
+    <link href='//fonts.googleapis.com/css?family=Roboto+Slab:400,300' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Ubuntu+Mono:400,700,400italic' rel='stylesheet' type='text/css'>
+    <link href='//fonts.googleapis.com/css?family=Roboto+Condensed:300,400' rel='stylesheet' type='text/css'>
+    <link rel="stylesheet" media="screen, projection" href="/res/screen.css" type="text/css">
+    <link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+    <link rel="shortcut icon" href="/small.ico">
+    <meta name="twitter:card" content="summary">
+    <meta name="twitter:site" content="@divergentdata">
+    
+    
+    <meta property="og:title" content="Forecasting the 2018 Midterms Using Tools from Engineering">
+      
+      <meta name="description" content="What tools from signals and systems analysis can help us understand trends in the political process">
+      <meta name="og:description" content="What tools from signals and systems analysis can help us understand trends in the political process">
+      
+    
+    
+    
+    
+    <meta property="og:url" content="http://nicholasarossi.github.io/Cross-Correlation">
+    <meta property="og:type" content="article">
+    <meta property="og:locale" content="en_GB" />
+    
+    <meta property="article:published_time" content="2017-04-04">
+    
+    <script>window.initFuncs = [];</script>
+  </head>
+  <body>
+    <header>
+      <h1 class="logo" onclick="document.location.href='/';"><a href="/home.html"><img src="/res/banner.png" width="264" height="60" alt="Banner"></a></h1>
+      <ul class="navigation" STYLE="padding-right: 0px; padding-left: 0px;">
+        <li><a href="/home.html">Blog</a></li>
+        <li><a href="https://www.youtube.com/channel/UCHtK1gzp7fBEUwcUaIbM28g"><img src="/res/youtube.png" STYLE="position:relative; Opacity:.4; TOP:-13px; WIDTH:50px;" ></a></li>
+
+        <li><a href="/projects/" title="Projects I am or was involved in">Portfolio</a></li>
+        <li><a href="/archive/" title="Archived articles">Archive</a></li>
+        <li><a href="/about/">About me</a></li>
+      </ul>
+    </header>
+    <!--div class="wrapper content"-->
+      <style>
+.PageNavigation {
+  font-size: 20px;
+  display: block;
+  width: auto;
+  overflow: hidden;
+}
+
+.PageNavigation a {
+  display: block;
+  width: 50%;
+  float: left;
+  margin: 1em 0;
+}
+
+.PageNavigation .next {
+  text-align: right;
+}
+
+
+
+</style>
+<div class="content">
+  <div class="post single">
+    
+    <h1>Forecasting the 2018 Midterms Using Tools from Engineering</h1>
+    <info datetime="2017-04-04">
+      Apr 04, 2017
+    </info>
+    
+    <div class="body"><style>
+  h1,h2,h3,head,title {
+
+    font-color: white;
+    color: white;
+    background-color: #a284e0;
+  }
+  <!-- header{
+    background-color: #d3d3d3;
+  } -->
+
+</style>
+
+<script type="text/x-mathjax-config">
+  MathJax.Hub.Config({tex2jax: {inlineMath: [['$','$'], ['\\(','\\)']]}});
+</script>
+
+<script type="text/javascript" async="" src="https://cdn.mathjax.org/mathjax/latest/MathJax.js?config=TeX-AMS_CHTML">
+</script>
+
+<h3 id="red-house-rising">Red House Rising</h3>
+<p><img src="/res/blog_5/meme.png" />
+We all know political movements seem to happen in waves - the different political parties are gaining and losing power all the time. But what can their current victories or losses tell us about the future? Can we prove that presidential victories produce losses in congress?</p>
+
+<h3 id="some-things-take-time">Some things take time</h3>
+<p>Before we get to politics let’s take a look at any easy example of two things changing in time</p>
+<center>
+<a align="center" href="/res/blog_5/graph_1.png">
+<img src="/res/blog_5/graph_1.png" />
+</a>﻿
+</center>
+<p>We see that the daylight in Boston and Paris follow the same basic trajectories, but the exact brightness in Boston isn’t a great predictor of the brightness in Paris at any given time. Taken a step further, if we “flatten” the data to remove the time dimension and plot the brightness in Paris vs that of Boston we get the following. Each point on the circle represents the brightness in Paris and the brightness in Boston at a specific time.</p>
+
+<video controls="" width="100%">
+  <source src="/res/blog_5/flattened_1.webm" type="video/webm" />
+  <source src="/res/blog_5/flattened_1.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+
+<!-- <center>
+<a align="center" href="/res/blog_5/graph_2.png">
+<img src="/res/blog_5/graph_2.png">
+</a>﻿
+</center> -->
+<p>An interesting graph that contains some information, but isn’t as informative as it could be. The <a href="https://en.wikipedia.org/wiki/Degenerate_conic">degeneracy</a> of the data makes each value non-unique, preventing us from determining the exact brightness of Paris given Boston and vice-versa.</p>
+
+<p>There <strong>is</strong> an answer to this problem that allows us to relate these two signals in a more meaningful way : compare them after a <strong>time-shift</strong>. If we compare Paris daylight to Boston 6 hours later, we find that there is much greater correlation between the two variables. In plain language, you’re comparing points from the two trajectories at different times.</p>
+
+<video controls="" width="100%">
+  <source src="/res/blog_5/flattened_2.webm" type="video/webm" />
+  <source src="/res/blog_5/flattened_2.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<!-- <a align="center" href="/res/blog_5/graph_3.png">
+<img src="/res/blog_5/graph_3.png">
+</a>﻿ -->
+
+<p>This operation is the essence of <a href="https://en.wikipedia.org/wiki/Cross-correlation">cross-correlation</a>. How much do two signals correlate with each other as you shift one of them in time. We call the magnitude of the shift $\tau$.</p>
+<center>
+$$(f*g)(\tau) = \int_{-\infty}^{\infty} f^{*}g(t+\tau)dt$$
+</center>
+<p>Basically, the operation is the sum of the similarity between two time traces as you move one of them around.</p>
+
+<p>Below we see the full cross-correlation of a sine and cosine wave as we move the cosine wave and keep the other fixed. We see that there is a peak cross-correlation at $ \tau=\frac{\pi}{2}$ and the signals are most anti-correlated at $ \tau=\frac{3\pi}{4}$. If you shift the signal backward or forward tau can be positive or negative (g is leading or lagging).</p>
+
+<video controls="" width="100%">
+  <source src="/res/blog_5/true_1.webm" type="video/webm" />
+  <source src="/res/blog_5/true_1.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+
+<h3 id="what-happens-with-noisy-data">What happens with noisy data?</h3>
+<p>Cross-correlation is an extremely powerful method of analysis to use on noisy data. Just adding bit of waggle to the sine and cosine waves from above gets similar results.</p>
+<video controls="" width="100%">
+  <source src="/res/blog_5/true_2.webm" type="video/webm" />
+  <source src="/res/blog_5/true_2.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+
+<p>More importantly, the analysis works even when the data is <strong>SUPER</strong> noisy. Consider the following set of stochastic differential equations representing <a href="https://en.wikipedia.org/wiki/Ornstein%E2%80%93Uhlenbeck_process">Ornstein–Uhlenbeck processes</a>:</p>
+<center>
+$$\frac{dX}{dt} = -\theta_{x} X_{t} dt+\sigma_{x} \eta_{x}$$
+$$\frac{dY}{dt} = (gX_{t}-\theta_{y}Y_{t})dt+\sigma_{y} \eta_{y}$$
+</center>
+
+<p>Here $\theta$ represents the inverse of the correlation time of the signal while $\sigma$ represents the standard deviation of the trajectory. In this case, I’ve modeled Y as having some linear dependance on X, scaled by the gain “g”.
+These equations could model any number of stochastic interactions (gene expression, weather patterns) but we’ll use them to imagine an example from the world of finance.</p>
+<center>
+<a href="/res/blog_5/Econ.png">
+<img src="/res/blog_5/Econ.png" />
+</a>﻿
+</center>
+<p>Here we see two time traces representing the value of the Dollar and the value of the Euro. Despite the fluctuations in both of the signals, there seems to be some interdependency. However, the directionality of this relationship isn’t entirely apparent at first glance. We don’t know if the Dollar affects the value of the Euro or vice-versa. We turn to our new favorite technique - Cross-Correlation!!!!</p>
+
+<video controls="" width="100%">
+  <source src="/res/blog_5/true_4.webm" type="video/webm" />
+  <source src="/res/blog_5/true_4.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+
+<p>It becomes apparent that as we shift the Euro time trace, the two trajectories become most correlated as $\tau = - 18$ days. The value of the dollar determines (in part) that of the Euro. If this simulated data is to be believed (<em>wink</em>), that means we should BUY BUY BUY Euros if the dollar spikes up, alternatively we should SELL SELL SELL Euros if the Dollar drops in value.</p>
+
+<p>Clearly real economic markets are more complicated than this as the regulation is not unilateral (ie the Euro value will feed back and affect the dollar value). But this analysis does lend insight into how we can take seemingly unrelated stochastic signals and find the underlying correlations.</p>
+
+<h3 id="understanding-past-political-patterns">Understanding Past Political Patterns</h3>
+<p>The central hypothesis is that presidential victories embolden the opposite party. Lets apply some of the mathematical techniques above to determine whether or not we can calculate the properties of the rise and fall of political groups. First, we gather historical data of US elections.</p>
+<center>
+<a align="center" width="10%" href="/res/blog_5/pos_neg.png">
+<img src="/res/blog_5/pos_neg.png" />
+</a>﻿
+</center>
+
+<p>In the chart above we see the trajectories of the presidential wins (diamonds) versus the democratic advantage in the house (dots). It seems like a qualitative first glance reveals that the mechanism of political turnover has changed. For instance, in the past (1800’s, 1900’s) one party at a time dominated the presidency and the house at the same time. However, it seems more recently there are these competing oscillations. To investigate for yourself, play with the interactive version of the same chart below (this time with senate data added ; looks better on desktop).</p>
+
+<!-- <iframe width="1200" height="600" frameborder="0" scrolling="no" src="//plot.ly/~divergent.data/2.embed"></iframe> -->
+
+<p><iframe id="igraph" style="border:none" src="//plot.ly/~divergent.data/2.embed" width="1200" height="600"></iframe></p>
+
+<h3 id="calculating-the-future">Calculating the future</h3>
+
+<p>To quantitatively investigate whether the presidential election influences the house majority, we compute the cross-correlation on this data to produce the following two graphs.</p>
+<center>
+<a align="center" href="/res/blog_5/xcor_house.png">
+<img src="/res/blog_5/xcor_house.png" />
+</a>﻿
+</center>
+<p>First, I’ve computed two functions - one including all the data since 1855 and the second just on the data since 1940 (an arbitrary demarcation for the inception of the modern definitions of the republicans and democrats). The upshot is that both predict house flips to the opposition party as a function of the presidential party, however it is more pronounced in the after 1940 data set.</p>
+
+<p>To help point out the features of this graph, I annotated the one below just to show what this method of analysis predicts in the current context.</p>
+
+<center>
+<a align="center" href="/res/blog_5/close_up3.png">
+<img src="/res/blog_5/close_up3.png" />
+</a>﻿
+</center>
+
+<p>So cross-correlation predicts the house to flip to the democrats in 2018 and stay there for another election cycle. Granted, this is a probabilistic system subject to variability and a correlation coefficient of 0.4 isn’t exactly a mathematical certainty. But if historical trends are any indicator, we should be in for blue midterms and continued democratic dominance in 2020.</p>
+
+<h3 id="conclusion">Conclusion</h3>
+<p>Cross-correlation is an essential data science technique to understand the flow of information in dynamical systems including <a href="http://www.nature.com/ng/journal/v40/n12/abs/ng.281.html">genetic networks</a>, <a href="https://arxiv.org/abs/1002.0321">finance</a> and the <a href="http://www.pnas.org/content/108/42/17296.full">climate </a>. It can lend insight into systems like politics which have time delayed interactions between different events. The above analysis shows that presidential victories may influence/predict the success of subsequent house races.</p>
+
+<h3 id="addendum-numerical-cross-correlation-is-data-hungry">Addendum: Numerical Cross-Correlation is data hungry</h3>
+<p>If the signal to noise ration is high in a given relationship between two time-series, it may require a relatively long data set in order to detect any apparent cross-correlation. The animation bellow illustrates this point by calculating the numerical cross correlation of two time traces (blue dots) and comparing them to the exact analytical solution to the cross-correlation of the two functions.</p>
+<video controls="" width="100%">
+  <source src="/res/blog_5/true_5.webm" type="video/webm" />
+  <source src="/res/blog_5/true_5.mp4" type="video/mp4" />
+Your browser does not support the video tag.
+</video>
+<p>In order to get the numerical calculations to converge to the exact solutions we need a relatively long simulation. This can be <strong>very</strong> problematic when calculating cross-correlations using real data sets as it’s possible a given time-series of collected data is insufficient to effectively calculate any underlying phenomena. However, the time it takes to converge to the exact solution is a function of the signal to noise ratio and as such shorter data sets will be sufficient for less noisy data.</p>
+
+<h2 id="notes">notes:</h2>
+<ul>
+  <li>
+    <p>I got the historical congressional data from <a href="https://www.infoplease.com/history-and-government/us-government/composition-congress-political-party-1855a2017">here</a></p>
+  </li>
+  <li>
+    <p>I didn’t include the data from the 2016 election because it’s all still 2real4me</p>
+  </li>
+  <li>
+    <p>I hacked this together on a couple jupyter notebooks in python, if you’re curious as to how I made the animations you can find the code  <a href="https://github.com/NicholasARossi/xcor_animations">here</a>. Interactive plot was done with <a href="www.plot.ly">plot.ly</a>)</p>
+  </li>
+  <li>
+    <p>Cross-correlation does assume the underlying phenomena are <a href="https://en.wikipedia.org/wiki/Stationary_process">stationary</a> and <a href="https://en.wikipedia.org/wiki/Ergodicity">ergodic</a>. There are work arounds for these assumptions but they are usually pretty messy.</p>
+  </li>
+</ul>
+</div>
+    <!-- <div class="breaker"></div> -->
+    <div class="breaker"></div>
+    <div class="PageNavigation">
+      
+        <a class="prev" href="/congress">&laquo; How Term Limits Might Affect How Congress Works</a>
+      
+      
+        <a class="next" href="/Wheat">Quantifying Genetic Entropy in Humans and Wheat &raquo;</a>
+      
+    </div>
+
+  
+  </div>
+</div>
+
+
+
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
+
+    <!--/div-->
+
+    
+
+    
+
+    
+    <!-- <footer>
+      <p>
+        <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US" class="cc"><img src="/res/cc-cc.png" class="cc">
+        <img src="/res/cc-by.png" class="cc"></a>
+        This work is licensed under a <a rel="license" href="http://creativecommons.org/licenses/by/3.0/deed.en_US">Creative Commons License</a>
+      </p>
+    </footer> -->
+    
+
+    <script>
+  var n,i,L,cn,v = document.getElementsByTagName('pre');
+  for (i=0,L=v.length;i<L;++i) {
+    n = v.item(i);
+    if ((cn = n.firstChild) && cn.nodeName == 'CODE') {
+      if (cn.className.indexOf("none") !== -1 || cn.className.indexOf("txt") !== -1) {
+        cn.className = 'nohighlight';
+      }
+    }
+  }
+</script>
+<link rel="stylesheet" media="all" href="/res/highlight.css" type="text/css">
+<script src="/res/highlight.js"></script>
+
+    <script type="text/javascript">
+  var _gaq = _gaq || [];
+  _gaq.push(['_setAccount', 'UA-9078556-2']);
+  _gaq.push(['_trackPageview']);
+  (function() {
+    var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+    ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+    var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+  })();
+</script>
+    <script>for (var k in window.initFuncs) { window.initFuncs[k](); } delete window.initFuncs;</script>
+    <script src="https://code.jquery.com/jquery-2.2.1.min.js"></script>
+    <script src="../assets/js/jquery.smoothState.min.js"></script>
+    <script src="../assets/js/main.js"></script>
+  </body>
+
+</html>
+
+<script>
+  (function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+  (i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+  m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+  })(window,document,'script','https://www.google-analytics.com/analytics.js','ga');
+
+  ga('create', 'UA-84468677-1', 'auto');
+  ga('send', 'pageview');
+
+</script>
