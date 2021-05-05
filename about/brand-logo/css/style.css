@@ -39,10 +39,7 @@ img {
   height: 2em;  padding: 0 2vw;
 
 }
-.content__container:before {
-  content: '>_';
-  left: 0;
-}
+
 
 .content__container:after, .content__container:before {
   position: absolute;
