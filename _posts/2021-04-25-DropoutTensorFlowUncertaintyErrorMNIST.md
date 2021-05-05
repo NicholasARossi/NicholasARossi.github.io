@@ -145,7 +145,7 @@ Still not perfect, but good enough for our toy example. We are seeing systematic
 ### Ultimate test: challenging with hand-drawn, unfiltered images from my ipad
 The ultimate test of our model is using things drawn by me, outside the context of training data. See the examples below:
 
-![../res/blog_21/challengers.png](../res/blog_21/challengers.png)
+![../res/blog_21/challengers2.png](../res/blog_21/challengers2.png)
 
 Here we have 4 exemplars: the chinese character 中, a poorly drawn baby yoda and two digits (3 and 8)
 
