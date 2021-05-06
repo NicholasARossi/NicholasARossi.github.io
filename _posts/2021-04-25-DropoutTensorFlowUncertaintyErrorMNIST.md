@@ -194,7 +194,7 @@ So looks like everything performs perfectly! Those that have higher uncertainty 
 Previously we identified how to ensemble methods with sub-sampling of the data to get [robust quantification of uncertainty](https://www.rossidata.com/UncertaintyQuantificationandEnsembleLearning). You can completely use this method here, but there are several advantages to each method:
 
 **Dropout-based UQ**
-* Can be performed on an existing model that wasn't built for UQ! No need for retraining! Simply load the model and use the dropout resampling snippet from above.
+* Can be performed on an existing model that was not built for UQ! No need for retraining! Simply load the model and use the dropout resampling snippet from above.
 * Only requires the training of one model --> cuts down on computation time and model storage.
 * For complex models, you need to do hundreds or thousands of interactions of dropout shuffling to correctly estimate uncertainty. This is intractable to train ensembles for. 
 
@@ -207,5 +207,6 @@ Previously we identified how to ensemble methods with sub-sampling of the data t
 * Notebook necessary to generate all the graphs and more [here](https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/05_Neural_Network_Uncertainty_Quantification_with_Dropout.ipynb)
 * The rest of the model and helper scripts [here](https://github.com/NicholasARossi/UQ_methods)
 * Previous posts on ensemble methods [here](https://www.rossidata.com/UncertaintyQuantificationandEnsembleLearning)
+* Further reading from the paper that inspired this [here](https://arxiv.org/abs/1506.02142)
 
 

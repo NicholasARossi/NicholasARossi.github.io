@@ -188,5 +188,6 @@ This served as an introduction to the power of ensemble methods for uncertainty 
 ### Notes
 * Notebook necessary to generate all the graphs and more [here](https://github.com/NicholasARossi/UQ_methods/blob/master/notebooks/00_Ensemble_methods.ipynb)
 * The rest of the model and helper scripts [here](https://github.com/NicholasARossi/UQ_methods)
+* Further reading from the paper that inspired this [here](https://proceedings.neurips.cc/paper/2017/file/9ef2ed4b7fd2c810847ffa5fa85bce38-Paper.pdf)
 
 
