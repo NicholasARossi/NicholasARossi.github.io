@@ -8,11 +8,12 @@ title: About
 
 
 # My name is Nick!
-# I am a PhD full-stack engineer using machine-learning to tackle projects in Genetics, Language, Animation and whatever's next
+# I am a PhD Bioinformatician building systems with machine learning
+
 
 ### Hi there 👋
 
-Hi, I'm Nicholas Rossi,a full-stack machine learning engineer living the Bay Area, currently working at [Synthego](https://www.synthego.com/). Let's collaborate and build something cool!
+I am a PhD full-stack engineer using machine-learning to tackle projects in Genetics, Language, Animation and whatever's next
 
 
 ### Machine Learning Apps
@@ -25,9 +26,7 @@ Hi, I'm Nicholas Rossi,a full-stack machine learning engineer living the Bay Are
 - **[Genetic Attribution Challenge (October, 2020)](https://github.com/NicholasARossi/genetic_attribution_challenge)**
 
 ### Data Science Stories
-
-<a href="https://www.rossidata.com/FinancialCrisis"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/Desktop-01.png" width="14%"></a><a href="https://www.rossidata.com/NatGeo"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/natgeo-01.png" width="14%"></a><a href="https://www.rossidata.com/segregation"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/NYC-01.png" width="14%"></a><a href="https://www.rossidata.com/res/blog_11_romans/emperor_scroll/scrollytelling.html"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/rome-01.png" width="14%"></a><a href="https://www.rossidata.com/cigarettes"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/smoking-01.png" width="14%"></a><a href="https://www.rossidata.com/flightdelays"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/air-01.png" width="14%"></a>
-
+![headline_stories.png](headline_stories.png)
 
 ### Science
 - <a href="https://doi.org/10.1038/s41467-020-18853-3"><img src="https://img.shields.io/badge/DOI-10.1038/s41467-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **CRISPRoff enables spatio-temporal control of CRISPR editing (2020)**
