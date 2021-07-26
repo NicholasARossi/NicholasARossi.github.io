@@ -6,11 +6,6 @@ title: About
 
 <iframe src="brand-logo/index.html" width="100%"  height="300px" frameBorder="0"></iframe>
 
-
-# My name is Nick!
-# I am a PhD Bioinformatician building systems with machine learning
-
-
 ### Hi there 👋
 
 I am a PhD full-stack engineer using machine-learning to tackle projects in Genetics, Language, Animation and whatever's next
