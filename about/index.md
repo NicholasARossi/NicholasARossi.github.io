@@ -8,26 +8,37 @@ title: About
 
 
 # My name is Nick!
-# I am a PhD Bioinformatician building systems with machine learning
+# I am a PhD full-stack engineer using machine-learning to tackle projects in Genetics, Language, Animation and whatever's next
 
-I am a results-focused data scientist and bioinformatician. Right now I'm building the algorithmic core of several key techologies at [Synthego](http://www.synthego.com/). Previously, I worked in the department of theoretical physics at École Normale Supérieure in Paris with [Aleksandra Walczak](http://www.phys.ens.fr/~awalczak/) and achieved my PhD with the [Dunlop lab](http://www.dunloplab.com/) at Boston University.
+### Hi there 👋
 
-# I'm a datascience story teller
-
-![img](headline_stories.png)
+Hi, I'm Nicholas Rossi,a full-stack machine learning engineer living the Bay Area, currently working at [Synthego](https://www.synthego.com/). Let's collaborate and build something cool!
 
 
-# And a published Academic:
-1. [**Forecasting when cells die during antibiotic exposure using stochastic gene expression**](https://www.nature.com/articles/s42003-019-0509-0) Rossi NA, Meouche IEM & Dunlop, MJ (2019) Communications Biology, 2(1), 1-7.
+### Machine Learning Apps
 
-2. [**Active degradation of a regulator controls coordination of downstream genes**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1006634)
-Rossi NA, Mora T, Walczak AM & Dunlop, MJ (2018) PLoS Computational Biology, 14(12), e1006634.
+- **[听好了 : a deep learning platform for mandarin tone practice](https://www.tinghaole.com/)**
 
-3. [**Making Waves with Synthetic Oscillators**](https://www.sciencedirect.com/science/article/pii/S2405471218301418) Rossi NA, & Dunlop MJ (2018). Cell Systems, 6(4), 406-407.
+### Machine Learning Competitions 
 
-4. [**Customized Regulation of Diverse Stress Response Genes by the Multiple Antibiotic Resistance Activator MarA**](https://journals.plos.org/ploscompbiol/article?id=10.1371/journal.pcbi.1005310)
-Rossi NA, Dunlop MJ (2017) PLoS Computational Biology 13(1): e1005310. doi: 10.1371/journal.pcbi.1005310
+- **[Cochlear Implant Hackathon (February, 2021)](https://github.com/NicholasARossi/Cochlear_Implant_Hackathon)**
+- **[Genetic Attribution Challenge (October, 2020)](https://github.com/NicholasARossi/genetic_attribution_challenge)**
 
+### Data Science Stories
+
+<a href="https://www.rossidata.com/FinancialCrisis"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/Desktop-01.png" width="14%"></a><a href="https://www.rossidata.com/NatGeo"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/natgeo-01.png" width="14%"></a><a href="https://www.rossidata.com/segregation"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/NYC-01.png" width="14%"></a><a href="https://www.rossidata.com/res/blog_11_romans/emperor_scroll/scrollytelling.html"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/rome-01.png" width="14%"></a><a href="https://www.rossidata.com/cigarettes"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/smoking-01.png" width="14%"></a><a href="https://www.rossidata.com/flightdelays"><img src="https://raw.githubusercontent.com/NicholasARossi/NicholasARossi/main/pngs/air-01.png" width="14%"></a>
+
+
+### Science
+- <a href="https://doi.org/10.1038/s41467-020-18853-3"><img src="https://img.shields.io/badge/DOI-10.1038/s41467-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **CRISPRoff enables spatio-temporal control of CRISPR editing (2020)**
+
+- <a href="https://doi.org/10.1038/s42003-019-0509-0"><img src="https://img.shields.io/badge/DOI-10.1038/s42003-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **[Forecasting cell fate during antibiotic exposure using stochastic gene expression (2019)](https://gitlab.com/dunloplab/forecasting-cell-fate)**
+
+- <a href="https://doi.org/10.1016/j.cels.2018.04.001"><img src="https://img.shields.io/badge/DOI-10.1016/j.cels.2018.04.001-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **Making Waves with Synthetic Oscillators (2018)**
+
+- <a href="https://doi.org/110.1371/journal.pcbi.1006634"><img src="https://img.shields.io/badge/DOI-10.1371/journal.pcbi.1006634-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **[Active degradation of MarA controls coordination of its downstream targets (2018)](https://github.com/NicholasARossi/MarA-Halflife-2018)**
+
+- <a href="https://doi.org/10.1371/journal.pcbi.1005310"><img src="https://img.shields.io/badge/DOI-10.1371/journal.pcbi.1005310-cfd8dc?labelColor=black&style=flat-square" align="right"/></a> **[Customized Regulation of Diverse Stress Response Genes by the Multiple Antibiotic Resistance Activator MarA (2017)](https://github.com/NicholasARossi/MarA-Multigene-Regulation)**
 
 # Contact
 <style>
@@ -40,4 +51,4 @@ iframe{
 Email : nicholas.rossi2 (at) gmail.com
 
 
-[resume](resume.pdf)
+[resume](Nicholas_Rossi_07252021.pdf)
