@@ -1,0 +1,33 @@
+<link rel="stylesheet" media="print" href="/res/print.css" type="text/css">
+
+
+<div class="overlay_top">
+<div class="row justify-content-center" style="padding-top: 10%;">
+  <p>Solve the riddle with below</p>
+  <form name="login">
+    <input type="password" id="pswd" class="form-control mx-sm-3" aria-describedby="passwordHelpInline"
+      placeholder="Password" style="border-radius: 0rem; width:240px;">
+    <input type="submit" id="submitbutton" value="Submit" class="btn btn-white"
+      style="border-radius: 0rem; width:240px; font-weight: 700;">
+  </form>
+</div>
+
+<script>
+    const submitBtnElem = document.querySelector('#submitbutton');
+
+submitBtnElem.addEventListener('click', (e) => {
+  e.preventDefault();
+  checkPswd();
+});
+
+function checkPswd() {
+  var confirmPassword = "314159";
+  var password = document.getElementById("pswd").value;
+  if (password == confirmPassword) {
+    window.location.href = "the-aurora-only-css/src/index.html";
+  }
+  else {
+    window.location.href = "the-aurora-only-css/src/index_bad.html";
+  }
+}
+</script>
