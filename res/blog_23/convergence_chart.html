@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+body {
+  font-family: 'Sligoil', monospace;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #2d1b36, #1a1a2e);
+  color: #e0e0e0;
+  overflow: hidden;
+}
+.axis path, .axis line {
+  stroke: #555;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: 'Sligoil', monospace;
+  fill: #ccc;
+  font-size: 10px;
+}
+.panel-title {
+  font-family: 'Basteleur', serif;
+  font-weight: bold;
+  fill: #fff;
+  font-size: 11px;
+}
+.panel-sub {
+  font-family: 'Format1452', monospace;
+  fill: #999;
+  font-size: 9px;
+}
+.bar-label {
+  font-family: 'Format1452', monospace;
+  fill: #fff;
+  font-size: 11px;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var panels = [
+  {
+    title: "Turn-to-Turn Similarity",
+    sub: "higher = more repetitive",
+    data: [{label: "Single", value: 0.156}, {label: "Director", value: 0.176}, {label: "Attractor", value: 0.175}],
+    yMax: 0.22, fmt: ".3f"
+  },
+  {
+    title: "Vocabulary Diversity",
+    sub: "lower = more repetitive",
+    data: [{label: "Single", value: 0.302}, {label: "Director", value: 0.260}, {label: "Attractor", value: 0.267}],
+    yMax: 0.35, fmt: ".3f"
+  },
+  {
+    title: "Consequence Persistence",
+    sub: "higher = more durable impact",
+    data: [{label: "Single", value: 0.0}, {label: "Director", value: 0.5}, {label: "Attractor", value: 4.0}],
+    yMax: 5, fmt: ".1f"
+  }
+];
+
+var totalWidth = 720;
+var totalHeight = 280;
+var panelWidth = 200;
+var panelGap = 25;
+var margin = {top: 45, right: 10, bottom: 55, left: 48};
+
+var svg = d3.select("body").append("svg")
+  .attr("width", totalWidth)
+  .attr("height", totalHeight);
+
+var colors = ["#ccc", "#555", "#8b2500"];
+
+panels.forEach(function(panel, pi) {
+  var offsetX = pi * (panelWidth + panelGap) + 40;
+  var g = svg.append("g")
+    .attr("transform", "translate(" + offsetX + "," + margin.top + ")");
+
+  var w = panelWidth - margin.left - margin.right;
+  var h = totalHeight - margin.top - margin.bottom;
+
+  // Title
+  g.append("text").attr("class", "panel-title")
+    .attr("x", w / 2 + margin.left).attr("y", -22)
+    .attr("text-anchor", "middle").text(panel.title);
+  g.append("text").attr("class", "panel-sub")
+    .attr("x", w / 2 + margin.left).attr("y", -10)
+    .attr("text-anchor", "middle").text(panel.sub);
+
+  var inner = g.append("g")
+    .attr("transform", "translate(" + margin.left + ",0)");
+
+  var x = d3.scaleBand().domain(panel.data.map(function(d) { return d.label; }))
+    .rangeRound([0, w]).padding(0.3);
+  var y = d3.scaleLinear().domain([0, panel.yMax]).rangeRound([h, 0]);
+
+  // Grid
+  inner.selectAll(".grid")
+    .data(y.ticks(4))
+    .enter().append("line")
+    .attr("x1", 0).attr("x2", w)
+    .attr("y1", function(d) { return y(d); })
+    .attr("y2", function(d) { return y(d); })
+    .attr("stroke", "#333").attr("stroke-dasharray", "2,2");
+
+  // Bars
+  inner.selectAll(".bar")
+    .data(panel.data)
+    .enter().append("rect")
+    .attr("x", function(d) { return x(d.label) + (Math.random() - 0.5) * 1; })
+    .attr("y", function(d) { return y(d.value); })
+    .attr("width", x.bandwidth())
+    .attr("height", function(d) { return h - y(d.value); })
+    .attr("fill", function(d, i) { return colors[i]; })
+    .attr("rx", 2)
+    .attr("opacity", 0.9);
+
+  // Value labels
+  inner.selectAll(".val")
+    .data(panel.data)
+    .enter().append("text")
+    .attr("class", "bar-label")
+    .attr("x", function(d) { return x(d.label) + x.bandwidth() / 2; })
+    .attr("y", function(d) { return y(d.value) - 4; })
+    .attr("text-anchor", "middle")
+    .text(function(d) { return d3.format(panel.fmt)(d.value); });
+
+  // X axis
+  var xAxis = inner.append("g").attr("class", "axis")
+    .attr("transform", "translate(0," + h + ")")
+    .call(d3.axisBottom(x).tickSize(0));
+  xAxis.select(".domain").remove();
+  xAxis.selectAll("text").each(function(d) {
+    var el = d3.select(this);
+    var lines = d.split("\n");
+    el.text("");
+    lines.forEach(function(line, i) {
+      el.append("tspan").attr("x", 0).attr("dy", i === 0 ? "1em" : "1.1em").text(line);
+    });
+  });
+
+  // Y axis
+  inner.append("g").attr("class", "axis")
+    .call(d3.axisLeft(y).ticks(4))
+    .select(".domain").remove();
+});
+</script>
+</body>

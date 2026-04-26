@@ -1,0 +1,182 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+body {
+  font-family: 'Sligoil', monospace;
+  margin: 0;
+  padding: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+  overflow: hidden;
+}
+svg {
+  display: block;
+  margin: 0 auto;
+}
+.axis path, .axis line {
+  stroke: #555;
+  shape-rendering: crispEdges;
+}
+.axis text {
+  font-family: 'Sligoil', monospace;
+  fill: #ccc;
+  font-size: 11px;
+}
+.chart-title {
+  font-family: 'Basteleur', serif;
+  font-weight: bold;
+  fill: #fff;
+  font-size: 14px;
+}
+.annotation {
+  font-family: 'Format1452', monospace;
+  fill: #aaa;
+  font-size: 10px;
+}
+.bar-label {
+  font-family: 'Format1452', monospace;
+  fill: #fff;
+  font-size: 11px;
+}
+.legend-text {
+  font-family: 'Format1452', monospace;
+  fill: #ccc;
+  font-size: 11px;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var data = [
+  {metric: "Novelty\nScore", sp: 2, dir: 4, attr: 4},
+  {metric: "Manifestation\nCount", sp: 4, dir: 5, attr: 5},
+  {metric: "Max\nTension", sp: 0, dir: 0.5, attr: 4.0},
+  {metric: "Confrontation\nRate", sp: 7, dir: 9, attr: 8}
+];
+
+var margin = {top: 40, right: 30, bottom: 55, left: 50};
+var width = 620 - margin.left - margin.right;
+var height = 320 - margin.top - margin.bottom;
+
+var svg = d3.select("body").append("svg")
+  .attr("width", width + margin.left + margin.right)
+  .attr("height", height + margin.top + margin.bottom)
+  .append("g")
+  .attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+
+// Title
+svg.append("text")
+  .attr("class", "chart-title")
+  .attr("x", width / 2)
+  .attr("y", -18)
+  .attr("text-anchor", "middle")
+  .text("Judge Metrics by Condition");
+
+var x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.25);
+var x1 = d3.scaleBand().padding(0.08);
+var y = d3.scaleLinear().rangeRound([height, 0]);
+
+var conditions = ["sp", "dir", "attr"];
+var colors = ["#ccc", "#555", "#8b2500"];
+var labels = ["Single-Prompt", "Director-Only", "With Attractors"];
+
+x0.domain(data.map(function(d) { return d.metric; }));
+x1.domain(conditions).rangeRound([0, x0.bandwidth()]);
+y.domain([0, 10]);
+
+// Grid lines
+svg.selectAll(".grid-line")
+  .data(y.ticks(5))
+  .enter().append("line")
+  .attr("x1", 0).attr("x2", width)
+  .attr("y1", function(d) { return y(d); })
+  .attr("y2", function(d) { return y(d); })
+  .attr("stroke", "#333")
+  .attr("stroke-dasharray", "3,3");
+
+// Bars with sketch wobble
+var groups = svg.selectAll(".group")
+  .data(data)
+  .enter().append("g")
+  .attr("transform", function(d) { return "translate(" + x0(d.metric) + ",0)"; });
+
+conditions.forEach(function(cond, i) {
+  groups.append("rect")
+    .attr("x", function() { return x1(cond) + (Math.random() - 0.5) * 1.5; })
+    .attr("y", function(d) { return y(d[cond]); })
+    .attr("width", x1.bandwidth())
+    .attr("height", function(d) { return height - y(d[cond]); })
+    .attr("fill", colors[i])
+    .attr("rx", 2)
+    .attr("opacity", 0.9);
+
+  // Value labels on bars
+  groups.append("text")
+    .attr("class", "bar-label")
+    .attr("x", function() { return x1(cond) + x1.bandwidth() / 2; })
+    .attr("y", function(d) { return y(d[cond]) - 4; })
+    .attr("text-anchor", "middle")
+    .text(function(d) {
+      var v = d[cond];
+      if (d.metric.indexOf("Confrontation") >= 0) return v + "/10";
+      return v % 1 === 0 ? v : v.toFixed(1);
+    });
+});
+
+// X axis
+var xAxis = svg.append("g")
+  .attr("class", "axis")
+  .attr("transform", "translate(0," + height + ")")
+  .call(d3.axisBottom(x0).tickSize(0));
+
+xAxis.selectAll("text")
+  .each(function(d) {
+    var el = d3.select(this);
+    var lines = d.split("\n");
+    el.text("");
+    lines.forEach(function(line, i) {
+      el.append("tspan")
+        .attr("x", 0)
+        .attr("dy", i === 0 ? "1em" : "1.2em")
+        .text(line);
+    });
+  });
+
+xAxis.select(".domain").remove();
+
+// Y axis
+svg.append("g")
+  .attr("class", "axis")
+  .call(d3.axisLeft(y).ticks(5))
+  .select(".domain").remove();
+
+// Legend
+var legend = svg.selectAll(".legend")
+  .data(labels)
+  .enter().append("g")
+  .attr("transform", function(d, i) { return "translate(" + (i * 150 + 50) + "," + (height + 45) + ")"; });
+
+legend.append("rect")
+  .attr("width", 12).attr("height", 12)
+  .attr("fill", function(d, i) { return colors[i]; })
+  .attr("rx", 2);
+
+legend.append("text")
+  .attr("class", "legend-text")
+  .attr("x", 16).attr("y", 10)
+  .text(function(d) { return d; });
+</script>
+</body>

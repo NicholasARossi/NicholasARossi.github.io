@@ -1,0 +1,328 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+body {
+  margin: 0; padding: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  overflow: hidden;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var W = 700, H = 520;
+var svg = d3.select("body").append("svg").attr("width", W).attr("height", H);
+
+// ═══ REAL DATA from backtest_results/attractor_ab_20260420_130431.json ═══
+
+// Panel 1: Individual attractor charge traces (with-attractors rollout 0)
+var attractorTraces = {
+  "resentment about move": [
+    {t:0,c:9,m:true},{t:1,c:3,m:false},{t:2,c:4,m:false},{t:3,c:6,m:false}
+  ],
+  "exclusion from Alex's life": [
+    {t:0,c:3,m:false},{t:1,c:5,m:false},{t:2,c:6,m:false},{t:3,c:10,m:true},
+    {t:4,c:3,m:false},{t:5,c:5,m:false},{t:6,c:6,m:false},{t:7,c:7,m:false},
+    {t:8,c:9,m:true},{t:9,c:3,m:false},{t:10,c:4,m:false},{t:11,c:5,m:false},
+    {t:12,c:6,m:false},{t:13,c:8,m:true},{t:14,c:3,m:false}
+  ],
+  "Jordan's work pressure": [
+    {t:0,c:6,m:false},{t:1,c:6,m:false},{t:2,c:6,m:false},{t:3,c:7,m:false},
+    {t:4,c:7,m:false},{t:5,c:7,m:false},{t:6,c:8,m:true},{t:7,c:3,m:false},
+    {t:8,c:3,m:false},{t:9,c:3,m:false},{t:10,c:4,m:false},{t:11,c:4,m:false},
+    {t:12,c:4,m:false},{t:13,c:4,m:false},{t:14,c:4,m:false}
+  ],
+  "Sam as replacement": [
+    {t:4,c:9,m:true},{t:5,c:3,m:false},{t:6,c:4,m:false},{t:7,c:5,m:false},
+    {t:8,c:6,m:false},{t:9,c:7,m:false},{t:10,c:7,m:false},{t:11,c:7,m:false},
+    {t:12,c:8,m:true},{t:13,c:3,m:false},{t:14,c:5,m:false}
+  ]
+};
+
+// Panel 2: Max charge per turn — mean across 10 rollouts
+var maxChargeAttr = [8.1,6.6,7.9,8.1,6.9,7.2,8.4,7.5,7.7,6.3,7.1,7.9,7.2,7.2,7.3];
+var maxChargeAttrStd = [0.7,0.8,1.0,1.1,1.1,0.8,0.8,1.1,0.8,1.1,0.7,0.9,0.9,0.8,1.5];
+var maxChargeDir = [9.1,9.9,10,10,10,10,10,10,10,10,10,10,10,10,10];
+
+// Panel 3: Tension — mean across 10 rollouts
+var tensionAttr = [0.0,0.8,1.0,1.6,1.9,2.1,2.2,2.5,2.7,3.3,3.4,3.5,4.0,4.2,4.6];
+var tensionDir = [0.0,0.0,0.0,0.0,0.0,0.0,0.0,0.2,0.3,0.3,0.5,0.5,0.5,0.7,0.7];
+var tensionSingle = [0,0,0,0,0,0,0,0,0,0,0,0,0,0,0];
+
+// ═══ LAYOUT ═══
+var panelW = 640, panelH = 130;
+var margin = {top: 28, right: 20, bottom: 22, left: 55};
+var gapY = 18;
+var startX = (W - panelW) / 2;
+var startY = 42;
+
+// ═══ COLORS ═══
+var RUST = "#8b2500";
+var SIENNA = "#b5450a";
+var attColors = ["#ccc", "#999", "#777", "#666"]; // grays for individual attractors
+var mandateColor = RUST;
+
+// ═══ HELPERS ═══
+function drawPanel(parent, px, py, title, subtitle) {
+  var g = parent.append("g").attr("transform", "translate(" + px + "," + py + ")");
+
+  g.append("text")
+    .attr("x", margin.left).attr("y", 12)
+    .attr("fill", "#fff").attr("font-size", 12)
+    .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+    .text(title);
+
+  if (subtitle) {
+    g.append("text")
+      .attr("x", margin.left + title.length * 7 + 8).attr("y", 12)
+      .attr("fill", "#666").attr("font-size", 9)
+      .attr("font-family", "'Format1452', monospace")
+      .text(subtitle);
+  }
+
+  return g;
+}
+
+function makeScales(yDomain) {
+  var iw = panelW - margin.left - margin.right;
+  var ih = panelH - margin.top - margin.bottom;
+  return {
+    x: d3.scaleLinear().domain([0, 14]).range([0, iw]),
+    y: d3.scaleLinear().domain(yDomain).range([ih, 0]),
+    iw: iw, ih: ih
+  };
+}
+
+function drawAxes(inner, s, yTicks, yFmt) {
+  // Grid
+  s.y.ticks(yTicks).forEach(function(t) {
+    inner.append("line").attr("x1",0).attr("x2",s.iw)
+      .attr("y1",s.y(t)).attr("y2",s.y(t))
+      .attr("stroke","#333").attr("stroke-dasharray","2,2");
+  });
+
+  // X axis
+  inner.append("g").attr("transform","translate(0,"+s.ih+")")
+    .call(d3.axisBottom(s.x).ticks(15).tickFormat(function(d){return d;}))
+    .selectAll("text").attr("fill","#777").attr("font-size",8).attr("font-family","'Sligoil', monospace");
+  inner.selectAll(".domain").attr("stroke","#444");
+  inner.selectAll(".tick line").attr("stroke","#444");
+
+  // Y axis
+  inner.append("g")
+    .call(d3.axisLeft(s.y).ticks(yTicks).tickFormat(d3.format(yFmt)))
+    .selectAll("text").attr("fill","#777").attr("font-size",8).attr("font-family","'Sligoil', monospace");
+}
+
+// ═══ TITLE ═══
+svg.append("text")
+  .attr("x", W/2).attr("y", 24).attr("text-anchor", "middle")
+  .attr("fill", "#fff").attr("font-size", 15)
+  .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+  .text("Charge Dynamics: Escaping Local Minima");
+
+// ═══ PANEL 1: Individual Attractor Charges ═══
+var g1 = drawPanel(svg, startX, startY, "Attractor Charges", "single rollout, with-attractors condition");
+var s1 = makeScales([0, 10]);
+var inner1 = g1.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+drawAxes(inner1, s1, 5, ".0f");
+
+// Mandate threshold line
+inner1.append("line")
+  .attr("x1", 0).attr("x2", s1.iw)
+  .attr("y1", s1.y(8)).attr("y2", s1.y(8))
+  .attr("stroke", RUST).attr("stroke-width", 1)
+  .attr("stroke-dasharray", "4,3").attr("opacity", 0.6);
+
+inner1.append("text")
+  .attr("x", s1.iw + 2).attr("y", s1.y(8) + 3)
+  .attr("fill", RUST).attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .attr("opacity", 0.8)
+  .text("mandate");
+
+var line1 = d3.line()
+  .x(function(d) { return s1.x(d.t); })
+  .y(function(d) { return s1.y(d.c); })
+  .curve(d3.curveMonotoneX);
+
+var traceKeys = Object.keys(attractorTraces);
+traceKeys.forEach(function(key, i) {
+  var trace = attractorTraces[key];
+
+  // Line
+  inner1.append("path")
+    .datum(trace)
+    .attr("d", line1)
+    .attr("fill", "none")
+    .attr("stroke", attColors[i])
+    .attr("stroke-width", 1.5)
+    .attr("opacity", 0.9);
+
+  // Mandate markers (rust diamonds)
+  trace.forEach(function(pt) {
+    if (pt.m) {
+      inner1.append("rect")
+        .attr("x", s1.x(pt.t) - 4).attr("y", s1.y(pt.c) - 4)
+        .attr("width", 8).attr("height", 8)
+        .attr("fill", RUST)
+        .attr("transform", "rotate(45," + s1.x(pt.t) + "," + s1.y(pt.c) + ")");
+    }
+  });
+});
+
+// Mini legend for panel 1
+var leg1 = inner1.append("g").attr("transform", "translate(" + (s1.iw - 200) + ",-8)");
+traceKeys.forEach(function(key, i) {
+  var shortLabel = key.length > 22 ? key.substring(0, 22) + "…" : key;
+  leg1.append("line")
+    .attr("x1", i < 2 ? 0 : 120).attr("x2", i < 2 ? 14 : 134)
+    .attr("y1", (i % 2) * 11).attr("y2", (i % 2) * 11)
+    .attr("stroke", attColors[i]).attr("stroke-width", 1.5);
+  leg1.append("text")
+    .attr("x", i < 2 ? 18 : 138).attr("y", (i % 2) * 11 + 3)
+    .attr("fill", "#888").attr("font-size", 7)
+    .attr("font-family", "'Format1452', monospace")
+    .text(shortLabel);
+});
+
+// ═══ PANEL 2: Max Charge Comparison ═══
+var g2 = drawPanel(svg, startX, startY + panelH + gapY, "Max Charge per Turn", "mean ± std across 10 rollouts");
+var s2 = makeScales([0, 11]);
+var inner2 = g2.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+drawAxes(inner2, s2, 5, ".0f");
+
+// Mandate threshold
+inner2.append("line")
+  .attr("x1", 0).attr("x2", s2.iw)
+  .attr("y1", s2.y(8)).attr("y2", s2.y(8))
+  .attr("stroke", RUST).attr("stroke-width", 1)
+  .attr("stroke-dasharray", "4,3").attr("opacity", 0.6);
+
+// Director-only: flatlined at 10
+var lineGen = d3.line()
+  .x(function(d,i) { return s2.x(i); })
+  .y(function(d) { return s2.y(d); })
+  .curve(d3.curveMonotoneX);
+
+inner2.append("path")
+  .datum(maxChargeDir)
+  .attr("d", lineGen)
+  .attr("fill", "none")
+  .attr("stroke", "#555")
+  .attr("stroke-width", 1.8)
+  .attr("stroke-dasharray", "4,3");
+
+// With attractors: confidence band
+var area2 = d3.area()
+  .x(function(d,i) { return s2.x(i); })
+  .y0(function(d,i) { return s2.y(Math.max(0, maxChargeAttr[i] - maxChargeAttrStd[i])); })
+  .y1(function(d,i) { return s2.y(Math.min(11, maxChargeAttr[i] + maxChargeAttrStd[i])); })
+  .curve(d3.curveMonotoneX);
+
+inner2.append("path")
+  .datum(maxChargeAttr)
+  .attr("d", area2)
+  .attr("fill", RUST).attr("opacity", 0.15);
+
+inner2.append("path")
+  .datum(maxChargeAttr)
+  .attr("d", lineGen)
+  .attr("fill", "none")
+  .attr("stroke", RUST)
+  .attr("stroke-width", 2);
+
+// Labels
+inner2.append("text")
+  .attr("x", s2.x(14) + 4).attr("y", s2.y(10) + 3)
+  .attr("fill", "#555").attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("director-only");
+
+inner2.append("text")
+  .attr("x", s2.x(14) + 4).attr("y", s2.y(maxChargeAttr[14]) + 3)
+  .attr("fill", RUST).attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("with attractors");
+
+// Annotation: "pegged at ceiling"
+inner2.append("text")
+  .attr("x", s2.x(7)).attr("y", s2.y(10.8))
+  .attr("text-anchor", "middle")
+  .attr("fill", "#555").attr("font-size", 8).attr("font-style", "italic")
+  .attr("font-family", "'Format1452', monospace")
+  .text("charges hit ceiling and stay — no cashout mechanism");
+
+// ═══ PANEL 3: Tension Accumulation ═══
+var g3 = drawPanel(svg, startX, startY + 2 * (panelH + gapY), "Tension Accumulation", "mean across 10 rollouts");
+var s3 = makeScales([0, 6]);
+var inner3 = g3.append("g").attr("transform", "translate(" + margin.left + "," + margin.top + ")");
+drawAxes(inner3, s3, 3, ".0f");
+
+// Single-prompt: zero line
+inner3.append("path")
+  .datum(tensionSingle)
+  .attr("d", d3.line().x(function(d,i){return s3.x(i);}).y(function(d){return s3.y(d);}).curve(d3.curveMonotoneX))
+  .attr("fill", "none").attr("stroke", "#ccc").attr("stroke-width", 1.5).attr("stroke-dasharray", "4,3");
+
+// Director-only
+inner3.append("path")
+  .datum(tensionDir)
+  .attr("d", d3.line().x(function(d,i){return s3.x(i);}).y(function(d){return s3.y(d);}).curve(d3.curveMonotoneX))
+  .attr("fill", "none").attr("stroke", "#555").attr("stroke-width", 1.8).attr("stroke-dasharray", "4,3");
+
+// With attractors
+inner3.append("path")
+  .datum(tensionAttr)
+  .attr("d", d3.line().x(function(d,i){return s3.x(i);}).y(function(d){return s3.y(d);}).curve(d3.curveMonotoneX))
+  .attr("fill", "none").attr("stroke", RUST).attr("stroke-width", 2.5);
+
+// End labels
+inner3.append("text")
+  .attr("x", s3.x(14) + 4).attr("y", s3.y(0) + 3)
+  .attr("fill", "#ccc").attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("single-prompt");
+
+inner3.append("text")
+  .attr("x", s3.x(14) + 4).attr("y", s3.y(tensionDir[14]) + 3)
+  .attr("fill", "#555").attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("director-only");
+
+inner3.append("text")
+  .attr("x", s3.x(14) + 4).attr("y", s3.y(tensionAttr[14]) + 3)
+  .attr("fill", RUST).attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("with attractors");
+
+// Annotation: cashouts feed tension
+inner3.append("text")
+  .attr("x", s3.x(7)).attr("y", s3.y(5.5))
+  .attr("text-anchor", "middle")
+  .attr("fill", "#888").attr("font-size", 8).attr("font-style", "italic")
+  .attr("font-family", "'Format1452', monospace")
+  .text("each cashout feeds tension upward — events compound");
+
+// X-axis label
+svg.append("text")
+  .attr("x", W/2).attr("y", H - 6).attr("text-anchor", "middle")
+  .attr("fill", "#666").attr("font-size", 9)
+  .attr("font-family", "'Format1452', monospace")
+  .text("Turn");
+
+</script>
+</body>

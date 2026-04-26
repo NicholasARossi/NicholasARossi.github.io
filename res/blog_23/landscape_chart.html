@@ -1,0 +1,430 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+body {
+  margin: 0; padding: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  overflow: hidden;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var W = 700, H = 340;
+var svg = d3.select("body").append("svg").attr("width", W).attr("height", H);
+
+// --- Landscape function ---
+// Sum of sinusoids producing 3 clear basins
+function landscape(x) {
+  return 0.35 * Math.sin(1.6 * x + 0.2)
+       + 0.25 * Math.sin(2.8 * x + 1.0)
+       + 0.15 * Math.sin(0.7 * x + 0.5)
+       + 0.04 * x;
+}
+
+// Sample the landscape
+var xMin = 0.5, xMax = 9.5, nPts = 200;
+var pts = [];
+for (var i = 0; i <= nPts; i++) {
+  var x = xMin + (xMax - xMin) * i / nPts;
+  pts.push({x: x, y: landscape(x)});
+}
+
+// Find local minima numerically
+var minima = [];
+for (var i = 1; i < pts.length - 1; i++) {
+  if (pts[i].y < pts[i-1].y && pts[i].y < pts[i+1].y) {
+    minima.push({x: pts[i].x, y: pts[i].y});
+  }
+}
+// Keep first 3 minima
+minima = minima.slice(0, 3);
+
+// Find barriers (local maxima between minima)
+var maxima = [];
+for (var i = 1; i < pts.length - 1; i++) {
+  if (pts[i].y > pts[i-1].y && pts[i].y > pts[i+1].y) {
+    maxima.push({x: pts[i].x, y: pts[i].y});
+  }
+}
+
+// --- Panel layout ---
+var panelW = 310, panelH = 260;
+var gapX = 40;
+var offsetX = (W - 2 * panelW - gapX) / 2;
+var offsetY = 50;
+
+// --- Scales (shared) ---
+var xScale = d3.scaleLinear().domain([xMin, xMax]).range([20, panelW - 20]);
+var yScale = d3.scaleLinear()
+  .domain([d3.min(pts, function(d){return d.y;}) - 0.15, d3.max(pts, function(d){return d.y;}) + 0.3])
+  .range([panelH - 30, 30]);
+
+var line = d3.line()
+  .x(function(d) { return xScale(d.x); })
+  .y(function(d) { return yScale(d.y); })
+  .curve(d3.curveBasis);
+
+// --- Draw a panel ---
+function drawPanel(parent, title, px, py) {
+  var g = parent.append("g").attr("transform", "translate(" + px + "," + py + ")");
+
+  // Panel background
+  g.append("rect")
+    .attr("width", panelW).attr("height", panelH)
+    .attr("rx", 6).attr("fill", "rgba(255,255,255,0.03)")
+    .attr("stroke", "#333").attr("stroke-width", 0.5);
+
+  // Title
+  g.append("text")
+    .attr("x", panelW / 2).attr("y", -12)
+    .attr("text-anchor", "middle")
+    .attr("fill", "#fff").attr("font-size", 13)
+    .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+    .text(title);
+
+  // Landscape path
+  var path = g.append("path")
+    .datum(pts)
+    .attr("d", line)
+    .attr("fill", "none")
+    .attr("stroke", "#555")
+    .attr("stroke-width", 1.5);
+
+  // Fill below landscape
+  var areaGen = d3.area()
+    .x(function(d) { return xScale(d.x); })
+    .y0(panelH - 30)
+    .y1(function(d) { return yScale(d.y); })
+    .curve(d3.curveBasis);
+
+  g.append("path")
+    .datum(pts)
+    .attr("d", areaGen)
+    .attr("fill", "rgba(255,255,255,0.02)");
+
+  return g;
+}
+
+// --- LEFT PANEL: Without Attractors ---
+var gLeft = drawPanel(svg, "Without Attractors", offsetX, offsetY);
+
+// Ball stuck in first minimum
+var stuckX = xScale(minima[0].x);
+var stuckY = yScale(minima[0].y) - 8;
+
+var leftBall = gLeft.append("circle")
+  .attr("cx", stuckX).attr("cy", stuckY)
+  .attr("r", 8).attr("fill", "#ccc");
+
+// Gentle oscillation for left ball
+function oscillateLeft() {
+  leftBall.transition()
+    .duration(1500)
+    .ease(d3.easeSinInOut)
+    .attr("cx", stuckX + 4)
+    .transition()
+    .duration(1500)
+    .ease(d3.easeSinInOut)
+    .attr("cx", stuckX - 4)
+    .on("end", oscillateLeft);
+}
+oscillateLeft();
+
+// "Stuck" label
+gLeft.append("text")
+  .attr("x", stuckX).attr("y", stuckY - 18)
+  .attr("text-anchor", "middle")
+  .attr("fill", "#888").attr("font-size", 9)
+  .attr("font-family", "'Format1452', monospace")
+  .attr("text-transform", "uppercase")
+  .attr("letter-spacing", "0.08em")
+  .text("SETTLED IN INITIAL REGISTER");
+
+// Basin label
+gLeft.append("text")
+  .attr("x", stuckX).attr("y", panelH - 12)
+  .attr("text-anchor", "middle")
+  .attr("fill", "#555").attr("font-size", 8)
+  .attr("font-family", "'Format1452', monospace")
+  .text("turn 1 → turn 15");
+
+
+// --- RIGHT PANEL: With Attractors ---
+var gRight = drawPanel(svg, "With Attractors", offsetX + panelW + gapX, offsetY);
+
+// Ball element
+var rightBall = gRight.append("circle")
+  .attr("cx", xScale(minima[0].x))
+  .attr("cy", yScale(minima[0].y) - 8)
+  .attr("r", 8).attr("fill", "#8b2500");
+
+// Charge label
+var chargeText = gRight.append("text")
+  .attr("x", xScale(minima[0].x) + 16)
+  .attr("y", yScale(minima[0].y) - 12)
+  .attr("text-anchor", "start")
+  .attr("fill", "#888").attr("font-size", 10)
+  .attr("font-family", "'Format1452', monospace")
+  .text("");
+
+// Mandate flash circle
+var flashCircle = gRight.append("circle")
+  .attr("r", 0).attr("fill", "none")
+  .attr("stroke", "#8b2500").attr("stroke-width", 2).attr("opacity", 0);
+
+// Basin floor overlay — shows the current basin "filling up"
+var basinFill = gRight.append("rect")
+  .attr("width", 0).attr("height", 0)
+  .attr("fill", "rgba(139,37,0,0.08)")
+  .attr("rx", 2);
+
+// Draw basin markers at minima
+minima.forEach(function(m, i) {
+  gRight.append("circle")
+    .attr("cx", xScale(m.x)).attr("cy", yScale(m.y) + 4)
+    .attr("r", 2).attr("fill", "#444");
+});
+
+// --- Animation state machine ---
+var currentBasin = 0;
+var charge = 0;
+var MANDATE_THRESHOLD = 8;
+var CHARGE_INTERVAL = 400; // ms per charge tick
+var SETTLE_DURATION = 800;
+var KICK_DURATION = 600;
+var PAUSE_AT_END = 2500;
+
+function getBasinBounds(basinIdx) {
+  // Find x-range of current basin (between surrounding maxima)
+  var m = minima[basinIdx];
+  var leftBound = xMin;
+  var rightBound = xMax;
+  for (var i = 0; i < maxima.length; i++) {
+    if (maxima[i].x < m.x) leftBound = maxima[i].x;
+    if (maxima[i].x > m.x && rightBound === xMax) rightBound = maxima[i].x;
+  }
+  return {left: leftBound, right: rightBound};
+}
+
+function updateChargeDisplay(c) {
+  if (c === 0) {
+    chargeText.text("");
+    return;
+  }
+  chargeText.text("charge " + c + "/10");
+  if (c >= MANDATE_THRESHOLD) {
+    chargeText.attr("fill", "#8b2500");
+  } else if (c >= 6) {
+    chargeText.attr("fill", "#b5450a");
+  } else {
+    chargeText.attr("fill", "#888");
+  }
+}
+
+function positionChargeLabel(bx, by) {
+  chargeText
+    .attr("x", bx + 16)
+    .attr("y", by - 12);
+}
+
+function animateBasinFill(basinIdx, chargeLevel) {
+  var bounds = getBasinBounds(basinIdx);
+  var lx = xScale(bounds.left) + 5;
+  var rx = xScale(bounds.right) - 5;
+  var bw = rx - lx;
+  var m = minima[basinIdx];
+  var baseY = yScale(m.y);
+  var fillHeight = chargeLevel * 2.5;
+
+  basinFill
+    .attr("x", lx)
+    .attr("y", baseY - fillHeight)
+    .attr("width", bw)
+    .attr("height", fillHeight)
+    .attr("opacity", Math.min(chargeLevel / 10, 0.8));
+}
+
+function settle(basinIdx, callback) {
+  var m = minima[basinIdx];
+  var tx = xScale(m.x);
+  var ty = yScale(m.y) - 8;
+
+  rightBall.transition()
+    .duration(SETTLE_DURATION)
+    .ease(d3.easeBounceOut)
+    .attr("cx", tx).attr("cy", ty)
+    .on("end", function() {
+      positionChargeLabel(tx, ty);
+      if (callback) callback();
+    });
+}
+
+function accumulate(basinIdx, callback) {
+  charge = 1;
+  var m = minima[basinIdx];
+  var tx = xScale(m.x);
+  var ty = yScale(m.y) - 8;
+
+  function tick() {
+    updateChargeDisplay(charge);
+    animateBasinFill(basinIdx, charge);
+
+    // Wobble ball slightly
+    var wobble = (charge / 10) * 6;
+    rightBall.transition()
+      .duration(CHARGE_INTERVAL * 0.4)
+      .attr("cx", tx + (Math.random() - 0.5) * wobble)
+      .attr("cy", ty - charge * 1.5);
+
+    positionChargeLabel(tx + (Math.random() - 0.5) * wobble, ty - charge * 1.5);
+
+    if (charge >= MANDATE_THRESHOLD) {
+      // Mandate!
+      flashMandate(tx, ty - charge * 1.5, function() {
+        charge = 3;
+        updateChargeDisplay(charge);
+        basinFill.attr("opacity", 0);
+        if (callback) callback();
+      });
+      return;
+    }
+
+    charge++;
+    setTimeout(tick, CHARGE_INTERVAL);
+  }
+
+  tick();
+}
+
+function flashMandate(cx, cy, callback) {
+  // Pulse effect
+  flashCircle
+    .attr("cx", cx).attr("cy", cy)
+    .attr("r", 8).attr("opacity", 1)
+    .transition()
+    .duration(400)
+    .attr("r", 30).attr("opacity", 0)
+    .on("end", function() {
+      if (callback) callback();
+    });
+
+  // Brief "MANDATE" text flash
+  var mandateLabel = gRight.append("text")
+    .attr("x", cx).attr("y", cy - 28)
+    .attr("text-anchor", "middle")
+    .attr("fill", "#8b2500").attr("font-size", 10)
+    .attr("font-family", "'Format1452', monospace")
+    .attr("opacity", 1)
+    .text("MANDATE");
+
+  mandateLabel.transition()
+    .duration(600)
+    .attr("opacity", 0)
+    .remove();
+}
+
+function kickToNext(fromBasin, callback) {
+  var nextBasin = fromBasin + 1;
+  if (nextBasin >= minima.length) {
+    if (callback) callback();
+    return;
+  }
+
+  var m = minima[nextBasin];
+  var tx = xScale(m.x);
+  var ty = yScale(m.y) - 8;
+
+  // Arc over the barrier
+  var barrier = null;
+  for (var i = 0; i < maxima.length; i++) {
+    if (maxima[i].x > minima[fromBasin].x && maxima[i].x < m.x) {
+      barrier = maxima[i];
+      break;
+    }
+  }
+  var arcY = barrier ? yScale(barrier.y) - 30 : ty - 40;
+
+  rightBall.transition()
+    .duration(KICK_DURATION * 0.4)
+    .ease(d3.easeQuadOut)
+    .attr("cy", arcY)
+    .transition()
+    .duration(KICK_DURATION * 0.6)
+    .ease(d3.easeBounceOut)
+    .attr("cx", tx).attr("cy", ty)
+    .on("end", function() {
+      positionChargeLabel(tx, ty);
+      if (callback) callback();
+    });
+}
+
+function runCycle() {
+  currentBasin = 0;
+  charge = 0;
+  updateChargeDisplay(0);
+  basinFill.attr("opacity", 0);
+
+  // Reset ball to start
+  rightBall
+    .attr("cx", xScale(minima[0].x))
+    .attr("cy", yScale(minima[0].y) - 60);
+
+  settle(0, function() {
+    accumulate(0, function() {
+      kickToNext(0, function() {
+        settle(1, function() {
+          accumulate(1, function() {
+            kickToNext(1, function() {
+              settle(2, function() {
+                // Arrived at third basin — pause then loop
+                chargeText.text("");
+                setTimeout(runCycle, PAUSE_AT_END);
+              });
+            });
+          });
+        });
+      });
+    });
+  });
+}
+
+// --- Main title ---
+svg.append("text")
+  .attr("x", W / 2).attr("y", 28)
+  .attr("text-anchor", "middle")
+  .attr("fill", "#fff").attr("font-size", 15)
+  .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+  .text("Narrative Energy Landscape");
+
+// --- Legend ---
+var legY = H - 16;
+var legG = svg.append("g").attr("transform", "translate(" + (W/2 - 140) + "," + legY + ")");
+
+legG.append("circle").attr("cx", 0).attr("cy", -3).attr("r", 5).attr("fill", "#ccc");
+legG.append("text").attr("x", 10).attr("y", 0)
+  .attr("fill", "#888").attr("font-size", 9)
+  .attr("font-family", "'Format1452', monospace").text("narrative state (no attractors)");
+
+legG.append("circle").attr("cx", 180).attr("cy", -3).attr("r", 5).attr("fill", "#8b2500");
+legG.append("text").attr("x", 190).attr("y", 0)
+  .attr("fill", "#888").attr("font-size", 9)
+  .attr("font-family", "'Format1452', monospace").text("narrative state (with attractors)");
+
+// Start animation
+setTimeout(runCycle, 500);
+</script>
+</body>
