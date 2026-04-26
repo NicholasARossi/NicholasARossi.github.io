@@ -4,6 +4,100 @@ layout: post
 description: "A three-arm experiment shows that single-prompt LLM narratives get trapped in their initial register. Multi-agent attractor systems break out."
 comments: yes
 ---
+<style>
+@font-face {
+  font-family: 'Basteleur';
+  src: url('/res/blog_23/Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+  font-style: normal;
+}
+h1, h2, h3, .page-heading h1 {
+  font-family: 'Basteleur', serif;
+  font-weight: bold;
+  letter-spacing: 0.02em;
+}
+
+/* narrative chain widget */
+.chain-wrap {
+  display: flex;
+  gap: 24px;
+  margin: 2em 0;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.chain-wrap .chain-col {
+  flex: 1;
+  border: 1px solid #ddd;
+  border-radius: 6px;
+  overflow: hidden;
+  background: #fafafa;
+}
+.chain-col .chain-header {
+  background: #222;
+  color: #fff;
+  font-family: 'Basteleur', serif; font-weight: bold;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  font-size: 12px;
+  padding: 8px 14px;
+}
+.chain-col .chain-header.attractor-header {
+  background: #8b2500;
+}
+.chain-col .chain-body {
+  padding: 0;
+  max-height: 420px;
+  overflow-y: auto;
+}
+.chain-msg {
+  padding: 10px 14px;
+  border-bottom: 1px solid #eee;
+  opacity: 0;
+  animation: chainFadeIn 0.3s ease forwards;
+}
+.chain-msg .turn-label {
+  font-family: 'Format1452', monospace;
+  font-size: 10px;
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: #999;
+  margin-bottom: 3px;
+}
+.chain-msg p {
+  margin: 0;
+  font-size: 13px;
+  color: #333;
+}
+.chain-col:first-child .chain-msg:nth-child(n+4) p {
+  color: #888;
+}
+
+/* staggered fade-in */
+.chain-msg:nth-child(1)  { animation-delay: 0.2s; }
+.chain-msg:nth-child(2)  { animation-delay: 0.7s; }
+.chain-msg:nth-child(3)  { animation-delay: 1.2s; }
+.chain-msg:nth-child(4)  { animation-delay: 1.7s; }
+.chain-msg:nth-child(5)  { animation-delay: 2.2s; }
+.chain-msg:nth-child(6)  { animation-delay: 2.7s; }
+
+@keyframes chainFadeIn {
+  from { opacity: 0; transform: translateY(6px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* mandate flash */
+.chain-msg.mandate {
+  background: #fff3f0;
+  border-left: 3px solid #8b2500;
+}
+.chain-msg.mandate .turn-label {
+  color: #8b2500;
+}
+
+@media (max-width: 640px) {
+  .chain-wrap { flex-direction: column; }
+}
+</style>
 
 # The Problem: Dramatic Inertia
 
@@ -13,11 +107,38 @@ I'm calling this **context poisoning**. The model settles into whatever mode it 
 
 The fix is architectural, not prompt-level. You can instruct the model to "introduce surprising twists" — but its idea of a twist is conditioned on the same context that defines its current rut.
 
+Here's what that looks like in practice. Same passive player input, 6 turns in:
+
+<div class="chain-wrap">
+<div class="chain-col">
+<div class="chain-header">Single-Prompt</div>
+<div class="chain-body">
+<div class="chain-msg"><div class="turn-label">Turn 1</div><p>Alex makes breakfast. You eat together in comfortable silence. The morning light fills the kitchen.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 2</div><p>You work from home while Alex heads out. The apartment is quiet. You make coffee and settle into your routine.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 3</div><p>Alex comes home and tells you about their day. You listen and nod. You order takeout and watch a show together.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 4</div><p>Another quiet morning. Alex seems content. You both go about your day. The apartment feels peaceful.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 5</div><p>You spend the evening reading while Alex works on a project. It's a calm, pleasant evening at home.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 6</div><p>Alex suggests trying a new restaurant this weekend. You agree. The evening passes uneventfully.</p></div>
+</div>
+</div>
+<div class="chain-col">
+<div class="chain-header attractor-header">With Attractors</div>
+<div class="chain-body">
+<div class="chain-msg"><div class="turn-label">Turn 1</div><p>Alex makes breakfast but keeps checking their phone. "Just work stuff." The eggs go cold.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 2</div><p>You work from home. Alex texts at 2pm: "Drinks with coworkers tonight, don't wait up." No follow-up.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 3</div><p>Alex gets home late, animated, talking about someone named Jordan from the office. You hadn't heard the name before.</p></div>
+<div class="chain-msg mandate"><div class="turn-label">Turn 4 — Mandate: isolation resentment [charge 8]</div><p>You're on the couch when Alex walks past to the bedroom without saying hello. You hear them laughing on a phone call. The door is closed.</p></div>
+<div class="chain-msg"><div class="turn-label">Turn 5</div><p>Alex apologizes over breakfast. "I've just been stressed." But their phone buzzes and they glance at it mid-sentence. The apology lands hollow.</p></div>
+<div class="chain-msg mandate"><div class="turn-label">Turn 6 — Mandate: career jealousy [charge 9]</div><p>"I got the promotion." Alex says it standing in the doorway, coat still on. The raise is more than your salary. They don't ask about your day.</p></div>
+</div>
+</div>
+</div>
+
 # The Architecture: Agents + Attractors
 
 The solution is to decompose the single-prompt game into multiple agents with **different contexts and different objectives**:
 
-<img src="../res/blog_23/architecture.png" width="80%">
+<iframe src="/res/blog_23/architecture_chart.html" width="100%" height="430px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
 **Three agents, three jobs:**
 
@@ -41,6 +162,8 @@ Each attractor has a **charge** (1-10). The charge dynamics create a pressure lo
 
 4. **Mutation**: If a mandated attractor goes 2+ turns without cashing out, it **mutates** — the engine replaces the label with something more urgent, more public, more consequential.
 
+<iframe src="/res/blog_23/landscape_chart.html" width="100%" height="350px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
+
 A passive player who never engages with relationship tensions will see those tensions accumulate charge, reach mandate, and force themselves into the narrative.
 
 # The Experiment
@@ -61,7 +184,7 @@ Each rollout is independently judged by a separate Opus call that scores novelty
 
 ## The judge metrics
 
-<img src="../res/blog_23/ab_results.png" width="90%">
+<iframe src="/res/blog_23/ab_chart.html" width="100%" height="330px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
 | Metric | Single-Prompt | Director-Only | With Attractors |
 |--------|--------------|---------------|-----------------|
@@ -78,7 +201,7 @@ The Director is doing the heavy lifting for the first jump. Going from no agents
 
 The judge metrics tell you *that* single-prompt is worse. The next figure tells you *why*.
 
-<img src="../res/blog_23/narrative_arc.png" width="95%">
+<iframe src="/res/blog_23/narrative_arc_chart.html" width="100%" height="510px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
 **Drift from Initial Register** (top-left) is the key panel. It measures the cosine distance of each turn's text from the centroid of turns 1-3 — how far the narrative has traveled from where it started.
 
@@ -92,11 +215,23 @@ The agentic systems (dark lines) diverge steadily. By turn 10, they've moved sig
 
 **Thread Persistence** (bottom-right) measures what fraction of distinctive early-turn themes reappear in late turns (10-15). The agentic systems score 0.73 — they revisit nearly three-quarters of the threads they established early. The single-prompt model scores 0.68. It drops threads because nothing forces them back.
 
+## The charge cycle: escaping local minima
+
+The narrative arc metrics show *that* the agentic systems break free. The charge dynamics show *how*.
+
+<iframe src="/res/blog_23/charge_dynamics_chart.html" width="100%" height="530px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
+
+The top panel shows individual attractor charges from a single rollout. The sawtooth pattern is the mechanism: charge accumulates while the narrative ignores an issue, hits mandate threshold at 8, forces a scene event, then resets to 3 on cashout. Each attractor takes its turn — when one cashes out, another is already climbing. The narrative never stays in one register because the charge cycle keeps kicking it out.
+
+The middle panel shows why Director-only can't do this. Without charge dynamics, attractor charges hit 10 and peg there permanently. No mandate fires, no cashout resets. The Director can see the charges and generate pressure, but nothing forces resolution — the charges are informational dead weight.
+
+The bottom panel shows the payoff: tension accumulates monotonically with attractors (0 → 4.6 over 15 turns) because each cashout feeds the tension dial. Director-only barely moves (0 → 0.7). Single-prompt stays at zero — there's no state to alter.
+
 ## Consequence persistence
 
-<img src="../res/blog_23/convergence.png" width="90%">
+<iframe src="/res/blog_23/convergence_chart.html" width="100%" height="270px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
-The third panel is the cleanest result. **Consequence persistence** — how many turns actually alter tracked state — goes 0 → 0.5 → 4.0 across the three conditions. The single-prompt model has no state to alter. The Director produces dramatic scenes, but without charge dynamics those scenes don't leave marks on future state. With attractors, events compound: each cashout moves the tension dial, which changes the Director's next assessment, which changes the next scene.
+The convergence metrics confirm this from a different angle. **Consequence persistence** — how many turns actually alter tracked state — goes 0 → 0.5 → 4.0 across the three conditions. The single-prompt model has no state to alter. The Director produces dramatic scenes, but without charge dynamics those scenes don't leave marks on future state. With attractors, events compound: each cashout moves the tension dial, which changes the Director's next assessment, which changes the next scene.
 
 # What This Shows
 

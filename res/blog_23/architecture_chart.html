@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+body {
+  font-family: 'Sligoil', monospace;
+  margin: 0; padding: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+  overflow: hidden;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+var w = 680, h = 420;
+var svg = d3.select("body").append("svg").attr("width", w).attr("height", h);
+
+// Helpers
+function box(g, x, y, label, opts) {
+  opts = opts || {};
+  var bw = opts.w || 110, bh = opts.h || 44;
+  var fill = opts.fill || "none", stroke = opts.stroke || "#ccc";
+  var fontSz = opts.fontSize || 13;
+  var bold = opts.bold || false;
+  g.append("rect")
+    .attr("x", x - bw/2).attr("y", y - bh/2)
+    .attr("width", bw).attr("height", bh)
+    .attr("rx", 4).attr("fill", fill).attr("stroke", stroke).attr("stroke-width", 1.5);
+  var lines = label.split("\n");
+  lines.forEach(function(line, i) {
+    g.append("text")
+      .attr("x", x).attr("y", y + (i - (lines.length-1)/2) * 16)
+      .attr("text-anchor", "middle").attr("dominant-baseline", "central")
+      .attr("fill", "#fff").attr("font-size", fontSz)
+      .attr("font-weight", bold ? "bold" : "normal")
+      .attr("font-family", "'Sligoil', monospace")
+      .text(line);
+  });
+}
+
+function arrow(g, x1, y1, x2, y2, opts) {
+  opts = opts || {};
+  var dash = opts.dash || "none";
+  var color = opts.color || "#888";
+  g.append("line")
+    .attr("x1",x1).attr("y1",y1).attr("x2",x2).attr("y2",y2)
+    .attr("stroke", color).attr("stroke-width", 1.5)
+    .attr("stroke-dasharray", dash)
+    .attr("marker-end", "url(#arrow-" + color.replace("#","") + ")");
+}
+
+// Arrow markers
+["888","8b2500","555"].forEach(function(c) {
+  svg.append("defs").append("marker")
+    .attr("id", "arrow-" + c)
+    .attr("viewBox", "0 0 10 10").attr("refX", 9).attr("refY", 5)
+    .attr("markerWidth", 8).attr("markerHeight", 8)
+    .attr("orient", "auto")
+    .append("path").attr("d", "M0,0 L10,5 L0,10 Z").attr("fill", "#" + c);
+});
+
+var g = svg.append("g").attr("transform", "translate(0,10)");
+
+// Title
+g.append("text")
+  .attr("x", w/2).attr("y", 22).attr("text-anchor", "middle")
+  .attr("fill", "#fff").attr("font-size", 14).attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+  .text("Multi-Agent Narrative Architecture");
+
+// Nodes
+var playerX = 70, dirX = 280, narX = 480, outX = 630;
+var topY = 110, midY = 200, botY = 310;
+
+box(g, playerX, midY, "Player\nInput", {stroke: "#888"});
+box(g, dirX, topY, "Director", {fill: "#2a2a4a", stroke: "#888", bold: true});
+box(g, narX, midY, "Narrative\nModel", {fill: "#2a2a4a", stroke: "#8b2500", bold: true});
+box(g, outX, midY, "Player\nSees This", {stroke: "#666", w: 90, h: 40, fontSize: 11});
+box(g, 280, botY, "Cashout\nClassifier", {stroke: "#666"});
+box(g, 500, botY, "Partner\nAgent", {fill: "#2a2a4a", stroke: "#888", bold: true});
+
+// Arrows: Player -> Director
+arrow(g, 125, midY - 15, dirX - 58, topY + 5, {color: "#888"});
+// Player -> Narrative (direct)
+arrow(g, 125, midY, narX - 58, midY, {color: "#888"});
+// Director -> Narrative
+arrow(g, dirX + 58, topY + 10, narX - 58, midY - 15, {color: "#888"});
+// Narrative -> Output
+arrow(g, narX + 58, midY, outX - 48, midY, {color: "#888"});
+// Partner -> Narrative (mandate, red)
+arrow(g, 500, botY - 25, narX + 15, midY + 25, {color: "#8b2500"});
+// Cashout <- Narrative (dashed)
+arrow(g, narX - 20, midY + 25, 335, botY - 15, {color: "#888", dash: "4,3"});
+// Cashout -> Partner
+arrow(g, 335, botY, 445, botY, {color: "#888", dash: "4,3"});
+// Director <-> Partner (dashed cross)
+arrow(g, dirX + 30, topY + 25, 470, botY - 25, {color: "#888", dash: "4,3"});
+
+// Directive label
+g.append("text")
+  .attr("x", (playerX + narX) / 2 + 30).attr("y", midY - 18)
+  .attr("text-anchor", "middle").attr("fill", "#999")
+  .attr("font-size", 10).attr("font-style", "italic")
+  .attr("font-family", "'Sligoil', monospace")
+  .text('"escalate the dinner scene"');
+
+// Mandate label
+g.append("text")
+  .attr("x", 530).attr("y", (midY + botY)/2 - 5)
+  .attr("text-anchor", "start").attr("fill", "#8b2500")
+  .attr("font-size", 10).attr("font-family", "'Sligoil', monospace")
+  .text("MANDATE:");
+g.append("text")
+  .attr("x", 530).attr("y", (midY + botY)/2 + 8)
+  .attr("text-anchor", "start").attr("fill", "#8b2500")
+  .attr("font-size", 9).attr("font-family", "'Sligoil', monospace")
+  .text('"must cash out this turn"');
+
+// Background thread label
+g.append("text")
+  .attr("x", 370).attr("y", botY + 5)
+  .attr("text-anchor", "middle").attr("fill", "#666")
+  .attr("font-size", 9).attr("font-family", "'Sligoil', monospace")
+  .text("background thread");
+
+// State box
+var stateX = 380, stateY = 380;
+g.append("rect")
+  .attr("x", stateX).attr("y", stateY - 5)
+  .attr("width", 250).attr("height", 38)
+  .attr("rx", 3).attr("fill", "none").attr("stroke", "#555").attr("stroke-dasharray", "3,2");
+
+var stateLines = [
+  'drift: 7/10  tension: 4/10',
+  '"move resentment" charge:9 MANDATED'
+];
+stateLines.forEach(function(line, i) {
+  g.append("text")
+    .attr("x", stateX + 125).attr("y", stateY + 8 + i * 14)
+    .attr("text-anchor", "middle").attr("fill", "#999")
+    .attr("font-size", 9).attr("font-family", "'Sligoil', monospace")
+    .text(line);
+});
+</script>
+</body>

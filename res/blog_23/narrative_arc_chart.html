@@ -1,0 +1,233 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style>
+@font-face {
+  font-family: 'Sligoil';
+  src: url('Sligoil-Micro.otf') format('opentype');
+}
+@font-face {
+  font-family: 'Basteleur';
+  src: url('Basteleur-Bold.otf') format('opentype');
+  font-weight: bold;
+}
+@font-face {
+  font-family: 'Format1452';
+  src: url('Format_1452.otf') format('opentype');
+}
+body {
+  font-family: 'Sligoil', monospace;
+  margin: 0; padding: 0;
+  background: linear-gradient(135deg, #1a1a2e, #16213e);
+  color: #e0e0e0;
+  overflow: hidden;
+}
+</style>
+<body>
+<script src="https://d3js.org/d3.v4.min.js"></script>
+<script>
+// Real data extracted from backtest_results/attractor_ab_20260420_130431.json
+var data = {
+  "single-prompt": {
+    "drift_mean": [0.349,0.3389,0.3558,0.7673,0.7732,0.7893,0.7969,0.8099,0.7859,0.7773,0.8036,0.7666,0.7931,0.7826,0.8244],
+    "drift_std": [0.0091,0.0201,0.0171,0.0315,0.0317,0.029,0.0248,0.0246,0.0308,0.0236,0.0274,0.0291,0.0326,0.0395,0.0226],
+    "conflict_mean": [0.0023,0.00198,0.0019,0.00125,0.00277,0.0029,0.00215,0.00197,0.00083,0.0011,0.00239,0.00122,0.00106,0.00159,0.00227],
+    "conflict_std": [0.00149,0.00224,0.00177,0.00136,0.00234,0.00203,0.00409,0.00218,0.00102,0.00148,0.00156,0.00142,0.00108,0.00114,0.00192],
+    "dialog_mean": [0.0793,0.0263,0.0139,0.0442,0.041,0.0329,0.0238,0.0302,0.0172,0.04,0.0229,0.019,0.0073,0.0175,0.0176],
+    "dialog_std": [0.0451,0.0178,0.0173,0.0615,0.0278,0.0486,0.035,0.0278,0.0128,0.0213,0.0233,0.0109,0.0099,0.0252,0.0194],
+    "thread_rate": 0.68
+  },
+  "director-only": {
+    "drift_mean": [0.3327,0.3274,0.3251,0.7149,0.7726,0.7869,0.7788,0.8012,0.7758,0.7621,0.7861,0.8066,0.8146,0.7727,0.8004],
+    "drift_std": [0.0152,0.0139,0.0151,0.029,0.0439,0.0298,0.0345,0.0482,0.0411,0.0368,0.0231,0.0364,0.0296,0.036,0.03],
+    "conflict_mean": [0.00162,0.00366,0.00427,0.00606,0.00216,0.00327,0.00105,0.00239,0.00272,0.00208,0.00165,0.00273,0.00332,0.00186,0.00226],
+    "conflict_std": [0.00204,0.00238,0.00208,0.00527,0.00267,0.00282,0.00139,0.00279,0.00231,0.00202,0.00125,0.00257,0.00258,0.00193,0.00228],
+    "dialog_mean": [0.0795,0.0775,0.0744,0.0494,0.0644,0.111,0.0356,0.0297,0.0514,0.0293,0.0615,0.0652,0.0999,0.0246,0.0331],
+    "dialog_std": [0.0638,0.0862,0.0645,0.0591,0.0877,0.1187,0.0513,0.0377,0.0799,0.0539,0.0957,0.0923,0.1102,0.0479,0.044],
+    "thread_rate": 0.7267
+  },
+  "with-attractors": {
+    "drift_mean": [0.3322,0.3276,0.3335,0.745,0.7604,0.7866,0.7703,0.8021,0.7596,0.7693,0.7911,0.7818,0.8167,0.7722,0.7896],
+    "drift_std": [0.0245,0.0258,0.0296,0.0264,0.0402,0.0404,0.0434,0.0364,0.0426,0.0339,0.0214,0.043,0.0375,0.0341,0.0394],
+    "conflict_mean": [0.00127,0.00364,0.00485,0.00461,0.00252,0.002,0.00205,0.00257,0.00254,0.00142,0.00134,0.0017,0.0017,0.00202,0.00186],
+    "conflict_std": [0.00158,0.00205,0.00329,0.00676,0.00208,0.00175,0.00226,0.00231,0.00105,0.00129,0.0014,0.00075,0.00108,0.0016,0.00235],
+    "dialog_mean": [0.0691,0.1681,0.1198,0.0524,0.1099,0.0548,0.0341,0.0308,0.062,0.046,0.0166,0.0756,0.1086,0.032,0.0323],
+    "dialog_std": [0.0595,0.1176,0.108,0.0826,0.1444,0.0824,0.0811,0.0652,0.0735,0.0827,0.0488,0.0675,0.1214,0.082,0.0531],
+    "thread_rate": 0.7333
+  }
+};
+
+var threadData = [
+  {label: "Single\nPrompt", value: data["single-prompt"].thread_rate},
+  {label: "Director\nOnly", value: data["director-only"].thread_rate},
+  {label: "With\nAttractors", value: data["with-attractors"].thread_rate}
+];
+
+var totalW = 700, totalH = 500;
+var svg = d3.select("body").append("svg").attr("width", totalW).attr("height", totalH);
+
+var colors = {sp: "#ccc", dir: "#555", attr: "#8b2500"};
+
+function drawLinePanel(g, title, sub, dataSets, yDomain, yFmt, pw, ph) {
+  var m = {top: 35, right: 10, bottom: 25, left: 45};
+  var iw = pw - m.left - m.right;
+  var ih = ph - m.top - m.bottom;
+
+  g.append("text").attr("x", pw/2).attr("y", 12).attr("text-anchor", "middle")
+    .attr("fill", "#fff").attr("font-size", 11).attr("font-family", "'Basteleur', serif").attr("font-weight", "bold").text(title);
+  if (sub) {
+    g.append("text").attr("x", pw/2).attr("y", 24).attr("text-anchor", "middle")
+      .attr("fill", "#777").attr("font-size", 8).attr("font-family", "'Format1452', monospace").text(sub);
+  }
+
+  var inner = g.append("g").attr("transform", "translate(" + m.left + "," + m.top + ")");
+
+  var x = d3.scaleLinear().domain([1, 15]).range([0, iw]);
+  var y = d3.scaleLinear().domain(yDomain).range([ih, 0]);
+
+  y.ticks(4).forEach(function(t) {
+    inner.append("line").attr("x1",0).attr("x2",iw)
+      .attr("y1", y(t)).attr("y2", y(t))
+      .attr("stroke", "#333").attr("stroke-dasharray", "2,2");
+  });
+
+  var line = d3.line().x(function(d,i) { return x(i+1); }).y(function(d) { return y(d); }).curve(d3.curveMonotoneX);
+
+  // Confidence bands using real std data
+  dataSets.forEach(function(ds) {
+    var area = d3.area()
+      .x(function(d,i) { return x(i+1); })
+      .y0(function(d,i) { return y(Math.max(yDomain[0], ds.mean[i] - ds.std[i])); })
+      .y1(function(d,i) { return y(Math.min(yDomain[1], ds.mean[i] + ds.std[i])); })
+      .curve(d3.curveMonotoneX);
+    inner.append("path").datum(ds.mean)
+      .attr("d", area).attr("fill", ds.color).attr("opacity", 0.15);
+  });
+
+  // Lines
+  dataSets.forEach(function(ds) {
+    inner.append("path").datum(ds.mean)
+      .attr("d", line).attr("fill", "none")
+      .attr("stroke", ds.color).attr("stroke-width", ds.key === "attr" ? 2.5 : 1.8)
+      .attr("stroke-dasharray", ds.key === "sp" ? "4,3" : "none");
+  });
+
+  // Axes
+  inner.append("g").attr("transform", "translate(0," + ih + ")")
+    .call(d3.axisBottom(x).ticks(7).tickSize(3)).selectAll("text")
+    .attr("fill", "#999").attr("font-size", 9).attr("font-family", "'Sligoil', monospace");
+  inner.select(".domain").attr("stroke", "#555");
+
+  inner.append("g")
+    .call(d3.axisLeft(y).ticks(4).tickFormat(d3.format(yFmt)).tickSize(3)).selectAll("text")
+    .attr("fill", "#999").attr("font-size", 9).attr("font-family", "'Sligoil', monospace");
+  inner.selectAll(".domain").attr("stroke", "#555");
+  inner.selectAll(".tick line").attr("stroke", "#555");
+
+  inner.append("text").attr("x", iw/2).attr("y", ih + 22).attr("text-anchor", "middle")
+    .attr("fill", "#777").attr("font-size", 9).attr("font-family", "'Format1452', monospace").text("Turn");
+}
+
+var pw = 330, ph = 220;
+var gap = 20;
+
+// Panel 1: Drift
+var g1 = svg.append("g").attr("transform", "translate(10,10)");
+drawLinePanel(g1, "Drift from Initial Register", "higher = narrative evolved more",
+  [{mean: data["single-prompt"].drift_mean, std: data["single-prompt"].drift_std, color: colors.sp, key: "sp"},
+   {mean: data["director-only"].drift_mean, std: data["director-only"].drift_std, color: colors.dir, key: "dir"},
+   {mean: data["with-attractors"].drift_mean, std: data["with-attractors"].drift_std, color: colors.attr, key: "attr"}],
+  [0, 0.9], ".1f", pw, ph);
+
+// Panel 2: Conflict
+var g2 = svg.append("g").attr("transform", "translate(" + (pw + gap) + ",10)");
+drawLinePanel(g2, "Conflict Escalation", "higher = more conflict vocabulary",
+  [{mean: data["single-prompt"].conflict_mean, std: data["single-prompt"].conflict_std, color: colors.sp, key: "sp"},
+   {mean: data["director-only"].conflict_mean, std: data["director-only"].conflict_std, color: colors.dir, key: "dir"},
+   {mean: data["with-attractors"].conflict_mean, std: data["with-attractors"].conflict_std, color: colors.attr, key: "attr"}],
+  [0, 0.012], ".3f", pw, ph);
+
+// Panel 3: Dialogue
+var g3 = svg.append("g").attr("transform", "translate(10," + (ph + gap + 10) + ")");
+drawLinePanel(g3, "Dialogue Density", "higher = more character interaction",
+  [{mean: data["single-prompt"].dialog_mean, std: data["single-prompt"].dialog_std, color: colors.sp, key: "sp"},
+   {mean: data["director-only"].dialog_mean, std: data["director-only"].dialog_std, color: colors.dir, key: "dir"},
+   {mean: data["with-attractors"].dialog_mean, std: data["with-attractors"].dialog_std, color: colors.attr, key: "attr"}],
+  [0, 0.30], ".2f", pw, ph);
+
+// Panel 4: Thread Persistence (bar chart)
+var g4 = svg.append("g").attr("transform", "translate(" + (pw + gap) + "," + (ph + gap + 10) + ")");
+(function() {
+  var m = {top: 35, right: 10, bottom: 35, left: 40};
+  var iw = pw - m.left - m.right;
+  var ih = pw - m.top - m.bottom;
+  // use ph for height not pw
+  ih = ph - m.top - m.bottom;
+
+  g4.append("text").attr("x", pw/2).attr("y", 12).attr("text-anchor", "middle")
+    .attr("fill", "#fff").attr("font-size", 11).attr("font-family", "'Sligoil', monospace").text("Thread Persistence");
+  g4.append("text").attr("x", pw/2).attr("y", 24).attr("text-anchor", "middle")
+    .attr("fill", "#777").attr("font-size", 8).attr("font-family", "'Format1452', monospace").text("fraction of early themes revisited late");
+
+  var inner = g4.append("g").attr("transform", "translate(" + m.left + "," + m.top + ")");
+
+  var x = d3.scaleBand().domain(threadData.map(function(d){return d.label;})).rangeRound([0, iw]).padding(0.35);
+  var y = d3.scaleLinear().domain([0, 1]).range([ih, 0]);
+
+  var barColors = [colors.sp, colors.dir, colors.attr];
+
+  [0.25, 0.5, 0.75].forEach(function(t) {
+    inner.append("line").attr("x1",0).attr("x2",iw)
+      .attr("y1",y(t)).attr("y2",y(t)).attr("stroke","#333").attr("stroke-dasharray","2,2");
+  });
+
+  inner.selectAll(".bar").data(threadData).enter().append("rect")
+    .attr("x", function(d) { return x(d.label); })
+    .attr("y", function(d) { return y(d.value); })
+    .attr("width", x.bandwidth())
+    .attr("height", function(d) { return ih - y(d.value); })
+    .attr("fill", function(d,i) { return barColors[i]; })
+    .attr("rx", 2).attr("opacity", 0.9);
+
+  inner.selectAll(".val").data(threadData).enter().append("text")
+    .attr("x", function(d) { return x(d.label) + x.bandwidth()/2; })
+    .attr("y", function(d) { return y(d.value) - 5; })
+    .attr("text-anchor", "middle").attr("fill", "#fff").attr("font-size", 12)
+    .attr("font-family", "'Sligoil', monospace")
+    .text(function(d) { return d.value.toFixed(2); });
+
+  var xAxis = inner.append("g").attr("transform", "translate(0," + ih + ")")
+    .call(d3.axisBottom(x).tickSize(0));
+  xAxis.select(".domain").attr("stroke", "#555");
+  xAxis.selectAll("text").each(function(d) {
+    var el = d3.select(this);
+    var lines = d.split("\n");
+    el.text("").attr("fill","#999").attr("font-size",9).attr("font-family","'Sligoil', monospace");
+    lines.forEach(function(line,i) {
+      el.append("tspan").attr("x",0).attr("dy", i===0 ? "1em" : "1.1em").text(line);
+    });
+  });
+
+  inner.append("g").call(d3.axisLeft(y).ticks(4).tickFormat(d3.format(".2f")).tickSize(3))
+    .selectAll("text").attr("fill","#999").attr("font-size",9).attr("font-family","'Sligoil', monospace");
+  inner.selectAll(".domain").attr("stroke","#555");
+  inner.selectAll(".tick line").attr("stroke","#555");
+})();
+
+// Legend
+var legendY = totalH - 22;
+var legendItems = [
+  {label: "single-prompt", color: colors.sp, dash: "4,3"},
+  {label: "director-only", color: colors.dir, dash: "none"},
+  {label: "with attractors", color: colors.attr, dash: "none"}
+];
+var legendG = svg.append("g").attr("transform", "translate(" + (totalW/2 - 180) + "," + legendY + ")");
+legendItems.forEach(function(item, i) {
+  var lx = i * 140;
+  legendG.append("line").attr("x1", lx).attr("y1", 0).attr("x2", lx+20).attr("y2", 0)
+    .attr("stroke", item.color).attr("stroke-width", 2).attr("stroke-dasharray", item.dash);
+  legendG.append("text").attr("x", lx+25).attr("y", 4)
+    .attr("fill", "#ccc").attr("font-size", 10).attr("font-family", "'Sligoil', monospace")
+    .text(item.label);
+});
+</script>
+</body>
