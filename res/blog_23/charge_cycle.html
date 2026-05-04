@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=JetBrains+Mono:wght@300;400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f4f1eb;
+    font-family: 'JetBrains Mono', monospace;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100%;
+    padding: 16px 20px;
+  }
+
+  .cycle-wrap {
+    width: 100%;
+    max-width: 700px;
+    position: relative;
+  }
+
+  /* The cycle diagram */
+  .cycle-row {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0;
+  }
+
+  .node {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    gap: 6px;
+    cursor: pointer;
+    padding: 12px 16px;
+    border-radius: 4px;
+    transition: background 0.2s;
+    position: relative;
+    min-width: 120px;
+  }
+
+  .node:hover {
+    background: #eae6de;
+  }
+
+  .node.active {
+    background: #eae6de;
+  }
+
+  .node-icon {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 16px;
+    font-weight: 400;
+    transition: all 0.3s;
+  }
+
+  .node-label {
+    font-size: 0.6rem;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: #6e685c;
+    text-align: center;
+  }
+
+  .node-charge {
+    font-size: 0.5rem;
+    color: #8a8478;
+  }
+
+  /* Node colors */
+  .n-accumulate .node-icon { background: #e8e4dc; color: #6e685c; border: 2px solid #d4cfc4; }
+  .n-mandate .node-icon { background: #f0e0d6; color: #8b2500; border: 2px solid #d4a48a; }
+  .n-cashout .node-icon { background: #dce8dc; color: #3a6a3a; border: 2px solid #b4ccb4; }
+  .n-mutation .node-icon { background: #e8dce8; color: #6a3a6a; border: 2px solid #ccb4cc; }
+
+  .node:hover .n-accumulate, .node.active .n-accumulate { border-color: #8a8478; }
+  .node:hover .n-mandate, .node.active .n-mandate { border-color: #8b2500; }
+
+  /* Arrows between nodes */
+  .arrow {
+    font-size: 18px;
+    color: #c4bfb4;
+    flex-shrink: 0;
+    margin: 0 2px;
+    padding-top: 0;
+  }
+
+  /* Loop-back arrow */
+  .loop-arrow {
+    text-align: center;
+    color: #c4bfb4;
+    font-size: 12px;
+    margin-top: 4px;
+    letter-spacing: 0.5em;
+  }
+
+  /* Detail panel */
+  .detail {
+    margin-top: 12px;
+    padding: 12px 16px;
+    background: #eae6de;
+    border: 1px solid #d4cfc4;
+    border-radius: 4px;
+    min-height: 60px;
+    transition: opacity 0.2s;
+  }
+
+  .detail-title {
+    font-size: 0.6rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e685c;
+    margin-bottom: 6px;
+  }
+
+  .detail-body {
+    font-size: 0.65rem;
+    line-height: 1.7;
+    color: #4a4640;
+  }
+
+  .detail-example {
+    margin-top: 6px;
+    padding: 6px 10px;
+    background: #e4e0d8;
+    border-radius: 3px;
+    font-size: 0.58rem;
+    color: #6e685c;
+    font-style: italic;
+  }
+</style>
+</head>
+<body>
+
+<div class="cycle-wrap">
+  <div class="cycle-row">
+    <div class="node n-accumulate active" onmouseenter="show(0)" onclick="show(0)">
+      <div class="node-icon n-accumulate">+1</div>
+      <div class="node-label">Accumulate</div>
+      <div class="node-charge">charge 1–7</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="node n-mandate" onmouseenter="show(1)" onclick="show(1)">
+      <div class="node-icon n-mandate">⚡</div>
+      <div class="node-label">Mandate</div>
+      <div class="node-charge">charge ≥ 8</div>
+    </div>
+    <div class="arrow">→</div>
+    <div class="node n-cashout" onmouseenter="show(2)" onclick="show(2)">
+      <div class="node-icon n-cashout">↓3</div>
+      <div class="node-label">Cashout</div>
+      <div class="node-charge">reset to 3</div>
+    </div>
+    <div class="arrow" style="color:#c4bfb4">↺</div>
+    <div class="node n-mutation" onmouseenter="show(3)" onclick="show(3)">
+      <div class="node-icon n-mutation">⟳</div>
+      <div class="node-label">Mutation</div>
+      <div class="node-charge">if stuck 2+ turns</div>
+    </div>
+  </div>
+
+  <div class="detail" id="detail">
+    <div class="detail-title" id="detail-title">Accumulation</div>
+    <div class="detail-body" id="detail-body">When the narrative ignores an attractor, the engine increments its charge by +1 each turn. Unresolved issues fester in the background even when nobody mentions them.</div>
+    <div class="detail-example" id="detail-example">"Alex resents the move" sits at charge 4. The player spends three turns at work. It's now charge 7.</div>
+  </div>
+</div>
+
+<script>
+const stages = [
+  {
+    title: 'Accumulation',
+    body: 'When the narrative ignores an attractor, the engine increments its charge by +1 each turn. Unresolved issues fester in the background even when nobody mentions them.',
+    example: '"Alex resents the move" sits at charge 4. The player spends three turns at work. It\'s now charge 7.'
+  },
+  {
+    title: 'Mandate',
+    body: 'At charge 8, the attractor enters mandate. A constraint block is injected into the narrative model: "This pattern MUST manifest as a concrete in-scene event this turn." The model cannot ignore it.',
+    example: '"Alex resents the move" hits charge 8. Next turn, Alex brings up the move unprompted while doing dishes.'
+  },
+  {
+    title: 'Cashout',
+    body: 'A classifier checks whether the mandated attractor actually manifested in the scene. If it did, charge resets to 3: spent but not dead. If the partner initiated a confrontation autonomously, tension goes up.',
+    example: 'Alex said it out loud. Charge drops from 9 to 3. Tension ticks from 1 to 2. The issue isn\'t resolved, just temporarily vented.'
+  },
+  {
+    title: 'Mutation',
+    body: 'If a mandated attractor goes 2+ turns without cashing out, it mutates. The engine replaces the label with something more urgent, more public, more consequential. The pressure escalates even if the player keeps dodging.',
+    example: '"Alex resents the move" becomes "Alex looked up apartments back home." Same wound, higher stakes.'
+  }
+];
+
+const nodes = document.querySelectorAll('.node');
+
+function show(idx) {
+  document.getElementById('detail-title').textContent = stages[idx].title;
+  document.getElementById('detail-body').textContent = stages[idx].body;
+  document.getElementById('detail-example').textContent = stages[idx].example;
+  nodes.forEach((n, i) => n.classList.toggle('active', i === idx));
+}
+</script>
+</body>
+</html>

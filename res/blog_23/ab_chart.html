@@ -6,8 +6,8 @@
   src: url('Sligoil-Micro.otf') format('opentype');
 }
 @font-face {
-  font-family: 'Basteleur';
-  src: url('Basteleur-Bold.otf') format('opentype');
+  font-family: 'Resistance';
+  src: url('Resistance.otf') format('opentype');
   font-weight: bold;
 }
 @font-face {
@@ -36,7 +36,7 @@ svg {
   font-size: 11px;
 }
 .chart-title {
-  font-family: 'Basteleur', serif;
+  font-family: 'Resistance', serif;
   font-weight: bold;
   fill: #fff;
   font-size: 14px;
@@ -61,14 +61,15 @@ svg {
 <script src="https://d3js.org/d3.v4.min.js"></script>
 <script>
 var data = [
-  {metric: "Novelty\nScore", sp: 2, dir: 4, attr: 4},
-  {metric: "Manifestation\nCount", sp: 4, dir: 5, attr: 5},
-  {metric: "Max\nTension", sp: 0, dir: 0.5, attr: 4.0},
-  {metric: "Confrontation\nRate", sp: 7, dir: 9, attr: 8}
+  {metric: "Novelty\nScore", sp: 2, ag: 4},
+  {metric: "Manifestation\nCount", sp: 4, ag: 5},
+  {metric: "Confrontation\nRate", sp: 7, ag: 9},
+  {metric: "Dialogue\nDensity", sp: 3, ag: 7},
+  {metric: "Consequence\nPersistence", sp: 0, ag: 4}
 ];
 
 var margin = {top: 40, right: 30, bottom: 55, left: 50};
-var width = 620 - margin.left - margin.right;
+var width = 720 - margin.left - margin.right;
 var height = 320 - margin.top - margin.bottom;
 
 var svg = d3.select("body").append("svg")
@@ -85,13 +86,13 @@ svg.append("text")
   .attr("text-anchor", "middle")
   .text("Judge Metrics by Condition");
 
-var x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.25);
-var x1 = d3.scaleBand().padding(0.08);
+var x0 = d3.scaleBand().rangeRound([0, width]).paddingInner(0.3);
+var x1 = d3.scaleBand().padding(0.12);
 var y = d3.scaleLinear().rangeRound([height, 0]);
 
-var conditions = ["sp", "dir", "attr"];
-var colors = ["#ccc", "#555", "#8b2500"];
-var labels = ["Single-Prompt", "Director-Only", "With Attractors"];
+var conditions = ["sp", "ag"];
+var colors = ["#ccc", "#8b2500"];
+var labels = ["Single-Prompt", "Agentic"];
 
 x0.domain(data.map(function(d) { return d.metric; }));
 x1.domain(conditions).rangeRound([0, x0.bandwidth()]);
@@ -107,7 +108,7 @@ svg.selectAll(".grid-line")
   .attr("stroke", "#333")
   .attr("stroke-dasharray", "3,3");
 
-// Bars with sketch wobble
+// Bars
 var groups = svg.selectAll(".group")
   .data(data)
   .enter().append("g")
@@ -132,6 +133,7 @@ conditions.forEach(function(cond, i) {
     .text(function(d) {
       var v = d[cond];
       if (d.metric.indexOf("Confrontation") >= 0) return v + "/10";
+      if (d.metric.indexOf("Dialogue") >= 0) return v + "%";
       return v % 1 === 0 ? v : v.toFixed(1);
     });
 });
@@ -167,7 +169,7 @@ svg.append("g")
 var legend = svg.selectAll(".legend")
   .data(labels)
   .enter().append("g")
-  .attr("transform", function(d, i) { return "translate(" + (i * 150 + 50) + "," + (height + 45) + ")"; });
+  .attr("transform", function(d, i) { return "translate(" + (i * 150 + (width / 2 - 130)) + "," + (height + 45) + ")"; });
 
 legend.append("rect")
   .attr("width", 12).attr("height", 12)

@@ -1,0 +1,468 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<style>
+  @import url('https://fonts.googleapis.com/css2?family=EB+Garamond:ital,wght@0,400;0,600;1,400&family=JetBrains+Mono:wght@300;400&display=swap');
+
+  * { margin: 0; padding: 0; box-sizing: border-box; }
+
+  body {
+    background: #f4f1eb;
+    color: #2a2622;
+    font-family: 'EB Garamond', Georgia, serif;
+    font-size: 15px;
+    line-height: 1.55;
+  }
+
+  .replay {
+    display: grid;
+    grid-template-columns: 1fr 200px;
+    gap: 0 16px;
+    max-width: 780px;
+    margin: 0 auto;
+    padding: 1rem 1.2rem;
+    min-height: 100%;
+  }
+
+  /* -- Header ---------------------- */
+  .replay-header {
+    grid-column: 1 / -1;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding-bottom: 0.8rem;
+    margin-bottom: 0.8rem;
+    border-bottom: 1px solid #d4cfc4;
+  }
+
+  .replay-title {
+    font-family: 'JetBrains Mono', monospace;
+    font-weight: 300;
+    font-size: 0.65rem;
+    letter-spacing: 0.4em;
+    text-transform: uppercase;
+    color: #8a8478;
+  }
+
+  .replay-controls {
+    display: flex;
+    gap: 8px;
+    align-items: center;
+  }
+
+  .replay-controls button {
+    background: none;
+    border: 1px solid #d4cfc4;
+    color: #8a8478;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    padding: 4px 10px;
+    border-radius: 2px;
+    cursor: pointer;
+    transition: all 0.2s;
+  }
+
+  .replay-controls button:hover {
+    border-color: #b0a898;
+    color: #4a4640;
+  }
+
+  .replay-controls button.active {
+    border-color: #8b2500;
+    color: #8b2500;
+  }
+
+  .turn-indicator {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.55rem;
+    letter-spacing: 0.12em;
+    color: #8a8478;
+  }
+
+  /* -- Main narrative -------------- */
+  .main-col {
+    grid-column: 1;
+    min-height: 0;
+    padding-right: 16px;
+  }
+
+  .player-input {
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.7rem;
+    color: #8a8478;
+    margin-bottom: 0.6rem;
+    padding: 6px 0;
+    border-bottom: 1px solid #ddd8ce;
+  }
+
+  .player-input span {
+    color: #b5b0a5;
+    margin-right: 6px;
+  }
+
+  .narrative-text {
+    font-size: 0.95rem;
+    line-height: 1.7;
+    color: #2a2622;
+    min-height: 120px;
+    transition: opacity 0.4s ease;
+  }
+
+  .narrative-text.fading { opacity: 0; }
+
+  /* -- Sidebar --------------------- */
+  .sidebar {
+    grid-column: 2;
+    background: #eae6de;
+    border-left: 1px solid #d4cfc4;
+    padding: 0.8rem 1rem;
+    font-family: 'JetBrains Mono', monospace;
+    font-size: 0.6rem;
+    color: #8a8478;
+  }
+
+  .sidebar-label {
+    font-size: 0.5rem;
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    color: #6e685c;
+    margin-bottom: 0.5rem;
+  }
+
+  .sidebar-section { margin-bottom: 1.2rem; }
+
+  /* Gauges */
+  .gauge { margin-bottom: 0.5rem; }
+
+  .gauge-header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 3px;
+  }
+
+  .gauge-name {
+    font-size: 0.5rem;
+    letter-spacing: 0.1em;
+    text-transform: uppercase;
+    color: #6e685c;
+  }
+
+  .gauge-value {
+    font-size: 0.55rem;
+    color: #4a4640;
+    transition: color 0.3s;
+  }
+
+  .gauge-track {
+    height: 5px;
+    background: #d4cfc4;
+    border-radius: 3px;
+    overflow: hidden;
+  }
+
+  .gauge-fill {
+    height: 100%;
+    border-radius: 3px;
+    transition: width 0.8s ease;
+  }
+
+  .drift-fill { background: #8a8478; }
+  .tension-fill { background: #8b2500; }
+
+  /* Attractors */
+  .attractor-row {
+    display: flex;
+    align-items: center;
+    gap: 5px;
+    margin-bottom: 5px;
+    padding: 3px 5px;
+    border-radius: 2px;
+    transition: background 0.3s, opacity 0.4s;
+  }
+
+  .attractor-row.mandated {
+    background: rgba(139, 37, 0, 0.08);
+  }
+
+  .attractor-dot {
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    background: #8a8478;
+    flex-shrink: 0;
+    transition: all 0.3s;
+  }
+
+  .attractor-row.mandated .attractor-dot {
+    background: #8b2500;
+    border-radius: 1px;
+    transform: rotate(45deg);
+  }
+
+  .attractor-label {
+    flex: 1;
+    font-size: 0.5rem;
+    color: #6e685c;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 90px;
+    transition: color 0.3s;
+  }
+
+  .attractor-row.mandated .attractor-label { color: #8b2500; }
+
+  .attractor-bar {
+    width: 40px;
+    height: 3px;
+    background: #d4cfc4;
+    border-radius: 2px;
+    overflow: hidden;
+    flex-shrink: 0;
+  }
+
+  .attractor-bar-fill {
+    height: 100%;
+    border-radius: 2px;
+    background: #8a8478;
+    transition: width 0.6s ease, background 0.3s;
+  }
+
+  .attractor-row.mandated .attractor-bar-fill { background: #8b2500; }
+
+  .attractor-charge-num {
+    font-size: 0.5rem;
+    color: #6e685c;
+    width: 12px;
+    text-align: right;
+    flex-shrink: 0;
+    transition: color 0.3s;
+  }
+
+  .attractor-row.mandated .attractor-charge-num { color: #8b2500; }
+
+  .mandate-tag {
+    font-size: 0.4rem;
+    color: #8b2500;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+
+  /* cashout flash */
+  @keyframes cashout-flash {
+    0% { background: rgba(139,37,0,0.15); }
+    100% { background: transparent; }
+  }
+  .cashout { animation: cashout-flash 1s ease-out; }
+
+  /* -- Responsive ------------------ */
+  @media (max-width: 500px) {
+    .replay { grid-template-columns: 1fr; }
+    .sidebar { grid-column: 1; border-left: none; border-top: 1px solid #d4cfc4; margin-top: 1rem; }
+  }
+</style>
+</head>
+<body>
+
+<div class="replay">
+  <div class="replay-header">
+    <span class="replay-title">first year — replay</span>
+    <div class="replay-controls">
+      <button id="prev-btn" onclick="prevTurn()">&#9664;</button>
+      <span class="turn-indicator" id="turn-ind">turn 0 / 7</span>
+      <button id="next-btn" onclick="nextTurn()">&#9654;</button>
+      <button id="play-btn" onclick="toggleAutoplay()" class="active">auto</button>
+    </div>
+  </div>
+
+  <div class="main-col">
+    <div class="player-input"><span>&gt;</span> <span id="p-input"></span></div>
+    <div class="narrative-text" id="narrative"></div>
+  </div>
+
+  <aside class="sidebar">
+    <div class="sidebar-section">
+      <div class="sidebar-label">Relationship State</div>
+      <div class="gauge">
+        <div class="gauge-header">
+          <span class="gauge-name">Drift</span>
+          <span class="gauge-value" id="drift-val">&mdash;</span>
+        </div>
+        <div class="gauge-track"><div class="gauge-fill drift-fill" id="drift-fill" style="width:0%"></div></div>
+      </div>
+      <div class="gauge">
+        <div class="gauge-header">
+          <span class="gauge-name">Tension</span>
+          <span class="gauge-value" id="tension-val">&mdash;</span>
+        </div>
+        <div class="gauge-track"><div class="gauge-fill tension-fill" id="tension-fill" style="width:0%"></div></div>
+      </div>
+    </div>
+    <div class="sidebar-section">
+      <div class="sidebar-label">Attractors</div>
+      <div id="attractor-list"></div>
+    </div>
+  </aside>
+</div>
+
+<script>
+const TURNS = [
+  {
+    turn: 0, input: "I work from home today",
+    narrative: "You set up at the kitchen table with your laptop, coffee, the whole spread. Jordan\u2019s quiet today \u2014 some offsite thing \u2014 so the morning is just you and a backlog of tickets that don\u2019t require thought. You move through them like clearing brush.",
+    drift: 10, tension: 0,
+    attractors: [
+      { label: "resentment about move", charge: 9, mandate: true },
+      { label: "exclusion from Alex\u2019s new life", charge: 3, mandate: false },
+      { label: "Jordan\u2019s work pressure", charge: 6, mandate: false }
+    ]
+  },
+  {
+    turn: 1, input: "I watch TV after dinner",
+    narrative: "You\u2019re watching something on Netflix \u2014 you couldn\u2019t tell someone the title if they asked. It\u2019s one of those limited series where beautiful British people are cruel to each other in well-lit rooms. You picked it because it was already queued, because Alex started it at some point and got four episodes in.",
+    drift: 10, tension: 1,
+    attractors: [
+      { label: "resentment about move", charge: 3, mandate: false },
+      { label: "exclusion from Alex\u2019s new life", charge: 6, mandate: false },
+      { label: "Jordan\u2019s work pressure", charge: 6, mandate: false }
+    ]
+  },
+  {
+    turn: 2, input: "I go for a run",
+    narrative: "You run. Not the river loop \u2014 you go the other direction, into the grid of residential streets where you don\u2019t have to think about turns, just straight lines and right angles. Your lungs burn.",
+    drift: 10, tension: 1,
+    attractors: [
+      { label: "exclusion from Alex\u2019s new life", charge: 8, mandate: true },
+      { label: "Jordan\u2019s work pressure", charge: 6, mandate: false },
+      { label: "resentment about move", charge: 4, mandate: false }
+    ]
+  },
+  {
+    turn: 3, input: "I catch up on emails",
+    narrative: "You walk back. Slower this time, the run\u2019s adrenaline curdling into something leaden. You don\u2019t call Morgan.",
+    drift: 10, tension: 2,
+    attractors: [
+      { label: "apartment on Linden Street", charge: 8, mandate: true },
+      { label: "Jordan\u2019s work pressure", charge: 7, mandate: false },
+      { label: "exclusion from Alex\u2019s new life", charge: 4, mandate: false }
+    ]
+  },
+  {
+    turn: 4, input: "I order takeout",
+    narrative: "You open DoorDash and scroll without seeing. Thai. Mexican. A poke place with a name that\u2019s trying too hard. You order pad see ew from the place two blocks away because Alex mentioned it once, then catch yourself wondering why that mattered.",
+    drift: 10, tension: 2,
+    attractors: [
+      { label: "Jordan\u2019s work pressure", charge: 7, mandate: false },
+      { label: "apartment on Linden Street", charge: 6, mandate: true },
+      { label: "ghost domesticity", charge: 5, mandate: false }
+    ]
+  },
+  {
+    turn: 5, input: "I do laundry",
+    narrative: "You do laundry because laundry is a task with steps. Gather, sort, load, measure, start. The machine is in a closet off the hallway, stacked units, and the door sticks unless you lift it slightly on the hinge.",
+    drift: 10, tension: 3,
+    attractors: [
+      { label: "apartment on Linden Street", charge: 3, mandate: false },
+      { label: "ghost domesticity", charge: 7, mandate: false },
+      { label: "Jordan\u2019s work pressure", charge: 7, mandate: false }
+    ]
+  },
+  {
+    turn: 6, input: "I scroll my phone on the couch",
+    narrative: "You scroll. It\u2019s the particular scroll of someone not looking for anything \u2014 thumb moving in that slow, hypnotic drag, eyes unfocused, the feed washing over you like lukewarm water. An ad for running shoes.",
+    drift: 10, tension: 3,
+    attractors: [
+      { label: "ghost domesticity", charge: 8, mandate: true },
+      { label: "Jordan\u2019s work pressure", charge: 7, mandate: false },
+      { label: "apartment on Linden Street", charge: 6, mandate: false }
+    ]
+  },
+  {
+    turn: 7, input: "I go grocery shopping alone",
+    narrative: "You drive to the Trader Joe\u2019s because it\u2019s the one you know. You and Alex mapped this route the second week here \u2014 Alex driving, you navigating from your phone, both of you treating a grocery run like a small adventure because everything was new and even errands felt like building something. The parking lot is half-empty. Sunday morning.",
+    drift: 10, tension: 3,
+    attractors: [
+      { label: "apartment on Linden Street", charge: 7, mandate: false },
+      { label: "Jordan\u2019s work pressure", charge: 7, mandate: false },
+      { label: "ghost domesticity", charge: 6, mandate: true }
+    ]
+  }
+];
+
+let current = -1;
+let autoplay = true;
+let autoTimer = null;
+
+function render(idx) {
+  const t = TURNS[idx];
+  const narr = document.getElementById('narrative');
+  narr.classList.add('fading');
+
+  setTimeout(() => {
+    document.getElementById('p-input').textContent = t.input;
+    narr.textContent = t.narrative;
+    narr.classList.remove('fading');
+
+    document.getElementById('drift-val').textContent = t.drift + '/10';
+    document.getElementById('drift-fill').style.width = (t.drift * 10) + '%';
+    document.getElementById('tension-val').textContent = t.tension + '/10';
+    document.getElementById('tension-fill').style.width = (t.tension * 10) + '%';
+
+    const list = document.getElementById('attractor-list');
+    list.innerHTML = '';
+    t.attractors.forEach(a => {
+      const row = document.createElement('div');
+      row.className = 'attractor-row' + (a.mandate ? ' mandated' : '');
+
+      if (idx > 0) {
+        const prev = TURNS[idx - 1].attractors.find(p => p.label === a.label);
+        if (prev && prev.charge >= 8 && a.charge <= 3) {
+          row.classList.add('cashout');
+        }
+      }
+
+      row.innerHTML =
+        '<div class="attractor-dot"></div>' +
+        '<span class="attractor-label" title="' + a.label + '">' + a.label + '</span>' +
+        '<div class="attractor-bar"><div class="attractor-bar-fill" style="width:' + (a.charge * 10) + '%"></div></div>' +
+        '<span class="attractor-charge-num">' + a.charge + '</span>' +
+        (a.mandate ? '<span class="mandate-tag">m</span>' : '');
+      list.appendChild(row);
+    });
+
+    document.getElementById('turn-ind').textContent = 'turn ' + t.turn + ' / 7';
+  }, 300);
+}
+
+function nextTurn() {
+  if (current < TURNS.length - 1) { current++; render(current); }
+  else if (autoplay) { current = -1; nextTurn(); }
+}
+
+function prevTurn() {
+  if (current > 0) { current--; render(current); }
+}
+
+function toggleAutoplay() {
+  autoplay = !autoplay;
+  document.getElementById('play-btn').classList.toggle('active', autoplay);
+  if (autoplay) startAuto();
+  else clearInterval(autoTimer);
+}
+
+function startAuto() {
+  clearInterval(autoTimer);
+  autoTimer = setInterval(() => {
+    if (autoplay) nextTurn();
+  }, 4000);
+}
+
+current = 0;
+render(0);
+startAuto();
+</script>
+</body>
+</html>
