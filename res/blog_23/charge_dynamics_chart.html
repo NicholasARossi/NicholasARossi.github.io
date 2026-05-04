@@ -2,8 +2,8 @@
 <meta charset="utf-8">
 <style>
 @font-face {
-  font-family: 'Basteleur';
-  src: url('Basteleur-Bold.otf') format('opentype');
+  font-family: 'Resistance';
+  src: url('Resistance.otf') format('opentype');
   font-weight: bold;
 }
 @font-face {
@@ -82,7 +82,7 @@ function drawPanel(parent, px, py, title, subtitle) {
   g.append("text")
     .attr("x", margin.left).attr("y", 12)
     .attr("fill", "#fff").attr("font-size", 12)
-    .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+    .attr("font-family", "'Resistance', serif").attr("font-weight", "bold")
     .text(title);
 
   if (subtitle) {
@@ -131,7 +131,7 @@ function drawAxes(inner, s, yTicks, yFmt) {
 svg.append("text")
   .attr("x", W/2).attr("y", 24).attr("text-anchor", "middle")
   .attr("fill", "#fff").attr("font-size", 15)
-  .attr("font-family", "'Basteleur', serif").attr("font-weight", "bold")
+  .attr("font-family", "'Resistance', serif").attr("font-weight", "bold")
   .text("Charge Dynamics: Escaping Local Minima");
 
 // ═══ PANEL 1: Individual Attractor Charges ═══

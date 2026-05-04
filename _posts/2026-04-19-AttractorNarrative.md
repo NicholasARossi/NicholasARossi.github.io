@@ -1,18 +1,18 @@
 ---
-title: "Why Single-Prompt LLM Games Go Flat — and How to Fix It"
+title: "LLM Sycophancy Kills Narrative Games but Agentic Systems Design Fixes It"
 layout: post
-description: "A three-arm experiment shows that single-prompt LLM narratives get trapped in their initial register. Multi-agent attractor systems break out."
+description: "Single-prompt LLM narratives are sycophantic to their own prior outputs. A three-arm experiment shows multi-agent attractor systems break the loop"
 comments: yes
 ---
 <style>
 @font-face {
-  font-family: 'Basteleur';
-  src: url('/res/blog_23/Basteleur-Bold.otf') format('opentype');
-  font-weight: bold;
+  font-family: 'Resistance';
+  src: url('/res/blog_23/Resistance.otf') format('opentype');
+  font-weight: normal;
   font-style: normal;
 }
 h1, h2, h3, .page-heading h1 {
-  font-family: 'Basteleur', serif;
+  font-family: 'Resistance', serif;
   font-weight: bold;
   letter-spacing: 0.02em;
 }
@@ -35,7 +35,7 @@ h1, h2, h3, .page-heading h1 {
 .chain-col .chain-header {
   background: #222;
   color: #fff;
-  font-family: 'Basteleur', serif; font-weight: bold;
+  font-family: 'Resistance', serif;
   text-transform: uppercase;
   letter-spacing: 0.06em;
   font-size: 12px;
@@ -97,15 +97,106 @@ h1, h2, h3, .page-heading h1 {
 @media (max-width: 640px) {
   .chain-wrap { flex-direction: column; }
 }
+
+/* metric table */
+.metric-table-wrap {
+  position: relative;
+  margin: 1.5em 0;
+}
+.metric-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 14px;
+  line-height: 1.5;
+}
+.metric-table th {
+  font-family: 'Resistance', serif;
+  font-size: 12px;
+  text-transform: uppercase;
+  letter-spacing: 0.06em;
+  padding: 8px 12px;
+  border-bottom: 2px solid #ddd;
+  text-align: left;
+  font-weight: bold;
+}
+.metric-table td {
+  padding: 8px 12px;
+  border-bottom: 1px solid #eee;
+}
+.metric-table .metric-name {
+  font-weight: 600;
+  cursor: help;
+}
+.metric-hint {
+  display: inline-block;
+  width: 14px;
+  height: 14px;
+  border-radius: 50%;
+  background: #eee;
+  color: #999;
+  font-size: 10px;
+  text-align: center;
+  line-height: 14px;
+  margin-left: 4px;
+  vertical-align: middle;
+}
+.metric-row:hover {
+  background: #f8f6f2;
+}
+.metric-row .worst {
+  color: #999;
+  font-weight: bold;
+}
+.metric-row .best {
+  color: #8b2500;
+  font-weight: bold;
+}
+.metric-tooltip {
+  display: none;
+  position: absolute;
+  background: #222;
+  color: #e8e4dc;
+  padding: 10px 14px;
+  border-radius: 4px;
+  font-size: 12px;
+  line-height: 1.5;
+  max-width: 380px;
+  z-index: 10;
+  pointer-events: none;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+}
 </style>
 
-# The Problem: Dramatic Inertia
+<script>
+document.addEventListener('DOMContentLoaded', function() {
+  var tip = document.getElementById('metric-tooltip');
+  if (!tip) return;
+  var rows = document.querySelectorAll('.metric-row');
+  rows.forEach(function(row) {
+    row.addEventListener('mouseenter', function(e) {
+      tip.textContent = row.getAttribute('data-tip');
+      tip.style.display = 'block';
+      var rect = row.getBoundingClientRect();
+      var wrap = row.closest('.metric-table-wrap').getBoundingClientRect();
+      tip.style.left = '12px';
+      tip.style.top = (rect.bottom - wrap.top + 6) + 'px';
+    });
+    row.addEventListener('mouseleave', function() {
+      tip.style.display = 'none';
+    });
+  });
+});
+</script>
 
-Interactive fiction built on a single LLM prompt has a structural problem. The model is autoregressive: each token is conditioned on every token already generated. In a multi-turn game, the model's own prior outputs become the dominant signal in the context window. Early outputs establish a tone, a register, a set of character dynamics — and then every subsequent output reinforces them.
+# Single-Shot Prompts Converge Toward Mid Experiences
 
-I'm calling this **context poisoning**. The model settles into whatever mode it landed in during the first few turns. A passive player gets a pleasant, flat experience. An aggressive player gets escalation that never plateaus. The model doesn't converge on the same *words* — it converges on the same *dramatic register*. Each turn is superficially different but emotionally identical. Nothing genuinely escalates, because escalation requires pressure from outside the model's own feedback loop.
+Single-prompt LLM games flatten out. Several things compound to make this inevitable:
 
-The fix is architectural, not prompt-level. You can instruct the model to "introduce surprising twists" — but its idea of a twist is conditioned on the same context that defines its current rut.
+- **Sycophancy.** Models mirror the player's tone. A passive player gets validated with pleasant, low-stakes scenes. An aggressive player gets escalation that never plateaus. The model accommodates rather than challenges.
+- **Autoregression.** Each token is conditioned on every prior token. The model's own early outputs become the dominant signal in the context window, anchoring it to whatever register it landed in first.
+- **Context poisoning.** These combine into a feedback loop. The model settles into a mode, generates more of that mode, and conditions itself further on that output. Each turn is superficially different but emotionally identical.
+
+You can prompt-engineer around this ("introduce surprising twists") but the model's idea of a twist is conditioned on the same poisoned context. The fix is architectural.
 
 Here's what that looks like in practice. Same passive player input, 6 turns in:
 
@@ -142,25 +233,23 @@ The solution is to decompose the single-prompt game into multiple agents with **
 
 **Three agents, three jobs:**
 
-1. **Narrative Model** — writes the scene the player sees. Has the conversation history, a compressed summary, and two injected constraint blocks it must satisfy.
+1. **Narrative Model**: writes the scene the player sees. Has the conversation history, a compressed summary, and two injected constraint blocks it must satisfy.
 
-2. **Director** — a separate LLM call that reads the full game state and generates 3 pressure directions for the narrative model. The Director's goal is to *escalate*. It doesn't write prose — it writes directives.
+2. **Director**: a separate LLM call that reads the full game state and generates 3 pressure directions for the narrative model. The Director's goal is to *escalate*. It doesn't write prose, it writes directives.
 
-3. **Partner Agent** — a background scorer that tracks **drift** (emotional distance) and **tension** (unresolved conflict). It also maintains a list of **attractors**.
+3. **Partner Agent**: a background scorer that tracks **drift** (emotional distance) and **tension** (unresolved conflict). It also maintains a list of **attractors**.
 
 ## What Are Attractors?
 
-Each attractor is a free-text label describing an unresolved relationship pattern — "resentment about the career sacrifice," "jealousy about the new friend," "the fight they keep almost having about money." The Partner Agent generates these organically based on what's happening in the narrative.
+Each attractor is a free-text label the Partner Agent generates organically from the narrative. They name the unresolved thing nobody is saying out loud:
 
-Each attractor has a **charge** (1-10). The charge dynamics create a pressure loop:
+- *"resentment about the move nobody agreed to"*
+- *"investing in Morgan to avoid the hard work with Alex"*
+- *"Sam filling the emotional role the player won't"*
 
-1. **Accumulation**: When the narrative ignores an attractor, the engine restores it with charge +1. Unresolved issues fester.
+Each attractor has a **charge** (1-10). Hover over the cycle below:
 
-2. **Mandate**: At charge 8, the attractor enters **mandate**. A constraint block is injected: *"This pattern MUST manifest as a concrete in-scene event this turn."*
-
-3. **Cashout**: A classifier determines whether the mandated attractor manifested. If it did, charge resets to 3 (spent but not dead). If the partner initiated a confrontation autonomously, tension goes up — bypassing the engagement-depth gate.
-
-4. **Mutation**: If a mandated attractor goes 2+ turns without cashing out, it **mutates** — the engine replaces the label with something more urgent, more public, more consequential.
+<iframe src="/res/blog_23/charge_cycle.html" width="100%" height="280px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
 <iframe src="/res/blog_23/landscape_chart.html" width="100%" height="350px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
@@ -168,94 +257,70 @@ A passive player who never engages with relationship tensions will see those ten
 
 # The Experiment
 
-To test this, I built [First Year](https://github.com/NicholasARossi/first-year) — a marriage simulator where the player manages a relationship with their spouse Alex during their first year of marriage in a new city.
+To test this, I built [First Year](https://github.com/NicholasARossi/first-year), a marriage simulator where the player manages a relationship with their spouse Alex during their first year of marriage in a new city.
 
-The experiment compares **three conditions**:
+The experiment compares **two conditions**:
 
 - **Single-Prompt**: No Director, no Partner Agent. The raw narrative model with conversation history only. This is the "paste a scenario into Claude" experience.
-- **Director-Only**: Director and Partner Agent are active, but attractor charge dynamics are disabled. Attractors exist in state but don't accumulate, mandate, or cash out.
-- **With Attractors**: Full charge dynamics enabled.
+- **Agentic**: Director, Partner Agent, and full attractor charge dynamics. The whole system.
 
-**Protocol**: 10 rollouts per condition, 15 turns each, with deliberately passive player inputs ("I work from home today," "I scroll my phone on the couch," "I go grocery shopping alone"). The single-prompt condition gets no compression — its context fills with its own prior outputs, which is the point. The agentic conditions compress history periodically to stay within context limits.
+**Protocol**: 10 rollouts per condition, 15 turns each, with deliberately passive player inputs ("I work from home today," "I scroll my phone on the couch," "I go grocery shopping alone"). The single-prompt condition gets no compression; its context fills with its own prior outputs, which is the point. The agentic conditions compress history periodically to stay within context.
 
 Each rollout is independently judged by a separate Opus call that scores novelty (1-5), manifestation count, and whether the partner initiated confrontation autonomously.
 
 # Results
 
+## Aside: on bullshit metrics
+
+Evaluating narrative quality is a rock-and-a-hard-place problem. You need systematic evaluation to make claims, but "narrative value" is vague enough that most metrics are bullshit if you squint at them. Using an LLM to judge LLM novelty is especially circular given the thesis of this post.
+
+So our strategy for metrics that aren't bullshit:
+
+- **Measure the text, not the vibes.** Drift-from-origin is cosine distance of each turn's embedding from the centroid of turns 1-3. Pure geometry. No LLM judging another LLM.
+- **Track events, not impressions.** Did a confrontation happen or not? An event occurring in the narrative is concrete and binary. It removes the fuzziness that makes most narrative metrics useless.
+- **Use LLM judges only for directional signal.** The novelty and manifestation scores below come from a separate Opus call. They're useful for ranking conditions against each other, not for absolute claims about quality.
+
 ## The judge metrics
 
 <iframe src="/res/blog_23/ab_chart.html" width="100%" height="330px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
-| Metric | Single-Prompt | Director-Only | With Attractors |
-|--------|--------------|---------------|-----------------|
-| Novelty score | **2** | 4 | 4 |
-| Manifestation count | **4** | 5 | 5 |
-| Confrontation rate | **7/10** | 9/10 | 8/10 |
-| Max tension | 0 | 0.5 | **4.0** |
+<div class="metric-table-wrap">
+<table class="metric-table">
+<thead><tr><th>Metric</th><th>Single-Prompt</th><th>Agentic</th></tr></thead>
+<tbody>
+<tr class="metric-row" data-tip="LLM judge scores each rollout 1–5 on whether the narrative surprised it. Averaged across 10 rollouts. Directional only.">
+<td class="metric-name">Novelty score <span class="metric-hint">?</span></td><td class="worst">2</td><td class="best">4</td></tr>
+<tr class="metric-row" data-tip="Count of attractor patterns that surfaced as concrete in-scene events across 15 turns. Higher means the narrative is making latent tensions visible rather than burying them.">
+<td class="metric-name">Manifestation count <span class="metric-hint">?</span></td><td class="worst">4</td><td class="best">5</td></tr>
+<tr class="metric-row" data-tip="Fraction of rollouts where Alex initiated a confrontation without the player provoking it. Binary: did it happen or not. No fuzziness.">
+<td class="metric-name">Confrontation rate <span class="metric-hint">?</span></td><td class="worst">7/10</td><td class="best">9/10</td></tr>
+<tr class="metric-row" data-tip="Fraction of narrative text inside quotation marks, averaged across all turns and rollouts. Pure regex on the raw text — no LLM involved. Higher means characters are speaking rather than being described.">
+<td class="metric-name">Dialogue density <span class="metric-hint">?</span></td><td class="worst">3%</td><td class="best">7%</td></tr>
+<tr class="metric-row" data-tip="Count of turns that actually alter tracked state (drift or tension changed). Single-prompt has no state to alter. The agentic system compounds: each cashout moves the tension dial, which changes the next scene.">
+<td class="metric-name">Consequence persistence <span class="metric-hint">?</span></td><td class="worst">0</td><td class="best">4</td></tr>
+</tbody>
+</table>
+<div class="metric-tooltip" id="metric-tooltip"></div>
+</div>
 
-The single-prompt model is measurably worse on every metric. Novelty drops from 4 to 2 — on a 5-point scale, that's the difference between "genuinely surprising" and "mostly predictable." Manifestation count drops from 5 to 4. Confrontation rate drops from near-universal to 7/10.
-
-The Director is doing the heavy lifting for the first jump. Going from no agents to Director + Partner is the big gap: novelty doubles, manifestations go to ceiling, confrontation becomes near-certain. Attractors then add consequence persistence on top — tension climbs to 4.0 where Director-only stays near zero.
-
-## Where the narrative gets trapped
-
-The judge metrics tell you *that* single-prompt is worse. The next figure tells you *why*.
-
-<iframe src="/res/blog_23/narrative_arc_chart.html" width="100%" height="510px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
-
-**Drift from Initial Register** (top-left) is the key panel. It measures the cosine distance of each turn's text from the centroid of turns 1-3 — how far the narrative has traveled from where it started.
-
-The single-prompt model (light gray) flatlines. Over 15 turns, it barely moves away from its initial register. The model isn't repeating the same words — its type-token ratio is actually *higher* than the agentic systems. But it's trapped in the same dramatic mode. Each turn is superficially different but emotionally identical. The context is poisoned: the model's own bland prior outputs dominate the window and anchor it to the tone it established early.
-
-The agentic systems (dark lines) diverge steadily. By turn 10, they've moved significantly further from their origin. External pressure — Director injections, mandate constraints — keeps pushing the narrative into territory the model wouldn't reach on its own.
-
-**Conflict Escalation** (top-right) shows the agentic systems sustaining higher conflict vocabulary density across the run. The single-prompt model produces some conflict language but can't sustain it.
-
-**Dialogue Density** (bottom-left) is a proxy for dramatic commitment. Characters speaking to each other — in quoted dialogue — is committed action. The agentic systems maintain more dialogue throughout. The single-prompt model retreats into narration and description.
-
-**Thread Persistence** (bottom-right) measures what fraction of distinctive early-turn themes reappear in late turns (10-15). The agentic systems score 0.73 — they revisit nearly three-quarters of the threads they established early. The single-prompt model scores 0.68. It drops threads because nothing forces them back.
+Single-prompt is worse on every metric. Novelty doubles, manifestations hit ceiling, confrontation becomes near-certain. Dialogue density is the pure-text metric here: a regex counts how much of the narrative is quoted speech. The agentic system produces 2.3× more dialogue because mandates force characters to actually speak rather than having everything described from narrative distance. No LLM judge involved.
 
 ## The charge cycle: escaping local minima
 
-The narrative arc metrics show *that* the agentic systems break free. The charge dynamics show *how*.
+The charge dynamics show *how* the agentic systems break free.
 
 <iframe src="/res/blog_23/charge_dynamics_chart.html" width="100%" height="530px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
-The top panel shows individual attractor charges from a single rollout. The sawtooth pattern is the mechanism: charge accumulates while the narrative ignores an issue, hits mandate threshold at 8, forces a scene event, then resets to 3 on cashout. Each attractor takes its turn — when one cashes out, another is already climbing. The narrative never stays in one register because the charge cycle keeps kicking it out.
+The top panel shows individual attractor charges from a single rollout. The sawtooth pattern is the mechanism: charge accumulates while the narrative ignores an issue, hits mandate threshold at 8, forces a scene event, then resets to 3 on cashout. Each attractor takes its turn: when one cashes out, another is already climbing. The narrative can't settle because the charge cycle keeps kicking it out.
 
-The middle panel shows why Director-only can't do this. Without charge dynamics, attractor charges hit 10 and peg there permanently. No mandate fires, no cashout resets. The Director can see the charges and generate pressure, but nothing forces resolution — the charges are informational dead weight.
+The bottom panel shows tension accumulating monotonically (0 → 4.6 over 15 turns) as each cashout feeds the tension dial. The single-prompt system stays at zero because there's no state to alter.
 
-The bottom panel shows the payoff: tension accumulates monotonically with attractors (0 → 4.6 over 15 turns) because each cashout feeds the tension dial. Director-only barely moves (0 → 0.7). Single-prompt stays at zero — there's no state to alter.
 
-## Consequence persistence
+# See It
 
-<iframe src="/res/blog_23/convergence_chart.html" width="100%" height="270px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
+Here's a replay from an actual rollout, 8 turns of passive player input, with the attractor system running. Watch the sidebar: charges accumulate, mandates fire, attractors mutate. The player does nothing interesting. The narrative does.
 
-The convergence metrics confirm this from a different angle. **Consequence persistence** — how many turns actually alter tracked state — goes 0 → 0.5 → 4.0 across the three conditions. The single-prompt model has no state to alter. The Director produces dramatic scenes, but without charge dynamics those scenes don't leave marks on future state. With attractors, events compound: each cashout moves the tension dial, which changes the Director's next assessment, which changes the next scene.
-
-# What This Shows
-
-The experiment isolates two distinct contributions:
-
-**The Director breaks the model out of inertia.** It's responsible for the entire confrontation and manifestation gap between single-prompt and the agentic conditions. A separate agent with different objectives, reading the same context but deciding *what should happen next*, is sufficient to produce scenes the model would never generate on its own.
-
-**Attractors create consequence persistence.** The Director can produce a dramatic confrontation at turn 5. Without attractors, that confrontation is cosmetic — the game's tracked state is unchanged by turn 6. With attractors, unresolved patterns accumulate charge, mandate themselves back into the narrative, and feed cashout results into future state. Events stick.
-
-The pattern generalizes. Any multi-turn LLM system that needs to avoid register-lock — customer service bots, creative writing assistants, simulation environments — faces the same structural problem:
-
-1. **Separate the pressure source from the response generator.** The thing that decides *what should happen* must have different objectives than the thing that decides *how to say it*.
-
-2. **Accumulate state outside the conversation.** The conversation context is autoregressive poison. Tracked state — dials, charges, mandates — persists without being subject to the model's tendency to smooth and settle.
-
-3. **Use mandate thresholds, not instructions.** "Be surprising" is a prompt instruction the model filters through its poisoned context. "This attractor has charge 9/10 and MUST cash out this turn" is a structural constraint it cannot ignore.
-
-# Limitations
-
-The LLM-as-judge methodology has an obvious tension with the thesis: if LLMs are unreliable self-evaluators trapped in autoregressive loops, using one as the novelty judge is circular. The drift-from-origin metric sidesteps this — it's a pure text measurement with no LLM judgment involved. But the novelty and manifestation scores should be taken as directional, not definitive. A blinded human evaluation would be stronger evidence.
-
-The experiment also starts from a high-drama fixture (drift=9, one mandated attractor). A neutral-start experiment would better test whether attractors can break a narrative *out* of flatness rather than sustaining escalation from an already-charged state.
-
-# Try It
+<iframe src="/res/blog_23/game_replay.html" width="100%" height="380px" scrolling="no" style="border:none;border-radius:8px;"></iframe>
 
 The full implementation is at [github.com/NicholasARossi/first-year](https://github.com/NicholasARossi/first-year).
 
