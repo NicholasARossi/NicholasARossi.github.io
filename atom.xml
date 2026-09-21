@@ -12,7 +12,7 @@ layout: null
     <name>Nicholas Rossi</name>
     <email>nrossi@bu.edu</email>
   </author>
-  {% for post in site.posts limit:10 %}
+  {% assign visible_posts = site.posts | where_exp: "p", "p.hidden != true" %}{% for post in visible_posts limit:10 %}
   <entry>
     <title>{{ post.title }}</title>
     <link href="http://nicholasarossi.github.io/{{ post.url }}"/>
