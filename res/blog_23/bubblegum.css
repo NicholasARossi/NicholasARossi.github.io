@@ -1,0 +1,99 @@
+/* Bubblegum Blitz series stylesheet — shared by blog_23 + blog_24.
+   Palette lifted from the game's styleframe prompt (tools/gen-styleframe.mjs):
+   mint-teal water, cyan team, bubblegum-pink team, candy-sand cream, lavender sky. */
+
+@font-face {
+  font-family: 'Banquise';
+  src: url('/res/blog_23/Banquise-Regular.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+:root {
+  --bb-pink: #ff5d7a;
+  --bb-cyan: #4aa3ff;
+  --bb-mint: #2bc3a6;
+  --bb-sand: #fff3e4;
+  --bb-lavender: #f3eaff;
+  --bb-ink: #2a2233;
+}
+
+h1, .page-heading h1, div.content:not(.sub) .post.single h1 {
+  font-family: 'Banquise', sans-serif;
+  font-weight: normal; /* Banquise has no bold — bolding smears it */
+  text-transform: none;
+  color: var(--bb-ink);
+  background: linear-gradient(90deg, var(--bb-sand), var(--bb-lavender));
+  border-left: 8px solid var(--bb-pink);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+}
+
+h2, h3 {
+  font-family: 'Banquise', sans-serif;
+  color: var(--bb-ink);
+  background: linear-gradient(90deg, var(--bb-sand), var(--bb-lavender));
+  border-left: 8px solid var(--bb-pink);
+  padding: 0.15em 0.4em;
+  border-radius: 4px;
+  font-weight: normal; /* Banquise has no bold — bolding smears it */
+}
+
+h3 { border-left-color: var(--bb-cyan); }
+
+/* Figures: every image sits on a soft candy card. */
+.post img, .post video, .post iframe {
+  border-radius: 10px;
+  box-shadow: 0 3px 14px rgba(42, 34, 51, 0.18);
+  max-width: 100%;
+}
+
+/* Stage strip: the pipeline shown as one row, scrolls sideways on phones. */
+.bb-strip {
+  display: flex;
+  gap: 8px;
+  overflow-x: auto;
+  padding: 10px;
+  background: var(--bb-sand);
+  border-radius: 12px;
+}
+.bb-strip figure { margin: 0; flex: 1 1 0; min-width: 120px; text-align: center; }
+.bb-strip img { width: 100%; box-shadow: none; border: 2px solid var(--bb-lavender); }
+.bb-strip figcaption {
+  font-family: 'Banquise', sans-serif;
+  font-size: 0.85em;
+  color: var(--bb-ink);
+  margin-top: 4px;
+}
+
+/* Failure gallery: same strip, red-tinted frame. */
+.bb-strip--fail { background: #ffe6ea; }
+.bb-strip--fail img { border-color: var(--bb-pink); }
+
+/* Team-colored inline accents for prose ("the cyan team", "the pink team"). */
+.bb-team-cyan { color: var(--bb-cyan); font-weight: bold; }
+.bb-team-pink { color: var(--bb-pink); font-weight: bold; }
+
+/* Quoted prompt text: calm candy card, not the theme's red alert style. */
+.post blockquote, .post blockquote p, .post blockquote em {
+  color: var(--bb-ink);
+  font-style: italic;
+  border-left: 6px solid var(--bb-mint);
+  background: var(--bb-lavender);
+  border-radius: 0 10px 10px 0;
+}
+.post blockquote { padding: 0.6em 1em; }
+.post blockquote p, .post blockquote em { border: none; background: none; padding: 0; }
+
+/* Pull-quote / callout used for the one-line human anchor of a section. */
+.bb-callout {
+  border-left: 6px solid var(--bb-mint);
+  background: var(--bb-lavender);
+  padding: 0.6em 1em;
+  border-radius: 0 10px 10px 0;
+  font-size: 1.05em;
+}
+
+/* Wide diagrams: scroll sideways on phones instead of shrinking to illegible. */
+.bb-wide { overflow-x: auto; -webkit-overflow-scrolling: touch; border-radius: 10px; }
+.bb-wide img { min-width: 720px; }

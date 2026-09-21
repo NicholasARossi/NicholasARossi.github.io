@@ -1,0 +1,97 @@
+<!doctype html>
+<html><head><meta charset="utf-8"/><title>concept → mesh</title>
+<style>
+@font-face { font-family:'Banquise'; src:url('/res/blog_23/Banquise-Regular.woff') format('woff'); }
+:root { --pink:#ff5d7a; --cyan:#4aa3ff; --mint:#2bc3a6; --sand:#fff3e4; --lav:#f3eaff; --ink:#2a2233; }
+html,body { margin:0; background:var(--sand); font-family:Menlo,Consolas,monospace; color:var(--ink); }
+.wrap { display:flex; gap:10px; padding:12px 12px 6px; }
+.card { flex:1 1 0; min-width:0; background:#fff; border-radius:12px; overflow:hidden; position:relative; }
+.card .tag { position:absolute; top:8px; left:8px; font-family:'Banquise'; font-size:14px;
+  background:var(--lav); border-left:4px solid var(--pink); padding:2px 8px; border-radius:3px; z-index:2; }
+.card:last-child .tag { border-left-color:var(--cyan); }
+.card img, .card canvas { width:100%; height:100%; display:block; object-fit:cover; }
+.card { aspect-ratio:1/1; }
+.hint { position:absolute; bottom:6px; right:10px; font-size:10px; color:#9a8fae; z-index:2; }
+.bar { display:flex; align-items:center; justify-content:center; gap:14px; padding:6px 12px 12px; }
+.bar button { font-family:'Banquise'; font-size:16px; background:#fff; color:var(--ink);
+  border:2px solid var(--ink); border-radius:8px; padding:2px 14px; cursor:pointer; }
+.bar button:hover { background:var(--lav); }
+#name { font-family:'Banquise'; font-size:16px; min-width:220px; text-align:center; }
+.dots { display:flex; gap:5px; }
+.dots i { width:8px; height:8px; border-radius:50%; background:#d8cfe6; cursor:pointer; }
+.dots i.on { background:var(--pink); }
+#spin { color:#9a8fae; font-size:11px; }
+</style></head><body>
+<div class="wrap">
+  <div class="card"><span class="tag">nanobanana</span><img id="pic" alt="concept image"></div>
+  <div class="card"><span class="tag">Meshy</span><canvas id="cv"></canvas><span class="hint">drag to spin</span></div>
+</div>
+<div class="bar">
+  <button id="prev">&lt;</button>
+  <div id="name"></div>
+  <div class="dots" id="dots"></div>
+  <button id="next">&gt;</button>
+</div>
+<script type="importmap">{ "imports": {
+  "three":"https://unpkg.com/three@0.160.0/build/three.module.js",
+  "three/addons/":"https://unpkg.com/three@0.160.0/examples/jsm/" } }</script>
+<script type="module">
+import * as THREE from 'three';
+import { GLTFLoader } from 'three/addons/loaders/GLTFLoader.js';
+import { OrbitControls } from 'three/addons/controls/OrbitControls.js';
+
+const UNITS = [
+  { id:'blog23-demo-turret', name:'twin cannon · the live run', yaw:2.9 },
+  { id:'turret-repeater',    name:'repeater',                   yaw:2.9 },
+  { id:'turret-railgun',     name:'railgun',                    yaw:2.9 },
+  { id:'turret-rocket',      name:'rocket pod',                 yaw:2.9 },
+  { id:'m-ripclaw-body',     name:'ripclaw hull · crab faction', yaw:3.7, flip:true },
+  { id:'m-mantis-blade',     name:'mantis blade · arm part',    yaw:4.4 },
+];
+const BASE = '/res/blog_23/pairs/';
+
+const cv = document.getElementById('cv');
+const size = () => Math.min(cv.clientWidth, 900) || 420;
+const r = new THREE.WebGLRenderer({ canvas: cv, antialias: true });
+r.setPixelRatio(Math.min(devicePixelRatio, 2));
+const sc = new THREE.Scene(); sc.background = new THREE.Color(0xffffff);
+const cam = new THREE.PerspectiveCamera(30, 1, 0.01, 100);
+cam.position.set(3.4, 2.4, 3.4); cam.lookAt(0, -0.1, 0);
+sc.add(new THREE.HemisphereLight(0xffffff, 0xd9c9b8, 1.15));
+const sun = new THREE.DirectionalLight(0xfff0c8, 1.35); sun.position.set(-3, 5, 4); sc.add(sun);
+const ctl = new OrbitControls(cam, cv); ctl.enableZoom = false; ctl.enablePan = false;
+
+const cache = {}; let current = null; let idx = 0;
+const loader = new GLTFLoader();
+function show(i) {
+  idx = (i + UNITS.length) % UNITS.length;
+  const u = UNITS[idx];
+  document.getElementById('pic').src = BASE + u.id + '.jpg';
+  document.getElementById('name').textContent = u.name;
+  [...document.getElementById('dots').children].forEach((d, j) => d.classList.toggle('on', j === idx));
+  if (current) sc.remove(current);
+  const attach = (obj) => {
+    current = obj; obj.rotation.y = u.yaw;
+    obj.scale.x = u.flip ? -1 : 1;
+    obj.traverse(n => { if (n.isMesh) n.material.side = THREE.DoubleSide; });
+    sc.add(obj);
+  };
+  if (cache[u.id]) return attach(cache[u.id]);
+  loader.load(BASE + u.id + '.glb', g => {
+    const obj = g.scene;
+    const b = new THREE.Box3().setFromObject(obj);
+    const c = new THREE.Vector3(), sz = new THREE.Vector3(); b.getCenter(c); b.getSize(sz);
+    obj.position.sub(c); obj.scale.setScalar(2.6 / Math.max(sz.x, sz.y, sz.z));
+    const pivot = new THREE.Group(); pivot.add(obj);
+    cache[u.id] = pivot; attach(pivot);
+  });
+}
+const dots = document.getElementById('dots');
+UNITS.forEach((u, j) => { const d = document.createElement('i'); d.onclick = () => show(j); dots.appendChild(d); });
+document.getElementById('prev').onclick = () => show(idx - 1);
+document.getElementById('next').onclick = () => show(idx + 1);
+function tick() { const s = size(); r.setSize(s, s, false); cam.updateProjectionMatrix(); r.render(sc, cam); requestAnimationFrame(tick); }
+show(0); tick();
+window.setYaw = (a) => { if (current) current.children[0] ? (current.rotation.y = a) : null; return a; };
+window.__ready = true;
+</script></body></html>

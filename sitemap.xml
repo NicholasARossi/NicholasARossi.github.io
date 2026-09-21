@@ -21,7 +21,7 @@ layout: null
     <changefreq>daily</changefreq>
     <priority>0.7</priority>
   </url>
-  {% for post in site.posts %}
+  {% assign visible_posts = site.posts | where_exp: "p", "p.hidden != true" %}{% for post in visible_posts %}
   <url>
     <loc>http://rossidata.com{{ post.url }}</loc>
     <lastmod>{{ post.date | date_to_xmlschema }}</lastmod>

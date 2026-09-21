@@ -56,7 +56,7 @@ title: Archive (sidebar)
 </ul>
 <p class="h"><b>Recent posts</b></p>
 <ul>
-{% for post in site.posts %}
+{% assign visible_posts = site.posts | where_exp: "p", "p.hidden != true" %}{% for post in visible_posts %}
   <li class="posts">
     <a onclick="return openInParent(this)" target="_top" href="{{ post.url }}">
       <span>{{ post.title }}</span>
