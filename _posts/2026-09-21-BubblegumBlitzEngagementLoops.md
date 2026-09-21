@@ -10,7 +10,7 @@ sitemap: false
 
 <img src="/res/blog_24/loop_diagram.svg" alt="Diagram of the two engagement loops: the cron-posted Daily and the player-made Gauntlet, both feeding the same deterministic sim">
 
-[Bubblegum Blitz](https://www.reddit.com/r/BubblegumBlitzDev/) is an autobattler that runs inside Reddit posts ([how its units get made](/BubblegumBlitzAssetPipeline)). This post is about its multiplayer, which has an unusual property: there are no game servers. No matchmaking, no live sessions, no backend simulating battles. There are Reddit posts, a Redis keyspace, and one architectural decision doing all the work.
+[Bubblegum Blitz](https://www.reddit.com/r/BubblegumBlitz/) is an autobattler that runs inside Reddit posts ([how its units get made](/BubblegumBlitzAssetPipeline)). This post is about its multiplayer, which has an unusual property: there are no game servers. No matchmaking, no live sessions, no backend simulating battles. There are Reddit posts, a Redis keyspace, and one architectural decision doing all the work.
 
 ## Two loops, one trick
 
@@ -81,4 +81,4 @@ The part I underestimated: Reddit isn't the distribution channel for this game, 
 <source src="/res/blog_24/boss_battle.mp4" type="video/mp4">
 </video>
 
-A boss-gate battle from a co-op run. **[Play today's Daily on r/BubblegumBlitzDev](https://www.reddit.com/r/BubblegumBlitzDev/)** — and if your army holds, post the gauntlet.
+A boss-gate battle from a co-op run. **[Play today's Daily on r/BubblegumBlitz](https://www.reddit.com/r/BubblegumBlitz/)** — and if your army holds, post the gauntlet.

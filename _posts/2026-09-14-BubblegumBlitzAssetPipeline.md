@@ -19,7 +19,7 @@ Shipping a game solo means solving two problems:
 
 The second is gameplay and style. Style is where expectations are high: people assume polish, and a generic look reads as unfinished. It doesn't have to be AAA — a casual game just has to be opinionated.
 
-[Bubblegum Blitz](https://www.reddit.com/r/BubblegumBlitzDev/) is an aesthetically opinionated autobattler built on it.
+[Bubblegum Blitz](https://www.reddit.com/r/BubblegumBlitz/) is an aesthetically opinionated autobattler built on it.
 
 A game like this needs a lot of assets. Past a certain count you stop making them one at a time and build a system instead. The rule I ended up writing down — it sits at the top of the `AGENTS.md` in my next project — is that the system isn't there for throughput:
 
@@ -82,6 +82,6 @@ Everything above ends up here: walkers, tanks and turret platforms, all generate
 
 Nothing had to be perfect. It had to hold together in motion — which is the part I can only tell by looking.
 
-**[Play the game on r/BubblegumBlitzDev](https://www.reddit.com/r/BubblegumBlitzDev/)** — a new Daily Blitz posts every morning.
+**[Play the game on r/BubblegumBlitz](https://www.reddit.com/r/BubblegumBlitz/)** — a new Daily Blitz posts every morning.
 
 *Next: the game's multiplayer has no game servers — how two Reddit-post loops and a deterministic sim replace a backend.*
